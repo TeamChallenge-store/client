@@ -16,12 +16,5 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        '': never,
-      },
-    ],
   },
 };

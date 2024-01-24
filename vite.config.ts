@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/template-vite',
+  base: '/team-challenge',
   resolve: {
     alias: {
       '~app': path.resolve('src/app'),
