@@ -16,5 +16,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'object-curly-newline': ['error', { multiline: true, consistent: true }],
+    'implicit-arrow-linebreak': 'off',
   },
 };
