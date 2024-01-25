@@ -11,7 +11,7 @@
 - [Node.js](https://nodejs.org/download/release/v21.5.0/) (recommended version: 25.5.0)
 - [npm](https://www.npmjs.com/package/npm/v/10.2.4) (recommended version: 10.2.4)
 - [linter](https://www.npmjs.com/package/@mate-academy/eslint-config-react-typescript) (using mate-academy config)
-- [prettier](https://prettier.io/) ![Alt text]([image.png](https://i.imgur.com/W9Qr0HS.png))
+- [prettier](https://prettier.io/) ![Alt text](https://i.imgur.com/W9Qr0HS.png)
 - [husky](https://www.npmjs.com/package/husky/v/8.0.3/) (install and check it)
 
 # Installation
