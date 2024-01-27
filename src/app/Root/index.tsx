@@ -1,13 +1,17 @@
 import React from 'react';
+import { Provider as ReduxProvider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
 
 import { appRouter } from '~app/appRouter';
+import { appStore } from '~app/appStore';
 
 import '~app/styles.scss';
 
 const Root = () => (
   <React.StrictMode>
-    <RouterProvider router={appRouter()} />
+    <ReduxProvider store={appStore}>
+      <RouterProvider router={appRouter()} />
+    </ReduxProvider>
   </React.StrictMode>
 );
 
