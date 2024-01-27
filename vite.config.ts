@@ -9,11 +9,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '~app': path.resolve('src/app'),
+      '~pages': path.resolve('src/pages'),
+      '~widgets': path.resolve('src/widgets'),
       '~entities': path.resolve('src/entities'),
       '~features': path.resolve('src/features'),
-      '~pages': path.resolve('src/pages'),
       '~shared': path.resolve('src/shared'),
-      '~widgets': path.resolve('src/widgets'),
+      '~root': path.resolve('src/app/root'),
+      '~layout': path.resolve('src/app/layout'),
     },
   },
 });
