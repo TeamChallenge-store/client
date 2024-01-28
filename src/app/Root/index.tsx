@@ -5,7 +5,7 @@ import { RouterProvider } from 'react-router-dom';
 import { appRouter } from '~app/appRouter';
 import { appStore } from '~app/appStore';
 
-import '~app/styles.scss';
+import '~shared/styles/base.scss';
 
 const Root = () => (
   <React.StrictMode>
