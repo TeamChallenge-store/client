@@ -1,0 +1,1 @@
+import{j as s}from"./index-S2ixLXXL.js";const e="/client/assets/shrek-zGmD8WvR.gif",t=()=>s.jsxs("div",{children:[s.jsx("h1",{className:"red",children:"Hello team!!!"}),s.jsx("img",{src:e,alt:"shrek"})]});export{t as default};
