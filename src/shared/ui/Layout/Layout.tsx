@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 type TLayoutProps = {
@@ -11,7 +11,9 @@ const Layout: FC<TLayoutProps> = props => {
     <>
       {props.header}
       <main>
-        <Outlet />
+        <Suspense fallback="Loading...">
+          <Outlet />
+        </Suspense>
       </main>
       {props.footer}
     </>

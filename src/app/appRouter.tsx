@@ -1,7 +1,7 @@
 import { RouteObject, createHashRouter as Router } from 'react-router-dom';
 
-import { Home } from '~pages/Home';
 import { baseLayout } from '~layout/baseLayout';
+import { Home } from '~lazyPages';
 
 const routes: RouteObject[] = [
   {

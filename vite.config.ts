@@ -16,6 +16,7 @@ export default defineConfig({
       '~shared': path.resolve('src/shared'),
       '~root': path.resolve('src/app/root'),
       '~layout': path.resolve('src/app/layout'),
+      '~lazyPages': path.resolve('src/app/lazyPages.tsx'),
     },
   },
 });

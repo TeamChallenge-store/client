@@ -38,6 +38,7 @@
       "~root/*": ["./app/root/*"],
       "~layout": ["./app/layout"],
       "~layout/*": ["./app/layout/*"],
+      "~lazyPages": ["./app/lazyPages.tsx"],
     },
   },
   "include": ["src", "types"],

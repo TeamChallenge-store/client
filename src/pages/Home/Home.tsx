@@ -1,10 +1,6 @@
-import { FC } from 'react';
-
 import shrek from '~shared/images/shrek.gif';
 
-type THomeProps = object;
-
-const Home: FC<THomeProps> = () => {
+const Home = () => {
   return (
     <div>
       <h1 className="red">Hello team!!!</h1>
