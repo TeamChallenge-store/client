@@ -1,13 +1,37 @@
 @use './normalize.scss';
 @use './breakpoints.scss';
-@use './colors.scss';
+@use './colors.scss' as *;
 
 * {
   box-sizing: border-box;
 }
 
+@function toRem($px) {
+  @return calc($px / 10) + rem;
+}
+
+html {
+  font-size: calc(100vw / 1360 * 10);
+
+  @media (max-width: 1024px) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @media (max-width: 767px) {
+    font-size: calc(100vw / 767 * 10);
+  }
+
+  @media (max-width: 500px) {
+    font-size: calc(100vw / 500 * 10);
+  }
+
+  @media (max-width: 360px) {
+    font-size: calc(100vw / 500 * 10);
+  }
+}
+
 .active {
-  color: var(--color-active);
+  color: $color-active;
   cursor: default;
 }
 
@@ -20,15 +44,15 @@ body {
 }
 
 header {
-  background-color: var(--color-bg);
-  padding: 2rem 0;
+  background-color: $c-bg;
+  padding: toRem(20) 0;
   text-align: center;
 
   ul {
     display: flex;
     justify-content: center;
-    gap: 150px;
-    font-size: 25px;
+    gap: 15rem;
+    font-size: 2.5rem;
     list-style: none;
 
     li {
@@ -45,6 +69,10 @@ header {
   }
 }
 
+footer {
+  font-size: 2rem;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -52,4 +80,8 @@ main {
   div {
     text-align: center;
   }
+}
+
+.shrek {
+  width: 40rem;
 }
