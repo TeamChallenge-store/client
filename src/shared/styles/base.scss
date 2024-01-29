@@ -24,10 +24,6 @@ html {
   @media (max-width: 500px) {
     font-size: calc(100vw / 500 * 10);
   }
-
-  @media (max-width: 360px) {
-    font-size: calc(100vw / 500 * 10);
-  }
 }
 
 .active {
