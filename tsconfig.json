@@ -38,6 +38,8 @@
       "~root/*": ["./app/root/*"],
       "~layout": ["./app/layout"],
       "~layout/*": ["./app/layout/*"],
+      "~icons": ["./shared/ui/Icon/icons"],
+      "~icons/*": ["./shared/ui/Icon/icons/*"],
       "~lazyPages": ["./app/lazyPages.tsx"],
     },
   },
