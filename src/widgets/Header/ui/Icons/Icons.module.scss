@@ -1,0 +1,12 @@
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: func.toRem(90);
+}
+
+.icon {
+  width: func.toRem(20);
+}

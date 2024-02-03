@@ -1,29 +1,32 @@
-@use './normalize.scss';
-@use './breakpoints.scss';
-@use './variables.scss' as *;
+@use './helpers/normalize.scss';
+@use './helpers/variables.scss' as *;
+@use './helpers/functions.scss' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
-@function toRem($px) {
-  @return calc($px / 10) + rem;
-}
-
 html {
-  font-size: calc(100vw / 1440 * 10);
+  font-size: calc(100vw / 1440 * $default-font);
 
   @media (max-width: 1024px) {
-    font-size: calc(100vw / 1024 * 10);
+    font-size: calc(100vw / 1024 * $default-font);
   }
 
   @media (max-width: 767px) {
-    font-size: calc(100vw / 767 * 10);
+    font-size: calc(100vw / 767 * $default-font);
   }
 
   @media (max-width: 500px) {
-    font-size: calc(100vw / 500 * 10);
+    font-size: calc(100vw / 500 * $default-font);
   }
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
 }
 
 button {
@@ -32,58 +35,31 @@ button {
   padding: 0;
 }
 
-.active {
-  color: $color-active;
-  cursor: default;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  --webkit-font-smoothing: antialiased;
-  --moz-osx-font-smoothing: grayscale;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-header {
-  background-color: $c-bg;
-  padding: toRem(20) 0;
-  text-align: center;
+img {
+  width: 100%;
+}
 
-  ul {
-    display: flex;
-    justify-content: center;
-    gap: 15rem;
-    font-size: 2.5rem;
-    list-style: none;
+.container {
+  max-width: toRem(1440);
+  padding: 0 toRem(60);
+  margin: auto;
 
-    li {
-      & > a {
-        color: white;
-        text-decoration: none;
-        padding: 0 1rem;
-      }
-
-      & > a:hover {
-        text-decoration: underline;
-      }
-    }
+  @media (max-width: 1024px) {
+    padding: 0 toRem(40);
   }
-}
 
-footer {
-  font-size: 2rem;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-
-  div {
-    text-align: center;
+  @media (max-width: 500px) {
+    padding: 0 toRem(20);
   }
-}
-
-.shrek {
-  width: 40rem;
 }

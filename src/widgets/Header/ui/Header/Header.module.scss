@@ -1,0 +1,42 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.header {
+  border-bottom: func.toRem(1) solid $border;
+
+  @media (max-width: $m-viewport) {
+    padding: func.toRem(26) 0;
+  }
+}
+.logo {
+  width: func.toRem(193);
+  display: block;
+
+  @media (max-width: $xs-viewport) {
+    display: none;
+  }
+}
+.inner {
+  @include mixin.flexible;
+  gap: 28px;
+
+  @media (max-width: $xs-viewport) {
+    gap: 0;
+  }
+
+  @media (min-width: $max-viewport) {
+    gap: func.toRem(28);
+  }
+}
+
+.leftHeader {
+  @include mixin.flexible;
+  gap: func.toRem(45);
+}
+
+.rightHeader {
+  @include mixin.flexible;
+  gap: func.toRem(42);
+  flex-grow: 1;
+}

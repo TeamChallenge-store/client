@@ -8,6 +8,7 @@ module.exports = {
     'node_modules/**',
     'tsconfig.json',
     'vite.config.ts',
+    'sass.config.js',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],

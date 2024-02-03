@@ -12,6 +12,31 @@ const routes: RouteObject[] = [
         index: true,
         element: <Home />,
       },
+      {
+        path: 'about',
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'contacts',
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'payment',
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'delivery',
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: 'login',
+        index: true,
+        element: <Home />,
+      },
     ],
   },
 ];

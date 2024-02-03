@@ -1,0 +1,29 @@
+//vars
+$default-font: 16;
+
+//colors
+$c-bg: #2c2c32;
+$color-active: #0f7dc6;
+
+//???
+$border: #f4f2f2;
+$lightGrey: #f4f2f2;
+$grey: #636363;
+
+//viewport
+$xs-viewport: 500px;
+
+$s-viewport: (
+  max-width: 767px,
+);
+
+$m-viewport: 1024px;
+
+$l-viewport: (
+  max-width: 1440px,
+);
+$xl-viewport: (
+  max-width: 1919px,
+);
+
+$max-viewport: 1440px;

@@ -1,0 +1,36 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.nav {
+  max-width: 384px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  @media (min-width: $max-viewport) {
+    max-width: func.toRem(385);
+  }
+}
+
+.list {
+  @include mixin.flexible;
+  gap: 40px;
+
+  @media (min-width: $max-viewport) {
+    gap: func.toRem(40);
+  }
+}
+
+.active {
+  border: none;
+  border-bottom: func.toRem(1) solid red;
+}
+
+.link {
+  display: inline-block;
+  padding: func.toRem(39) 0;
+  position: relative;
+  font-weight: 500;
+}

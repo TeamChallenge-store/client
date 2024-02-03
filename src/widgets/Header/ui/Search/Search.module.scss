@@ -1,0 +1,39 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.searchForm {
+  width: 100%;
+
+  position: relative;
+}
+
+.label {
+  display: block;
+}
+
+.searchInput {
+  width: 100%;
+  font-size: func.toRem(14);
+  font-weight: 500;
+  padding: func.toRem(10.6) func.toRem(56) func.toRem(10.6) func.toRem(18);
+  background-color: $lightGrey;
+  border-radius: 15px;
+  border: func.toRem(1) solid transparent;
+  // outline: none;
+
+  position: relative;
+
+  // &:focus {
+  //   border: func.toRem(1) solid $grey;
+  // }
+}
+
+.searchButton {
+  position: absolute;
+  right: func.toRem(18);
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: func.toRem(20);
+  height: func.toRem(20);
+}
