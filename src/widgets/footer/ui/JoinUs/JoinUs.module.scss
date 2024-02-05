@@ -1,0 +1,24 @@
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+
+.joinUs {
+  order: 3;
+  // @media (max-width: $s-viewport) {
+  //   // width: 100px;
+  // }
+}
+.joinTitle {
+  @media (max-width: $xs-viewport) {
+    display: none;
+  }
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: func.toRem(426);
+}
+
+.icon {
+  width: func.toRem(24);
+}

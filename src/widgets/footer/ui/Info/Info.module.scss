@@ -1,0 +1,22 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+
+.info {
+  order: 1;
+  @media (max-width: $xs-viewport) {
+    order: 2;
+    flex: 1;
+    width: 50%;
+  }
+}
+.infoTitle {
+  @media (max-width: $xs-viewport) {
+    display: none;
+  }
+}
+.infoList {
+  gap: 8px;
+  @media (max-width: $xs-viewport) {
+    display: flex;
+    flex-direction: row;
+  }
+}

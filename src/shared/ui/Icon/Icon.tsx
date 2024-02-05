@@ -7,9 +7,24 @@ import like from '~icons/like.svg';
 import cart from '~icons/cart.svg';
 import search from '~icons/search.svg';
 
+import youtube from '~icons/youtube.svg';
+import facebook from '~icons/facebook.svg';
+import twitter from '~icons/twitter.svg';
+import instagram from '~icons/instagram.svg';
+import linkedin from '~icons/linkedin.svg';
+
 import css from './Icon.module.scss';
 
-type TIconType = 'account' | 'like' | 'cart' | 'search';
+type TIconType =
+  | 'account'
+  | 'like'
+  | 'cart'
+  | 'search'
+  | 'youtube'
+  | 'facebook'
+  | 'twitter'
+  | 'instagram'
+  | 'linkedin';
 type TPaths = { [key in TIconType]: string };
 
 type IconProps = {
@@ -27,6 +42,11 @@ const paths: TPaths = {
   like,
   cart,
   search,
+  youtube,
+  facebook,
+  twitter,
+  instagram,
+  linkedin,
 };
 
 const Icon: FC<IconProps> = ({

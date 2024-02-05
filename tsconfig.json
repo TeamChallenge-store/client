@@ -43,6 +43,12 @@
       "~lazyPages": ["./app/lazyPages.tsx"],
     },
   },
-  "include": ["src", "types"],
+  "include": [
+    "src",
+    "types",
+    "ui",
+    "src/widgets/footer/Icons",
+    "src/widgets/footer/Footer",
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

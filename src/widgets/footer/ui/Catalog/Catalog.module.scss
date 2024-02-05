@@ -1,0 +1,19 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+
+.catalog {
+  order: 2;
+  @media (max-width: $xs-viewport) {
+    order: 1;
+  }
+}
+.catalogTitle {
+  @media (max-width: $xs-viewport) {
+    font: 1em sans-serif;
+  }
+}
+
+.catalogList {
+  @media (max-width: $xs-viewport) {
+    display: none;
+  }
+}
