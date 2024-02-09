@@ -3,9 +3,6 @@
 
 .joinUs {
   order: 3;
-  // @media (max-width: $s-viewport) {
-  //   // width: 100px;
-  // }
 }
 .joinTitle {
   @media (max-width: $xs-viewport) {
@@ -16,7 +13,6 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  min-width: func.toRem(426);
 }
 
 .icon {

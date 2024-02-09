@@ -14,7 +14,7 @@ type TFooterProps = object;
 const Footer: FC<TFooterProps> = () => {
   return (
     <footer className={css.footer}>
-      <div className="container">
+      <div className={css.container}>
         <Link to="/" className={css.logo}>
           <img src={logo} alt="logo" />
         </Link>
