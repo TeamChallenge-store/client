@@ -24,7 +24,6 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    // column-gap: func.toRem(36);
   }
   li {
     @media (max-width: $xs-viewport) {
@@ -44,30 +43,3 @@
     display: block;
   }
 }
-//  info {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     flex-direction: column;
-//     text-align: center;
-// }
-// .infoList {
-//     display: flex;
-//     flex-direction: row;
-//     /* justify-content: space-between; */
-//     align-items: center;
-//     flex-wrap: wrap;
-// }
-// .footer-link {
-//     margin: 5px 0;
-//     font-size: 16px;
-//     text-decoration: none;
-//     color: black;
-//     font-family: Arial, sans-serif;
-//     flex-basis: calc(33.333% - 10px);
-// }
-
-// .footer-link:nth-child(5){
-//     flex-basis: calc(66% - 10px);
-// }
-// }

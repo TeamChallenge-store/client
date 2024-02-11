@@ -25,15 +25,6 @@ const Info: FC = () => {
         </li>
       </ul>
     </div>
-    // <info>
-    //     <div class="infoList">
-    //         <a href="/catalog" class="footer-link">Catalog</a>
-    //         <a href="/payment" class="footer-link">Payment</a>
-    //         <a href="/delivery" class="footer-link">Delivery</a>
-    //         <a href="/contacts" class="footer-link">Contacts</a>
-    //         <a href="/exchange-return" class="footer-link">Exchange and Return</a>
-    //     </div>
-    // </info>
   );
 };
 
