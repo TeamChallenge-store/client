@@ -6,6 +6,7 @@ import account from '~icons/account.svg';
 import like from '~icons/like.svg';
 import cart from '~icons/cart.svg';
 import search from '~icons/search.svg';
+import burger from '~icons/burger.svg';
 
 import youtube from '~icons/youtube.svg';
 import facebook from '~icons/facebook.svg';
@@ -20,11 +21,13 @@ type TIconType =
   | 'like'
   | 'cart'
   | 'search'
+  | 'burger'
   | 'youtube'
   | 'facebook'
   | 'twitter'
   | 'instagram'
   | 'linkedin';
+
 type TPaths = { [key in TIconType]: string };
 
 type IconProps = {
@@ -42,6 +45,7 @@ const paths: TPaths = {
   like,
   cart,
   search,
+  burger,
   youtube,
   facebook,
   twitter,
