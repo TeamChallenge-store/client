@@ -2,14 +2,14 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .catalog {
-  order: 2;
   @media (max-width: $xs-viewport) {
-    order: 1;
+    display: none;
   }
 }
+
 .catalogTitle {
   @media (max-width: $xs-viewport) {
-    font: 1rem sans-serif;
+    font: 16px;
     margin: 17px 25px;
   }
 }

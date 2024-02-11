@@ -3,31 +3,27 @@ import { Link } from 'react-router-dom';
 
 import css from './Catalog.module.scss';
 
-type TCatalogProps = object;
-
-const Catalog: FC<TCatalogProps> = () => {
+const Catalog: FC = () => {
   return (
     <div className={css.catalog}>
       <h4 className={css.catalogTitle}>Catalog</h4>
       <ul className={css.catalogList}>
         <li>
           <Link to="/tents" className={css.logo}>
-            <p>Tents</p>
+            Tents
           </Link>
         </li>
         <li>
-          <Link to="/backpacks">
-            <p>Backpacks</p>
-          </Link>
+          <Link to="/backpacks">Backpacks</Link>
         </li>
         <li>
           <Link to="/clothing" className={css.logo}>
-            <p>Clothing</p>
+            Clothing
           </Link>
         </li>
         <li>
           <Link to="/Shoes" className={css.logo}>
-            <p>Shoes</p>
+            Shoes
           </Link>
         </li>
       </ul>

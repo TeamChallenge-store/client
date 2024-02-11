@@ -9,12 +9,10 @@ import { Catalog } from '../Catalog';
 
 import css from './Footer.module.scss';
 
-type TFooterProps = object;
-
-const Footer: FC<TFooterProps> = () => {
+const Footer: FC = () => {
   return (
     <footer className={css.footer}>
-      <div className={css.container}>
+      <div className="container">
         <Link to="/" className={css.logo}>
           <img src={logo} alt="logo" />
         </Link>
@@ -23,7 +21,9 @@ const Footer: FC<TFooterProps> = () => {
           <Catalog />
           <JoinUs />
         </div>
-        <p>CompanyName @ 2024. All rights reserved.</p>
+        <p className={css.copyright}>
+          CompanyName @ 2024. All rights reserved.
+        </p>
       </div>
     </footer>
   );

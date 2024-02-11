@@ -1,20 +1,22 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
-.joinUs {
-  order: 3;
-}
 .joinTitle {
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
+
 .icons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  @media (max-width: $xs-viewport) {
+    text-align: center;
+  }
 }
 
 .icon {
   width: func.toRem(24);
+  margin-right: 10px;
+  @media (max-width: $xs-viewport) {
+    margin-top: 25px;
+  }
 }

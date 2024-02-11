@@ -4,9 +4,7 @@ import { Icon } from '~shared/ui/Icon';
 
 import css from './JoinUs.module.scss';
 
-type TJoinUsProps = object;
-
-const JoinUs: FC<TJoinUsProps> = () => {
+const JoinUs: FC = () => {
   return (
     <div className={css.joinUs}>
       <h4 className={css.joinTitle}>Join Us</h4>

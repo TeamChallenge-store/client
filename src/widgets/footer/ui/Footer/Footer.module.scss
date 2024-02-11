@@ -3,13 +3,13 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 .footer {
   background-color: $lightGrey;
-  padding: func.toRem(45) 60px;
   margin-top: auto;
   width: 100%;
+  padding: func.toRem(45) ;
   @media (max-width: $xs-viewport) {
-    padding: func.toRem(15) 20px;
   }
 }
+
 .logo {
   width: func.toRem(193);
   display: block;
@@ -18,25 +18,26 @@
     display: none;
   }
 }
+
 .container {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  // gap: func.toRem(20);
   @media (max-width: $xs-viewport) {
-    @include mixin.flexible;
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
   }
 }
+
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: func.toRem(30) 0;
-  margin-left: 7px;
   @media (max-width: $xs-viewport) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: func.toRem(25);
+    display: block;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  @media (max-width: $xs-viewport) {
+    text-align: center;
   }
 }
