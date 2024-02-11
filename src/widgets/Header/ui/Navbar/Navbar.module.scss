@@ -5,7 +5,7 @@
 .nav {
   max-width: 384px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: $m-viewport) {
     display: none;
   }
 

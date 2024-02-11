@@ -1,29 +1,28 @@
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-
-import logo from '~shared/logo.png';
-
+import { ReactNode, FC } from 'react';
 import { Navbar } from '../Navbar';
-import { Search } from '../Search';
 import { Icons } from '../Icons';
+
+import { Logo } from '~entities/logo';
+import { Icon } from '~shared/ui/Icon';
 
 import css from './Header.module.scss';
 
-type THeaderProps = object;
+type THeaderProps = {
+  searchSlot?: ReactNode;
+};
 
-const Header: FC<THeaderProps> = () => {
+const Header: FC<THeaderProps> = props => {
   return (
     <header className={css.header}>
       <div className="container">
         <div className={css.inner}>
           <div className={css.leftHeader}>
-            <Link to="/" className={css.logo}>
-              <img src={logo} alt="logo" />
-            </Link>
+            <Logo />
             <Navbar />
+            <Icon type="burger" btnStyle={css.burger} />
           </div>
           <div className={css.rightHeader}>
-            <Search />
+            {props.searchSlot}
             <Icons />
           </div>
         </div>

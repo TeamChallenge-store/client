@@ -19,13 +19,8 @@
   background-color: $lightGrey;
   border-radius: 15px;
   border: func.toRem(1) solid transparent;
-  // outline: none;
 
   position: relative;
-
-  // &:focus {
-  //   border: func.toRem(1) solid $grey;
-  // }
 }
 
 .searchButton {

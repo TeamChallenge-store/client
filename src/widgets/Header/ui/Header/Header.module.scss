@@ -9,14 +9,7 @@
     padding: func.toRem(26) 0;
   }
 }
-.logo {
-  width: func.toRem(193);
-  display: block;
 
-  @media (max-width: $xs-viewport) {
-    display: none;
-  }
-}
 .inner {
   @include mixin.flexible;
   gap: 28px;
@@ -39,4 +32,14 @@
   @include mixin.flexible;
   gap: func.toRem(42);
   flex-grow: 1;
+}
+
+.burger {
+  display: none;
+
+  @media (max-width: $m-viewport) {
+    display: block;
+
+    padding-right: func.toRem(24);
+  }
 }
