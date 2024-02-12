@@ -1,7 +1,8 @@
 import { RouteObject, createHashRouter as Router } from 'react-router-dom';
 
 import { baseLayout } from '~layout/baseLayout';
-import { Home } from '~lazyPages';
+
+import { Home, ProductPage } from '~lazyPages';
 
 const routes: RouteObject[] = [
   {
@@ -11,6 +12,11 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: 'products/:category',
+        index: true,
+        element: <ProductPage />,
       },
       {
         path: 'about',
@@ -36,6 +42,11 @@ const routes: RouteObject[] = [
         path: 'login',
         index: true,
         element: <Home />,
+      },
+      {
+        path: '*',
+        index: true,
+        element: <h1>Ooops...</h1>,
       },
     ],
   },

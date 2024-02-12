@@ -1,0 +1,16 @@
+.favButton {
+  svg {
+    width: 24px;
+    height: 24px;
+
+    path {
+      stroke: #666666;
+    }
+  }
+}
+
+.clicked {
+  path {
+    fill: #666666;
+  }
+}

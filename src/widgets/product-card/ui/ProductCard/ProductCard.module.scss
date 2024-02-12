@@ -1,0 +1,48 @@
+.card {
+  position: relative;
+
+  max-width: 310px;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  transition: box-shadow 0.3s ease 0s;
+
+  &:hover {
+    box-shadow: 0 2px 4px 0 #00000027;
+  }
+}
+
+.cardImg {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: block;
+}
+
+.content {
+  padding: 21px 15px 16px;
+  width: calc(100% - 10px);
+}
+
+.cardTitle {
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 0.5;
+  margin-bottom: 31px;
+}
+
+.cardActionInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardPrice {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cardWishButton {
+  position: absolute;
+  top: 30px;
+  right: 18px;
+  transform: translateY(-12px);
+}
