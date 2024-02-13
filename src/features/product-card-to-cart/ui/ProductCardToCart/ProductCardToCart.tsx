@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { ToastOptions as IToastOptions } from 'react-toastify';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider, createTheme } from '@mui/material';
 import cn from 'classnames';
-
+import { ShowMessage } from '~shared/ui/ShowMessage';
+import 'react-toastify/dist/ReactToastify.css';
 import css from './ProductCardToCart.module.scss';
 
 const theme = createTheme({
@@ -30,6 +32,12 @@ const theme = createTheme({
   },
 });
 
+const options: IToastOptions = {
+  position: 'top-right',
+  autoClose: 5000,
+  className: 'custom',
+};
+
 const ProductCardToCart = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setLoading] = useState(false);
@@ -39,6 +47,8 @@ const ProductCardToCart = () => {
   const handleClick = () => {
     setIsLiked(!isLiked);
     setLoading(true);
+
+    ShowMessage('Product added to Cart ', options);
 
     const id = setTimeout(() => {
       setLoading(false);
