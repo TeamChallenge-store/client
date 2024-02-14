@@ -12,13 +12,14 @@
 }
 
 .infoTitle {
+  margin-bottom: 28px;
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
 
 .infoList {
-  column-gap: 8px;
+
   @media (max-width: $xs-viewport) {
     display: flex;
     flex-direction: row;
@@ -26,6 +27,7 @@
     flex-wrap: wrap;
   }
   li {
+      margin-bottom: 16px;
     @media (max-width: $xs-viewport) {
       margin: 5px 0;
       font-size: 16px;

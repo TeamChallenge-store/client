@@ -11,6 +11,12 @@
   @media (max-width: $xs-viewport) {
     text-align: center;
   }
+  img {
+    margin-right: func.toRem(16);
+    @media (max-width: $s-viewport) {
+      margin-right: func.toRem(12);
+    }
+  }
 }
 
 .icon {

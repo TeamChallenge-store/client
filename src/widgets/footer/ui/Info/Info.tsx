@@ -8,7 +8,7 @@ const Info: FC = () => {
     <div className={css.info}>
       <h4 className={css.infoTitle}>Information</h4>
       <ul className={css.infoList}>
-        <li className={css.CatologHide}>
+        <li className={css.catologHide}>
           <Link to="/catalog">Catalog</Link>
         </li>
         <li>
