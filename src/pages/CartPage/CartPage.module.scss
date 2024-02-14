@@ -1,0 +1,24 @@
+@use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../shared/styles/helpers/functions.scss' as func;
+
+.cartPage {
+  border: 2px solid black;
+  margin: 0 auto;
+  width: func.toRem(1258);
+  padding: 13px 30px 13px 30px;
+  border-radius: 8px;
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ border-bottom: func.toRem(1) solid $border;
+}
+
+.title {
+}
+
+.close {
+}
