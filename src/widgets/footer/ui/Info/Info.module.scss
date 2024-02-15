@@ -19,7 +19,6 @@
 }
 
 .infoList {
-
   @media (max-width: $xs-viewport) {
     display: flex;
     flex-direction: row;
@@ -27,7 +26,7 @@
     flex-wrap: wrap;
   }
   li {
-      margin-bottom: 16px;
+    margin-bottom: 16px;
     @media (max-width: $xs-viewport) {
       margin: 5px 0;
       font-size: 16px;
