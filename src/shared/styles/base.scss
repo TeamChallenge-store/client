@@ -76,3 +76,10 @@ h6 {
   width: 0 !important;
   overflow: hidden;
 }
+.Toastify__toast-theme--light {
+  background: #dedede !important;
+  color: #757575;
+}
+.Toastify__toast-container--top-right {
+  top: 35% !important;
+}
