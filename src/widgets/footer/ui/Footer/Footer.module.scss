@@ -29,8 +29,12 @@
 
 .copyright {
   font-size: 14px;
-  
+
   @media (max-width: $xs-viewport) {
     text-align: center;
+  }
+
+  @media (min-width: $max-viewport) {
+    font-size: 40px;
   }
 }
