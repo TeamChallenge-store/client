@@ -6,7 +6,7 @@ import css from './JoinUs.module.scss';
 
 const JoinUs: FC = () => {
   return (
-    <div className={css.joinUs}>
+    <article className={css.joinUs}>
       <h4 className={css.joinTitle}>Join Us</h4>
       <div className={css.icons}>
         <Link to="https://www.youtube.com/?gl=UA&hl=ru">
@@ -25,7 +25,7 @@ const JoinUs: FC = () => {
           <Icon className={css.icon} type="linkedin" />
         </Link>
       </div>
-    </div>
+    </article>
   );
 };
 

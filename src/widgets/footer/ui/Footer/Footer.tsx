@@ -21,9 +21,9 @@ const Footer: FC = () => {
           <Catalog />
           <JoinUs />
         </div>
-        <p className={css.copyright}>
+        <span className={css.copyright}>
           CompanyName @ 2024. All rights reserved.
-        </p>
+        </span>
       </div>
     </footer>
   );

@@ -3,22 +3,18 @@
 
 .catalog {
   margin-bottom: 28px;
+
   @media (max-width: $xs-viewport) {
     display: none;
-  }
-}
-
-.catalogTitle {
-  @media (max-width: $xs-viewport) {
-    font: 16px;
-    margin: 17px 25px;
   }
 }
 
 .catalogList {
+
   @media (max-width: $xs-viewport) {
     display: none;
   }
+
   li {
     margin-bottom: 16px;
   }

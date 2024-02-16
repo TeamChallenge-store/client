@@ -2,35 +2,36 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .info {
+
   @media (max-width: $xs-viewport) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     text-align: center;
   }
 }
 
 .infoTitle {
   margin-bottom: 28px;
+
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
 
 .infoList {
+  
   @media (max-width: $xs-viewport) {
     display: flex;
-    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
   }
+
   li {
     margin-bottom: 16px;
+
     @media (max-width: $xs-viewport) {
       margin: 5px 0;
       font-size: 16px;
       flex-basis: calc(33.333% - 10px);
+
       &:nth-child(5) {
         flex-basis: calc(66% - 10px);
       }
@@ -40,6 +41,7 @@
 
 .catologHide {
   display: none;
+
   @media (max-width: $xs-viewport) {
     display: block;
   }
