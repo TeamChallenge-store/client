@@ -3,7 +3,7 @@ import { LoadingButton } from '@mui/lab';
 import { ThemeProvider, createTheme } from '@mui/material';
 import cn from 'classnames';
 
-import css from './ProductCardToCart.module.scss';
+import css from './AddToCart.module.scss';
 
 const theme = createTheme({
   components: {
@@ -30,7 +30,7 @@ const theme = createTheme({
   },
 });
 
-const ProductCardToCart = () => {
+const AddToCart = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
@@ -144,4 +144,4 @@ const ProductCardToCart = () => {
   );
 };
 
-export { ProductCardToCart };
+export { AddToCart };

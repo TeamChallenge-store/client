@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import cn from 'classnames';
-import css from './ProductCardWish.module.scss';
+import css from './AddToWish.module.scss';
 
-const ProductCardWish = () => {
+const AddToWish = () => {
   const [isClicked, setClicked] = useState(false);
 
   return (
@@ -36,4 +36,4 @@ const ProductCardWish = () => {
   );
 };
 
-export { ProductCardWish };
+export { AddToWish };
