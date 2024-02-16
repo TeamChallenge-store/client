@@ -1,4 +1,5 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .icons {
   display: flex;
@@ -27,4 +28,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: $max-viewport) {
+    bottom: func.toRem(19);
+    left: func.toRem(13);
+    width: func.toRem(17);
+    height: func.toRem(17);
+    font-size: func.toRem(12);
+    border: func.toRem(2) solid #000000;
+
+  }
 }
