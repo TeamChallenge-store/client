@@ -2,7 +2,6 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .catalog {
-  margin-bottom: 28px;
 
   @media (max-width: $xs-viewport) {
     display: none;
