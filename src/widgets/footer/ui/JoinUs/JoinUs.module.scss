@@ -2,21 +2,23 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .joinTitle {
+  
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
 
 .icons {
+  display: flex;
+  gap: 16px;
+
   @media (max-width: $xs-viewport) {
     text-align: center;
+    justify-content: center;
+    margin-top: 32px;
   }
 }
 
 .icon {
   width: func.toRem(24);
-  margin-right: 10px;
-  @media (max-width: $xs-viewport) {
-    margin-top: 25px;
-  }
 }

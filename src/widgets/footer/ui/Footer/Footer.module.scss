@@ -1,13 +1,11 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 @use '../../../../shared/styles/helpers/functions.scss' as func;
+
 .footer {
   background-color: $lightGrey;
   margin-top: auto;
-  width: 100%;
   padding: func.toRem(45);
-  @media (max-width: $xs-viewport) {
-  }
 }
 
 .logo {
@@ -19,17 +17,11 @@
   }
 }
 
-.container {
-  @media (max-width: $xs-viewport) {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: func.toRem(30) 0;
+
   @media (max-width: $xs-viewport) {
     display: block;
   }
@@ -37,6 +29,7 @@
 
 .copyright {
   font-size: 14px;
+  
   @media (max-width: $xs-viewport) {
     text-align: center;
   }
