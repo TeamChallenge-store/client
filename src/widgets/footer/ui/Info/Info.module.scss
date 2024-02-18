@@ -2,21 +2,18 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .info {
-
   @media (max-width: $xs-viewport) {
     text-align: center;
   }
 }
 
 .infoTitle {
-
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
 
 .infoList {
-  
   @media (max-width: $xs-viewport) {
     display: flex;
     align-items: center;
