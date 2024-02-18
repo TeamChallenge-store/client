@@ -16,26 +16,16 @@
 }
 .cartCount {
   position: absolute;
-  bottom: 19px;
-  left: 13px;
-  width: 17px;
-  height: 17px;
-  border: 2px solid #000000;
+  bottom: func.toRem(18);
+  left: func.toRem(11);
+  width: func.toRem(17);
+  height: func.toRem(17);
+  border: func.toRem(2) solid #000000;
   background: #ffffff;
   border-radius: 50%;
   color: #000000;
-  font-size: 12px;
+  font-size: func.toRem(12);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media (min-width: $max-viewport) {
-    bottom: func.toRem(19);
-    left: func.toRem(13);
-    width: func.toRem(17);
-    height: func.toRem(17);
-    font-size: func.toRem(12);
-    border: func.toRem(2) solid #000000;
-
-  }
 }
