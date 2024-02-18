@@ -2,18 +2,14 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .catalog {
-
   @media (max-width: $xs-viewport) {
     display: none;
   }
 }
-
+.catalogTitle {
+  margin-bottom: 20px;
+}
 .catalogList {
-
-  @media (max-width: $xs-viewport) {
-    display: none;
-  }
-
   li {
     margin-bottom: 16px;
   }
