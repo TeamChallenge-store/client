@@ -6,6 +6,10 @@
   background-color: $lightGrey;
   margin-top: auto;
   padding: func.toRem(45) 0;
+
+  @media (max-width: $xs-viewport) {
+    text-align: center;
+  }
 }
 
 .logo {
@@ -29,10 +33,6 @@
 
 .copyright {
   font-size: 14px;
-
-  @media (max-width: $xs-viewport) {
-    text-align: center;
-  }
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(14);
