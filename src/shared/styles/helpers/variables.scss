@@ -16,11 +16,8 @@ $s-viewport: 500px;
 
 $m-viewport: 1024px;
 
-$l-viewport: (
-  max-width: 1440px,
-);
-$xl-viewport: (
-  max-width: 1919px,
-);
+$l-viewport: 1440px;
+
+$xl-viewport: 1919px;
 
 $max-viewport: 1440px;
