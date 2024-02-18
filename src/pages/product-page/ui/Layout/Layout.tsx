@@ -1,4 +1,7 @@
 import { FC, ReactNode } from 'react';
+import cn from 'classnames';
+
+import css from './Layout.module.scss';
 
 type TLayoutProps = {
   sidebar?: ReactNode;
@@ -9,16 +12,14 @@ type TLayoutProps = {
 
 const Layout: FC<TLayoutProps> = props => {
   return (
-    <section>
-      <div className="inner">
-        <aside className="filters">{props.sidebar}</aside>
+    <section className={cn('container', css.productsSection)}>
+      <div className={css.inner}>
+        <aside className={css.filters}>{props.sidebar}</aside>
 
-        <div>
-          <div className="select">{props.sortBy}</div>
-          <div>
-            {props.productList}
-            {props.pagination}
-          </div>
+        <div className={css.listInner}>
+          <div className={css.select}>{props.sortBy}</div>
+          <ul className={css.listGrid}>{props.productList}</ul>
+          {props.pagination}
         </div>
       </div>
     </section>

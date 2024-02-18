@@ -14,7 +14,7 @@
   @include mixin.flexible;
   gap: 28px;
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     gap: 0;
   }
 

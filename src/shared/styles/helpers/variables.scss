@@ -10,12 +10,9 @@ $border: #f4f2f2;
 $lightGrey: #f4f2f2;
 $grey: #636363;
 
-//viewport
-$xs-viewport: 500px;
-
-$s-viewport: (
-  max-width: 767px,
-);
+//viewports
+$xs-viewport: 376px;
+$s-viewport: 500px;
 
 $m-viewport: 1024px;
 

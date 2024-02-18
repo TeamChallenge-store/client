@@ -1,7 +1,20 @@
+@use '../../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../../shared/styles/helpers/functions.scss' as func;
+
 .favButton {
   svg {
     width: 24px;
     height: 24px;
+
+    @media (min-width: $max-viewport) {
+      width: func.toRem(24);
+      height: func.toRem(24);
+    }
+
+    @media (max-width: $xs-viewport) {
+      width: 18px;
+      height: 18px;
+    }
 
     path {
       stroke: #666666;

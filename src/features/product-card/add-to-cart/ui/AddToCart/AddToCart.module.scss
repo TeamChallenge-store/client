@@ -1,7 +1,20 @@
+@use '../../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../../shared/styles/helpers/functions.scss' as func;
+
 .cartCheck,
 .cartSvg {
   width: 20px;
   height: 20px;
+
+  @media (min-width: $max-viewport) {
+    width: func.toRem(24);
+    height: func.toRem(24);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .addButtonContainer {
@@ -16,9 +29,26 @@
 
   overflow-x: hidden;
 
-  &:hover {
-    width: 154px;
-    border-color: #a0a0a0;
+  @media (min-width: $max-viewport) {
+    width: func.toRem(66);
+    margin: func.toRem(1);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: 40px;
+    justify-content: center;
+    overflow: initial;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      width: 154px;
+      border-color: #a0a0a0;
+
+      @media (min-width: $max-viewport) {
+        width: func.toRem(154);
+      }
+    }
   }
 }
 
@@ -37,22 +67,40 @@
   font-size: 20px;
   border: 2px solid #a0a0a0;
 
+  @media (min-width: $max-viewport) {
+    gap: func.toRem(5);
+    padding-left: func.toRem(4);
+    width: func.toRem(110);
+    font-size: func.toRem(20);
+    border: func.toRem(2.1) solid #a0a0a0;
+    right: calc(100% - func.toRem(65));
+  }
+
+  @media (max-width: $s-viewport) {
+    display: none;
+  }
+
   button {
     color: #666666;
   }
 
+  .left,
   .right {
     padding: 6px 6px;
-  }
 
-  .left {
-    padding: 6px 6px;
+    @media (min-width: $max-viewport) {
+      padding: func.toRem(6) func.toRem(6);
+    }
   }
 
   .count {
     display: block;
     width: 15px;
     text-align: center;
+
+    @media (min-width: $max-viewport) {
+      width: func.toRem(15);
+    }
   }
 }
 

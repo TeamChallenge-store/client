@@ -1,17 +1,14 @@
 import { FC, ReactNode } from 'react';
-import card from '~shared/cardI.jpg';
+
+import cardi from '~shared/cardI.jpg';
 
 import css from './LayoutProductCard.module.scss';
+import { IProductCard } from '~entities/product';
 
 type TLayoutProductCardProps = {
   wishSlot?: ReactNode;
   addToCartSlot?: ReactNode;
-  product?: {
-    img: string;
-    title: string;
-    price: number;
-    name: string;
-  };
+  product: IProductCard;
 };
 
 const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
@@ -21,30 +18,23 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     return null;
   }
 
-  const { img, title, price, name } = product;
+  const { image, price, name } = product;
 
   return (
-    <article className={css.card}>
-      <img className={css.cardImg} src={img} alt={name} />
-      <div className={css.content}>
-        <h3 className={css.cardTitle}>{title}</h3>
-        <div className={css.cardActionInner}>
-          <span className={css.cardPrice}>{`$ ${price}`}</span>
-          {addToCartSlot}
+    <li>
+      <article className={css.card}>
+        <img className={css.cardImg} src={image && cardi} alt={name} />
+        <div className={css.content}>
+          <h3 className={css.cardTitle}>{name}</h3>
+          <div className={css.cardActionInner}>
+            <span className={css.cardPrice}>{`$ ${price}`}</span>
+            {addToCartSlot}
+          </div>
+          <span className={css.cardWishButton}>{wishSlot}</span>
         </div>
-        <span className={css.cardWishButton}>{wishSlot}</span>
-      </div>
-    </article>
+      </article>
+    </li>
   );
-};
-
-LayoutProductCard.defaultProps = {
-  product: {
-    img: card,
-    title: 'Tent Te Terra Incognita  ALFA 2',
-    price: 4800,
-    name: 'card',
-  },
 };
 
 export { LayoutProductCard };

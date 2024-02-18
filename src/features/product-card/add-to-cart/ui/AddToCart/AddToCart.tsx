@@ -1,34 +1,11 @@
 import { useEffect, useState } from 'react';
 import { LoadingButton } from '@mui/lab';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import cn from 'classnames';
 
+import theme from '../../config/muiTheme';
+
 import css from './AddToCart.module.scss';
-
-const theme = createTheme({
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          padding: '21px 23px',
-          borderRadius: '15px',
-          backgroundColor: '#a0a0a0',
-          boxShadow: 'none',
-          position: 'relative',
-
-          '&:hover': {
-            backgroundColor: '#a0a0a0',
-            boxShadow: 'none',
-          },
-
-          '& svg': {
-            position: 'absolute',
-          },
-        },
-      },
-    },
-  },
-});
 
 const AddToCart = () => {
   const [isLiked, setIsLiked] = useState(false);
