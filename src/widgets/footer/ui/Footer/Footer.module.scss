@@ -24,7 +24,7 @@
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // padding: func.toRem(20) 0;
+  padding: func.toRem(20) 0;
 
   @media (max-width: $xs-viewport) {
     display: block;
