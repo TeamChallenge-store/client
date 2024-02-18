@@ -18,7 +18,7 @@
     gap: 40px;
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     gap: func.toRem(16);
   }
 
@@ -41,7 +41,7 @@
     gap: func.toRem(40);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     gap: func.toRem(16);
   }
 }

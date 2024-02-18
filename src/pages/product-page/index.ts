@@ -1,3 +1,3 @@
-import { ProductPage } from './ui/ProductPage';
+import { ProductPage } from './ProductPage';
 
 export default ProductPage;

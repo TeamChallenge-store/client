@@ -22,6 +22,10 @@ html {
   @media (max-width: 500px) {
     font-size: calc(100vw / 500 * $default-font);
   }
+
+  @media (max-width: 376px) {
+    font-size: calc(100vw / 375 * $default-font);
+  }
 }
 
 body {
@@ -70,5 +74,9 @@ h6 {
 
   @media (max-width: 500px) {
     padding: 0 toRem(20);
+  }
+
+  @media (max-width: 376px) {
+    padding: 0 toRem(16);
   }
 }
