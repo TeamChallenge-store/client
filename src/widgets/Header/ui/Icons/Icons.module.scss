@@ -1,12 +1,23 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-width: func.toRem(90);
+
+  @media (max-width: $m-viewport) {
+    min-width: auto;
+  }
 }
 
 .icon {
   width: func.toRem(20);
+}
+
+.mobHide {
+  @media (max-width: $m-viewport) {
+    display: none;
+  }
 }
