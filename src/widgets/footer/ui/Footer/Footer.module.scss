@@ -24,10 +24,11 @@
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: func.toRem(30) 0;
+  // padding: func.toRem(20) 0;
 
   @media (max-width: $xs-viewport) {
     display: block;
+    padding: 0;
   }
 }
 
@@ -36,5 +37,6 @@
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(14);
+    
   }
 }
