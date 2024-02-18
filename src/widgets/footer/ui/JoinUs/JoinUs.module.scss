@@ -2,9 +2,11 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .joinTitle {
-  
+  margin-bottom: 20px;
+
   @media (max-width: $xs-viewport) {
     display: none;
+      margin-bottom: 0;
   }
 }
 
