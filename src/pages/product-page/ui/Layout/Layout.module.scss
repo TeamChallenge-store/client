@@ -39,7 +39,6 @@
 }
 
 .select {
-  @include mixin.placeholder(func.toRem(247), func.toRem(40));
   position: absolute;
   right: 0;
   top: 0;

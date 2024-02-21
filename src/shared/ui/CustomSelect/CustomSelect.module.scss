@@ -1,0 +1,98 @@
+@use '../../styles/helpers/functions.scss' as func;
+
+.containerSelect {
+  border: func.toRem(1) solid #a0a0a0;
+  min-width: func.toRem(247);
+  font-weight: 500;
+
+  position: relative;
+  font-size: func.toRem(16);
+  line-height: 1;
+  border-radius: 15px;
+  min-height: func.toRem(40);
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  right: func.toRem(16);
+  width: func.toRem(24);
+  height: func.toRem(24);
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease 0s;
+}
+
+.lableName {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+}
+
+.selectedOption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menuSelect {
+  display: block;
+  position: absolute;
+  top: func.toRem(39.5);
+  width: 100%;
+  border-radius: 15px;
+  background-color: #ffffff;
+  transition: all 0.3s;
+
+  visibility: hidden;
+  opacity: 0;
+  border: func.toRem(1) solid transparent;
+  height: 0;
+  transform: scale(0.9);
+}
+
+.optionSelect {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: func.toRem(11.6) func.toRem(16);
+  line-height: 1;
+  font-weight: inherit;
+  width: 100%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #a0a0a0;
+  }
+
+  &:first-child {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  &:disabled {
+    background-color: #a0a0a072;
+    color: rgba(0, 0, 0, 0.473);
+  }
+}
+
+.optionSelectedA {
+  background-color: #e3e3e3;
+}
+
+.open {
+  height: func.toRem(120);
+  visibility: visible;
+  opacity: 1;
+  border-color: #a0a0a0;
+  transform: scale(1);
+}
+
+.isArrowRotate {
+  transform: translateY(-50%) rotate(180deg);
+}

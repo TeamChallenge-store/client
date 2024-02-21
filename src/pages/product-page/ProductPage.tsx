@@ -1,15 +1,14 @@
-import { FC } from 'react';
-
 import { ProductList } from '~widgets/product-list';
 import { products } from '~entities/product';
 import { Layout } from './ui/Layout';
+import { CustomSelect } from '~shared/ui/CustomSelect';
 
-type TProductPageProps = object;
+import options from './model/selectOptions';
 
-const ProductPage: FC<TProductPageProps> = () => (
+const ProductPage = () => (
   <Layout
     sidebar={null}
-    sortBy={null}
+    sortBy={<CustomSelect options={options} startValue="Popularity" />}
     productList={<ProductList products={products} />}
     pagination={null}
   />
