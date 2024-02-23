@@ -2,7 +2,7 @@ import { RouteObject, createHashRouter as Router } from 'react-router-dom';
 
 import { baseLayout } from '~layout/baseLayout';
 
-import { Home, ProductPage, CartPage } from '~lazyPages';
+import { Home, ProductPage } from '~lazyPages';
 
 const routes: RouteObject[] = [
   {
@@ -47,11 +47,6 @@ const routes: RouteObject[] = [
         path: '*',
         index: true,
         element: <h1>Ooops...</h1>,
-      },
-      {
-        path: 'cart',
-        index: true,
-        element: <CartPage />,
       },
     ],
   },

@@ -7,10 +7,19 @@ import like from '~icons/like.svg';
 import cart from '~icons/cart.svg';
 import search from '~icons/search.svg';
 import burger from '~icons/burger.svg';
+import close from '~icons/close.svg';
+import remove from '~icons/remove.svg';
 
 import css from './Icon.module.scss';
 
-type TIconType = 'account' | 'like' | 'cart' | 'search' | 'burger';
+type TIconType =
+  | 'account'
+  | 'like'
+  | 'cart'
+  | 'search'
+  | 'burger'
+  | 'close'
+  | 'remove';
 type TPaths = { [key in TIconType]: string };
 
 type IconProps = {
@@ -29,6 +38,8 @@ const paths: TPaths = {
   cart,
   search,
   burger,
+  close,
+  remove,
 };
 
 const Icon: FC<IconProps> = ({

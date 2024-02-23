@@ -5,7 +5,16 @@ import { LayoutCartItems } from '~shared/ui/LayoutCartItems';
 type TCartList = object;
 
 const CartList: FC<TCartList> = () => {
-  return <LayoutCartItems />;
+  return (
+    <>
+      <LayoutCartItems />
+      <LayoutCartItems />
+      <LayoutCartItems />
+      <LayoutCartItems />
+      <LayoutCartItems />
+      <LayoutCartItems />
+    </>
+  );
 };
 
 export { CartList };

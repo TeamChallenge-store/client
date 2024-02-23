@@ -1,0 +1,100 @@
+@use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../shared/styles/helpers/functions.scss' as func;
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cartPage {
+  margin: 0 auto;
+  width: func.toRem(1258);
+  height: func.toRem(559);
+  padding: 0 func.toRem(30);
+  border-radius: 15px;
+  background-color: #ffff;
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(900);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(700);
+  }
+
+  @media (max-width: $xs-viewport) {
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: func.toRem(1) solid $border;
+
+  @media (max-width: $xs-viewport) {
+    background-color: #efefef;
+    border-bottom: func.toRem(1) solid #d1d1d1;
+    padding: func.toRem(30) func.toRem(21);
+    height: 60px;
+  }
+}
+
+.title {
+  font-weight: 500;
+  font-size: func.toRem(24);
+}
+
+.closeIcon {
+  width: func.toRem(19);
+  height: func.toRem(19);
+}
+
+.info {
+  display: flex;
+  gap: func.toRem(70);
+
+  @media (max-width: $m-viewport) {
+    gap: func.toRem(40);
+  }
+
+  @media (max-width: $s-viewport) {
+    gap: func.toRem(55);
+  }
+
+  @media (max-width: $xs-viewport) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.cartList {
+  display: block;
+  max-height: func.toRem(460);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 20px;
+  scrollbar-color: #50555c #ffff;
+  scrollbar-width: thin;
+
+  @media (max-width: $m-viewport) {
+    padding-right: 0;
+  }
+
+  @media (max-width: $xs-viewport) {
+    max-height: func.toRem(700);
+  }
+}

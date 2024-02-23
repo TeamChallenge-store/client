@@ -1,0 +1,82 @@
+@use '../../styles/helpers/variables.scss' as *;
+@use '../../styles/helpers/mixins.scss' as mixin;
+@use '../../styles/helpers/functions.scss' as func;
+
+.summary {
+  width: func.toRem(489);
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(300);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(250);
+  }
+
+  @media (max-width: $xs-viewport) {
+    width: 100%;
+    border-top: func.toRem(1) solid #eaebed;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffff;
+  }
+}
+
+.summaryTitle {
+  font-weight: 600;
+  font-size: func.toRem(24);
+  border-bottom: func.toRem(1) solid $border;
+  padding-bottom: func.toRem(15);
+  margin-top: func.toRem(20);
+
+  @media (max-width: $xs-viewport) {
+    padding: func.toRem(24) func.toRem(16);
+    margin: 0;
+  }
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: func.toRem(16);
+
+  @media (max-width: $xs-viewport) {
+    padding: func.toRem(16) func.toRem(16) func.toRem(24) func.toRem(16);
+    // padding-bottom: func.toRem(24);
+  }
+}
+
+.contentTitle {
+  font-weight: 700;
+  margin: 0;
+}
+
+.price {
+  font-weight: 600;
+}
+.continueBtn {
+  width: 100%;
+  background-color: #50555c;
+  border-radius: func.toRem(15);
+  padding: func.toRem(14) func.toRem(167);
+  color: #ffff;
+  text-align: center;
+  margin-top: func.toRem(29);
+  cursor: pointer;
+
+  @media (max-width: $m-viewport) {
+    padding: func.toRem(14) func.toRem(80);
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: func.toRem(14) func.toRem(45);
+  }
+
+  @media (max-width: $xs-viewport) {
+    border-radius: 0;
+    height: func.toRem(61);
+    margin: 0;
+  }
+}
