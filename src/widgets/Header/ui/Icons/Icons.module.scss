@@ -21,3 +21,23 @@
     display: none;
   }
 }
+
+.iconBtn {
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  bottom: func.toRem(18);
+  left: func.toRem(11);
+  width: func.toRem(17);
+  height: func.toRem(17);
+  border: func.toRem(2) solid #000000;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #000000;
+  font-size: func.toRem(12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
