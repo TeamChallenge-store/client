@@ -1,32 +1,35 @@
 import { FC, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import cn from 'classnames';
 
+import { type TSortBy } from '~entities/product';
+import { getSearchWith } from '~shared/lib/getSearchWith';
 import { useToggle } from '~shared/model/useToggle';
 
-import css from './CustomSelect.module.scss';
-import { THandleOption } from './types/THandleOption';
 import { OptionButton } from './ui/OptionButton';
+import { THandleOption } from './types/THandleOption';
+
+import css from './CustomSelect.module.scss';
 
 type TCustomSelectProps = {
-  options: string[][];
+  options: TSortBy;
   startValue: string;
-  onChange?: (value: string) => void;
 };
 
-const CustomSelect: FC<TCustomSelectProps> = ({
-  options,
-  startValue,
-  onChange = () => {},
-}) => {
+const CustomSelect: FC<TCustomSelectProps> = ({ options, startValue }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [isModalOpen, toggle] = useToggle();
   const [selectedOption, setSelectedOption] = useState(startValue);
 
   const handleOption = ({ e, option, value }: THandleOption) => {
     e.stopPropagation();
 
+    const search = getSearchWith({ sortBy: value }, searchParams);
+
+    setSearchParams(search);
+
     setSelectedOption(option);
-    onChange(value);
     toggle();
   };
 
@@ -61,7 +64,6 @@ const CustomSelect: FC<TCustomSelectProps> = ({
           <svg
             className={cn(css.arrowsMobUp, {
               [css.isMobailArrowRotateDown]: isModalOpen,
-              [css.isMobailArrowRotateBackUp]: isModalOpen === false,
             })}
             width="10"
             height="16"

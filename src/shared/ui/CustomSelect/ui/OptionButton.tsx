@@ -6,7 +6,7 @@ import { THandleOption } from '../types/THandleOption';
 import css from '../CustomSelect.module.scss';
 
 type TOptionButtonProps = {
-  options: string[];
+  options: [string, string];
   selectedOption: string;
   onClick: (args: THandleOption) => void;
 };
