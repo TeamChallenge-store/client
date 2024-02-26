@@ -24,7 +24,7 @@
 .content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // padding: func.toRem(20) 0;
+  margin: func.toRem(48) 0;
 
   @media (max-width: $xs-viewport) {
     display: block;
@@ -37,6 +37,9 @@
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(14);
-    
+  }
+
+  @media (max-width: $xs-viewport) {
+    font-size: 12px;
   }
 }
