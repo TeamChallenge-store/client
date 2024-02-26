@@ -5,18 +5,13 @@ import { RemoveFromCart } from '~features/cart/RemoveFromCart';
 
 import css from './LayoutCartItems.module.scss';
 
-type TLayoutCartItemsProps = {
-  product?: {
-    img: string;
-    title: string;
-    price: number;
-    name: string;
-  };
-};
-
-const LayoutCartItems: FC<TLayoutCartItemsProps> = props => {
-  const { product } = props;
-
+interface Product {
+  img: string;
+  title: string;
+  price: number;
+  name: string;
+}
+const LayoutCartItems: FC<{ product?: Product }> = ({ product }) => {
   if (!product) {
     return null;
   }

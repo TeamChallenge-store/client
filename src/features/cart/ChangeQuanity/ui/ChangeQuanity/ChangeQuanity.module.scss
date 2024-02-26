@@ -4,7 +4,8 @@
 
 .counter {
   margin-right: func.toRem(70);
-
+  width: func.toRem(46);
+  white-space: nowrap;
   @media (max-width: $m-viewport) {
     margin-right: func.toRem(40);
   }
@@ -13,11 +14,11 @@
 .counterActions {
   color: rgba(102, 102, 102, 1);
   cursor: pointer;
-  font-size: func.toRem(15);
+  font-size: 15px;
 }
 
 .quantity {
   margin: 0 10px;
-  font-weight: func.toRem(500);
-  font-size: func.toRem(18);
+  font-weight: 500;
+  font-size: 18px;
 }

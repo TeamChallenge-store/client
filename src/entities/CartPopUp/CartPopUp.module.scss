@@ -2,6 +2,10 @@
 @use '../../shared/styles/helpers/mixins.scss' as mixin;
 @use '../../shared/styles/helpers/functions.scss' as func;
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .modalBackdrop {
   position: fixed;
   top: 0;
@@ -12,15 +16,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1;
   overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modalBackdrop.closing {
+  animation: fadeOut 0.3s ease forwards;
 }
 
 .cartPage {
-  margin: 0 auto;
-  width: func.toRem(1258);
-  height: func.toRem(559);
-  padding: 0 func.toRem(30);
+  margin: auto;
+  max-width: func.toRem(1258);
   border-radius: 15px;
   background-color: #ffff;
 
@@ -40,16 +62,14 @@
 }
 
 .cartHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: func.toRem(1) solid $border;
+  @include mixin.flexible;
+  border-bottom: func.toRem(1) solid #d1d1d1;
+  padding: func.toRem(25) func.toRem(30);
 
   @media (max-width: $xs-viewport) {
     background-color: #efefef;
     border-bottom: func.toRem(1) solid #d1d1d1;
-    padding: func.toRem(30) func.toRem(21);
-    height: 60px;
+    padding: 0 func.toRem(30);
   }
 }
 
@@ -66,6 +86,7 @@
 .info {
   display: flex;
   gap: func.toRem(70);
+  padding: 0 func.toRem(30);
 
   @media (max-width: $m-viewport) {
     gap: func.toRem(40);

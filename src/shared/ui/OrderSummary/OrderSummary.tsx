@@ -4,14 +4,21 @@ import css from './OrderSummary.module.scss';
 
 type TOrderSummaryProps = {
   total?: number;
+  onClose?: () => void;
 };
 
 const OrderSummary: FC<TOrderSummaryProps> = props => {
-  const { total } = props;
+  const { total, onClose } = props;
 
   if (!total) {
     return null;
   }
+
+  const handleContinueClick = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
 
   return (
     <article className={css.summary}>
@@ -21,7 +28,11 @@ const OrderSummary: FC<TOrderSummaryProps> = props => {
         <span className={css.price}>{`${total} ₴`}</span>
       </div>
       <Link to="/checkout">
-        <button type="button" className={css.continueBtn}>
+        <button
+          type="button"
+          className={css.continueBtn}
+          onClick={handleContinueClick}
+        >
           Continue to order
         </button>
       </Link>
