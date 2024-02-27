@@ -5,4 +5,10 @@ interface IProductCard {
   image: string;
 }
 
-export { type IProductCard };
+type TResponse = {
+  results: IProductCard[];
+};
+
+type TSortBy = [string, string][];
+
+export { type IProductCard, type TSortBy, type TResponse };
