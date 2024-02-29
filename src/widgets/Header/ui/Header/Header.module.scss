@@ -57,3 +57,11 @@
     width: func.toRem(24);
   }
 }
+
+.errorLeftHeader {
+  margin: func.toRem(30) 0;
+
+  @media (max-width: $m-viewport) {
+    margin: 0;
+  }
+}

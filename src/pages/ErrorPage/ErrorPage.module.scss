@@ -1,0 +1,61 @@
+@use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/functions.scss' as func;
+@use '../../shared/styles/helpers/mixins.scss' as mixin;
+
+.errorContainer {
+  max-width: func.toRem(536);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: auto;
+
+  @media (max-width: $s-viewport) {
+    padding: 0 16px;
+  }
+}
+
+.errorIcon {
+  width: func.toRem(48);
+  height: func.toRem(48);
+}
+
+.error {
+  font-weight: 700;
+  font-size: 48px;
+  margin: func.toRem(24) 0;
+}
+
+.errorDesc {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  margin: func.toRem(16) 0;
+}
+
+.errorSolution {
+  color: #666666;
+}
+
+.errorBtn {
+  max-width: func.toRem(386);
+  width: 100%;
+  background-color: #50555c;
+  border-radius: func.toRem(15);
+  padding: func.toRem(14) func.toRem(75);
+  color: white;
+  text-align: center;
+  margin-top: func.toRem(29);
+  cursor: pointer;
+
+  @media (max-width: $s-viewport) {
+    margin-top: func.toRem(48);
+    padding: func.toRem(14) func.toRem(55);
+  }
+
+  @media (max-width: $xs-viewport) {
+    max-width: func.toRem(343);
+  }
+}
