@@ -7,6 +7,11 @@ import like from '~icons/like.svg';
 import cart from '~icons/cart.svg';
 import search from '~icons/search.svg';
 import burger from '~icons/burger.svg';
+import youtube from '~icons/youtube.svg';
+import facebook from '~icons/facebook.svg';
+import twitter from '~icons/twitter.svg';
+import instagram from '~icons/instagram.svg';
+import linkedin from '~icons/linkedin.svg';
 import close from '~icons/close.svg';
 import remove from '~icons/remove.svg';
 
@@ -18,8 +23,14 @@ type TIconType =
   | 'cart'
   | 'search'
   | 'burger'
+  | 'youtube'
+  | 'facebook'
+  | 'twitter'
+  | 'instagram'
+  | 'linkedin'
   | 'close'
   | 'remove';
+
 type TPaths = { [key in TIconType]: string };
 
 type IconProps = {
@@ -38,6 +49,11 @@ const paths: TPaths = {
   cart,
   search,
   burger,
+  youtube,
+  facebook,
+  twitter,
+  instagram,
+  linkedin,
   close,
   remove,
 };

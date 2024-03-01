@@ -1,0 +1,41 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.footer {
+  background-color: $lightGrey;
+  margin-top: auto;
+  padding: func.toRem(45) 0;
+
+  @media (max-width: $s-viewport) {
+    text-align: center;
+  }
+}
+
+.logo {
+  width: func.toRem(193);
+  display: block;
+
+  @media (max-width: $s-viewport) {
+    display: none;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: func.toRem(20) 0;
+
+  @media (max-width: $s-viewport) {
+    display: block;
+    padding: 0;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+
+  @media (min-width: $max-viewport) {
+    font-size: func.toRem(14);
+  }
+}

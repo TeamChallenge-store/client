@@ -22,11 +22,21 @@ html {
   @media (max-width: 500px) {
     font-size: calc(100vw / 500 * $default-font);
   }
+
+  @media (max-width: 376px) {
+    font-size: calc(100vw / 375 * $default-font);
+  }
 }
 
 body {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 button {
@@ -62,7 +72,8 @@ h6 {
 
 .container {
   max-width: toRem(1440);
-  padding: 0 toRem(60);
+  padding-left: toRem(60);
+  padding-right: toRem(60);
   margin: auto;
 
   @media (max-width: 1024px) {
@@ -71,6 +82,10 @@ h6 {
 
   @media (max-width: 500px) {
     padding: 0 toRem(20);
+  }
+
+  @media (max-width: 376px) {
+    padding: 0 toRem(16);
   }
 }
 .no-scroll {

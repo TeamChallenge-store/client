@@ -11,13 +11,19 @@
     width: func.toRem(490);
   }
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     width: func.toRem(350);
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: 16px 16px 0;
+    width: func.toRem(490);
+    border: none;
   }
 
   @media (max-width: $xs-viewport) {
     padding: 16px 16px 0;
-    width: func.toRem(490);
+    width: func.toRem(375);
     border: none;
   }
 }
@@ -33,9 +39,9 @@
     height: func.toRem(120);
   }
 
-  @media (max-width: $xs-viewport) {
-    width: func.toRem(129);
-    height: func.toRem(133);
+  @media (max-width: $s-viewport) {
+    width: func.toRem(105);
+    height: func.toRem(105);
   }
 }
 
@@ -49,14 +55,22 @@
   align-items: center;
   flex-direction: row;
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     display: flex;
     flex-direction: column;
     gap: 19px;
     align-items: start;
   }
-  @media (max-width: $xs-viewport) {
+
+  @media (max-width: $s-viewport) {
     width: func.toRem(370);
+  }
+
+  @media (max-width: $xs-viewport) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
   }
 }
 
@@ -67,6 +81,11 @@
   @media (max-width: $m-viewport) {
     margin-right: func.toRem(40);
   }
+
+  @media (max-width: $xs-viewport) {
+    margin-right: 0;
+    font-size: func.toRem(16);
+  }
 }
 
 .itemActionInner {
@@ -76,15 +95,19 @@
   gap: func.toRem(29);
   margin-top: func.toRem(53);
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     flex-direction: row;
     gap: func.toRem(150);
     align-items: center;
     margin-top: 0;
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     gap: func.toRem(245);
+  }
+
+  @media (max-width: $xs-viewport) {
+    gap: func.toRem(150);
   }
 }
 

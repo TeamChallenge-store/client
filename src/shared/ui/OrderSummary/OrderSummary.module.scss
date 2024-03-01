@@ -9,11 +9,11 @@
     width: func.toRem(300);
   }
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     width: func.toRem(250);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     width: 100%;
     border-top: func.toRem(1) solid #eaebed;
     position: fixed;
@@ -30,7 +30,7 @@
   padding-bottom: func.toRem(15);
   margin-top: func.toRem(20);
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     padding: func.toRem(24) func.toRem(16);
     margin: 0;
   }
@@ -42,7 +42,7 @@
   font-size: func.toRem(16);
   padding-top: func.toRem(16);
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     padding: func.toRem(16) func.toRem(16) func.toRem(24) func.toRem(16);
   }
 }
@@ -69,11 +69,11 @@
     padding: func.toRem(14) func.toRem(80);
   }
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     padding: func.toRem(14) func.toRem(45);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     border-radius: 0;
     height: func.toRem(61);
     margin: 0;

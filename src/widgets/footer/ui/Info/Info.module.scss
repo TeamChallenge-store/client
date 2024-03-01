@@ -1,0 +1,47 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.info {
+  @media (max-width: $s-viewport) {
+    text-align: center;
+  }
+}
+
+.infoTitle {
+  margin-bottom: 20px;
+
+  @media (max-width: $s-viewport) {
+    display: none;
+  }
+}
+
+.infoList {
+  @media (max-width: $s-viewport) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 31px;
+  }
+
+  li {
+    margin-bottom: 16px;
+
+    @media (max-width: $s-viewport) {
+      margin: 5px 0;
+      font-size: 16px;
+      flex-basis: calc(33.333% - 10px);
+
+      &:nth-child(5) {
+        flex-basis: calc(68% - 10px);
+      }
+    }
+  }
+}
+
+.catologHide {
+  display: none;
+
+  @media (max-width: $s-viewport) {
+    display: block;
+  }
+}

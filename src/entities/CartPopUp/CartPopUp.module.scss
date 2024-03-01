@@ -50,11 +50,11 @@
     width: func.toRem(900);
   }
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     width: func.toRem(700);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     height: 100%;
     padding: 0;
     border-radius: 0;
@@ -66,10 +66,9 @@
   border-bottom: func.toRem(1) solid #d1d1d1;
   padding: func.toRem(25) func.toRem(30);
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     background-color: #efefef;
-    border-bottom: func.toRem(1) solid #d1d1d1;
-    padding: 0 func.toRem(30);
+    padding: func.toRem(21) func.toRem(46);
   }
 }
 
@@ -92,11 +91,11 @@
     gap: func.toRem(40);
   }
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $md-viewport) {
     gap: func.toRem(55);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     flex-direction: column;
     gap: 0;
   }
@@ -115,7 +114,7 @@
     padding-right: 0;
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     max-height: func.toRem(700);
   }
 }

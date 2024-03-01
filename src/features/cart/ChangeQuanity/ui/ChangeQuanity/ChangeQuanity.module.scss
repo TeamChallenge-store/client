@@ -14,11 +14,11 @@
 .counterActions {
   color: rgba(102, 102, 102, 1);
   cursor: pointer;
-  font-size: 15px;
+  font-size:func.toRem(15);
 }
 
 .quantity {
   margin: 0 10px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: func.toRem(18);
 }

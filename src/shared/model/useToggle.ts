@@ -22,14 +22,16 @@
 
 import { useState } from 'react';
 
-const useToggle = (initialValue: boolean) => {
+type TValueReturns = [boolean, () => void, (value: boolean) => void];
+
+const useToggle = (initialValue = false): TValueReturns => {
   const [value, setValue] = useState(initialValue);
 
   const toggle = () => {
     setValue(!value);
   };
 
-  return [value, toggle];
+  return [value, toggle, setValue];
 };
 
 export { useToggle };

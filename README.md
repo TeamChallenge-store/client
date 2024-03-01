@@ -8,7 +8,7 @@
 
 # Requirements
 
-- [Node.js](https://nodejs.org/download/release/v21.5.0/) (recommended version: 25.5.0)
+- [Node.js](https://nodejs.org/download/release/v21.5.0/) (recommended version: 21.5.0)
 - [npm](https://www.npmjs.com/package/npm/v/10.2.4) (recommended version: 10.2.4)
 - [linter](https://www.npmjs.com/package/@mate-academy/eslint-config-react-typescript) (using mate-academy config)
 - [prettier](https://prettier.io/) ![Alt text](https://i.imgur.com/W9Qr0HS.png)
@@ -64,4 +64,9 @@
   - `~entities`
   - `~features`
   - `~shared`
-  - `index.ts`
+
+# Commits style guide
+
+- According to [conventional](https://www.conventionalcommits.org/en/v1.0.0/)
+
+- Also u need to add time stamp ($(LC_TIME=en_US.UTF-8 date '+%a, %b %d, %Y %I:%M:%S %p')). It works in bash
