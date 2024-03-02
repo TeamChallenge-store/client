@@ -8,12 +8,6 @@
   box-sizing: border-box;
 }
 
-#root {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
 html {
   font-size: calc(100vw / 1440 * $default-font);
 
@@ -28,11 +22,21 @@ html {
   @media (max-width: 500px) {
     font-size: calc(100vw / 500 * $default-font);
   }
+
+  @media (max-width: 376px) {
+    font-size: calc(100vw / 375 * $default-font);
+  }
 }
 
 body {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 button {
@@ -56,9 +60,19 @@ img {
   width: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .container {
   max-width: toRem(1440);
-  padding: 0 toRem(60);
+  padding-left: toRem(60);
+  padding-right: toRem(60);
   margin: auto;
 
   @media (max-width: 1024px) {
@@ -67,5 +81,9 @@ img {
 
   @media (max-width: 500px) {
     padding: 0 toRem(20);
+  }
+
+  @media (max-width: 376px) {
+    padding: 0 toRem(16);
   }
 }

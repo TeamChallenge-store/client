@@ -1,12 +1,12 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
-.joinTitle {
-  margin-bottom: 20px;
 
+.joinTitle {
+  margin-bottom: 21px;
   @media (max-width: $xs-viewport) {
     display: none;
-      margin-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -18,9 +18,7 @@
     text-align: center;
     justify-content: center;
     margin-top: 32px;
-    margin-bottom: 32px;
-
-    
+    margin-bottom: 25px;
   }
 }
 

@@ -5,10 +5,13 @@
 .footer {
   background-color: $lightGrey;
   margin-top: auto;
-  padding: func.toRem(45) 0;
+  padding: func.toRem(50) func.toRem(80);
+  height: func.toRem(472);
 
   @media (max-width: $xs-viewport) {
     text-align: center;
+    padding: func.toRem(37) 0;
+    height: func.toRem(260);
   }
 }
 
@@ -22,11 +25,13 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: func.toRem(48) 0;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  margin: func.toRem(53) 0 func.toRem(33);
 
   @media (max-width: $xs-viewport) {
+    margin: 0;
     display: block;
     padding: 0;
   }

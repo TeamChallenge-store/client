@@ -2,13 +2,15 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .info {
+  width: 394px;
   @media (max-width: $xs-viewport) {
     text-align: center;
+    width: 100%;
   }
 }
 
 .infoTitle {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 
   @media (max-width: $xs-viewport) {
     display: none;
@@ -20,19 +22,19 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-left: 31px;
+    margin-left: func.toRem(44);
   }
 
   li {
     margin-bottom: 16px;
 
     @media (max-width: $xs-viewport) {
-      margin: 12px 0;
+      margin: 9px 3px;
       font-size: 16px;
-      flex-basis: calc(33.333% - 10px);
+      flex-basis: calc(30.333% - 10px);
 
       &:nth-child(5) {
-        flex-basis: calc(68% - 10px);
+        flex-basis: calc(61% - 10px);
       }
     }
   }

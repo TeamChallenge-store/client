@@ -12,7 +12,7 @@ import css from './Footer.module.scss';
 const Footer: FC = () => {
   return (
     <footer className={css.footer}>
-      <div className="container">
+      <div>
         <Link to="/" className={css.logo}>
           <img src={logo} alt="logo" />
         </Link>
