@@ -1,5 +1,6 @@
 import { Empty } from '~shared/ui/Empty';
 import { Layout } from './ui/HomePage';
+import { SubscribeBlock } from '~widgets/subscribe-block';
 
 const HomePage = () => (
   <Layout
@@ -10,7 +11,7 @@ const HomePage = () => (
     subCategory={<Empty title="subCategory" />}
     newProducts={<Empty title="newProducts" />}
     stock={<Empty title="stock" />}
-    subscribe={<Empty title="subscribe" />}
+    subscribe={<SubscribeBlock />}
   />
 );
 
