@@ -28,7 +28,7 @@
   font-size: func.toRem(24);
   border-bottom: func.toRem(1) solid $border;
   padding-bottom: func.toRem(15);
-  margin-top: func.toRem(20);
+  margin-top: func.toRem(16);
 
   @media (max-width: $s-viewport) {
     padding: func.toRem(24) func.toRem(16);

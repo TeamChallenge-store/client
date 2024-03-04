@@ -42,10 +42,9 @@
 
 .cartPage {
   margin: auto;
-  max-width: func.toRem(1258);
   border-radius: 15px;
   background-color: #ffff;
-
+  height: func.toRem(559);
   @media (max-width: $m-viewport) {
     width: func.toRem(900);
   }
@@ -64,7 +63,7 @@
 .cartHeader {
   @include mixin.flexible;
   border-bottom: func.toRem(1) solid #d1d1d1;
-  padding: func.toRem(25) func.toRem(30);
+  padding: func.toRem(19) func.toRem(35);
 
   @media (max-width: $s-viewport) {
     background-color: #efefef;
@@ -84,7 +83,7 @@
 
 .info {
   display: flex;
-  gap: func.toRem(70);
+  gap: func.toRem(60);
   padding: 0 func.toRem(30);
 
   @media (max-width: $m-viewport) {
