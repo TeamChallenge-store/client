@@ -1,6 +1,7 @@
 import { ReactNode, FC } from 'react';
-import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
+import { useErrorPageCheck } from '~features/error-page';
+
 import { Navbar } from '../Navbar';
 import { Icons } from '../Icons';
 import { Logo } from '~entities/logo';
@@ -13,13 +14,7 @@ type THeaderProps = {
 };
 
 const Header: FC<THeaderProps> = props => {
-  const location = useLocation();
-
-  const isErrorPage = (pathname: string): boolean => {
-    return pathname !== '/' && pathname !== '/product';
-  };
-
-  const isError = isErrorPage(location.pathname);
+  const isErrorPage = useErrorPageCheck();
 
   return (
     <header className={css.header}>
@@ -31,12 +26,12 @@ const Header: FC<THeaderProps> = props => {
             })}
           >
             <Logo />
-            {!isError && <Navbar />}
-            {!isError && <Icon type="burger" btnStyle={css.burger} />}
+            {!isErrorPage && <Navbar />}
+            {!isErrorPage && <Icon type="burger" btnStyle={css.burger} />}
           </div>
           <div className={css.rightHeader}>
-            {!isError && props.searchSlot}
-            {!isError && <Icons />}
+            {!isErrorPage && props.searchSlot}
+            {!isErrorPage && <Icons />}
           </div>
         </div>
       </div>

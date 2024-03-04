@@ -13,6 +13,7 @@ import facebook from '~icons/facebook.svg';
 import twitter from '~icons/twitter.svg';
 import instagram from '~icons/instagram.svg';
 import linkedin from '~icons/linkedin.svg';
+import error from '~icons/error.svg';
 
 import css from './Icon.module.scss';
 
@@ -26,7 +27,8 @@ type TIconType =
   | 'facebook'
   | 'twitter'
   | 'instagram'
-  | 'linkedin';
+  | 'linkedin'
+  | 'error';
 
 type TPaths = { [key in TIconType]: string };
 
@@ -51,6 +53,7 @@ const paths: TPaths = {
   twitter,
   instagram,
   linkedin,
+  error,
 };
 
 const Icon: FC<IconProps> = ({
