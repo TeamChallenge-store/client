@@ -1,6 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { useErrorPageCheck } from '~features/error-page';
+import { Link, useLocation } from 'react-router-dom';
 
 import logo from '~shared/logo.png';
 
@@ -11,7 +10,8 @@ import { Catalog } from '../Catalog';
 import css from './Footer.module.scss';
 
 const Footer: FC = () => {
-  const isErrorPage = useErrorPageCheck();
+  const location = useLocation();
+  const isErrorPage = location.key === 'default';
 
   return (
     <footer className={css.footer}>

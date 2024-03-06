@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { useErrorPageCheck } from '~features/error-page';
 
 import logo from '~shared/logo.png';
 
 import css from './Logo.module.scss';
 
 const Logo = () => {
-  const isErrorPage = useErrorPageCheck();
+  const location = useLocation();
+  const isErrorPage = location.key === 'default';
 
   return (
     <Link

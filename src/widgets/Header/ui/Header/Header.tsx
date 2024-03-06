@@ -1,6 +1,6 @@
 import { ReactNode, FC } from 'react';
+import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
-import { useErrorPageCheck } from '~features/error-page';
 
 import { Navbar } from '../Navbar';
 import { Icons } from '../Icons';
@@ -14,7 +14,8 @@ type THeaderProps = {
 };
 
 const Header: FC<THeaderProps> = props => {
-  const isErrorPage = useErrorPageCheck();
+  const location = useLocation();
+  const isErrorPage = location.key === 'default';
 
   return (
     <header className={css.header}>
