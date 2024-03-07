@@ -21,11 +21,10 @@ const CategoriesButton: FC<CategoriesButtonProps> = ({
     <Link
       to={to}
       className={`${css.categoriesButton} ${css[type]} ${className || ''}`}
-      onClick={e => {
-        e.stopPropagation();
-      }}
+      onClick={e => e.stopPropagation()}
     >
-      {text || (
+      {type === 'text' && text && <span className={css.text}>{text}</span>}
+      {type === 'icon' && icon && (
         <div className={css.iconContainer}>
           <img src={icon} alt="" />
         </div>

@@ -11,6 +11,11 @@
   display: inline-block;
   border-radius: 15px;
   vertical-align: middle;
+  max-width: func.toRem(336);
+
+  @media (max-width: $xs-viewport) {
+    max-width: func.toRem(160);
+  }
 }
 
 .iconContainer {
@@ -33,11 +38,9 @@
 }
 
 .text {
-  padding: 14px func.toRem(133);
+  padding: func.toRem(14) func.toRem(13.5);
+  width: 100%;
   border-radius: 15px;
   line-height: 22px;
-
-  @media (max-width: $xs-viewport) {
-    padding: 14px 45px;
-  }
+  text-align: center;
 }
