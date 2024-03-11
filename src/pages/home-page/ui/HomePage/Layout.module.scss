@@ -1,0 +1,46 @@
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.catigories {
+  height: 56px;
+  margin-bottom: func.toRem(30);
+  margin-top: func.toRem(5);
+}
+
+.categoriesSlider {
+  height: 496px;
+  margin-bottom: func.toRem(50);
+}
+
+.title {
+  height: 105px;
+}
+
+.bestsellers {
+  height: 588px;
+}
+
+.subCategory {
+  height: 624px;
+}
+
+.newProducts {
+  height: 588px;
+}
+
+.stock {
+  height: 664px;
+  background-color: gray;
+}
+
+.subscribe {
+  height: 465px;
+  margin-bottom: func.toRem(140);
+}
+
+.title,
+.bestsellers,
+.subCategory,
+.newProducts,
+.stock {
+  margin-bottom: func.toRem(80);
+}
