@@ -96,11 +96,9 @@
   position: absolute;
   top: 20px;
   right: 19px;
-  transform: translateY(-12px);
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(20);
-    transform: translateY(func.toRem(-12));
   }
 
   @media (max-width: $xs-viewport) {
