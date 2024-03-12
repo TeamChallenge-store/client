@@ -6,13 +6,13 @@ export default createTheme({
       styleOverrides: {
         root: {
           padding: '21px 23px',
-          borderRadius: '15px',
-          backgroundColor: '#a0a0a0',
+          borderRadius: '8px',
+          backgroundColor: 'rgba(55, 100, 59, 1)',
           boxShadow: 'none',
           position: 'relative',
 
           '&:hover': {
-            backgroundColor: '#a0a0a0',
+            backgroundColor: 'rgba(55, 100, 59, 1)',
             boxShadow: 'none',
           },
 

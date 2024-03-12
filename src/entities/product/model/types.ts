@@ -3,6 +3,7 @@ interface IProductCard {
   name: string;
   price: string;
   image: string;
+  oldPrice?: string;
 }
 
 type TResponse = {
