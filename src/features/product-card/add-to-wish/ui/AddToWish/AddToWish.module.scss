@@ -17,13 +17,13 @@
     }
 
     path {
-      stroke: rgba(55, 100, 59, 1);
+      stroke: $mainGreen;
     }
   }
 }
 
 .clicked {
   path {
-    fill: rgba(55, 100, 59, 1);
+    fill: $mainGreen;
   }
 }

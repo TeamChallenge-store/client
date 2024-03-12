@@ -41,7 +41,7 @@
   @media (hover: hover) {
     &:hover {
       width: 154px;
-      border-color: rgba(55, 100, 59, 1);
+      border-color: $mainGreen;
 
       @media (min-width: $max-viewport) {
         width: func.toRem(154);
@@ -63,14 +63,14 @@
   border-radius: 8px;
   transform: translateX(50%);
   font-size: 20px;
-  border: 2px solid rgba(55, 100, 59, 1);
+  border: 2px solid $mainGreen;
 
   @media (min-width: $max-viewport) {
     gap: func.toRem(5);
     padding-left: func.toRem(4);
     width: func.toRem(110);
     font-size: func.toRem(20);
-    border: func.toRem(2.1) solid rgba(55, 100, 59, 1);
+    border: func.toRem(2.1) solid $mainGreen;
     right: calc(100% - func.toRem(65));
   }
 
