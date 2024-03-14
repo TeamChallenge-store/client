@@ -1,0 +1,88 @@
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+
+.offersBunner {
+  background-image: url('./promo.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.offersBunnerContent {
+  font-family: 'Helvetica', sans-serif;
+  padding: func.toRem(72) func.toRem(24) func.toRem(149) func.toRem(60);
+  background-color: $mainGreen;
+  color: #fff;
+  max-width: func.toRem(510);
+}
+
+.offersSubtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(194, 217, 193, 1);
+  display: block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.offersTitle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 55.2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.offersDescription {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 42px;
+}
+
+.offersLink {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27.6px;
+  width: 100%;
+  max-width: 311px;
+  background-color: #fff;
+  padding: func.toRem(18) 0;
+  border-radius: 8px;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  color: #000;
+}
+
+.offersSlider {
+  position: relative;
+  top: func.toRem(-103);
+}
+
+.swiperPrev,
+.swiperNext {
+  position: absolute;
+  top: -104px;
+  right: 60px;
+  width: 64px;
+  height: 64px;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiperPrev {
+  right: 136px;
+}
+
+.swiperNext {
+  transform: rotate(180deg);
+}
+
+.swiperArrowDisabled {
+  opacity: 0.5;
+}

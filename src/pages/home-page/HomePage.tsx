@@ -1,5 +1,6 @@
 import { Empty } from '~shared/ui/Empty';
 import { Layout } from './ui/HomePage';
+import { PromotionalOffers } from '~widgets/promotional-offers';
 
 const HomePage = () => (
   <Layout
@@ -9,7 +10,7 @@ const HomePage = () => (
     bestsellers={<Empty title="bestsellers" />}
     subCategory={<Empty title="subCategory" />}
     newProducts={<Empty title="newProducts" />}
-    stock={<Empty title="stock" />}
+    stock={<PromotionalOffers />}
     subscribe={<Empty title="subscribe" />}
   />
 );

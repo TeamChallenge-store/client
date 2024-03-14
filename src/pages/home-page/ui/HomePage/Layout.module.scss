@@ -27,11 +27,6 @@
   height: 588px;
 }
 
-.stock {
-  height: 664px;
-  background-color: gray;
-}
-
 .subscribe {
   height: 465px;
   margin-bottom: func.toRem(140);
@@ -40,7 +35,6 @@
 .title,
 .bestsellers,
 .subCategory,
-.newProducts,
-.stock {
+.newProducts {
   margin-bottom: func.toRem(80);
 }
