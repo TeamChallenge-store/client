@@ -2,39 +2,32 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .subscribeInputForm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(153, 159, 165);
-    border-radius: 10px;
-    max-width: func.toRem(600);
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-right: 32px;
 }
 
 .inputContainer {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
+  margin-right: func.toRem(44);
 }
 
 .subscribeInput {
-    padding: func.toRem(13) func.toRem(13) func.toRem(13) func.toRem(48);
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 16px;
-    line-height: func.toRem(22.4);
-    border: none;
-    border-radius: 10px 0 0 10px;
-  }
-  
-  .emailIcon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: func.toRem(16);
-    width: func.toRem(24);
-    height: func.toRem(24);
-  }
+  padding: func.toRem(2) func.toRem(10) func.toRem(8) func.toRem(33);
+  width: 100%;
+  font-size: 16px;
+  line-height: func.toRem(22.4);
+  border: none;
+  border-bottom: 1px solid rgba(49, 49, 49, 1);
+  color: rgba(105, 112, 119, 1);
+}
 
-  .subscribeButton {
-    border-radius: 0 9px 9px 0;
-  }
+.emailIcon {
+  position: absolute;
+  top: 0;
+  left: func.toRem(0);
+  width: func.toRem(24);
+  height: func.toRem(24);
+}

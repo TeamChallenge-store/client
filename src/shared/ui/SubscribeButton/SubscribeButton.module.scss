@@ -1,16 +1,17 @@
 @use '../../styles/helpers/variables.scss' as *;
 @use '../../styles/helpers/functions.scss' as func;
 
+.buttonContainer {
+  max-width: 219px;
+  width: 100%;
+}
 .subscribeButton {
-    padding: func.toRem(16) func.toRem(36);
-    font-size: func.toRem(16);
-    line-height: func.toRem(16);
-    border-radius: 10px;
-    background-color: $grey;
-    color: #fff;
-    letter-spacing: func.toRem(0.5);
-
-    @media (max-width: $xs-viewport) {
-        padding: 16px 17px;
-    }
+  padding: func.toRem(15.5) 0;
+  font-size: 24px;
+  line-height: 33.12px;
+  border-radius: 8px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: $mainGreen;
+  width: 100%;
 }
