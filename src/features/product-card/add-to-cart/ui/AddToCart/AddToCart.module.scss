@@ -24,14 +24,12 @@
   width: 66px;
   transition: all 0.1s ease-in 0s;
   border-color: transparent;
-  border-radius: 15px;
-  margin: 1px 0;
+  border-radius: 8px;
 
   overflow-x: hidden;
 
   @media (min-width: $max-viewport) {
     width: func.toRem(66);
-    margin: func.toRem(1);
   }
 
   @media (max-width: $s-viewport) {
@@ -43,7 +41,7 @@
   @media (hover: hover) {
     &:hover {
       width: 154px;
-      border-color: #a0a0a0;
+      border-color: $mainGreen;
 
       @media (min-width: $max-viewport) {
         width: func.toRem(154);
@@ -62,17 +60,17 @@
   height: 100%;
   padding-left: 4px;
   width: 110px;
-  border-radius: 15px;
+  border-radius: 8px;
   transform: translateX(50%);
   font-size: 20px;
-  border: 2px solid #a0a0a0;
+  border: 2px solid $mainGreen;
 
   @media (min-width: $max-viewport) {
     gap: func.toRem(5);
     padding-left: func.toRem(4);
     width: func.toRem(110);
     font-size: func.toRem(20);
-    border: func.toRem(2.1) solid #a0a0a0;
+    border: func.toRem(2.1) solid $mainGreen;
     right: calc(100% - func.toRem(65));
   }
 
@@ -81,7 +79,7 @@
   }
 
   button {
-    color: #666666;
+    color: rgba(55, 100, 59, 1);
   }
 
   .left,
