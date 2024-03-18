@@ -1,0 +1,45 @@
+@use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/functions.scss' as func;
+
+.banner {
+  position: relative;
+  margin-bottom: func.toRem(50);
+}
+
+.bannerImg {
+  display: flex;
+  flex-direction: row;
+
+  & img {
+    width: func.toRem(480);
+  }
+}
+
+.bannerInfo {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 56px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -27%);
+  text-transform: uppercase;
+}
+
+.bannerTitle {
+  width: func.toRem(1320);
+  font-weight: 700;
+  font-size: func.toRem(48);
+  text-align: center;
+}
+
+.bannerBtn {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: func.toRem(24);
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ffffff;
+  text-transform: uppercase;
+}

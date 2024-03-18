@@ -2,12 +2,11 @@ import { Empty } from '~shared/ui/Empty';
 import { Layout } from './ui/HomePage';
 import { CategoriesBanner } from '~widgets/categories-banner';
 import { SubscribeBlock } from '~widgets/subscribe-block';
+import { Banner } from '~entities/Banner';
 
 const HomePage = () => (
   <Layout
-    categories={<Empty title="categories" />}
-    categoriesSlider={<Empty title="categoriesSlider" />}
-    title={<Empty title="title" />}
+    categoriesSlider={<Banner />}
     bestsellers={<Empty title="bestsellers" />}
     subCategory={<CategoriesBanner />}
     newProducts={<Empty title="newProducts" />}
