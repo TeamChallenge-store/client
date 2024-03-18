@@ -1,0 +1,133 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.cardContainer {
+  display: flex;
+  height: func.toRem(624);
+}
+
+.leftContainer {
+  position: relative;
+  width: func.toRem(760);
+  margin-right: func.toRem(24);
+
+  .title {
+    font-size: func.toRem(48);
+    line-height: func.toRem(52.8);
+    max-width: func.toRem(570);
+  }
+}
+
+.card {
+  background-color: rgba(185, 185, 185, 1);
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: auto;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.rightContainer {
+  position: relative;
+  width: func.toRem(536);
+}
+
+.rightContainer .title {
+  font-size: 32px;
+  line-height: 35.2px;
+}
+
+.rightContainer .card {
+  position: relative;
+  height: func.toRem(300);
+}
+
+.rightContainer .card:nth-child(1) {
+  margin-bottom: func.toRem(24);
+}
+
+.title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 20px;
+}
+
+.cardButton {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@media (max-width: $m-viewport) {
+  .title {
+    top: 30px;
+    left: 30px;
+  }
+
+  .cardButton {
+    left: 30px;
+    bottom: 30px;
+  }
+
+  .leftContainer .title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .title {
+    top: 20px;
+    left: 20px;
+  }
+
+  .cardButton {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .cardContainer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .leftContainer {
+    margin-right: 0;
+    width: 100%;
+    .title {
+      font-size: 32px;
+      line-height: 35.2px;
+    }
+    .cardButton {
+      bottom: 40px;
+    }
+  }
+
+  .rightContainer {
+    width: 100%;
+    .card:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .leftContainer .card {
+    height: func.toRem(300);
+  }
+
+  .card {
+    height: 300px;
+    margin-bottom: 24px;
+    pointer-events: auto;
+  }
+
+  .cardImage {
+    pointer-events: auto;
+  }
+}
