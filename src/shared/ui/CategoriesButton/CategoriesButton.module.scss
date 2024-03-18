@@ -1,0 +1,46 @@
+@use '../../styles/helpers/variables.scss' as *;
+@use '../../styles/helpers/functions.scss' as func;
+
+.categoriesButton {
+  background-color: rgba(50, 55, 62, 1);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.4px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 15px;
+  vertical-align: middle;
+  max-width: func.toRem(336);
+
+  @media (max-width: $xs-viewport) {
+    max-width: func.toRem(160);
+  }
+}
+
+.iconContainer {
+  padding: func.toRem(14) func.toRem(13.5);
+  display: flex;
+
+  @media (max-width: $xs-viewport) {
+    padding: 10.85px;
+  }
+}
+
+.icon img {
+  width: func.toRem(24);
+  height: func.toRem(24);
+
+  @media (max-width: $xs-viewport) {
+    width: 19.29px;
+    height: 19.29px;
+  }
+}
+
+.text {
+  padding: func.toRem(14) func.toRem(13.5);
+  width: 100%;
+  border-radius: 15px;
+  line-height: 22px;
+  text-align: center;
+}

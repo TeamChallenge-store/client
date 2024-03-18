@@ -1,0 +1,64 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.title {
+    font-weight: 700;
+    font-size: func.toRem(42);
+    line-height: func.toRem(46.2);
+    margin-bottom: func.toRem(32);
+    text-align: center;
+
+    @media (max-width: $xs-viewport) {
+        font-size: 24px;
+        line-height: 26.4px;
+        margin-bottom: 16px;
+    }
+}
+
+.description {
+    max-width: func.toRem(900);
+    font-weight: 500;
+    font-size: func.toRem(18);
+    line-height: func.toRem(25.2);
+    margin-top: 0;
+    margin-bottom: func.toRem(48);
+    text-align: center;
+    margin: auto;
+    margin-bottom: func.toRem(48);
+
+    @media (max-width: $s-viewport) {
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: $xs-viewport) {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin-bottom: 32px;
+    }
+}
+
+.formContainer {
+    max-width: func.toRem(600);
+    margin: auto;
+    text-align: center;
+}
+
+.form {
+    margin-bottom: func.toRem(15);
+
+    @media (max-width: $xs-viewport) {
+        margin-bottom: 16px;
+    }
+}
+
+.formDescription {
+    font-size: func.toRem(14);
+    line-height: func.toRem(19.6);
+    color: rgba(105, 112, 119, 1);
+
+    @media (max-width: $xs-viewport) {
+        font-size: 12px;
+        line-height: 16.8px;
+    }
+}
