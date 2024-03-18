@@ -90,6 +90,12 @@ const CategoriesBanner = () => {
               to={productData[0].linkToProduct}
               icon={productButtons[0].icon?.arrowIcon}
             />
+            <CategoriesButton
+              className={css.cardButtonArrowFirst}
+              type="icon"
+              to={productData[0].linkToProduct}
+              icon={productButtons[0].icon?.arrowIcon}
+            />
           </div>
         </div>
       </div>

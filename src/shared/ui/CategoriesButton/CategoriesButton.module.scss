@@ -1,20 +1,27 @@
 @use '../../styles/helpers/variables.scss' as *;
 @use '../../styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .categoriesButton {
   background-color: #fff;
-  font-size: 24px;
-  line-height: 33.12px;
-  font-weight: 400;
+  font-size: func.toRem(24);
+  line-height: func.toRem(33.12);
   color: #000;
   display: inline-block;
   border-radius: 8px;
   vertical-align: middle;
   max-width: func.toRem(333);
   text-transform: uppercase;
+  @include mixin.button-transition;
+  &:hover {
+    background-color: rgba(242, 247, 242, 1);
+  }
+  &:focus {
+    box-shadow: rgba(0, 0, 0, 0.1);
+  }
 
-  @media (max-width: $xs-viewport) {
-    max-width: func.toRem(160);
+  &:active {
+    background-color: rgba(194, 217, 193, 1);
   }
 }
 
@@ -22,26 +29,16 @@
   padding: func.toRem(17.57) func.toRem(16.94) func.toRem(16.31)
     func.toRem(16.94);
   display: flex;
-
-  @media (max-width: $xs-viewport) {
-    padding: 10.85px;
-  }
 }
 
 .icon img {
   width: func.toRem(30.12);
   height: func.toRem(30.12);
-
-  @media (max-width: $xs-viewport) {
-    width: 19.29px;
-    height: 19.29px;
-  }
 }
 
 .text {
   padding: func.toRem(15.5) 0;
   border-radius: 8px;
-  line-height: 33.12px;
   text-align: center;
 }
 
@@ -54,9 +51,36 @@
   .text {
     margin-right: 10px;
   }
+
   .iconContainer {
     padding: 0;
-    width: 30.12px;
-    height: 30.12px;
+    width: func.toRem(30.12);
+    height: func.toRem(30.12);
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .categoriesButton {
+    max-width: func.toRem(160);
+  }
+
+  .iconContainer {
+    padding: 10.85px;
+  }
+
+  .icon img {
+    width: 19.29px;
+    height: 19.29px;
+  }
+}
+
+@media (max-width: $s-viewport) {
+  .iconContainer {
+    padding: 12px 13px 13px 12px;
+  }
+
+  .icon img {
+    width: 25px;
+    height: 25px;
   }
 }

@@ -17,8 +17,6 @@
 }
 
 .card {
-  background-color: rgba(185, 185, 185, 1);
-  font-weight: 700;
   border-radius: 16px;
   cursor: auto;
   pointer-events: none;
@@ -50,19 +48,18 @@
   }
 
   .subtitle {
-    font-weight: 400;
     font-size: 24px;
     line-height: 24px;
     margin: 0;
-    margin-bottom: 37px;
+    margin-bottom: func.toRem(37);
   }
 }
 
 .content {
   position: absolute;
-  left: 24px;
-  right: 24px;
-  bottom: 35px;
+  left: func.toRem(24);
+  right: func.toRem(24);
+  bottom: func.toRem(35);
 }
 
 .rightContainer {
@@ -70,7 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
-    bottom: 24px;
+    bottom: func.toRem(24);
   }
 }
 
@@ -86,6 +83,10 @@
   pointer-events: auto;
 }
 
+.cardButtonArrowFirst {
+  display: none;
+}
+
 .cardImage {
   width: 100%;
   height: 100%;
@@ -94,71 +95,88 @@
   pointer-events: none;
 }
 
-// @media (max-width: $m-viewport) {
-//   .title {
-//     top: 30px;
-//     left: 30px;
-//   }
+@media (max-width: 767px) {
+  .cardContainer {
+    flex-direction: column;
+    max-height: fit-content;
+  }
 
-//   .cardButton {
-//     left: 30px;
-//     bottom: 30px;
-//   }
+  .leftContainer {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 16px;
+    max-height: func.toRem(346);
+    .cardButton {
+      display: none;
+    }
+  }
 
-//   .leftContainer .title {
-//     font-size: 40px;
-//     line-height: 40px;
-//   }
-// }
+  .card {
+    margin-bottom: 16px;
+    height: func.toRem(346);
+    pointer-events: auto;
+  }
 
-// @media (max-width: 900px) {
-//   .title {
-//     top: 20px;
-//     left: 20px;
-//   }
+  .cardImage {
+    pointer-events: auto;
+  }
 
-//   .cardButton {
-//     left: 20px;
-//     bottom: 20px;
-//   }
-// }
+  .cardButtonArrowFirst {
+    display: block;
+  }
 
-// @media (max-width: 780px) {
-//   .cardContainer {
-//     flex-direction: column;
-//     height: auto;
-//   }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
 
-//   .leftContainer {
-//     margin-right: 0;
-//     width: 100%;
-//     .title {
-//       font-size: 32px;
-//       line-height: 35.2px;
-//     }
-//     .cardButton {
-//       bottom: 40px;
-//     }
-//   }
+  .boxLeftContent {
+    .subtitle {
+      margin-bottom: 8px;
+    }
+  }
 
-//   .rightContainer {
-//     width: 100%;
-//     .card:last-child {
-//       margin-bottom: 0;
-//     }
-//   }
+  .rightContainer {
+    width: 100%;
+    .card:last-child {
+      margin-bottom: 0;
+    }
+    .title {
+      margin-bottom: 8px;
+    }
 
-//   .leftContainer .card {
-//     height: func.toRem(300);
-//   }
+    .content {
+      bottom: 16px;
+    }
+  }
 
-//   .card {
-//     height: 300px;
-//     margin-bottom: 24px;
-//     pointer-events: auto;
-//   }
+  .rightContainer .card:nth-child(1) {
+    margin-bottom: 16px;
+  }
+}
 
-//   .cardImage {
-//     pointer-events: auto;
-//   }
-// }
+@media (max-width: $s-viewport) {
+  .title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .boxLeftContent {
+    .subtitle {
+      font-size: 16px;
+      line-height: 16px;
+      max-width: 185px;
+    }
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .leftContainer,
+  .card {
+    max-height: 280px;
+  }
+}
