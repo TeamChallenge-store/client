@@ -2,15 +2,15 @@
 @use '../../styles/helpers/functions.scss' as func;
 
 .subscribeButton {
-    padding: func.toRem(16) func.toRem(36);
-    font-size: func.toRem(16);
-    line-height: func.toRem(16);
-    border-radius: 10px;
-    background-color: $grey;
-    color: #fff;
-    letter-spacing: func.toRem(0.5);
+  padding: func.toRem(16) func.toRem(36);
+  font-size: func.toRem(16);
+  line-height: func.toRem(16);
+  border-radius: 10px;
+  background-color: $grey;
+  color: #fff;
+  letter-spacing: func.toRem(0.5);
 
-    @media (max-width: $xs-viewport) {
-        padding: 16px 17px;
-    }
+  @media (max-width: $xs-viewport) {
+    padding: 16px 17px;
+  }
 }
