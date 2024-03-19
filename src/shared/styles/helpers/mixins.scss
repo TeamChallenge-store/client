@@ -11,6 +11,6 @@
   border-radius: 10px;
 }
 
-@mixin button-transition {
-  transition: all 0.3s ease;
+@mixin button-transition($transition-property, $duration) {
+  transition: $transition-property $duration;
 }

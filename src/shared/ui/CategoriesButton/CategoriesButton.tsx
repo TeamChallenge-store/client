@@ -23,18 +23,18 @@ const CategoriesButton: FC<CategoriesButtonProps> = ({
       className={`${css.categoriesButton} ${css[type]} ${className || ''}`}
       onClick={e => e.stopPropagation()}
     >
-      {type === 'text-icon' && text && icon && (
+      {type === 'text-icon' && (
         <div className={css.textAndIcon}>
           <span className={css.text}>{text}</span>
           <div className={css.iconContainer}>
-            <img src={icon} alt="" />
+            <img src={icon} alt="link" />
           </div>
         </div>
       )}
-      {type === 'text' && text && <span className={css.text}>{text}</span>}
-      {type === 'icon' && icon && (
+      {type === 'text' && <span className={css.text}>{text}</span>}
+      {type === 'icon' && (
         <div className={css.iconContainer}>
-          <img src={icon} alt="" />
+          <img src={icon} alt="link" />
         </div>
       )}
     </Link>

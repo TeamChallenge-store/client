@@ -12,10 +12,12 @@
   vertical-align: middle;
   max-width: func.toRem(333);
   text-transform: uppercase;
-  @include mixin.button-transition;
+  @include mixin.button-transition(background-color, 0.3s);
+
   &:hover {
     background-color: rgba(242, 247, 242, 1);
   }
+
   &:focus {
     box-shadow: rgba(0, 0, 0, 0.1);
   }

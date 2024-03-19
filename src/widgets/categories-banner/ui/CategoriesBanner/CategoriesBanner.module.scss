@@ -23,6 +23,7 @@
   height: 100%;
   width: 100%;
   display: block;
+  background-color: $grey;
 }
 
 .rightContainer {
@@ -73,7 +74,7 @@
 
 .title {
   font-size: func.toRem(48);
-  line-height: func.toRem(48);
+  line-height: func.toRem(38);
   max-width: func.toRem(448);
   color: #fff;
 }
