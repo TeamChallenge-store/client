@@ -1,9 +1,14 @@
 @use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/mixins.scss' as mixins;
 @use '../../shared/styles/helpers/functions.scss' as func;
 
 .banner {
   position: relative;
   margin-bottom: func.toRem(50);
+
+  @media (max-width: $s-viewport) {
+    display: none;
+  }
 }
 
 .bannerImg {
@@ -12,6 +17,11 @@
 
   & img {
     width: func.toRem(480);
+
+    @media (max-width: $s-viewport) {
+      height: 560px;
+      width: func.toRem(500);
+    }
   }
 }
 
@@ -26,6 +36,20 @@
   left: 50%;
   transform: translate(-50%, -27%);
   text-transform: uppercase;
+
+  @media (max-width: $m-viewport) {
+    transform: translate(-34%, -30%);
+  }
+
+  @media (max-width: $sm-viewport) {
+    transform: translate(-25%, -30%);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: 340px;
+    gap: 26px;
+    transform: translate(-50%, -37%);
+  }
 }
 
 .bannerTitle {
@@ -33,6 +57,12 @@
   font-weight: 700;
   font-size: func.toRem(48);
   text-align: center;
+
+  @media (max-width: $s-viewport) {
+    font-size: func.toRem(32);
+    width: func.toRem(332);
+    line-height: 38px;
+  }
 }
 
 .bannerBtn {
@@ -42,4 +72,46 @@
   padding-bottom: 4px;
   border-bottom: 1px solid #ffffff;
   text-transform: uppercase;
+
+  @media (max-width: $s-viewport) {
+    font-size: func.toRem(20);
+  }
+}
+
+.bannerSwiper {
+  display: none;
+  
+  @media (max-width: $s-viewport) {
+    display: block;
+    padding-bottom: 32px;
+  }
+}
+
+.swiperButtonPrev {
+  color: rgba(255, 255, 255, 0) !important;
+  width: 50% !important;
+  height: 95% !important;
+  justify-content: space-around !important;
+  top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.swiperPagination {
+  position: relative !important;
+  padding: 12px 16px !important;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  bottom: 0 !important;
+}
+
+.swiperPaginationBullet {
+  width: 61px !important;
+  height: 8px !important;
+  border-radius: 26px !important;
+  background-color: #37643b !important;
+}
+
+.swiperPaginationBulletActive {
+  width: 343px !important;
 }
