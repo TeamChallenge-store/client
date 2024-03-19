@@ -8,9 +8,6 @@ import people from './bannerImg/people.jpg';
 
 import css from './Banner.module.scss';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
-import 'swiper/css/pagination';
 
 const Banner = () => {
   return (
@@ -24,13 +21,13 @@ const Banner = () => {
           }}
           pagination={{
             clickable: true,
-            el: '.swiper-pagination',
+            el: '#Banner',
             bulletClass: `swiper-pagination-bullet ${css.swiperPaginationBullet}`,
             bulletActiveClass: `swiper-pagination-bullet-active ${css.swiperPaginationBulletActive}`,
           }}
           navigation={{
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
+            prevEl: '#BannerBtnPrev',
+            nextEl: '#BannerBtnNext',
           }}
           modules={[Autoplay, Scrollbar, Navigation, Pagination]}
         >
@@ -82,13 +79,18 @@ const Banner = () => {
               </Link>
             </div>
           </SwiperSlide>
-          <div className={`swiper-button-prev ${css.swiperButtonPrev}`} />
-          <div className={`swiper-button-next ${css.swiperButtonPrev}`} />
-          <div className={`swiper-pagination ${css.swiperPagination}`}>
-            <span>
-              className=
-              {css.swiperPaginationBullet}
-            </span>
+          <div className={css.swiperButton}>
+            <div
+              id="BannerBtnPrev"
+              className={`BannerBtnPrev ${css.swiperButtonPrev}`}
+            />
+            <div
+              id="BannerBtnNext"
+              className={`BannerBtnNext ${css.swiperButtonNext}`}
+            />
+          </div>
+          <div id="Banner" className={css.swiperPagination}>
+            <span id="Banner" className={css.swiperPaginationBullet} />
           </div>
         </Swiper>
       </div>
