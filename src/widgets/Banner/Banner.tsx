@@ -17,8 +17,9 @@ const Banner = () => {
           spaceBetween={0}
           slidesPerView={1}
           autoplay={{
-            delay: 9000,
+            delay: 2000,
           }}
+          speed={600}
           pagination={{
             clickable: true,
             el: '#Banner',
@@ -29,6 +30,7 @@ const Banner = () => {
             prevEl: '#BannerBtnPrev',
             nextEl: '#BannerBtnNext',
           }}
+          loop
           modules={[Autoplay, Scrollbar, Navigation, Pagination]}
         >
           <SwiperSlide>

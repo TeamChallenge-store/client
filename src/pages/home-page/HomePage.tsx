@@ -2,7 +2,7 @@ import { Empty } from '~shared/ui/Empty';
 import { Layout } from './ui/HomePage';
 import { CategoriesBanner } from '~widgets/categories-banner';
 import { SubscribeBlock } from '~widgets/subscribe-block';
-import { Banner } from '~entities/Banner';
+import { Banner } from '~widgets/Banner';
 
 const HomePage = () => (
   <Layout
