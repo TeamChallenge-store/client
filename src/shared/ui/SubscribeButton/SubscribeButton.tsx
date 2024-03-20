@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC } from 'react';
 import css from './SubscribeButton.module.scss';
 
 interface ButtonProps {
-  type: "submit" | "reset" | "button" | undefined;
+  type: 'submit' | 'reset' | 'button' | undefined;
   text: string;
   className?: string;
 }
