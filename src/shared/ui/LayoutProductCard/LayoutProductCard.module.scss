@@ -3,14 +3,29 @@
 
 .card {
   position: relative;
-
   width: func.toRem(312);
-  height: func.toRem(452);
   border-radius: 8px;
   background-color: white;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+
+    .cardWishButton svg path {
+      stroke: rgba(31, 53, 34, 1);
+    }
+  }
 
   @media (min-width: $max-viewport) {
     max-width: func.toRem(312);
+  }
+
+  @media (max-width: $s-viewport) {
+    max-width: func.toRem(230);
+  }
+
+  @media (max-width: $xs-viewport) {
+    width: 164px;
   }
 }
 
@@ -19,6 +34,14 @@
   display: flex;
   justify-content: center;
   padding: func.toRem(30) 0 func.toRem(18) 0;
+
+  @media (max-width: $s-viewport) {
+    max-height: func.toRem(230);
+  }
+
+  @media (max-width: $xs-viewport) {
+    height: 164px;
+  }
 }
 
 .cardImg {
@@ -28,8 +51,7 @@
 }
 
 .content {
-  padding: 16px 16px 24px 16px;
-  height: func.toRem(152);
+  padding: func.toRem(16) func.toRem(16) func.toRem(24) func.toRem(16);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,23 +59,29 @@
   @media (min-width: $max-viewport) {
     padding: func.toRem(16) func.toRem(16) func.toRem(24) func.toRem(16);
   }
+
+  @media (max-width: $s-viewport) {
+    padding: 8px 9px 12px 8px;
+  }
 }
 
 .cardTitle {
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
   margin-bottom: func.toRem(22);
+  max-width: func.toRem(270);
 
   @media (max-width: $s-viewport) {
-    margin-bottom: func.toRem(20);
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
   }
 
   @media (max-width: $xs-viewport) {
-    font-size: func.toRem(14);
+    font-size: 14px;
     line-height: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
 }
 
@@ -65,17 +93,27 @@
 
 .oldPrice {
   display: block;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 18.4px;
   color: rgba(176, 176, 176, 1);
   margin-bottom: 4px;
   text-decoration: line-through;
-  text-decoration-thickness: 0.5px;
+  text-decoration-thickness: 0.8px;
+
+  @media (max-width: $s-viewport) {
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 3px;
+  }
+
+  @media (max-width: $xs-viewport) {
+    font-size: 8px;
+    line-height: 9.5px;
+    margin-bottom: 2px;
+  }
 }
 
 .cardPrice {
-  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 18px;
@@ -85,24 +123,27 @@
   }
 
   @media (max-width: $s-viewport) {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 14px;
   }
+
   @media (max-width: $xs-viewport) {
-    font-size: func.toRem(12);
+    font-size: 12px;
+    line-height: 12px;
   }
 }
 
 .cardWishButton {
   position: absolute;
   top: 20px;
-  right: 19px;
+  right: 20px;
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(20);
   }
 
   @media (max-width: $xs-viewport) {
-    top: 15px;
+    top: 12px;
     right: 10px;
   }
 }

@@ -6,6 +6,11 @@
     width: 24px;
     height: 24px;
 
+    path {
+      stroke: $mainGreen;
+      transition: stroke 0.3s ease;
+    }
+
     @media (min-width: $max-viewport) {
       width: func.toRem(24);
       height: func.toRem(24);
@@ -14,10 +19,6 @@
     @media (max-width: $xs-viewport) {
       width: 18px;
       height: 18px;
-    }
-
-    path {
-      stroke: $mainGreen;
     }
   }
 }
