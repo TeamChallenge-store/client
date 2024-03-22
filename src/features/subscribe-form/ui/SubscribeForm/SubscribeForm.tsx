@@ -5,26 +5,40 @@ import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
 
 const SubscribeForm = () => {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [isChecking, setIsChecking] = useState(false);
 
-  const validateEmail = () => {
+  const validateEmail = (email: string) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
-
     return emailRegex.test(email);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+
+    if (isChecking) {
+      setError('');
+      setIsChecking(false);
+    }
+
+    const timeoutId = setTimeout(() => {
+      setIsChecking(true);
+      setError(validateEmail(newEmail) ? '' : 'Invalid email address');
+    }, 5000);
+
+    return () => clearTimeout(timeoutId);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (validateEmail()) {
-      try {
-        // request
-      } catch (error) {
-        // error handling
-      }
-    }
-  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    if (!validateEmail(email)) {
+      setError('Invalid email address');
+      return;
+    }
+
+    // ... ваш код для відправки email
   };
 
   return (
@@ -35,12 +49,16 @@ const SubscribeForm = () => {
           type="email"
           placeholder="Enter your email to get the best offers..."
           value={email}
-          onChange={handleChange}
+          onChange={handleEmailChange}
           maxLength={75}
           minLength={3}
           required
         />
         <img className={css.emailIcon} src={emailIcon} alt="Email" />
+        {error && 
+        <span className={css.errorMessage}>
+          {error}
+        </span>}
       </div>
 
       <SubscribeButton

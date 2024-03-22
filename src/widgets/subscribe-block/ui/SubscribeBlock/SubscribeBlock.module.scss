@@ -3,7 +3,6 @@
 
 .subscribe {
   display: flex;
-  padding: func.toRem(144) 0;
 }
 
 .title {
@@ -13,20 +12,49 @@
   margin-right: func.toRem(83);
   color: $mainGreen;
   text-transform: uppercase;
-  padding: 25px 0 8px 0;
-  max-width: 589px;
+  padding: func.toRem(20) 0 func.toRem(8) 0;
+  max-width: func.toRem(589);
 }
 
 .form {
-  margin-bottom: func.toRem(24);
-
-  @media (max-width: $xs-viewport) {
-    margin-bottom: 16px;
-  }
+  margin-bottom: func.toRem(26);
 }
 
 .formDescription {
   font-size: func.toRem(18);
   line-height: func.toRem(21.6);
   color: rgba(93, 93, 93, 1);
+}
+
+@media (max-width: $m-viewport) {
+  .subscribe {
+    display: block;
+  }
+
+  .title {
+    margin-right: 0;
+  };
+}
+
+@media (max-width: $xs-viewport) {
+  .form {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    margin-bottom: 16px;
+  };
+
+  .formDescription {
+    display: none;
+  }
+}
+
+@media (max-width: $s-viewport) {
+  .title {
+    font-size: 32px;
+    line-height: 38.4px;
+  };
 }
