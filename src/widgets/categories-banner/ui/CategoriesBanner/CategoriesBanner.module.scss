@@ -16,6 +16,16 @@
   }
 }
 
+.cardHoverEffect {
+  height: 100%;
+}
+
+.cardHoverEffect:hover {
+  .cardImage {
+    transform: scale(1.03);
+  }
+}
+
 .card {
   border-radius: 16px;
   cursor: auto;
@@ -24,6 +34,7 @@
   width: 100%;
   display: block;
   background-color: $grey;
+  overflow: hidden;
 }
 
 .rightContainer {
@@ -70,6 +81,10 @@
     align-items: end;
     bottom: func.toRem(24);
   }
+
+  .cardHoverEffect {
+    height: auto;
+  }
 }
 
 .title {
@@ -94,6 +109,7 @@
   object-fit: cover;
   border-radius: 16px;
   pointer-events: none;
+  transition: transform 0.3s;
 }
 
 @media (max-width: 767px) {
@@ -171,6 +187,12 @@
       font-size: 16px;
       line-height: 16px;
       max-width: 185px;
+    }
+  }
+
+  .cardHoverEffect:hover {
+    .cardImage {
+      transform: none;
     }
   }
 }

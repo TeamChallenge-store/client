@@ -1,6 +1,6 @@
-import firstProductImage from '../categories-banner/images/1.jpg';
-import secondProductImage from '../categories-banner/images/2.jpg';
-import thirdProductImage from '../categories-banner/images/3.jpg';
+import firstProductImage from './images/1.jpg';
+import secondProductImage from './images/2.jpg';
+import thirdProductImage from './images/3.jpg';
 
 const categories = [
   {
