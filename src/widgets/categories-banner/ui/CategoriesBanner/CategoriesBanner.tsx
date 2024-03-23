@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { CategoriesButton } from '~shared/ui/CategoriesButton';
-import arrowIcon from '~shared/ui/Icon/icons/arrow-up.svg';
 import catergoriesData from '../../catergories';
 
 import css from './CategoriesBanner.module.scss';
+import { ReuseButton } from '~shared/ui/ReuseButton';
 
 const CategoriesBanner = () => {
   const navigate = useNavigate();
@@ -43,19 +42,53 @@ const CategoriesBanner = () => {
                 <h3 className={css.title}>{catergoriesData[0].title}</h3>
                 <p className={css.subtitle}>{catergoriesData[0].subtitle}</p>
               </div>
-              <CategoriesButton
+              <ReuseButton
+                bgColor="white"
                 className={css.cardButton}
-                type="text-icon"
-                text="See more"
                 to={catergoriesData[0].linkToProduct}
-                icon={arrowIcon}
-              />
-              <CategoriesButton
-                className={css.cardButtonArrowFirst}
-                type="icon"
+                onClick={e => e.stopPropagation()}
+              >
+                See more
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    // eslint-disable-next-line max-len
+                    d="M8.64239 6.43312L18.1442 7.34961L17.2277 16.8515M17.4207 7.94582L6.8577 16.6504"
+                    stroke="rgba(17, 29, 19, 1)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </ReuseButton>
+              <ReuseButton
+                bgColor="white"
+                className={`${css.cardButton} ${css.cardButtonArrowFirst}`}
                 to={catergoriesData[0].linkToProduct}
-                icon={arrowIcon}
-              />
+                onClick={e => e.stopPropagation()}
+              >
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    // eslint-disable-next-line max-len
+                    d="M8.64239 6.43312L18.1442 7.34961L17.2277 16.8515M17.4207 7.94582L6.8577 16.6504"
+                    stroke="rgba(17, 29, 19, 1)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </ReuseButton>
             </div>
           </div>
         </div>
@@ -69,9 +102,7 @@ const CategoriesBanner = () => {
               onClick={() => handleCardAction(productLink(index + 1))}
               role="button"
               tabIndex={0}
-              onKeyDown={event =>
-                handleCardAction(productLink(index + 1), event)
-              }
+              onKeyDown={e => handleCardAction(productLink(index + 1), e)}
             >
               <img
                 src={catergoriesData[index + 1].backgroundImage}
@@ -80,12 +111,29 @@ const CategoriesBanner = () => {
               />
               <div className={css.content}>
                 <h3 className={css.title}>{product.title}</h3>
-                <CategoriesButton
+                <ReuseButton
+                  bgColor="white"
                   className={css.cardButton}
-                  type="icon"
                   to={product.linkToProduct}
-                  icon={arrowIcon}
-                />
+                  onClick={e => e.stopPropagation()}
+                >
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      // eslint-disable-next-line max-len
+                      d="M8.64239 6.43312L18.1442 7.34961L17.2277 16.8515M17.4207 7.94582L6.8577 16.6504"
+                      stroke="rgba(17, 29, 19, 1)"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </ReuseButton>
               </div>
             </div>
           </div>

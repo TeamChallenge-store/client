@@ -1,0 +1,82 @@
+@use '../../styles/helpers/variables.scss' as *;
+@use '../../styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.navigation {
+  border-radius: func.toRem(8);
+  padding: func.toRem(17);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: func.toRem(24);
+  cursor: pointer;
+  @include mixin.button-transition(background-color, 0.3s);
+
+  svg {
+    width: func.toRem(30);
+    height: func.toRem(30);
+    path {
+      stroke: #000;
+    }
+  }
+}
+
+.icon {
+  svg {
+    margin-left: func.toRem(10);
+  }
+}
+
+.green {
+  background-color: $mainGreen;
+  color: white;
+  @include mixin.button-transition(background-color, 0.3s);
+
+  svg {
+    path {
+      stroke: #fff;
+    }
+  }
+
+  &:hover {
+    background-color: #2c5030;
+  }
+
+  &:focus {
+    box-shadow: #37643b;
+  }
+
+  &:active {
+    background-color: #254028;
+  }
+}
+
+.white {
+  background-color: white;
+  color: black;
+  @include mixin.button-transition(background-color, 0.3s);
+
+  &:hover {
+    background-color: #f2f7f2;
+  }
+
+  &:focus {
+    box-shadow: #ffffff;
+  }
+
+  &:active {
+    background-color: #c2d9c1;
+  }
+}
+
+@media (max-width: $s-viewport) {
+  .navigation {
+    padding: func.toRem(12);
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
