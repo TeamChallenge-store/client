@@ -2,11 +2,11 @@ import React, { FC } from 'react';
 import { Link, Path } from 'react-router-dom';
 import cn from 'classnames';
 
-import css from './ReuseButton.module.scss';
+import css from './CustomButton.module.scss';
 
 type TButtonColor = 'green' | 'white';
 
-type TReuseButtonProps = {
+type TCustomButtonProps = {
   children: React.ReactNode;
   className?: string;
   to?: string | Partial<Path>;
@@ -15,7 +15,7 @@ type TReuseButtonProps = {
   buttonType?: 'button' | 'submit' | 'reset';
 };
 
-const ReuseButton: FC<TReuseButtonProps> = ({
+const CustomButton: FC<TCustomButtonProps> = ({
   children,
   className = '',
   to = '/',
@@ -50,4 +50,4 @@ const ReuseButton: FC<TReuseButtonProps> = ({
   );
 };
 
-export { ReuseButton };
+export { CustomButton };

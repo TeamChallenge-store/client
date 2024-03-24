@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import catergoriesData from '../../catergories';
 
 import css from './CategoriesBanner.module.scss';
-import { ReuseButton } from '~shared/ui/ReuseButton';
+import { CustomButton } from '~shared/ui/CustomButton';
 
 const CategoriesBanner = () => {
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const CategoriesBanner = () => {
                 <h3 className={css.title}>{catergoriesData[0].title}</h3>
                 <p className={css.subtitle}>{catergoriesData[0].subtitle}</p>
               </div>
-              <ReuseButton
+              <CustomButton
                 bgColor="white"
                 className={css.cardButton}
                 to={catergoriesData[0].linkToProduct}
@@ -65,8 +65,8 @@ const CategoriesBanner = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </ReuseButton>
-              <ReuseButton
+              </CustomButton>
+              <CustomButton
                 bgColor="white"
                 className={`${css.cardButton} ${css.cardButtonArrowFirst}`}
                 to={catergoriesData[0].linkToProduct}
@@ -88,7 +88,7 @@ const CategoriesBanner = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </ReuseButton>
+              </CustomButton>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const CategoriesBanner = () => {
               />
               <div className={css.content}>
                 <h3 className={css.title}>{product.title}</h3>
-                <ReuseButton
+                <CustomButton
                   bgColor="white"
                   className={css.cardButton}
                   to={product.linkToProduct}
@@ -133,7 +133,7 @@ const CategoriesBanner = () => {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </ReuseButton>
+                </CustomButton>
               </div>
             </div>
           </div>
