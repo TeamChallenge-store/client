@@ -6,10 +6,10 @@ import css from './Info.module.scss';
 const Info: FC = () => {
   return (
     <article className={css.info}>
-      <h4 className={css.infoTitle}>Information</h4>
+      <h4 className={css.infoTitle}>Company info</h4>
       <ul className={css.infoList}>
-        <li className={css.catologHide}>
-          <Link to="/catalog">Catalog</Link>
+        <li>
+          <Link to="info/payment">About us</Link>
         </li>
         <li>
           <Link to="info/payment">Payment</Link>

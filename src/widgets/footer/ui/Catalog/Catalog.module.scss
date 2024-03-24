@@ -2,15 +2,24 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .catalog {
+}
+
+.catalogTitle {
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: func.toRem(24);
+  color: #ffff;
+
   @media (max-width: $s-viewport) {
-    display: none;
+    font-weight: 400;
+    font-size: func.toRem(20);
+    padding-bottom: 12px;
   }
 }
-.catalogTitle {
-  margin-bottom: 20px;
-}
+
 .catalogList {
   li {
-    margin-bottom: 16px;
+    padding-bottom: 8px;
+    color: #d1d1d1;
   }
 }

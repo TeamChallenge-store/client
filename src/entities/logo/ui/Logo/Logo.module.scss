@@ -2,10 +2,22 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .logo {
-  width: func.toRem(193);
   display: block;
 
+  
+}
+.headerLogo {
+  width: func.toRem(124);
   @media (max-width: $m-viewport) {
     display: none;
+  }
+}
+
+.footerLogo {
+  width: func.toRem(658);
+
+   @media (max-width: $s-viewport) {
+    width: func.toRem(343);
+
   }
 }

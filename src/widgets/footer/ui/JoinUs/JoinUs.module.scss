@@ -2,24 +2,22 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .joinTitle {
-  margin-bottom: 20px;
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: func.toRem(24);
+  color: #ffff;
 
   @media (max-width: $s-viewport) {
-    display: none;
-    margin-bottom: 0;
+    font-weight: 400;
+    font-size: func.toRem(20);
+  padding-bottom: 12px;
+
   }
 }
 
 .icons {
   display: flex;
   gap: 16px;
-
-  @media (max-width: $s-viewport) {
-    text-align: center;
-    justify-content: center;
-    margin-top: 32px;
-    margin-bottom: 32px;
-  }
 }
 
 .icon {
