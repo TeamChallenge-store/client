@@ -1,17 +1,51 @@
 //vars
 $default-font: 16;
 
+//colors state
+$greenFocus: #37643b;
+$greenHover: #2c5030;
+$greenActive: #254028;
+
+$whiteHover: #f2f7f2;
+$whiteFocus: #ffff;
+$whiteActive: #c2d9c1;
+
+$disable: #c7c7c7;
+
 //colors
-$c-bg: #2c2c32;
-$color-active: #0f7dc6;
+$bg: #181518;
+
+$green: #37643b;
+$white: #ffff;
+$red: #d92d20;
+$black: #0000;
 
 //???
-$border: #f4f2f2;
-$lightGrey: #f4f2f2;
-$grey: #636363;
+$success: #0e8345;
+$warning: #f6bc2f;
+$accent: #276ef1;
+
+$norway50: #f2f7f2;
+$norway900: #1f3522;
+$norway200: #c2d9c1;
+$norway950: #111d13;
+
+$codGray200: #d1d1d1;
+$codGray300: #b0b0b0;
+$codGray900: #3d3d3d;
+
+$lightGray: #c7c7c7;
+$gray: #868484;
+
+$granite: #475156;
+$graphite: #32373e;
+$darkGray: #313131;
+
+$dark: #1a1b1f;
 
 //viewports
 $xs-viewport: 376px;
+
 $s-viewport: 500px;
 
 $m-viewport: 1024px;
