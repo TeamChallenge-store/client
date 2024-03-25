@@ -1,37 +1,47 @@
 //vars
 $default-font: 16;
 
+//colors state
+$greenFocus: #37643b;
+$greenHover: #2c5030;
+$greenActive: #254028;
+
+$whiteHover: #f2f7f2;
+$whiteFocus: #ffff;
+$whiteActive: #c2d9c1;
+
+$disable: #c7c7c7;
+
 //colors
-$c-bg: #181518;
-$color-active: #1f3522;
-$error: #E30000;
+$bg: #181518;
+
+$green: #37643b;
+$white: #ffff;
+$red: #d92d20;
+$black: #0000;
 
 //???
-$red: #d92d20;
+$success: #0e8345;
+$warning: #f6bc2f;
+$accent: #276ef1;
 
-$pastelGreen: #f2f7f2;
-$lightMint: #c2d9c1;
-$emerald: #0e8345;
-$green: #37643b;
-$deepGreen: #2c5030;
-$darkGreen: #254028 ;
-$forestGreen: #111D13  ;
+$norway50: #f2f7f2;
+$norway900: #1f3522;
+$norway200: #c2d9c1;
+$norway950: #111d13;
 
-$white: #ffff;
-$platinum: #f2f7f2;
+$codGrey200: #d1d1d1;
+$codGrey300: #b0b0b0;
+$codGrey900: #3d3d3d;
 
-$silver: #d1d1d1;
 $ightGray: #c7c7c7;
-$grey: #b0b0b0;
-$mediumGrey: #868484;
+$grey: #868484;
 
-$slateGray: #475156;
-$gunmetalGrey: #32373e;
-$darkGrey: #3d3d3d;
-$jetBlack: #313131;
+$granite: #475156;
+$graphite: #32373e;
+$darkGrey: #313131;
 
 $dark: #1a1b1f;
-$black: #0000;
 
 //viewports
 $xs-viewport: 376px;
