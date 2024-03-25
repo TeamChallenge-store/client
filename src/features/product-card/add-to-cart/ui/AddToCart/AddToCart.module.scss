@@ -1,10 +1,9 @@
 @use '../../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../../shared/styles/helpers/functions.scss' as func;
 
-.cartCheck,
 .cartSvg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 
   @media (min-width: $max-viewport) {
     width: func.toRem(24);
@@ -12,9 +11,14 @@
   }
 
   @media (max-width: $s-viewport) {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
+}
+
+.cartCheck {
+  width: 20px;
+  height: 20px;
 }
 
 .addButtonContainer {
@@ -33,7 +37,7 @@
   }
 
   @media (max-width: $s-viewport) {
-    width: 40px;
+    width: 52px;
     justify-content: center;
     overflow: initial;
   }
