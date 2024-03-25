@@ -5,7 +5,7 @@
 .banner {
   position: relative;
   margin-bottom: func.toRem(50);
-  
+
   @media (max-width: $s-viewport) {
     display: none;
   }
@@ -26,7 +26,7 @@
 }
 
 .bannerInfo {
-  color: #ffffff;
+  color: $white;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -66,11 +66,11 @@
 }
 
 .bannerBtn {
-  color: #ffffff;
+  color: $white;
   font-weight: 400;
   font-size: func.toRem(24);
   padding-bottom: 4px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $white;
   text-transform: uppercase;
 
   @media (max-width: $s-viewport) {
@@ -118,7 +118,7 @@
   width: 61px;
   height: 8px;
   border-radius: 26px;
-  background-color: #37643b;
+  background-color: $green;
 }
 
 .swiperPaginationBulletActive {
