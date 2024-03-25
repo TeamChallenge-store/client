@@ -4,15 +4,15 @@
 .card {
   position: relative;
   width: func.toRem(312);
-  border-radius: 8px;
-  background-color: white;
+  border-radius: func.toRem(8);
+  background-color: $white;
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px func.toRem(1) func.toRem(4) 0px #00000029;
 
     .cardWishButton svg path {
-      stroke: rgba(31, 53, 34, 1);
+      stroke: $norway900;
     }
   }
 
@@ -67,8 +67,8 @@
 
 .cardTitle {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: func.toRem(20);
+  line-height: func.toRem(24);
   margin-bottom: func.toRem(22);
   max-width: func.toRem(270);
 
@@ -93,12 +93,12 @@
 
 .oldPrice {
   display: block;
-  font-size: 16px;
-  line-height: 18.4px;
+  font-size: func.toRem(16);
+  line-height: func.toRem(18.4);
   color: rgba(176, 176, 176, 1);
-  margin-bottom: 4px;
+  margin-bottom: func.toRem(4);
   text-decoration: line-through;
-  text-decoration-thickness: 0.8px;
+  text-decoration-thickness: func.toRem(0.8);
 
   @media (max-width: $s-viewport) {
     font-size: 12px;
@@ -115,8 +115,8 @@
 
 .cardPrice {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 18px;
+  font-size: func.toRem(20);
+  line-height: func.toRem(18);
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(20);
@@ -135,8 +135,8 @@
 
 .cardWishButton {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: func.toRem(20);
+  right: func.toRem(20);
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(20);
