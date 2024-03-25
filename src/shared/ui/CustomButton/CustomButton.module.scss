@@ -18,7 +18,7 @@
     width: func.toRem(30);
     height: func.toRem(30);
     path {
-      stroke: #000;
+      stroke: $black;
     }
   }
 }
@@ -30,26 +30,27 @@
 }
 
 .green {
-  background-color: $mainGreen;
+  background-color: $green;
   color: white;
   @include mixin.button-transition(background-color, 0.3s);
 
   svg {
     path {
-      stroke: #fff;
+      stroke: $white;
     }
   }
 
   &:hover {
-    background-color: #2c5030;
+    background-color: $greenHover;
   }
 
   &:focus {
-    box-shadow: #37643b;
+    background-color: $greenFocus;
+    box-shadow: 0px 4px 8px 0px #0000001A;
   }
 
   &:active {
-    background-color: #254028;
+    background-color: $greenActive;
   }
 }
 
@@ -59,15 +60,16 @@
   @include mixin.button-transition(background-color, 0.3s);
 
   &:hover {
-    background-color: #f2f7f2;
+    background-color: $whiteHover;
   }
 
   &:focus {
-    box-shadow: #ffffff;
+    background-color: $whiteFocus;
+    box-shadow: 0px 4px 8px 0px #0000001A;
   }
 
   &:active {
-    background-color: #c2d9c1;
+    background-color: $whiteActive;
   }
 }
 

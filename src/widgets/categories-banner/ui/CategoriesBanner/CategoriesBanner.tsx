@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import catergoriesData from '../../catergories';
+import categoriesData from '../../categories';
 
 import css from './CategoriesBanner.module.scss';
 import { CustomButton } from '~shared/ui/CustomButton';
@@ -8,7 +8,7 @@ const CategoriesBanner = () => {
   const navigate = useNavigate();
 
   const productLink = (index: number) => {
-    return catergoriesData[index].linkToProduct;
+    return categoriesData[index].linkToProduct;
   };
 
   const handleCardAction = (
@@ -25,7 +25,7 @@ const CategoriesBanner = () => {
       <div className={css.leftContainer}>
         <div className={css.cardHoverEffect}>
           <div
-            key={catergoriesData[0].id}
+            key={categoriesData[0].id}
             className={css.card}
             onClick={() => handleCardAction(productLink(0))}
             role="button"
@@ -33,19 +33,19 @@ const CategoriesBanner = () => {
             tabIndex={0}
           >
             <img
-              src={catergoriesData[0].backgroundImage}
-              alt={catergoriesData[0].title}
+              src={categoriesData[0].backgroundImage}
+              alt={categoriesData[0].title}
               className={css.cardImage}
             />
             <div className={css.content}>
               <div className={css.boxLeftContent}>
-                <h3 className={css.title}>{catergoriesData[0].title}</h3>
-                <p className={css.subtitle}>{catergoriesData[0].subtitle}</p>
+                <h3 className={css.title}>{categoriesData[0].title}</h3>
+                <p className={css.subtitle}>{categoriesData[0].subtitle}</p>
               </div>
               <CustomButton
                 bgColor="white"
                 className={css.cardButton}
-                to={catergoriesData[0].linkToProduct}
+                to={categoriesData[0].linkToProduct}
                 onClick={e => e.stopPropagation()}
               >
                 See more
@@ -69,7 +69,7 @@ const CategoriesBanner = () => {
               <CustomButton
                 bgColor="white"
                 className={`${css.cardButton} ${css.cardButtonArrowFirst}`}
-                to={catergoriesData[0].linkToProduct}
+                to={categoriesData[0].linkToProduct}
                 onClick={e => e.stopPropagation()}
               >
                 <svg
@@ -95,7 +95,7 @@ const CategoriesBanner = () => {
       </div>
 
       <div className={css.rightContainer}>
-        {catergoriesData.slice(1).map((product, index) => (
+        {categoriesData.slice(1).map((product, index) => (
           <div className={css.cardHoverEffect} key={product.id}>
             <div
               className={css.card}
@@ -105,7 +105,7 @@ const CategoriesBanner = () => {
               onKeyDown={e => handleCardAction(productLink(index + 1), e)}
             >
               <img
-                src={catergoriesData[index + 1].backgroundImage}
+                src={categoriesData[index + 1].backgroundImage}
                 alt={product.title}
                 className={css.cardImage}
               />
