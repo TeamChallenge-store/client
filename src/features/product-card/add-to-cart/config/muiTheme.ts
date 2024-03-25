@@ -7,16 +7,16 @@ export default createTheme({
         root: {
           padding: '21px',
           borderRadius: '8px',
-          backgroundColor: 'rgba(55, 100, 59, 1)',
+          backgroundColor: '$green',
           boxShadow: 'none',
           position: 'relative',
 
           '&.Mui-disabled': {
-            backgroundColor: 'rgba(55, 100, 59, 1)',
+            backgroundColor: '$green',
           },
 
           '&:hover': {
-            backgroundColor: 'rgba(55, 100, 59, 1)',
+            backgroundColor: '$green',
             boxShadow: 'none',
           },
 

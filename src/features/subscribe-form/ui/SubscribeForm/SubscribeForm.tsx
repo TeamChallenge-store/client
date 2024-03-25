@@ -8,6 +8,7 @@ const SubscribeForm = () => {
 
   const validateEmail = () => {
     const emailRegex = /^\S+@\S+\.\S+$/;
+
     return emailRegex.test(email);
   };
 
