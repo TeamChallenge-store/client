@@ -1,7 +1,5 @@
 import { FC, ReactNode } from 'react';
 
-import cardi from '~shared/cardI.jpg';
-
 import css from './LayoutProductCard.module.scss';
 import { IProductCard } from '~entities/product';
 
@@ -18,16 +16,23 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     return null;
   }
 
-  const { image, price, name } = product;
+  const { image, price, name, oldPrice } = product;
 
   return (
     <li>
       <article className={css.card}>
-        <img className={css.cardImg} src={image && cardi} alt={name} />
+        <div className={css.cardTop}>
+          {image && <img className={css.cardImg} src={image} alt={name} />}
+        </div>
         <div className={css.content}>
           <h3 className={css.cardTitle}>{name}</h3>
           <div className={css.cardActionInner}>
-            <span className={css.cardPrice}>{`$ ${price}`}</span>
+            <div className={css.priceContainer}>
+              {oldPrice && (
+                <span className={css.oldPrice}>{`${oldPrice} ₴`}</span>
+              )}
+              <span className={css.cardPrice}>{`${price} ₴`}</span>
+            </div>
             {addToCartSlot}
           </div>
           <span className={css.cardWishButton}>{wishSlot}</span>

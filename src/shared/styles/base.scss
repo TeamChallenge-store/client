@@ -2,7 +2,7 @@
 @use './helpers/variables.scss' as *;
 @use './helpers/functions.scss' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap');
+@import './fonts.scss';
 
 * {
   box-sizing: border-box;
@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: 400;
 }
 
@@ -49,6 +49,10 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+li {
+  list-style: none;
 }
 
 a {
