@@ -53,7 +53,7 @@ const paths: TPaths = {
   twitter,
   instagram,
   linkedin,
-  email
+  email,
 };
 
 const Icon: FC<IconProps> = ({

@@ -1,10 +1,9 @@
 @use '../../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../../shared/styles/helpers/functions.scss' as func;
 
-.cartCheck,
 .cartSvg {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
 
   @media (min-width: $max-viewport) {
     width: func.toRem(24);
@@ -12,9 +11,14 @@
   }
 
   @media (max-width: $s-viewport) {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
+}
+
+.cartCheck {
+  width: 20px;
+  height: 20px;
 }
 
 .addButtonContainer {
@@ -24,18 +28,16 @@
   width: 66px;
   transition: all 0.1s ease-in 0s;
   border-color: transparent;
-  border-radius: 15px;
-  margin: 1px 0;
+  border-radius: 8px;
 
   overflow-x: hidden;
 
   @media (min-width: $max-viewport) {
     width: func.toRem(66);
-    margin: func.toRem(1);
   }
 
   @media (max-width: $s-viewport) {
-    width: 40px;
+    width: 52px;
     justify-content: center;
     overflow: initial;
   }
@@ -43,7 +45,7 @@
   @media (hover: hover) {
     &:hover {
       width: 154px;
-      border-color: #a0a0a0;
+      border-color: $green;
 
       @media (min-width: $max-viewport) {
         width: func.toRem(154);
@@ -62,17 +64,17 @@
   height: 100%;
   padding-left: 4px;
   width: 110px;
-  border-radius: 15px;
+  border-radius: 8px;
   transform: translateX(50%);
   font-size: 20px;
-  border: 2px solid #a0a0a0;
+  border: 2px solid $green;
 
   @media (min-width: $max-viewport) {
     gap: func.toRem(5);
     padding-left: func.toRem(4);
     width: func.toRem(110);
     font-size: func.toRem(20);
-    border: func.toRem(2.1) solid #a0a0a0;
+    border: func.toRem(2.1) solid $green;
     right: calc(100% - func.toRem(65));
   }
 
@@ -81,7 +83,7 @@
   }
 
   button {
-    color: #666666;
+    color: $green;
   }
 
   .left,
