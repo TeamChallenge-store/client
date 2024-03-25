@@ -5,14 +5,14 @@
   position: relative;
   width: func.toRem(312);
   border-radius: func.toRem(8);
-  background-color: white;
+  background-color: $white;
   transition: box-shadow 0.3s;
 
   &:hover {
-    box-shadow: 0px 1px 4px 0px #00000029;
+    box-shadow: 0px func.toRem(1) func.toRem(4) 0px #00000029;
 
     .cardWishButton svg path {
-      stroke: #1f3522;
+      stroke: $norway900;
     }
   }
 
