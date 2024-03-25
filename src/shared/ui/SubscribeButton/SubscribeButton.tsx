@@ -13,14 +13,10 @@ const SubscribeButton: FC<ButtonProps> = ({
   className,
 }) => {
   return (
-    <div className={css.buttonContainer}>
-      <button
-        className={`${css.subscribeButton} ${className || ''}`}
-        type={type}
-      >
-        {text}
-      </button>
-    </div>
+    /* eslint-disable react/button-has-type */
+    <button className={`${css.subscribeButton} ${className || ''}`} type={type}>
+      {text}
+    </button>
   );
 };
 

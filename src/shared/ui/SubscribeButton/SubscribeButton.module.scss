@@ -6,14 +6,13 @@
   width: 100%;
 }
 .subscribeButton {
-  padding: func.toRem(15.5) 0;
-  font-size: 24px;
-  line-height: 33.12px;
-  border-radius: 8px;
+  padding: func.toRem(16) func.toRem(36);
+  font-size: func.toRem(16);
+  line-height: func.toRem(16);
+  border-radius: 10px;
+  background-color: $gray;
   color: #fff;
-  text-transform: uppercase;
-  background-color: $mainGreen;
-  width: 100%;
+  letter-spacing: func.toRem(0.5);
 }
 
 @media (max-width: 767px) {

@@ -20,7 +20,8 @@
 }
 
 .subCategory {
-  height: 624px;
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
 }
 
 .newProducts {
@@ -39,7 +40,6 @@
 
 .title,
 .bestsellers,
-.subCategory,
 .newProducts,
 .stock {
   margin-bottom: func.toRem(80);
