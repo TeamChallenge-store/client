@@ -3,10 +3,9 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  background-color: $gray200;
   margin-top: auto;
   padding: func.toRem(60) 0;
-  background-color: #181518;
+  background-color: $bg;
 
   @media (max-width: $s-viewport) {
     text-align: center;
@@ -25,9 +24,14 @@
 
 .content {
   display: flex;
-  flex-direction: row;
   gap: func.toRem(239);
 
+  @media (max-width: $m-viewport) {
+    gap: func.toRem(139);
+  }
+  @media (max-width: $sm-viewport) {
+    gap: func.toRem(70);
+  }
   @media (max-width: $s-viewport) {
     flex-direction: column;
     gap: func.toRem(32);
@@ -36,27 +40,26 @@
 
 .contentInfo {
   display: flex;
-  flex-direction: row;
-  gap: func.toRem(74);
+  gap: func.toRem(24);
   justify-content: center;
 
   @media (max-width: $s-viewport) {
-    gap: func.toRem(39);
+    gap: func.toRem(16);
     text-align: start;
   }
 }
 
 .contentLinks {
   display: flex;
-  flex-direction: row;
   justify-content: end;
   align-items: end;
-  padding-top: func.toRem(34);
-  gap: func.toRem(82);
+  padding-top: func.toRem(30);
+  gap: func.toRem(7);
 
   @media (max-width: $s-viewport) {
     flex-direction: column;
-    gap: func.toRem(32);
+    gap: func.toRem(24);
+    padding-top: func.toRem(28);
     text-align: start;
     align-items: start;
   }
@@ -65,11 +68,11 @@
 .copyright {
   text-align: end;
   font-size: func.toRem(10);
-  color: #ffff;
-  padding-bottom: 8px;
+  color: $white;
+  padding-bottom: func.toRem(15);
+  padding-right: func.toRem(5);
 
   @media (max-width: $s-viewport) {
-    font-size: func.toRem(14);
-    padding-bottom: 0;
+    font-size: func.toRem(13);
   }
 }

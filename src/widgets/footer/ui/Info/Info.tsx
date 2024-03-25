@@ -9,7 +9,7 @@ const Info: FC = () => {
       <h4 className={css.infoTitle}>Company info</h4>
       <ul className={css.infoList}>
         <li>
-          <Link to="info/payment">About us</Link>
+          <Link to="info/about">About us</Link>
         </li>
         <li>
           <Link to="info/payment">Payment</Link>
