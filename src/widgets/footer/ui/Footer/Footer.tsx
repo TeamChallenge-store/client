@@ -22,7 +22,7 @@ const Footer: FC = () => {
         <div className={css.contentLinks}>
           <JoinUs />
           <span className={css.copyright}>
-            CompanyName @ 2024. All rights reserved.
+            Campfire@ 2024. All rights reserved.
           </span>
         </div>
       </div>

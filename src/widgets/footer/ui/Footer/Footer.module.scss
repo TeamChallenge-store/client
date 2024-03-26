@@ -3,7 +3,7 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  margin-top: auto;
+  margin-top: 56px;
   padding: func.toRem(60) 0;
   background-color: $bg;
 
@@ -67,12 +67,12 @@
 
 .copyright {
   text-align: end;
-  font-size: func.toRem(10);
+  font-size: func.toRem(12);
   color: $white;
   padding-bottom: func.toRem(15);
   padding-right: func.toRem(5);
 
   @media (max-width: $s-viewport) {
-    font-size: func.toRem(13);
+    font-size: func.toRem(16);
   }
 }
