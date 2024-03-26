@@ -63,6 +63,10 @@
   background-repeat: no-repeat;
 }
 
+.subscribeButton {
+  max-width: func.toRem(219);
+}
+
 @media (max-width: 767px) {
   .subscribeInputForm {
     display: block;

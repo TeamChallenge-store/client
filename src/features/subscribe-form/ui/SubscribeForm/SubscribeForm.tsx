@@ -1,73 +1,54 @@
-import { useState } from 'react';
-import { SubscribeButton } from '~shared/ui/SubscribeButton';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import css from './SubscribeForm.module.scss';
 import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
+import { CustomButton } from '~shared/ui/CustomButton';
 
 const SubscribeForm = () => {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [isChecking, setIsChecking] = useState(false);
 
-  const validateEmail = (email: string) => {
-    const emailRegex = /^\S+@\S+\.\S+$/;
-    return emailRegex.test(email);
-  };
+const englishEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmail = e.target.value;
-    setEmail(newEmail);
+ const formik = useFormik({
+   initialValues: {
+     email: '',
+   },
+   validationSchema: Yup.object({
+     email: Yup.string()
+     .min(3, 'Must be at least 3 characters')
+     .max(75, 'Must be less than 75 characters')
+     .test('isEnglishEmail', 'Invalid email address', (value) => !!value && englishEmailRegex.test(value))
+     .email('Invalid email address')
+     .required('Required')
+   }),
+   onSubmit: values => {
+     console.log(values);
+   },
+ });
+ 
+ return (
+   <form className={css.subscribeInputForm} onSubmit={formik.handleSubmit}>
+     <div className={css.inputContainer}>
+     <input 
+       className={css.subscribeInput}
+       name="email"
+       type="email"
+       placeholder="Enter your email to get the best offers..."
+       value={formik.values.email}
+       onChange={formik.handleChange}
+       onBlur={formik.handleBlur}
+     />
+     <img className={css.emailIcon} src={emailIcon} alt="Email" />
 
-    if (isChecking) {
-      setError('');
-      setIsChecking(false);
-    }
-
-    const timeoutId = setTimeout(() => {
-      setIsChecking(true);
-      setError(validateEmail(newEmail) ? '' : 'Invalid email address');
-    }, 5000);
-
-    return () => clearTimeout(timeoutId);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!validateEmail(email)) {
-      setError('Invalid email address');
-      return;
-    }
-
-    // ... ваш код для відправки email
-  };
-
-  return (
-    <form className={css.subscribeInputForm} onSubmit={handleSubmit}>
-      <div className={css.inputContainer}>
-        <input
-          className={css.subscribeInput}
-          type="email"
-          placeholder="Enter your email to get the best offers..."
-          value={email}
-          onChange={handleEmailChange}
-          maxLength={75}
-          minLength={3}
-          required
-        />
-        <img className={css.emailIcon} src={emailIcon} alt="Email" />
-        {error && 
-        <span className={css.errorMessage}>
-          {error}
-        </span>}
+      {formik.touched.email && formik.errors.email ? (
+       <span className={css.errorMessage}>{formik.errors.email}</span>
+     ): null}
       </div>
 
-      <SubscribeButton
-        type="submit"
-        text="SEND"
-        className={css.subscribeButton}
-      />
-    </form>
-  );
+      <CustomButton className={css.subscribeButton} buttonType="submit" bgColor="green">
+       SEND
+      </CustomButton>
+   </form>
+ );
 };
 
 export { SubscribeForm };
