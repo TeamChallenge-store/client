@@ -8,13 +8,16 @@ const SubscribeForm = () => {
   const [error, setError] = useState('');
   const [isChecking, setIsChecking] = useState(false);
 
+  // eslint-disable-next-line @typescript-eslint/no-shadow
   const validateEmail = (email: string) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
+
     return emailRegex.test(email);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newEmail = e.target.value;
+
     setEmail(newEmail);
 
     if (isChecking) {
@@ -35,7 +38,6 @@ const SubscribeForm = () => {
 
     if (!validateEmail(email)) {
       setError('Invalid email address');
-      return;
     }
 
     // ... ваш код для відправки email
@@ -55,10 +57,7 @@ const SubscribeForm = () => {
           required
         />
         <img className={css.emailIcon} src={emailIcon} alt="Email" />
-        {error && 
-        <span className={css.errorMessage}>
-          {error}
-        </span>}
+        {error && <span className={css.errorMessage}>{error}</span>}
       </div>
 
       <SubscribeButton
