@@ -18,7 +18,7 @@ type TCustomButtonProps = {
 const CustomButton: FC<TCustomButtonProps> = ({
   children,
   className = '',
-  to = '/',
+  to = '',
   bgColor = 'green',
   onClick = () => {},
   buttonType = 'button',
