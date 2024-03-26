@@ -19,7 +19,8 @@
   height: 588px;
 }
 
-.subCategory {
+.subCategory,
+.subscribe {
   padding-top: func.toRem(56);
   padding-bottom: func.toRem(56);
 }
@@ -31,11 +32,6 @@
 .stock {
   height: 664px;
   background-color: gray;
-}
-
-.subscribe {
-  padding-top: 56px;
-  padding-bottom: 56px;
 }
 
 .title,
