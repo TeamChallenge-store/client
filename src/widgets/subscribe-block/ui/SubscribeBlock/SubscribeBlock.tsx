@@ -3,26 +3,18 @@ import css from './SubscribeBlock.module.scss';
 
 const SubscribeBlock = () => {
   return (
-    <>
-      <h3 className={css.title}>Lorem ipsum dolor sit amet, consectetur</h3>
-      <p className={css.description}>
-        et doloreadipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        doloreadipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        doloreadipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        doloreadipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore
-      </p>
+    <div className={css.subscribe}>
+      <h1 className={css.title}>Innovations for Your Adventure Life</h1>
       <div className={css.formContainer}>
         <div className={css.form}>
           <SubscribeForm />
         </div>
         <span className={css.formDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          Embark on your next adventure with confidence. Explore the world with
+          our top-quality gear by your side. Start your journey today!
         </span>
       </div>
-    </>
+    </div>
   );
 };
 

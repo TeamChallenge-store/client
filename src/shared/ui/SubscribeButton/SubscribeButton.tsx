@@ -7,7 +7,11 @@ interface ButtonProps {
   className?: string;
 }
 
-const SubscribeButton: FC<ButtonProps> = ({ type, text, className }) => {
+const SubscribeButton: FC<ButtonProps> = ({
+  type = 'button',
+  text,
+  className,
+}) => {
   return (
     /* eslint-disable react/button-has-type */
     <button className={`${css.subscribeButton} ${className || ''}`} type={type}>
