@@ -4,8 +4,16 @@ import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
 import { CustomButton } from '~shared/ui/CustomButton';
 import { SubscribeFormConfig } from './SubscribeFormConfig';
 
-const SubscribeForm: FC = () => {
-  const { handleSubmit, handleChange, values, touched, errors } = SubscribeFormConfig();
+interface ISubscribeFormProps {
+  setSubscribeIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
+  /* eslint-disable operator-linebreak */
+  const { handleSubmit, handleChange, values, touched, errors } =
+    SubscribeFormConfig({
+      setSubscribeIsSuccess,
+    });
 
   return (
     <>

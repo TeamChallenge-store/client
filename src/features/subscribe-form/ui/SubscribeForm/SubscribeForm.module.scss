@@ -67,16 +67,6 @@
   max-width: func.toRem(219);
 }
 
-.successMessage {
-  padding: func.toRem(15.5) func.toRem(11);
-  background-color: $green;
-  line-height: func.toRem(22.08);
-  text-align: center;
-  width: 100%;
-  color: $white;
-  text-transform: uppercase; 
-}
-
 @media (max-width: 767px) {
   .subscribeInputForm {
     display: block;
@@ -90,7 +80,7 @@
 
   .successMessage {
     padding: 14px 11px;
-  } 
+  }
 }
 
 @media (max-width: $s-viewport) {
