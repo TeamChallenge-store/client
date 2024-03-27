@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import cn from 'classnames';
 import { SubscribeForm } from '~features/subscribe-form';
 import css from './SubscribeBlock.module.scss';
 
@@ -14,11 +15,13 @@ const SubscribeBlock = () => {
 
   return (
     <>
-      {subscribeIsSuccess && (
-        <span className={css.successSubmit}>
-          Subscription successfully completed
-        </span>
-      )}
+      <span
+        className={cn(css.successSubmit, {
+          [css.show]: subscribeIsSuccess,
+        })}
+      >
+        Subscription successfully completed
+      </span>
       <div className={`${css.subscribe} container`}>
         <h1 className={css.title}>Innovations for Your Adventure Life</h1>
         <div className={css.formContainer}>

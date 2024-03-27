@@ -10,7 +10,7 @@ interface ISubscribeFormProps {
 
 const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
   /* eslint-disable operator-linebreak */
-  const { handleSubmit, handleChange, values, touched, errors } =
+  const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
     SubscribeFormConfig({
       setSubscribeIsSuccess,
     });
@@ -26,6 +26,7 @@ const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
             placeholder="Enter your email to get the best offers..."
             value={values.email}
             onChange={handleChange}
+            onBlur={handleBlur}
           />
           <img className={css.emailIcon} src={emailIcon} alt="Email" />
 
