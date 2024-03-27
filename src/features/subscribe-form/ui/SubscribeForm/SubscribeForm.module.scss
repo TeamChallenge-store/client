@@ -1,0 +1,76 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.subscribeInputForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-right: func.toRem(32);
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-right: func.toRem(44);
+}
+
+.subscribeInput {
+  padding: func.toRem(4) func.toRem(10) func.toRem(5) func.toRem(33);
+  width: 100%;
+  font-size: 16px;
+  line-height: 22.4px;
+  border: none;
+  border-bottom: 1px solid rgba(49, 49, 49, 1);
+}
+
+.subscribeInput::placeholder {
+  color: rgba(105, 112, 119, 1);
+  transition: color 0.3s;
+}
+
+.subscribeInput:hover::placeholder {
+  color: rgba(175, 182, 189, 1);
+}
+
+.subscribeInput:focus::placeholder {
+  color: rgba(175, 182, 189, 1);
+}
+
+.subscribeInput:focus {
+  color: rgba(0, 0, 0, 1);
+  outline-color: transparent;
+}
+
+.emailIcon {
+  position: absolute;
+  top: 0;
+  left: func.toRem(0);
+  width: func.toRem(24);
+  height: func.toRem(24);
+}
+
+.errorMessage {
+  position: absolute;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: rgba(227, 0, 0, 1);
+  padding-left: 14px;
+  left: 1px;
+  bottom: -18px;
+  background-image: url('../../../../shared/ui/Icon/icons/warning.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .subscribeInputForm {
+    display: block;
+    margin-right: 0;
+  }
+
+  .inputContainer {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
+}

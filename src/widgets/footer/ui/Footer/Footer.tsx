@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
 
-import logo from '~shared/logo.png';
+import { Logo } from '~entities/logo';
 
 import { JoinUs } from '../JoinUs';
 import { Info } from '../Info';
@@ -13,17 +12,19 @@ const Footer: FC = () => {
   return (
     <footer className={css.footer}>
       <div className="container">
-        <Link to="/" className={css.logo}>
-          <img src={logo} alt="logo" />
-        </Link>
         <div className={css.content}>
-          <Info />
-          <Catalog />
-          <JoinUs />
+          <Logo type="footer" />
+          <div className={css.contentInfo}>
+            <Catalog />
+            <Info />
+          </div>
         </div>
-        <span className={css.copyright}>
-          CompanyName @ 2024. All rights reserved.
-        </span>
+        <div className={css.contentLinks}>
+          <JoinUs />
+          <span className={css.copyright}>
+            Campfire@ 2024. All rights reserved.
+          </span>
+        </div>
       </div>
     </footer>
   );

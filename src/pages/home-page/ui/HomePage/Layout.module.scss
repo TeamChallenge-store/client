@@ -20,7 +20,8 @@
 }
 
 .subCategory {
-  height: 624px;
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
 }
 
 .newProducts {
@@ -28,13 +29,14 @@
 }
 
 .subscribe {
-  height: 465px;
-  margin-bottom: func.toRem(140);
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 .title,
 .bestsellers,
 .subCategory,
-.newProducts {
+.newProducts 
+.stock {
   margin-bottom: func.toRem(80);
 }
