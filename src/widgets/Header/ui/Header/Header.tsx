@@ -17,7 +17,7 @@ const Header: FC<THeaderProps> = props => {
       <div className="container">
         <div className={css.inner}>
           <div className={css.leftHeader}>
-            <Logo />
+            <Logo type="header" />
             <Navbar />
             <Icon type="burger" btnStyle={css.burger} />
           </div>

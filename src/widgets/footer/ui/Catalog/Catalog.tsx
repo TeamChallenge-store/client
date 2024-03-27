@@ -12,13 +12,16 @@ const Catalog: FC = () => {
           <Link to="/catalog/tents">Tents</Link>
         </li>
         <li>
-          <Link to="/catalog/backpacks">Backpacks</Link>
+          <Link to="/catalog/backpacks">Clothes</Link>
         </li>
         <li>
-          <Link to="/catalog/clothing">Clothing</Link>
+          <Link to="/catalog/clothing">Accessories</Link>
         </li>
         <li>
-          <Link to="/catalog/shoes">Shoes</Link>
+          <Link to="/catalog/shoes">Camping equipment</Link>
+        </li>
+        <li>
+          <Link to="/catalog/shoes">Mountaineering</Link>
         </li>
       </ul>
     </article>

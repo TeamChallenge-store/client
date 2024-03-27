@@ -3,12 +3,14 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  background-color: $gray200;
-  margin-top: auto;
-  padding: func.toRem(45) 0;
+  margin-top: 56px;
+  padding: func.toRem(60) 0;
+  background-color: $bg;
 
   @media (max-width: $s-viewport) {
     text-align: center;
+    padding: func.toRem(48) 0;
+    margin-top: 44px;
   }
 }
 
@@ -22,20 +24,56 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: func.toRem(20) 0;
+  display: flex;
+  gap: func.toRem(239);
+
+  @media (max-width: $m-viewport) {
+    gap: func.toRem(139);
+  }
+  @media (max-width: $sm-viewport) {
+    gap: func.toRem(70);
+  }
+  @media (max-width: $s-viewport) {
+    flex-direction: column;
+    gap: func.toRem(32);
+  }
+}
+
+.contentInfo {
+  display: flex;
+  gap: func.toRem(24);
+  justify-content: center;
 
   @media (max-width: $s-viewport) {
-    display: block;
-    padding: 0;
+    gap: func.toRem(16);
+    text-align: start;
+  }
+}
+
+.contentLinks {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-top: func.toRem(30);
+  gap: func.toRem(7);
+
+  @media (max-width: $s-viewport) {
+    flex-direction: column;
+    gap: func.toRem(24);
+    padding-top: func.toRem(28);
+    text-align: start;
+    align-items: start;
   }
 }
 
 .copyright {
-  font-size: 14px;
+  text-align: end;
+  font-size: func.toRem(12);
+  color: $white;
+  padding-bottom: func.toRem(15);
+  padding-right: func.toRem(5);
 
-  @media (min-width: $max-viewport) {
-    font-size: func.toRem(14);
+  @media (max-width: $s-viewport) {
+    font-size: func.toRem(16);
   }
 }
