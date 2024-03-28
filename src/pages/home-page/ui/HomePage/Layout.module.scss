@@ -1,18 +1,7 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
-.catigories {
-  height: 56px;
-  margin-bottom: func.toRem(30);
-  margin-top: func.toRem(5);
-}
-
 .categoriesSlider {
-  height: 496px;
-  margin-bottom: func.toRem(50);
-}
-
-.title {
-  height: 105px;
+  padding-bottom: func.toRem(56);
 }
 
 .bestsellers {

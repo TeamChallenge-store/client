@@ -13,7 +13,7 @@ const SubscribeButton: FC<ButtonProps> = ({
   className,
 }) => {
   return (
-    /* eslint-disable react/button-has-type */
+    // eslint-disable-next-line react/button-has-type
     <button className={`${css.subscribeButton} ${className || ''}`} type={type}>
       {text}
     </button>
