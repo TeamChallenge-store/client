@@ -1,6 +1,9 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
+.offers {
+  margin-bottom: func.toRem(-95);
+}
 .offersBunner {
   background-image: url('./promo.jpg');
   background-size: cover;
@@ -9,74 +12,73 @@
 
 .offersBunnerContent {
   font-family: 'Helvetica', sans-serif;
-  padding: func.toRem(72) func.toRem(24) func.toRem(149) func.toRem(60);
-  background-color: $mainGreen;
-  color: #fff;
-  max-width: func.toRem(510);
+  padding: func.toRem(75) func.toRem(24) func.toRem(155) func.toRem(60);
+  background-color: $green;
+  color: $white;
+  max-width: func.toRem(509);
 }
 
 .offersSubtitle {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: rgba(194, 217, 193, 1);
+  font-size: func.toRem(20);
+  line-height: func.toRem(24);
+  color: $norway200;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: func.toRem(24);
   text-transform: uppercase;
 }
 
 .offersTitle {
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 55.2px;
-  margin-bottom: 20px;
+  font-size: func.toRem(48);
+  line-height: func.toRem(52.8);
+  margin-bottom: func.toRem(20);
   text-transform: uppercase;
 }
 
 .offersDescription {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 23px;
-  margin-bottom: 42px;
+  font-size: func.toRem(20);
+  line-height: func.toRem(23.6);
+  margin-bottom: func.toRem(34);
 }
 
 .offersLink {
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 27.6px;
-  width: 100%;
-  max-width: 311px;
-  background-color: #fff;
-  padding: func.toRem(18) 0;
-  border-radius: 8px;
-  text-transform: uppercase;
-  display: block;
-  text-align: center;
-  color: #000;
+  max-width: func.toRem(333);
 }
 
 .offersSlider {
   position: relative;
-  top: func.toRem(-103);
+  top: func.toRem(-95);
+}
+
+.swiperSlide {
+  width: 250px;
+}
+
+.swiperNavigationArrows {
+  position: absolute;
+  top: func.toRem(-104);
+  right: func.toRem(60);
+  display: flex;
 }
 
 .swiperPrev,
 .swiperNext {
-  position: absolute;
-  top: -104px;
-  right: 60px;
-  width: 64px;
-  height: 64px;
+  width: func.toRem(64);
+  height: func.toRem(64);
   background-color: white;
-  border-radius: 8px;
+  border-radius: func.toRem(8);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: func.toRem(22);
+    height: func.toRem(22);
+  }
 }
 
 .swiperPrev {
-  right: 136px;
+  margin-right: func.toRem(16);
 }
 
 .swiperNext {
@@ -85,4 +87,104 @@
 
 .swiperArrowDisabled {
   opacity: 0.5;
+}
+
+@media (max-width: $sm-viewport) {
+  .offers {
+    margin-bottom: func.toRem(-55);
+  }
+
+  .offersBunnerContent {
+    background: #00000099;
+    max-width: 100%;
+    padding: 43px 35px 30px 16px;
+  }
+
+  .offersSubtitle {
+    font-size: 16px;
+    line-height: 19.2px;
+    margin-bottom: 8px;
+  }
+
+  .offersTitle {
+    font-size: 32px;
+    line-height: 38.4px;
+    margin-bottom: 16px;
+  }
+
+  .offersDescription {
+    font-size: 16px;
+    line-height: 22.08px;
+    margin-bottom: 51px;
+  }
+
+  .offersLink {
+    background-color: transparent !important;
+    padding: 0 !important;
+    width: max-content !important;
+    color: white !important;
+    text-decoration: underline;
+    position: absolute !important;
+    z-index: 2 !important;
+    font-size: 16px !important;
+
+    svg {
+      path {
+        stroke: $white !important;
+      }
+    }
+  }
+
+  .offersSlider {
+    top: func.toRem(-55);
+    padding-top: 80px;
+    z-index: 1;
+  }
+
+  .offersSlider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    background-color: $green;
+    z-index: -1;
+  }
+
+  .swiperNavigationArrows {
+    position: initial;
+    display: flex;
+    justify-content: end;
+    padding-top: 24px;
+  }
+
+  .swiperPrev,
+  .swiperNext {
+    border: 1px solid $norway950;
+    width: 50px;
+    height: 50px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+  }
+
+  .swiperPrev {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .offers {
+    margin-bottom: func.toRem(-32);
+  }
+  .offersTitle {
+    max-width: 286px;
+  }
+
+  .offersSlider {
+    top: func.toRem(-32);
+  }
 }

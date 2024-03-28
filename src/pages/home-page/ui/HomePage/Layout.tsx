@@ -34,7 +34,7 @@ const Layout: FC<TLayoutProps> = props => {
         {props.newProducts}
       </section>
       <section className={css.stock}>
-        <div>{props.stock}</div>
+        {props.stock}
       </section>
       <section className={cn(css.subscribe, 'container')}>
         {props.subscribe}
