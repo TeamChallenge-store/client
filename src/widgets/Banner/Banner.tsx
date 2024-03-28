@@ -42,10 +42,8 @@ const Banner = () => {
                 Innovations for Your Adventure Life: Convenience, Quality,
                 Nature
               </span>
-              <Link to="products/:category">
-                <button type="button" className={css.bannerBtn}>
-                  Shop now
-                </button>
+              <Link to="products/:category" className={css.bannerBtn}>
+                Shop now
               </Link>
             </div>
           </SwiperSlide>

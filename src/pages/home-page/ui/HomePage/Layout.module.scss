@@ -1,5 +1,9 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
+.categoriesSlider {
+  padding-bottom: func.toRem(56);
+}
+
 .bestsellers {
   height: 588px;
 }

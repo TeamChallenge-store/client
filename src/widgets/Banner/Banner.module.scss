@@ -4,7 +4,6 @@
 
 .banner {
   position: relative;
-  margin-bottom: func.toRem(50);
 
   @media (max-width: $s-viewport) {
     display: none;
@@ -17,6 +16,14 @@
 
   & img {
     width: func.toRem(480);
+
+    @media (max-width: $m-viewport) {
+      width: func.toRem(341);
+    }
+
+    @media (max-width: $sm-viewport) {
+      width: func.toRem(256);
+    }
 
     @media (max-width: $s-viewport) {
       height: 560px;
@@ -34,16 +41,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -27%);
+  transform: translate(-50%, -25%);
   text-transform: uppercase;
-
-  @media (max-width: $m-viewport) {
-    transform: translate(-34%, -30%);
-  }
-
-  @media (max-width: $sm-viewport) {
-    transform: translate(-25%, -30%);
-  }
 
   @media (max-width: $s-viewport) {
     width: 340px;
@@ -53,10 +52,20 @@
 }
 
 .bannerTitle {
-  width: func.toRem(1320);
+  width: func.toRem(1036);
   font-weight: 700;
   font-size: func.toRem(48);
   text-align: center;
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(850);
+    font-size: func.toRem(39);
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(650);
+    font-size: func.toRem(30);
+  }
 
   @media (max-width: $s-viewport) {
     font-size: func.toRem(32);
@@ -119,6 +128,7 @@
   height: 8px;
   border-radius: 26px;
   background-color: $green;
+  transition: width 0.3s;
 }
 
 .swiperPaginationBulletActive {

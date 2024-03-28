@@ -15,7 +15,9 @@ type TLayoutProps = {
 const Layout: FC<TLayoutProps> = props => {
   return (
     <>
-      <section>{props.categoriesSlider}</section>
+      <section className={cn(css.categoriesSlider)}>
+        {props.categoriesSlider}
+      </section>
       <section className={cn(css.bestsellers, 'container')}>
         {props.bestsellers}
       </section>
