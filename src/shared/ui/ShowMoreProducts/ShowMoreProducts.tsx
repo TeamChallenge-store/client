@@ -1,7 +1,6 @@
 import { useState, FC } from 'react';
 import css from './ShowMoreProducts.module.scss';
 import { ProductList } from '~widgets/product-list';
-import { Icon } from '~shared/ui/Icon';
 
 type Product = {
   id: number;
@@ -19,13 +18,12 @@ const ShowMoreProducts: FC<TShowMoreProductProps> = props => {
   const { title, products } = props;
 
   const [showAdditionalProducts, setShowAdditionalProducts] = useState(false);
+
   const toggleAdditionalProducts = () => {
     setShowAdditionalProducts(prevState => !prevState);
   };
 
-  const displayedProducts = showAdditionalProducts
-    ? products
-    : products.slice(0, 4);
+  const displayedProducts = products.slice(0, 4);
 
   return (
     <div className={showAdditionalProducts ? css.showProduct : css.hideProduct}>
@@ -34,11 +32,17 @@ const ShowMoreProducts: FC<TShowMoreProductProps> = props => {
         <ProductList products={displayedProducts} />
       </ul>
       <div className={css.btn}>
-        <Icon
-          type="showMoreProduct"
+        <svg
           className={showAdditionalProducts ? css.hideBtn : css.showMoreBtn}
           onClick={toggleAdditionalProducts}
-        />
+          width="63"
+          height="22"
+          viewBox="0 0 63 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M60.5 2L31 19L2 2" stroke="#37643B" />
+        </svg>
       </div>
     </div>
   );

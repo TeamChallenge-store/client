@@ -7,7 +7,7 @@
 // const Bestsellers = () => {
 //   const { data } = useBestsellersProductQuery();
 
-//   console.log(data);
+//   // console.log(data);
 
 //   return (
 //     <div className={css.bestsellers}>
