@@ -33,7 +33,7 @@
 
   .title {
     margin-right: 0;
-  };
+  }
 }
 
 @media (max-width: $xs-viewport) {
@@ -45,7 +45,7 @@
 @media (max-width: 767px) {
   .title {
     margin-bottom: 16px;
-  };
+  }
 
   .formDescription {
     display: none;
@@ -56,5 +56,5 @@
   .title {
     font-size: 32px;
     line-height: 38.4px;
-  };
+  }
 }
