@@ -3,23 +3,13 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  margin-top: 56px;
-  padding: func.toRem(60) 0;
+  margin-top: 72px;
   background-color: $bg;
+  padding-bottom: 25px;
 
   @media (max-width: $s-viewport) {
     text-align: center;
-    padding: func.toRem(48) 0;
-    margin-top: 44px;
-  }
-}
-
-.logo {
-  width: func.toRem(193);
-  display: block;
-
-  @media (max-width: $s-viewport) {
-    display: none;
+    padding-bottom: 45px;
   }
 }
 
@@ -35,18 +25,19 @@
   }
   @media (max-width: $s-viewport) {
     flex-direction: column;
-    gap: func.toRem(32);
+    gap: func.toRem(22);
   }
 }
 
 .contentInfo {
   display: flex;
   gap: func.toRem(24);
-  justify-content: center;
+  padding: func.toRem(60) 0 0;
 
   @media (max-width: $s-viewport) {
     gap: func.toRem(16);
     text-align: start;
+    padding: 0;
   }
 }
 
@@ -59,7 +50,7 @@
 
   @media (max-width: $s-viewport) {
     flex-direction: column;
-    gap: func.toRem(24);
+    gap: func.toRem(22);
     padding-top: func.toRem(28);
     text-align: start;
     align-items: start;
@@ -73,7 +64,12 @@
   padding-bottom: func.toRem(15);
   padding-right: func.toRem(5);
 
+  @media (max-width: $m-viewport) {
+    padding-right: 0;
+  }
+
   @media (max-width: $s-viewport) {
     font-size: func.toRem(16);
+    padding-bottom: 0;
   }
 }
