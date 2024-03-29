@@ -55,12 +55,12 @@
 
   &:disabled {
     pointer-events: none;
-    background-color: $gray200;
-    color: $gray500;
+    background-color: $disable;
+    color: $gray600;
 
     svg {
       path {
-        stroke: $gray500;
+        stroke: $gray600;
       }
     }
   }
@@ -86,12 +86,12 @@
 
   &:disabled {
     pointer-events: none;
-    background-color: $gray200;
-    color: $gray500;
+    background-color: $disable;
+    color: $gray600;
 
     svg {
       path {
-        stroke: $gray500;
+        stroke: $gray600;
       }
     }
   }

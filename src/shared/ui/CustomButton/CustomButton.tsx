@@ -37,16 +37,23 @@ const CustomButton: FC<TCustomButtonProps> = ({
         className,
         css.navigation,
         hasIcon && css.icon,
+        { [css.disabled]: disabled }
       )}
       onClick={onClick}
       id={id}
+      aria-disabled={disabled}
     >
       {children}
     </Link>
   ) : (
     <button
       onClick={onClick}
-      className={cn(css[bgColor], { [css.disabled]: disabled }, className, css.navigation)}
+      className={cn(
+        css[bgColor], 
+        { [css.disabled]: disabled }, 
+        className, 
+        css.navigation)
+      }
       /* eslint-disable react/button-has-type */
       type={buttonType}
       id={id}
