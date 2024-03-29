@@ -504,7 +504,7 @@ input {
 
     // Remove inner padding and search cancel button in Safari 5 and Chrome
     // on OS X.
-    &::--webkit-search-cancel-button,
+    &::state(webkit-search-cancel-button),
     &::--webkit-search-decoration {
       --webkit-appearance: none;
     }
