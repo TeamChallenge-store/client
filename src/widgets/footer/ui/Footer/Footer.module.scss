@@ -3,14 +3,14 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  margin-top: 72px;
+  margin-top: func.toRem(72);
   background-color: $bg;
   padding-bottom: 25px;
 
   @media (max-width: $s-viewport) {
     text-align: center;
     padding-bottom: 45px;
-    margin-top: 45px;
+    margin-top: func.toRem(45);
   }
 }
 
