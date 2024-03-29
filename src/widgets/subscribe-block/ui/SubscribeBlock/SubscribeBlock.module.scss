@@ -23,7 +23,7 @@
 .formDescription {
   font-size: func.toRem(18);
   line-height: func.toRem(21.6);
-  color: rgba(93, 93, 93, 1);
+  color: $gray600;
 }
 
 .successSubmit {
