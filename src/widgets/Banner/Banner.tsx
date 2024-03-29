@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Scrollbar, Navigation, Pagination } from 'swiper/modules';
+import { BannerInfo } from '~features/bannerInfo';
 
 import tent from '~shared/tent.jpg';
 import mountainView from './bannerImg/mountainView.jpg';
@@ -37,47 +37,19 @@ const Banner = () => {
             <div className={css.bannerImg}>
               <img src={mountainView} alt="mountain" />
             </div>
-            <div className={css.bannerInfo}>
-              <span className={css.bannerTitle}>
-                Innovations for Your Adventure Life: Convenience, Quality,
-                Nature
-              </span>
-              <Link to="products/:category" className={css.bannerBtn}>
-                Shop now
-              </Link>
-            </div>
+            <BannerInfo />
           </SwiperSlide>
           <SwiperSlide>
             <div className={css.bannerImg}>
               <img src={people} alt="people are on a hike" />
             </div>
-            <div className={css.bannerInfo}>
-              <span className={css.bannerTitle}>
-                Innovations for Your Adventure Life: Convenience, Quality,
-                Nature
-              </span>
-              <Link to="products/:category">
-                <button type="button" className={css.bannerBtn}>
-                  Shop now
-                </button>
-              </Link>
-            </div>
+            <BannerInfo />
           </SwiperSlide>
           <SwiperSlide>
             <div className={css.bannerImg}>
               <img src={tent} alt="tent" />
             </div>
-            <div className={css.bannerInfo}>
-              <span className={css.bannerTitle}>
-                Innovations for Your Adventure Life: Convenience, Quality,
-                Nature
-              </span>
-              <Link to="products/:category">
-                <button type="button" className={css.bannerBtn}>
-                  Shop now
-                </button>
-              </Link>
-            </div>
+            <BannerInfo />
           </SwiperSlide>
           <div className={css.swiperButton}>
             <div
@@ -101,16 +73,7 @@ const Banner = () => {
           <img src={people} alt="people are on a hike" />
           <img src={tent} alt="tent" />
         </div>
-        <div className={css.bannerInfo}>
-          <span className={css.bannerTitle}>
-            Innovations for Your Adventure Life: Convenience, Quality, Nature
-          </span>
-          <Link to="products/:category">
-            <button type="button" className={css.bannerBtn}>
-              Shop now
-            </button>
-          </Link>
-        </div>
+        <BannerInfo />
       </div>
     </>
   );
