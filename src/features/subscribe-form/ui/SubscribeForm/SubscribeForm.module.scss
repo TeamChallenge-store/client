@@ -20,24 +20,24 @@
   font-size: func.toRem(16);
   line-height: func.toRem(22.4);
   border: none;
-  border-bottom: 1px solid rgba(49, 49, 49, 1);
+  border-bottom: 1px solid $gray950;
 }
 
 .subscribeInput::placeholder {
-  color: rgba(105, 112, 119, 1);
+  color: $gray600;
   transition: color 0.3s;
 }
 
 .subscribeInput:hover::placeholder {
-  color: rgba(175, 182, 189, 1);
+  color: $gray300;
 }
 
 .subscribeInput:focus::placeholder {
-  color: rgba(175, 182, 189, 1);
+  color: $gray300;
 }
 
 .subscribeInput:focus {
-  color: rgba(0, 0, 0, 1);
+  color: $black;
   outline-color: transparent;
 }
 
