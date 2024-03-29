@@ -13,6 +13,8 @@ type TCustomButtonProps = {
   bgColor?: TButtonColor;
   onClick?: (e: React.MouseEvent) => void;
   buttonType?: 'button' | 'submit' | 'reset';
+  id?: string;
+  disabled?: boolean;
 };
 
 const CustomButton: FC<TCustomButtonProps> = ({
@@ -22,6 +24,8 @@ const CustomButton: FC<TCustomButtonProps> = ({
   bgColor = 'green',
   onClick = () => {},
   buttonType = 'button',
+  id,
+  disabled = false,
 }) => {
   const hasIcon = React.Children.count(children) > 1;
 
@@ -35,15 +39,18 @@ const CustomButton: FC<TCustomButtonProps> = ({
         hasIcon && css.icon,
       )}
       onClick={onClick}
+      id={id}
     >
       {children}
     </Link>
   ) : (
     <button
       onClick={onClick}
-      className={cn(css[bgColor], className, css.navigation)}
+      className={cn(css[bgColor], { [css.disabled]: disabled }, className, css.navigation)}
       /* eslint-disable react/button-has-type */
       type={buttonType}
+      id={id}
+      disabled={disabled}
     >
       {children}
     </button>

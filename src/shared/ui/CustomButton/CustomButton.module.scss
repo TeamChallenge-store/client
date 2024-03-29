@@ -52,6 +52,18 @@
   &:active {
     background-color: $greenActive;
   }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: $gray200;
+    color: $gray500;
+
+    svg {
+      path {
+        stroke: $gray500;
+      }
+    }
+  }
 }
 
 .white {
@@ -70,6 +82,18 @@
 
   &:active {
     background-color: $whiteActive;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: $gray200;
+    color: $gray500;
+
+    svg {
+      path {
+        stroke: $gray500;
+      }
+    }
   }
 }
 
