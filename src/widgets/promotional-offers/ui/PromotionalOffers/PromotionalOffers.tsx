@@ -93,7 +93,7 @@ const PromotionalOffers = () => {
       </div>
       <div className={`${css.offersSlider} container`}>
         <Swiper
-          slidesPerView={2}
+          slidesPerView={1}
           spaceBetween={15}
           navigation={{
             prevEl: '#swiper-prev',
@@ -101,6 +101,9 @@ const PromotionalOffers = () => {
             disabledClass: css.swiperArrowDisabled,
           }}
           breakpoints={{
+            375: {
+              slidesPerView: 2,
+            },
             500: {
               slidesPerView: 2,
             },
@@ -108,7 +111,7 @@ const PromotionalOffers = () => {
               slidesPerView: 3,
               
             },
-            1024: {
+            1025: {
               slidesPerView: 4,
             }
           }}

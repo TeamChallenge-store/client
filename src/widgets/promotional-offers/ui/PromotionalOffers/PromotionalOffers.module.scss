@@ -97,7 +97,7 @@
   .offersBunnerContent {
     background: #00000099;
     max-width: 100%;
-    padding: 43px 35px 30px 16px;
+    padding: 43px 35px 15px 16px;
   }
 
   .offersSubtitle {
@@ -136,8 +136,8 @@
   }
 
   .offersSlider {
-    top: func.toRem(-55);
-    padding-top: 80px;
+    top: -40px;
+    padding-top: 83px;
     z-index: 1;
   }
 
@@ -156,7 +156,7 @@
     position: initial;
     display: flex;
     justify-content: end;
-    padding-top: 24px;
+    padding-top: 19px;
   }
 
   .swiperPrev,
@@ -184,7 +184,18 @@
     max-width: 286px;
   }
 
-  .offersSlider {
-    top: func.toRem(-32);
+  .offersSubtitle {
+    line-height: 21.2px;
   }
+}
+
+@media (max-width: 374px) {
+  .imageInner {
+    margin: 0 auto;
+    display: table;
+  }
+
+  .offersSlider {
+    padding-top: 70px;
+}
 }
