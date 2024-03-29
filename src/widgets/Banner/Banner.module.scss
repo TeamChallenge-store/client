@@ -109,6 +109,10 @@
   height: 96%;
   bottom: 24px;
   z-index: 1;
+
+  @media (max-width: $s-viewport) {
+    width: 35%;
+  }
 }
 
 .swiperButtonNext {
