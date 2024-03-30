@@ -85,10 +85,6 @@
   transform: rotate(180deg);
 }
 
-.swiperArrowDisabled {
-  opacity: 0.5;
-}
-
 @media (max-width: $sm-viewport) {
   .offers {
     margin-bottom: func.toRem(-55);
@@ -119,18 +115,18 @@
   }
 
   .offersLink {
-    background-color: transparent !important;
-    padding: 0 !important;
-    width: max-content !important;
-    color: white !important;
+    background-color: transparent;
+    padding: 0;
+    width: max-content;
+    color: white;
     text-decoration: underline;
-    position: absolute !important;
-    z-index: 2 !important;
-    font-size: 16px !important;
+    position: absolute;
+    z-index: 2;
+    font-size: 16px;
 
     svg {
       path {
-        stroke: $white !important;
+        stroke: $white;
       }
     }
   }
@@ -142,7 +138,7 @@
   }
 
   .offersSlider::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -165,10 +161,10 @@
     width: 50px;
     height: 50px;
 
-  svg {
-    width: 15px;
-    height: 15px;
-  }
+    svg {
+      width: 15px;
+      height: 15px;
+    }
   }
 
   .swiperPrev {
@@ -197,5 +193,5 @@
 
   .offersSlider {
     padding-top: 70px;
-}
+  }
 }
