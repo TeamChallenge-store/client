@@ -1,18 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ProductList } from '~widgets/product-list';
+import { CustomButton } from '~shared/ui/CustomButton';
+import { useSaleProductsQuery } from './promotionalOffersApi';
 
 import 'swiper/css';
-
-import { CustomButton } from '~shared/ui/CustomButton';
 import css from './PromotionalOffers.module.scss';
-import { useSaleProductsQuery } from './promotionalOffersApi';
+import { Loader } from '~shared/ui/Loader';
 
 const PromotionalOffers = () => {
 
   const { data: products, isLoading } = useSaleProductsQuery();
 
-  if (isLoading) return <div>Loading products...</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className={css.offers}>
