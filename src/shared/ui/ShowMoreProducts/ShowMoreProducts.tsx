@@ -29,8 +29,6 @@ const ShowMoreProducts: FC<TShowMoreProductProps> = ({ title, products }) => {
         <svg
           className={showAdditionalProducts ? css.hideBtn : css.showMoreBtn}
           onClick={toggleAdditionalProducts}
-          width="63"
-          height="22"
           viewBox="0 0 63 22"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

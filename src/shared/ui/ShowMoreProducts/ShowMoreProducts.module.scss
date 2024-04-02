@@ -10,10 +10,13 @@
 }
 
 .btn {
-  text-align: center;
+  margin: 0 auto;
+  width: func.toRem(63);
   margin-top: func.toRem(37);
 
   & svg {
+    width: func.toRem(63);
+    height: func.toRem(22);
     stroke: $green;
   }
 
