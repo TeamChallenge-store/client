@@ -6,7 +6,7 @@ import css from './Loader.module.scss';
 const Loader: FC = () => {
   return (
     <div className={css.loader}>
-      <CircularProgress style={{ color: '#121212' }} />
+      <CircularProgress style={{ color: '#111d13' }} />
     </div>
   );
 };
