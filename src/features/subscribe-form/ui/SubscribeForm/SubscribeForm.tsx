@@ -38,6 +38,9 @@ const SubscribeForm = () => {
 
     if (!validateEmail(email)) {
       setError('Invalid email address');
+
+      // eslint-disable-next-line no-useless-return
+      return;
     }
 
     // ... ваш код для відправки email
