@@ -20,8 +20,12 @@
     max-width: func.toRem(312);
   }
 
+  @media (max-width: $m-viewport) {
+    max-width: func.toRem(290);
+  }
+
   @media (max-width: $s-viewport) {
-    max-width: func.toRem(230);
+    max-width: func.toRem(220);
   }
 
   @media (max-width: $xs-viewport) {
@@ -48,6 +52,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .content {

@@ -1,19 +1,13 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/variables.scss' as *;
 
-.catigories {
-  height: 56px;
-  margin-bottom: func.toRem(30);
-  margin-top: func.toRem(5);
-}
+.banner {
+  padding-bottom: func.toRem(56);
 
-.categoriesSlider {
-  height: 496px;
-  margin-bottom: func.toRem(50);
-}
-
-.title {
-  height: 105px;
+  @media (max-width: $xs-viewport) {
+    padding-bottom: func.toRem(32);
+  }
 }
 
 .bestsellers {
@@ -45,7 +39,6 @@
 .stock {
   margin-bottom: func.toRem(80);
 }
-
 
 @media (max-width: $xs-viewport) {
   .stock,
