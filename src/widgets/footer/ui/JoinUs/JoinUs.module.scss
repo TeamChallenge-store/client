@@ -3,6 +3,10 @@
 
 .joinUs {
   width: func.toRem(217);
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(190);
+  }
 }
 
 .joinTitle {

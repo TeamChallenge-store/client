@@ -3,21 +3,39 @@
 
 .logo {
   display: block;
-
-  
+  text-transform: uppercase;
 }
+
 .headerLogo {
-  width: func.toRem(124);
+  font-weight: 400;
+  font-size: func.toRem(24);
+  color: $gray950;
+
   @media (max-width: $m-viewport) {
     display: none;
   }
 }
 
 .footerLogo {
-  width: func.toRem(657);
+  width: func.toRem(658);
+  font-size: func.toRem(126);
+  color: $gray100;
+  font-weight: 600;
+  padding-top: func.toRem(33);
 
-   @media (max-width: $s-viewport) {
+  @media (max-width: $m-viewport) {
+    font-size: func.toRem(75);
+    padding-top: func.toRem(52);
+  }
+
+  @media (max-width: $sm-viewport) {
+    font-size: func.toRem(44);
+    padding-top: func.toRem(56);
+  }
+
+  @media (max-width: $s-viewport) {
     width: func.toRem(343);
-
+    padding-top: func.toRem(34);
+    font-size: func.toRem(66);
   }
 }

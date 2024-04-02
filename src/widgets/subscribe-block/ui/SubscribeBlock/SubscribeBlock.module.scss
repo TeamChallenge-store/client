@@ -23,7 +23,28 @@
 .formDescription {
   font-size: func.toRem(18);
   line-height: func.toRem(21.6);
-  color: rgba(93, 93, 93, 1);
+  color: $gray600;
+}
+
+.successSubmit {
+  display: block;
+  position: fixed;
+  top: 102px;
+  padding: func.toRem(15.5) func.toRem(11);
+  background-color: $green;
+  font-size: func.toRem(24);
+  line-height: func.toRem(22.08);
+  text-align: center;
+  width: 100%;
+  color: $white;
+  text-transform: uppercase;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.successSubmit.show {
+  opacity: 1;
 }
 
 @media (max-width: $m-viewport) {
@@ -33,7 +54,8 @@
 
   .title {
     margin-right: 0;
-  };
+    padding: 0;
+  }
 }
 
 @media (max-width: $xs-viewport) {
@@ -42,13 +64,20 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $sm-viewport) {
   .title {
-    margin-bottom: 16px;
-  };
+    margin-bottom: 10px;
+  }
 
   .formDescription {
     display: none;
+  }
+
+  .successSubmit {
+    font-size: 16px;
+    line-height: 18.4px;
+    padding: 16px 10px;
+    top: 100px;
   }
 }
 
@@ -56,5 +85,5 @@
   .title {
     font-size: 32px;
     line-height: 38.4px;
-  };
+  }
 }
