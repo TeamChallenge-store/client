@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import defaultImage from './defaultImage.png';
 
 import css from './LayoutProductCard.module.scss';
 import { IProductCard } from '~entities/product';
@@ -23,7 +24,7 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     <li>
       <article className={css.card}>
         <Link className={css.cardTop} to={`/products/${id}`}>
-          {image && <img className={css.cardImg} src={image} alt={name} />}
+          <img className={css.cardImg} src={image || defaultImage} alt={name} />
         </Link>
         <h3 className={css.cardTitle}>{name}</h3>
         <div className={css.content}>
