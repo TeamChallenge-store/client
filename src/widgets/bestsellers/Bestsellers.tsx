@@ -1,7 +1,6 @@
 import { useBestsellersProductQuery } from './bestsellersApi';
 
 import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
-import css from './Bestsellers.module.scss';
 
 const Bestsellers = () => {
   const { data, isLoading } = useBestsellersProductQuery();
@@ -17,7 +16,7 @@ const Bestsellers = () => {
   const trimmedData = data.slice(0, 8);
 
   return (
-    <div className={css.bestsellers}>
+    <div>
       <ShowMoreProducts title="bestsellers" products={trimmedData} />
     </div>
   );
