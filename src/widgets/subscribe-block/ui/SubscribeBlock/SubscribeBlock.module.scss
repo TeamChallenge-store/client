@@ -64,7 +64,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: $sm-viewport) {
   .title {
     margin-bottom: 10px;
   }
