@@ -6,7 +6,7 @@ import { Banner } from '~widgets/banner';
 
 const HomePage = () => (
   <Layout
-    categoriesSlider={<Banner />}
+    banner={<Banner />}
     bestsellers={<Empty title="bestsellers" />}
     subCategory={<CategoriesBanner />}
     newProducts={<Empty title="newProducts" />}

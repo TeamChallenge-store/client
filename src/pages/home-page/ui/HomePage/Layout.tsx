@@ -4,7 +4,7 @@ import cn from 'classnames';
 import css from './Layout.module.scss';
 
 type TLayoutProps = {
-  categoriesSlider?: ReactNode;
+  banner?: ReactNode;
   bestsellers?: ReactNode;
   subCategory?: ReactNode;
   newProducts?: ReactNode;
@@ -15,9 +15,7 @@ type TLayoutProps = {
 const Layout: FC<TLayoutProps> = props => {
   return (
     <>
-      <section className={cn(css.categoriesSlider)}>
-        {props.categoriesSlider}
-      </section>
+      <section className={cn(css.banner)}>{props.banner}</section>
       <section className={cn(css.bestsellers, 'container')}>
         {props.bestsellers}
       </section>

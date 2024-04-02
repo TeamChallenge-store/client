@@ -4,7 +4,6 @@
 
 .banner {
   position: relative;
-  padding-bottom: func.toRem(56);
 
   @media (max-width: $s-viewport) {
     display: none;
@@ -38,7 +37,7 @@
 
   @media (max-width: $s-viewport) {
     display: block;
-    padding-bottom: 32px;
+    // padding-bottom: 32px;
   }
 }
 
