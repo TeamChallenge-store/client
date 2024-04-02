@@ -2,11 +2,15 @@
 @use '../../../shared/styles/helpers/functions.scss' as func;
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   width: func.toRem(312);
   border-radius: func.toRem(8);
   background-color: $white;
   transition: box-shadow 0.3s;
+  height: func.toRem(452);
 
   &:hover {
     box-shadow: 0px func.toRem(1) func.toRem(4) 0px #00000029;
@@ -26,10 +30,12 @@
 
   @media (max-width: $s-viewport) {
     max-width: func.toRem(220);
+    max-height: func.toRem(350);
   }
 
   @media (max-width: $xs-viewport) {
     width: 164px;
+    height: 255px;
   }
 }
 
@@ -74,19 +80,19 @@
   font-weight: 700;
   font-size: func.toRem(20);
   line-height: func.toRem(24);
-  margin-bottom: func.toRem(22);
   max-width: func.toRem(270);
+  padding: func.toRem(10) func.toRem(16) 0 func.toRem(16);
+  flex-grow: 1;
 
   @media (max-width: $s-viewport) {
     font-size: 18px;
     line-height: 18px;
-    margin-bottom: 15px;
   }
 
   @media (max-width: $xs-viewport) {
     font-size: 14px;
     line-height: 18px;
-    margin-bottom: 8px;
+    padding: func.toRem(8) func.toRem(8) 0 func.toRem(8);
   }
 }
 
@@ -148,7 +154,7 @@
   }
 
   @media (max-width: $xs-viewport) {
-    top: 12px;
+    top: 16px;
     right: 10px;
   }
 }

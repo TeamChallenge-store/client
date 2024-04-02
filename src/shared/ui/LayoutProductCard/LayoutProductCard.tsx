@@ -25,8 +25,8 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
         <Link className={css.cardTop} to={`/products/${id}`}>
           {image && <img className={css.cardImg} src={image} alt={name} />}
         </Link>
+        <h3 className={css.cardTitle}>{name}</h3>
         <div className={css.content}>
-          <h3 className={css.cardTitle}>{name}</h3>
           <div className={css.cardActionInner}>
             <div className={css.priceContainer}>
               {oldPrice && (
