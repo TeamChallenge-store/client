@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ProductList } from '~widgets/product-list';
@@ -8,7 +9,7 @@ import 'swiper/css';
 import css from './PromotionalOffers.module.scss';
 import { Loader } from '~shared/ui/Loader';
 
-const PromotionalOffers = () => {
+const PromotionalOffers: FC = () => {
   const { data: products, isLoading } = useSaleProductsQuery();
 
   if (isLoading) {
