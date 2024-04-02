@@ -15,17 +15,15 @@
   height: 105px;
 }
 
-.bestsellers {
-  height: 588px;
+.bestsellers,
+.newProducts {
+  margin-top: func.toRem(56);
+  margin-bottom: func.toRem(56);
 }
 
 .subCategory {
   padding-top: func.toRem(56);
   padding-bottom: func.toRem(56);
-}
-
-.newProducts {
-  height: 588px;
 }
 
 .stock {
@@ -39,8 +37,6 @@
 }
 
 .title,
-.bestsellers,
-.newProducts,
 .stock {
   margin-bottom: func.toRem(80);
 }

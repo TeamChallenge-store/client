@@ -4,14 +4,22 @@
 .title {
   font-weight: 700;
   font-size: func.toRem(32);
-  color: #1a1b1f;
+  color: $gray950;
   text-transform: uppercase;
   padding-bottom: 48px;
 }
 
 .btn {
   text-align: center;
-  padding-bottom: 0;
+  margin-top: func.toRem(37);
+
+  & svg {
+    stroke: $green;
+  }
+
+  &:hover svg {
+    stroke: $gray950;
+  }
 }
 
 .hideBtn {

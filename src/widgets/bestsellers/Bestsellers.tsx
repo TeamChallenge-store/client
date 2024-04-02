@@ -1,19 +1,26 @@
-// import { useBestsellersProductQuery } from './bestsellersApi';
-// // import { useProductCategoryQuery } from '~entities/product';
+import { useBestsellersProductQuery } from './bestsellersApi';
 
-// import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
-// import css from './Bestsellers.module.scss';
+import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
+import css from './Bestsellers.module.scss';
 
-// const Bestsellers = () => {
-//   const { data } = useBestsellersProductQuery();
+const Bestsellers = () => {
+  const { data, isLoading } = useBestsellersProductQuery();
 
-//   // console.log(data);
+  if (isLoading) {
+    return 'Loading ...';
+  }
 
-//   return (
-//     <div className={css.bestsellers}>
-//       <ShowMoreProducts title="bestsellers" products={data} />
-//     </div>
-//   );
-// };
+  if (!data) {
+    return 'Something went wrong';
+  }
 
-// export { Bestsellers };
+  const trimmedData = data.slice(0, 8);
+
+  return (
+    <div className={css.bestsellers}>
+      <ShowMoreProducts title="bestsellers" products={trimmedData} />
+    </div>
+  );
+};
+
+export { Bestsellers };

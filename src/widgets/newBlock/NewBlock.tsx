@@ -1,15 +1,25 @@
-// import { useNewProductQuery } from './newBlockApi';
-// import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
-// import css from './NewBlock.module.scss';
+import { useNewProductQuery } from './newBlockApi';
+import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
+import css from './NewBlock.module.scss';
 
-// const NewBlock = () => {
-//   const { data } = useNewProductQuery();
+const NewBlock = () => {
+  const { data, isLoading } = useNewProductQuery();
 
-//   return (
-//     <div className={css.newBlock}>
-//       <ShowMoreProducts title="new" products={data} />
-//     </div>
-//   );
-// };
+  if (isLoading) {
+    return 'Loading ...';
+  }
 
-// export { NewBlock };
+  if (!data) {
+    return 'Something went wrong';
+  }
+
+  const trimmedData = data.slice(0, 8);
+
+  return (
+    <div className={css.newBlock}>
+      <ShowMoreProducts title="new" products={trimmedData} />
+    </div>
+  );
+};
+
+export { NewBlock };
