@@ -93,10 +93,6 @@
     @media (min-width: $max-viewport) {
       padding: func.toRem(6) func.toRem(6);
     }
-
-    @media (min-width: $xs-viewport) {
-      border-radius: 4px !important;
-    }
   }
 
   .count {
