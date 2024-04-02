@@ -4,6 +4,7 @@
 
 .banner {
   position: relative;
+  padding-bottom: func.toRem(56);
 
   @media (max-width: $s-viewport) {
     display: none;
@@ -31,7 +32,6 @@
     }
   }
 }
-
 
 .bannerSwiper {
   display: none;
