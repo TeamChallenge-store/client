@@ -11,8 +11,13 @@
 
 .bestsellers,
 .newProducts {
-  margin-top: func.toRem(56);
-  margin-bottom: func.toRem(56);
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
+
+  @media (max-width: $xs-viewport) {
+    padding-bottom: func.toRem(32);
+    padding-top: func.toRem(32);
+  }
 }
 
 .subCategory {
