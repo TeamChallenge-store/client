@@ -22,7 +22,7 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
   return (
     <li>
       <article className={css.card}>
-        <Link className={css.cardTop} to={`/products/ ${id}`}>
+        <Link className={css.cardTop} to={`/products/${id}`}>
           {image && <img className={css.cardImg} src={image} alt={name} />}
         </Link>
         <div className={css.content}>
