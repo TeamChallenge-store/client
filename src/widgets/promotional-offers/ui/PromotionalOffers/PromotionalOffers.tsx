@@ -47,7 +47,7 @@ const PromotionalOffers = () => {
       </div>
       <div className={`${css.offersSlider} container`}>
         <Swiper
-          slidesPerView={1}
+          slidesPerView={4}
           spaceBetween={15}
           navigation={{
             prevEl: '#swiper-prev',
