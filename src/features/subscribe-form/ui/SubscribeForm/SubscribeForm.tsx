@@ -1,74 +1,49 @@
-import { useState } from 'react';
-import { SubscribeButton } from '~shared/ui/SubscribeButton';
+import { FC } from 'react';
 import css from './SubscribeForm.module.scss';
 import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
+import { CustomButton } from '~shared/ui/CustomButton';
+import { SubscribeFormConfig } from './SubscribeFormConfig';
 
-const SubscribeForm = () => {
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
-  const [isChecking, setIsChecking] = useState(false);
+interface ISubscribeFormProps {
+  setSubscribeIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-  const validateEmail = (email: string) => {
-    const emailRegex = /^\S+@\S+\.\S+$/;
-
-    return emailRegex.test(email);
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmail = e.target.value;
-
-    setEmail(newEmail);
-
-    if (isChecking) {
-      setError('');
-      setIsChecking(false);
-    }
-
-    const timeoutId = setTimeout(() => {
-      setIsChecking(true);
-      setError(validateEmail(newEmail) ? '' : 'Invalid email address');
-    }, 5000);
-
-    return () => clearTimeout(timeoutId);
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    if (!validateEmail(email)) {
-      setError('Invalid email address');
-
-      // eslint-disable-next-line no-useless-return
-      return;
-    }
-
-    // ... ваш код для відправки email
-  };
+const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
+  /* eslint-disable operator-linebreak */
+  const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
+    SubscribeFormConfig({
+      setSubscribeIsSuccess,
+    });
 
   return (
-    <form className={css.subscribeInputForm} onSubmit={handleSubmit}>
-      <div className={css.inputContainer}>
-        <input
-          className={css.subscribeInput}
-          type="email"
-          placeholder="Enter your email to get the best offers..."
-          value={email}
-          onChange={handleEmailChange}
-          maxLength={75}
-          minLength={3}
-          required
-        />
-        <img className={css.emailIcon} src={emailIcon} alt="Email" />
-        {error && <span className={css.errorMessage}>{error}</span>}
-      </div>
+    <>
+      <form className={css.subscribeInputForm} onSubmit={handleSubmit}>
+        <div className={css.inputContainer}>
+          <input
+            className={css.subscribeInput}
+            name="email"
+            type="email"
+            placeholder="Enter your email to get the best offers..."
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          <img className={css.emailIcon} src={emailIcon} alt="Email" />
 
-      <SubscribeButton
-        type="submit"
-        text="SEND"
-        className={css.subscribeButton}
-      />
-    </form>
+          {touched.email && errors.email ? (
+            <span className={css.errorMessage}>{errors.email}</span>
+          ) : null}
+        </div>
+
+        <CustomButton
+          className={css.subscribeButton}
+          buttonType="submit"
+          bgColor="green"
+        >
+          SEND
+        </CustomButton>
+      </form>
+    </>
   );
 };
 
