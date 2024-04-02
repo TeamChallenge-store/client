@@ -1,12 +1,12 @@
 import { useBestsellersProductQuery } from './bestsellersApi';
-
 import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
+import { Loader } from '~shared/ui/Loader';
 
 const Bestsellers = () => {
   const { data, isLoading } = useBestsellersProductQuery();
 
   if (isLoading) {
-    return 'Loading ...';
+    return <Loader />;
   }
 
   if (!data) {

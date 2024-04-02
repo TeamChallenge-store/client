@@ -1,11 +1,12 @@
 import { useNewProductQuery } from './newBlockApi';
 import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
+import { Loader } from '~shared/ui/Loader';
 
 const NewBlock = () => {
   const { data, isLoading } = useNewProductQuery();
 
   if (isLoading) {
-    return 'Loading ...';
+    return <Loader />;
   }
 
   if (!data) {
