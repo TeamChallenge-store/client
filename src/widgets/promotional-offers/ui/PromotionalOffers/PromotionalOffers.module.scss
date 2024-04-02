@@ -44,6 +44,10 @@
   max-width: func.toRem(333);
 }
 
+.swiperWrapper {
+  padding: 2px;
+}
+
 .offersSlider {
   position: relative;
   top: func.toRem(-95);
@@ -74,6 +78,10 @@
   svg {
     width: func.toRem(22);
     height: func.toRem(22);
+  }
+
+  &:disabled {
+    border: none;
   }
 }
 
@@ -132,8 +140,8 @@
   }
 
   .offersSlider {
-    top: -40px;
-    padding-top: 83px;
+    top: -37px;
+    padding-top: 80px;
     z-index: 1;
   }
 
@@ -176,6 +184,7 @@
   .offers {
     margin-bottom: func.toRem(-32);
   }
+
   .offersTitle {
     max-width: 286px;
   }

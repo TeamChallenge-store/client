@@ -9,10 +9,11 @@ import css from './PromotionalOffers.module.scss';
 import { Loader } from '~shared/ui/Loader';
 
 const PromotionalOffers = () => {
-
   const { data: products, isLoading } = useSaleProductsQuery();
 
-  if (isLoading) return <Loader />;
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className={css.offers}>
@@ -58,27 +59,36 @@ const PromotionalOffers = () => {
             },
             500: {
               slidesPerView: 2,
+              spaceBetween: 15,
             },
             767: {
               slidesPerView: 3,
             },
             1025: {
               slidesPerView: 4,
+              spaceBetween: 20,
+            },
+            1440: {
+              spaceBetween: 25,
             },
           }}
           modules={[Navigation, Pagination]}
           className={`swiper-wrapper ${css.swiperWrapper}`}
         >
-          {products && products.map(product => (
-            <SwiperSlide
-              key={product.id}
-              className={`${css.swiperSlide} swiper-slide`}
-            >
-              <div className={css.imageInner}>
-                <ProductList products={[product]} />
-              </div>
-            </SwiperSlide>
-          ))}
+          {
+            // eslint-disable-next-line operator-linebreak
+            products &&
+              products.map(product => (
+                <SwiperSlide
+                  key={product.id}
+                  className={`${css.swiperSlide} swiper-slide`}
+                >
+                  <div className={css.imageInner}>
+                    <ProductList products={[product]} />
+                  </div>
+                </SwiperSlide>
+              ))
+          }
         </Swiper>
         <div className={css.swiperNavigationArrows}>
           <CustomButton

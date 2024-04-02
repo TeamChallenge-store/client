@@ -5,9 +5,10 @@ import { IProductCard, TResponseProducts } from '~entities/product/model/types';
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
     saleProducts: build.query<IProductCard[], void>({
-      query: () => `product-categories/sale`,
+      query: () => 'product-categories/sale',
       keepUnusedDataFor: 30,
-      transformResponse: (response: TResponseProducts) => response.results.products,
+      transformResponse: (response: TResponseProducts) =>
+        response.results.products,
     }),
   }),
 });
