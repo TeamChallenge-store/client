@@ -24,8 +24,9 @@ const SubscribeFormConfig = ({
         .email('Invalid email address')
         .required('Required'),
     }),
-    onSubmit: () => {
+    onSubmit: ({}, { resetForm }) => {
       setSubscribeIsSuccess(true);
+      resetForm();
     },
   });
 };
