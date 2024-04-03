@@ -10,8 +10,15 @@
   }
 }
 
-.bestsellers {
-  height: 588px;
+.bestsellers,
+.newProducts {
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
+
+  @media (max-width: $xs-viewport) {
+    padding-bottom: func.toRem(32);
+    padding-top: func.toRem(32);
+  }
 }
 
 .subCategory {
@@ -29,10 +36,6 @@
   }
 }
 
-.newProducts {
-  height: 588px;
-}
-
 .stock {
   padding-top: func.toRem(56);
   padding-bottom: func.toRem(56);
@@ -44,8 +47,7 @@
 }
 
 .title,
-.bestsellers,
 .subCategory,
-.newProducts {
+.stock {
   margin-bottom: func.toRem(80);
 }

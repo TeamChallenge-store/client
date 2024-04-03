@@ -43,6 +43,10 @@
       "~lazyPages": ["./app/lazyPages.tsx"],
     },
   },
-  "include": ["src", "types"],
+  "include": [
+    "src",
+    "types",
+    "src/shared/ui/ShowMoreProducts/ShowMoreProducts.tsx",
+  ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
