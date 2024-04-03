@@ -11,7 +11,9 @@
 }
 
 .bestsellers,
-.newProducts {
+.newProducts,
+.subCategory,
+.stock {
   padding-top: func.toRem(56);
   padding-bottom: func.toRem(56);
 
@@ -19,11 +21,6 @@
     padding-bottom: func.toRem(32);
     padding-top: func.toRem(32);
   }
-}
-
-.subCategory {
-  padding-top: func.toRem(56);
-  padding-bottom: func.toRem(56);
 }
 
 .subscribe {
@@ -34,20 +31,4 @@
     padding-top: func.toRem(32);
     padding-bottom: func.toRem(44);
   }
-}
-
-.stock {
-  padding-top: func.toRem(56);
-  padding-bottom: func.toRem(56);
-
-  @media (max-width: $xs-viewport) {
-    padding-top: func.toRem(32);
-    padding-bottom: func.toRem(32);
-  }
-}
-
-.title,
-.subCategory,
-.stock {
-  margin-bottom: func.toRem(80);
 }
