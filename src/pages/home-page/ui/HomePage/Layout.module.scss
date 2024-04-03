@@ -1,3 +1,4 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
@@ -25,17 +26,29 @@
   padding-bottom: func.toRem(56);
 }
 
-.stock {
-  height: 664px;
-  background-color: gray;
+.subscribe {
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(72);
+
+  @media (max-width: $xs-viewport) {
+    padding-top: func.toRem(32);
+    padding-bottom: func.toRem(44);
+  }
 }
 
-.subscribe {
-  padding-top: 56px;
-  padding-bottom: 56px;
+
+.stock {
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
+
+  @media (max-width: $xs-viewport) {
+    padding-top: func.toRem(32);
+    padding-bottom: func.toRem(32);
+  }
 }
 
 .title,
+.subCategory,
 .stock {
   margin-bottom: func.toRem(80);
 }
