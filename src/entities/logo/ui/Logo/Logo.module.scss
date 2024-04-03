@@ -4,10 +4,14 @@
 .logo {
   display: block;
   text-transform: uppercase;
+  
+  &:focus {
+    outline-color: transparent;
+  }
 }
 
 .headerLogo {
-  font-weight: 400;
+  font-weight: 700;
   font-size: func.toRem(24);
   color: $gray950;
 

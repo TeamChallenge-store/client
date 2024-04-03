@@ -3,14 +3,14 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .nav {
-  max-width: 384px;
+  max-width:  672px;
 
   @media (max-width: $m-viewport) {
     display: none;
   }
 
   @media (min-width: $max-viewport) {
-    max-width: func.toRem(385);
+    max-width: func.toRem(672);
   }
 }
 
@@ -19,18 +19,26 @@
   gap: 40px;
 
   @media (min-width: $max-viewport) {
-    gap: func.toRem(40);
+    gap: func.toRem(38.5);
   }
 }
 
 .active {
   border: none;
-  border-bottom: func.toRem(1) solid red;
+  border-bottom: func.toRem(2) solid $green;
 }
 
 .link {
   display: inline-block;
-  padding: func.toRem(39) 0;
+  padding: func.toRem(25) 0;
   position: relative;
   font-weight: 500;
+
+  &:focus {
+    outline-color: transparent;
+  }
+}
+
+.itemRed {
+  color: $red;
 }

@@ -34,6 +34,7 @@
 
 .rightHeader {
   @include mixin.flexible;
+  justify-content: end;
   gap: func.toRem(33);
   flex-grow: 1;
 

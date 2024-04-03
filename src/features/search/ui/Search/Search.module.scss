@@ -2,9 +2,14 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .searchForm {
-  width: 100%;
-
+  width: 216px;
   position: relative;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.expanded {
+  width: 293px;
 }
 
 .label {
@@ -13,22 +18,27 @@
 
 .searchInput {
   width: 100%;
-  font-size: func.toRem(14);
-  font-weight: 500;
-  padding: func.toRem(10.6) func.toRem(56) func.toRem(10.6) func.toRem(18);
-  background-color: $gray200;
-  border-radius: 15px;
-  border: func.toRem(1) solid transparent;
-
+  font-size: func.toRem(16);
+  padding: func.toRem(1.5) func.toRem(20) func.toRem(5.5) func.toRem(32);
+  border: none;
+  border-bottom: func.toRem(1) solid $black;
   position: relative;
+}
+
+.searchInput::placeholder {
+  color: $gray200;
+}
+
+.searchInput:focus {
+  color: $black;
+  outline-color: transparent;
 }
 
 .searchButton {
   position: absolute;
-  right: func.toRem(18);
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: func.toRem(20);
-  height: func.toRem(20);
+  left: 0;
+  top: 0;
+  width: func.toRem(25);
+  height: func.toRem(25);
+  z-index: 1;
 }

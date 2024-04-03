@@ -12,23 +12,33 @@ const Navbar = () => {
     <nav className={css.nav}>
       <ul className={css.list}>
         <li className={css.item}>
-          <NavLink className={active} to="/about">
-            About us
+          <NavLink className={active} to="/tents">
+            Tents
           </NavLink>
         </li>
         <li className={css.item}>
-          <NavLink className={active} to="/contacts">
-            Contacts
+          <NavLink className={active} to="/clothes">
+            Clothes
           </NavLink>
         </li>
         <li className={css.item}>
-          <NavLink className={active} to="/payment">
-            Payment
+          <NavLink className={active} to="/accessories">
+            Accessories
           </NavLink>
         </li>
         <li className={css.item}>
-          <NavLink className={active} to="/delivery">
-            Delivery
+          <NavLink className={active} to="/equipment">
+            Camping equipment
+          </NavLink>
+        </li>
+        <li className={css.item}>
+          <NavLink className={active} to="/mountaineering">
+            Mountaineering
+          </NavLink>
+        </li>
+        <li className={`${css.item} ${css.itemRed}`}>
+          <NavLink className={active} to="/sale">
+            Sale
           </NavLink>
         </li>
       </ul>
