@@ -148,6 +148,7 @@
   position: absolute;
   top: func.toRem(20);
   right: func.toRem(20);
+  z-index: 2;
 
   @media (min-width: $max-viewport) {
     font-size: func.toRem(20);
