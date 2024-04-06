@@ -1,0 +1,33 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.top {
+  background-color: $green;
+  padding: 10px 0;
+  color: white;
+}
+
+.topInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: $white;
+  display: none;
+}
+
+.link {
+  display: flex;
+  justify-content: end;
+  padding: 0 12px;
+  font-size: 12px;
+  line-height: 12px;
+
+  &:last-child {
+    padding-right: 0;
+    border-left: 1px solid $white;
+  }
+}

@@ -73,6 +73,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
+  top: func.toRem(22);
 
   opacity: 0;
   transition: opacity 0.3s;

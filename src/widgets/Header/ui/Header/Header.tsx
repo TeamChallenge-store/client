@@ -6,6 +6,7 @@ import { Logo } from '~entities/logo';
 import { Icon } from '~shared/ui/Icon';
 
 import css from './Header.module.scss';
+import { TopHeader } from '../TopHeader';
 
 type THeaderProps = {
   searchSlot?: ReactNode;
@@ -14,6 +15,7 @@ type THeaderProps = {
 const Header: FC<THeaderProps> = props => {
   return (
     <header className={css.header}>
+      <TopHeader />
       <div className="container">
         <div className={css.inner}>
           <div className={css.leftHeader}>
