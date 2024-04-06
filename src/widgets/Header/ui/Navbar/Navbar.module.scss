@@ -17,10 +17,18 @@
 .list {
   @include mixin.flexible;
   gap: 41.2px;
-  padding: func.toRem(27) 0 func.toRem(22) 0;
+  padding: func.toRem(27) 0 func.toRem(23) 0;
 
   @media (min-width: $max-viewport) {
     gap: func.toRem(41.2);
+  }
+
+  @media (max-width: $m-viewport) {
+    padding: func.toRem(26) 0;
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: 12px 0;
   }
 }
 

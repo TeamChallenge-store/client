@@ -7,26 +7,42 @@
   width: 100%;
   background-color: white;
   z-index: 3;
-
-  @media (max-width: $m-viewport) {
-    padding: func.toRem(26) 0;
-  }
 }
 
 .inner {
   @include mixin.flexible;
+
+  @media (max-width: $m-viewport) {
+    padding: 12px 0;
+  } 
 }
 
 .leftHeader {
   @include mixin.flexible;
-  gap: 120px;
+  gap: func.toRem(120);
+
+  @media (max-width: 1380px) {
+    gap: func.toRem(100);
+  } 
+
+  @media (max-width: 1260px) {
+    gap: func.toRem(80);
+  } 
+
+  @media (max-width: 1200px) {
+    gap: func.toRem(30);
+  } 
 }
 
 .rightHeader {
   @include mixin.flexible;
   justify-content: end;
   flex-grow: 1;
-  gap: 5px;
+  gap: func.toRem(5);
+
+  @media (max-width: $s-viewport) {
+    justify-content: center;
+  } 
 }
 
 .burger {

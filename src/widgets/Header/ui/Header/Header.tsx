@@ -25,8 +25,8 @@ const Header: FC<THeaderProps> = props => {
           </div>
           <div className={css.rightHeader}>
             {props.searchSlot}
-            <Icons />
           </div>
+          <Icons />
         </div>
       </div>
     </header>

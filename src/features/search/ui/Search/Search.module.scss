@@ -2,14 +2,22 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .searchForm {
-  width: 216px;
+  width: func.toRem(216);
   position: relative;
   overflow: hidden;
   transition: width 0.5s ease;
+
+  @media (max-width: $s-viewport) {
+    width: 216px;
+  } 
 }
 
 .expanded {
-  width: 293px;
+  width: func.toRem(293);
+
+  @media (max-width: $xs-viewport) {
+    width: 216px;
+  } 
 }
 
 .label {

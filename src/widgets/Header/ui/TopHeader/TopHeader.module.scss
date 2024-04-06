@@ -4,8 +4,12 @@
 
 .top {
   background-color: $green;
-  padding: 10px 0;
+  padding: func.toRem(10) 0;
   color: white;
+
+  @media (max-width: $s-viewport) {
+    padding: 6px 0;
+  }
 }
 
 .topInner {
@@ -14,9 +18,20 @@
   align-items: center;
 }
 
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-grow: 1;
+}
+
 .logo {
   color: $white;
   display: none;
+
+  @media (max-width: $m-viewport) {
+    display: block;
+  }
 }
 
 .link {
