@@ -1,0 +1,41 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.menu {
+  padding: 24px 16px 48px 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  z-index: 3;
+  height: 100vh;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.menuTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.burgerLogo {
+  font-size: 41.15px;
+  line-height: 56.78px;
+  margin-right: 37px;
+  display: block;
+}
+
+.navigation {
+  margin-bottom: 16px;
+}
+
+.info {
+  margin-bottom: 84px;
+
+  li {
+    padding: 14px 0;
+  }
+}
