@@ -23,9 +23,7 @@ const Header: FC<THeaderProps> = props => {
             <Navbar />
             <Icon type="burger" btnStyle={css.burger} />
           </div>
-          <div className={css.rightHeader}>
-            {props.searchSlot}
-          </div>
+          <div className={css.rightHeader}>{props.searchSlot}</div>
           <Icons />
         </div>
       </div>

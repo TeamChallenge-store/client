@@ -6,6 +6,10 @@
   padding-top: func.toRem(80);
   padding-bottom: func.toRem(56);
 
+  @media (max-width: $s-viewport) {
+    padding-top: 0;
+  }
+
   @media (max-width: $xs-viewport) {
     padding-bottom: func.toRem(32);
   }

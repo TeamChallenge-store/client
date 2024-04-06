@@ -14,7 +14,11 @@
 
   @media (max-width: $m-viewport) {
     padding: 12px 0;
-  } 
+  }
+
+  @media (max-width: $xs-viewport) {
+    padding: 12px 4px;
+  }
 }
 
 .leftHeader {
@@ -23,15 +27,15 @@
 
   @media (max-width: 1380px) {
     gap: func.toRem(100);
-  } 
+  }
 
   @media (max-width: 1260px) {
     gap: func.toRem(80);
-  } 
+  }
 
   @media (max-width: 1200px) {
     gap: func.toRem(30);
-  } 
+  }
 }
 
 .rightHeader {
@@ -42,7 +46,7 @@
 
   @media (max-width: $s-viewport) {
     justify-content: center;
-  } 
+  }
 }
 
 .burger {
