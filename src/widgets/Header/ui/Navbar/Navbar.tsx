@@ -1,46 +1,36 @@
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import css from './Navbar.module.scss';
+import { navigationData } from './navigationData';
 
 const active = ({ isActive }: { isActive: boolean }) =>
   classNames(css.link, {
     '': isActive,
   });
 
-const Navbar = () => {
+const Navbar: FC = () => {
   return (
     <nav className={css.nav}>
       <ul className={css.list}>
-        <li className={css.item}>
-          <NavLink className={active} to="/tents">
-            Tents
-          </NavLink>
-        </li>
-        <li className={css.item}>
-          <NavLink className={active} to="/clothes">
-            Clothes
-          </NavLink>
-        </li>
-        <li className={css.item}>
-          <NavLink className={active} to="/accessories">
-            Accessories
-          </NavLink>
-        </li>
-        <li className={css.item}>
-          <NavLink className={active} to="/equipment">
-            Camping equipment
-          </NavLink>
-        </li>
-        <li className={css.item}>
-          <NavLink className={active} to="/mountaineering">
-            Mountaineering
-          </NavLink>
-        </li>
-        <li className={`${css.item} ${css.itemRed}`}>
-          <NavLink className={active} to="/sale">
-            Sale
-          </NavLink>
-        </li>
+        {navigationData.map(item => (
+          <li key={item.title} className={css.item}>
+            <NavLink className={active} to={item.url}>
+              {item.title}
+            </NavLink>
+            {item.submenu && (
+              <ul className={css.submenu}>
+                {item.submenu.map(subItem => (
+                  <li key={subItem.title}>
+                    <NavLink className={active} to={subItem.url}>
+                      {subItem.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
       </ul>
     </nav>
   );

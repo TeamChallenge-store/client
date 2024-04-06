@@ -1,12 +1,12 @@
 import cn from 'classnames';
-//import { useState } from 'react';
+// import { useState } from 'react';
 
 import { Icon } from '~shared/ui/Icon';
 
 import css from './Icons.module.scss';
 
 const Icons = () => {
-  //const [cartCount] = useState(1);
+  // const [cartCount] = useState(1);
 
   return (
     <div className={css.icons}>

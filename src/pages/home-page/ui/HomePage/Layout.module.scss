@@ -3,6 +3,7 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 
 .banner {
+  padding-top: func.toRem(80);
   padding-bottom: func.toRem(56);
 
   @media (max-width: $xs-viewport) {

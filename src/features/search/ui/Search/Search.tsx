@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Icon } from '~shared/ui/Icon';
-
 import cn from 'classnames';
+import { Icon } from '~shared/ui/Icon';
 import css from './Search.module.scss';
 
 const Search = () => {
@@ -16,11 +15,13 @@ const Search = () => {
   };
 
   return (
-    <form className={cn(css.searchForm, {
-      [css.expanded]: isExpanded,
-    })}>
+    <form
+      className={cn(css.searchForm, {
+        [css.expanded]: isExpanded,
+      })}
+    >
       <label className={css.label}>
-      <Icon
+        <Icon
           className={css.searchIcon}
           btnStyle={css.searchButton}
           type="search"

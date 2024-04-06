@@ -3,7 +3,10 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .header {
-  border-bottom: func.toRem(1) solid $white;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 3;
 
   @media (max-width: $m-viewport) {
     padding: func.toRem(26) 0;
@@ -12,39 +15,18 @@
 
 .inner {
   @include mixin.flexible;
-  gap: 33px;
-
-  @media (max-width: $m-viewport) {
-    gap: 40px;
-  }
-
-  @media (max-width: $s-viewport) {
-    gap: func.toRem(16);
-  }
-
-  @media (min-width: $max-viewport) {
-    gap: func.toRem(33);
-  }
 }
 
 .leftHeader {
   @include mixin.flexible;
-  gap: func.toRem(45);
+  gap: 120px;
 }
 
 .rightHeader {
   @include mixin.flexible;
   justify-content: end;
-  gap: func.toRem(33);
   flex-grow: 1;
-
-  @media (max-width: $m-viewport) {
-    gap: func.toRem(40);
-  }
-
-  @media (max-width: $s-viewport) {
-    gap: func.toRem(16);
-  }
+  gap: 5px;
 }
 
 .burger {
