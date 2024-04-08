@@ -33,11 +33,47 @@ export const navigationData = [
     title: 'Clothes',
     url: '/clothes',
     icon: clothesIcon,
+    submenu: [
+      {
+        title: 'See all',
+        url: '/all',
+      },
+      {
+        title: 'Single',
+        url: '/single',
+      },
+      {
+        title: 'Double',
+        url: '/double',
+      },
+      {
+        title: 'For whole family',
+        url: '/forFamily',
+      },
+    ],
   },
   {
     title: 'Accessories',
     url: '/accessories',
     icon: accessoriesIcon,
+    submenu: [
+      {
+        title: 'See all',
+        url: '/all',
+      },
+      {
+        title: 'Single',
+        url: '/single',
+      },
+      {
+        title: 'Double',
+        url: '/double',
+      },
+      {
+        title: 'For whole family',
+        url: '/forFamily',
+      },
+    ],
   },
   {
     title: 'Camping equipment',
@@ -66,6 +102,24 @@ export const navigationData = [
     title: 'Mountaineering',
     url: '/mountaineering',
     icon: mountaineeringIcon,
+    submenu: [
+      {
+        title: 'See all',
+        url: '/all',
+      },
+      {
+        title: 'Single',
+        url: '/single',
+      },
+      {
+        title: 'Double',
+        url: '/double',
+      },
+      {
+        title: 'For whole family',
+        url: '/forFamily',
+      },
+    ],
   },
   {
     title: 'Sale',

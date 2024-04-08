@@ -52,8 +52,9 @@
 }
 
 .subtitle {
-  padding: func.toRem(17) 0 func.toRem(5) 0;
+  padding: func.toRem(14) 0;
   border-top: 1px solid $green;
+  text-transform: uppercase;
 }
 
 .info {
