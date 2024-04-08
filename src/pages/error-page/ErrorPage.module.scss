@@ -28,9 +28,8 @@
   line-height: func.toRem(48);
   padding: func.toRem(18) 0;
 
-   @media (max-width: $s-viewport) {
-   padding: func.toRem(24) 0;
-
+  @media (max-width: $s-viewport) {
+    padding: func.toRem(24) 0;
   }
 }
 
@@ -44,8 +43,7 @@
 
   @media (max-width: $s-viewport) {
     text-align: start;
-  padding-bottom: func.toRem(16);
-
+    padding-bottom: func.toRem(16);
   }
 }
 
