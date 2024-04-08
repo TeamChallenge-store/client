@@ -14,6 +14,7 @@ import twitter from '~icons/twitter.svg';
 import instagram from '~icons/instagram.svg';
 import linkedin from '~icons/linkedin.svg';
 import email from '~icons/email.svg';
+import close from '~icons/close.svg';
 
 import css from './Icon.module.scss';
 
@@ -28,7 +29,8 @@ type TIconType =
   | 'twitter'
   | 'instagram'
   | 'linkedin'
-  | 'email';
+  | 'email'
+  | 'close';
 
 type TPaths = { [key in TIconType]: string };
 
@@ -54,6 +56,7 @@ const paths: TPaths = {
   instagram,
   linkedin,
   email,
+  close,
 };
 
 const Icon: FC<IconProps> = ({
