@@ -3,39 +3,42 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .menu {
-  padding: 24px 16px 48px 16px;
+  padding: func.toRem(24) func.toRem(16) func.toRem(48) func.toRem(16);
   position: absolute;
   top: 0;
   left: 0;
   background-color: $white;
   z-index: 3;
   height: 100vh;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: func.toRem(20);
+  line-height: func.toRem(24);
+  overflow-y: scroll;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  &.animating {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .menuTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: func.toRem(16);
 }
 
 .burgerLogo {
-  font-size: 41.15px;
-  line-height: 56.78px;
-  margin-right: 37px;
+  font-size: func.toRem(41.15);
+  line-height: func.toRem(56.78);
+  margin-right: func.toRem(37);
   display: block;
 }
 
 .navigation {
-  margin-bottom: 16px;
-}
-
-.info {
-  margin-bottom: 84px;
-
-  li {
-    padding: 14px 0;
-  }
+  margin-bottom: func.toRem(16);
 }

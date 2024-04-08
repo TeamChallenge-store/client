@@ -1,7 +1,15 @@
+import tentsIcon from '../../NavigationIcons/tents.svg';
+import clothesIcon from '../../NavigationIcons/clothes.svg';
+import accessoriesIcon from '../../NavigationIcons/accessories.svg';
+import equipmentIcon from '../../NavigationIcons/equipment.svg';
+import mountaineeringIcon from '../../NavigationIcons/mountaineering.svg';
+import saleIcon from '../../NavigationIcons/sale.svg';
+
 export const navigationData = [
   {
     title: 'Tents',
     url: '/tents',
+    icon: tentsIcon,
     submenu: [
       {
         title: 'See all',
@@ -24,14 +32,17 @@ export const navigationData = [
   {
     title: 'Clothes',
     url: '/clothes',
+    icon: clothesIcon,
   },
   {
     title: 'Accessories',
     url: '/accessories',
+    icon: accessoriesIcon,
   },
   {
     title: 'Camping equipment',
     url: '/equipment',
+    icon: equipmentIcon,
     submenu: [
       {
         title: 'See all',
@@ -54,9 +65,11 @@ export const navigationData = [
   {
     title: 'Mountaineering',
     url: '/mountaineering',
+    icon: mountaineeringIcon,
   },
   {
     title: 'Sale',
     url: '/sale',
+    icon: saleIcon,
   },
 ];
