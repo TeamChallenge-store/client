@@ -14,6 +14,14 @@
   }
 }
 
+.errorFooter {
+  padding-bottom: func.toRem(51);
+
+  @media (max-width: $s-viewport) {
+    padding-bottom: func.toRem(31);
+  }
+}
+
 .content {
   display: flex;
   gap: func.toRem(239);
@@ -58,6 +66,17 @@
   }
 }
 
+.errorLinks {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  padding-top: func.toRem(51);
+
+    @media (max-width: $s-viewport) {
+    padding-top: func.toRem(31);
+  }
+}
+
 .copyright {
   text-align: end;
   font-size: func.toRem(12);
@@ -72,5 +91,16 @@
   @media (max-width: $s-viewport) {
     font-size: func.toRem(16);
     padding-bottom: 0;
+  }
+}
+
+.copyrightError {
+  text-align: start;
+  font-size: func.toRem(24);
+  color: $white;
+  text-transform: uppercase;
+  padding-bottom: 0;
+  @media (max-width: $s-viewport) {
+    font-size: func.toRem(14);
   }
 }

@@ -38,6 +38,14 @@ const routes: RouteObject[] = [
         element: <h1>***in develop***</h1>,
       },
       {
+        path: 'checkout',
+        element: <h1>***in develop***</h1>,
+      },
+      {
+        path: 'thank-you',
+        element: <h1>***in develop***</h1>,
+      },
+      {
         path: '*',
         element: <h1>Ooops...</h1>,
       },
