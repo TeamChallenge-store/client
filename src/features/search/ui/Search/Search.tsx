@@ -22,10 +22,6 @@ const Search = () => {
     setSearchText(event.target.value);
   };
 
-  const clearSearchText = () => {
-    setSearchText('');
-  };
-
   const handleFormClose = () => {
     setSearchText('');
     setIsExpanded(false);
@@ -55,17 +51,19 @@ const Search = () => {
         {searchText && (
           <Icon
             type="close"
-            onClick={clearSearchText}
+            onClick={handleFormClose}
             className={css.clearButton}
           />
         )}
       </label>
-      <SearchResults
-        searchText={searchText}
-        className={css.searchResults}
-        isExpanded={isExpanded}
-        handleFormClose={handleFormClose}
-      />
+      {searchText && (
+        <SearchResults
+          searchText={searchText}
+          className={css.searchResults}
+          isExpanded={isExpanded}
+          handleFormClose={handleFormClose}
+        />
+      )}
     </form>
   );
 };
