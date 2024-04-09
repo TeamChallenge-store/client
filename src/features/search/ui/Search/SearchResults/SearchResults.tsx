@@ -17,21 +17,15 @@ const SearchResults: FC<TSearchResultsProps> = ({
   isExpanded,
   handleFormClose,
 }) => {
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useSearchProductsQuery(searchText.length > 0 ? searchText : '');
+  const { data: products, isLoading, error } = useSearchProductsQuery(
+    searchText.length > 0 ? searchText : '',
+  );
 
   return (
     isExpanded && (
       <div className={cn(className)}>
         {isLoading && <div className={css.loading}>Loading...</div>}
-        {error && (
-          <span className={css.errorMessage}>
-            Sorry, your item was not found
-          </span>
-        )}
+        {(error || products?.length === 0) && <span className={css.errorMessage}>Sorry, your item was not found</span>}
         {products && products.length > 0 && !isLoading && !error && (
           <>
             <NavLink

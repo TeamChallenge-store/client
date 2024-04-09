@@ -6,7 +6,7 @@ export const searchApi = baseApi.injectEndpoints({
   endpoints: build => ({
     searchProducts: build.query<IProductCard[], string>({
       query: searchProduct => ({
-        url: `proucts/?search=${searchProduct}`,
+        url: `products/?search=${searchProduct}`,
       }),
       transformResponse: (response: TResponse) => response.results,
     }),
