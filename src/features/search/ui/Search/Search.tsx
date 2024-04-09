@@ -2,6 +2,7 @@ import { useState } from 'react';
 import cn from 'classnames';
 import { Icon } from '~shared/ui/Icon';
 import css from './Search.module.scss';
+import { SearchResults } from './SearchResults';
 
 const Search = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -11,8 +12,10 @@ const Search = () => {
     setIsExpanded(true);
   };
 
-  const handleBlur = () => {
-    setIsExpanded(false);
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    if (!event.relatedTarget || !event.relatedTarget.closest('form')) {
+      setIsExpanded(false);
+    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,6 +24,11 @@ const Search = () => {
 
   const clearSearchText = () => {
     setSearchText('');
+  };
+
+  const handleFormClose = () => {
+    setSearchText('');
+    setIsExpanded(false);
   };
 
   return (
@@ -39,8 +47,8 @@ const Search = () => {
           className={css.searchInput}
           type="text"
           placeholder="Search.."
-          onFocus={handleFocus}
           onBlur={handleBlur}
+          onFocus={handleFocus}
           value={searchText}
           onChange={handleChange}
         />
@@ -52,6 +60,12 @@ const Search = () => {
           />
         )}
       </label>
+      <SearchResults
+        searchText={searchText}
+        className={css.searchResults}
+        isExpanded={isExpanded}
+        handleFormClose={handleFormClose}
+      />
     </form>
   );
 };

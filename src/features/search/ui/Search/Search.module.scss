@@ -4,7 +4,6 @@
 .searchForm {
   width: func.toRem(216);
   position: relative;
-  overflow: hidden;
   transition: width 0.5s ease;
 
   @media (max-width: $s-viewport) {
@@ -29,7 +28,7 @@
   font-size: func.toRem(16);
   padding: func.toRem(7) func.toRem(20) func.toRem(5.5) func.toRem(32);
   border: none;
-  border-bottom: func.toRem(1) solid $black;
+  border-bottom: 1px solid $black;
   position: relative;
 }
 
@@ -63,4 +62,14 @@
   svg {
     stroke-width: 1.5px;
   }
+}
+
+.searchResults {
+  position: absolute;
+  background-color: white;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  top: 35px;
+  width: 100%;
+  z-index: 1;
 }
