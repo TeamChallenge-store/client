@@ -1,5 +1,5 @@
-import { FC, ReactNode, useState } from "react";
-import { TopHeader } from "../TopHeader";
+import { FC, ReactNode, useState } from 'react';
+import { TopHeader } from '../TopHeader';
 import { Navbar } from '../Navbar';
 import { Icons } from '../Icons';
 import { Logo } from '~entities/logo';
@@ -18,10 +18,10 @@ const HeaderDefault: FC<THeaderDefaultProps> = ({ searchSlot }) => {
   const handleBurger = () => {
     setOpenBurger(!openBurger);
   };
-  
+
   return (
     <>
-    <TopHeader />
+      <TopHeader />
       <div className="container">
         <div className={css.inner}>
           <div className={css.leftHeader}>
@@ -35,7 +35,7 @@ const HeaderDefault: FC<THeaderDefaultProps> = ({ searchSlot }) => {
       </div>
       <BurgerMenu isOpen={openBurger} setIsOpen={handleBurger} />
     </>
-  )
-}
+  );
+};
 
 export { HeaderDefault };

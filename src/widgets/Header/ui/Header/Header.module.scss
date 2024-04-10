@@ -8,15 +8,3 @@
   background-color: white;
   z-index: 3;
 }
-
-.inner {
-  @include mixin.flexible;
-
-  @media (max-width: $m-viewport) {
-    padding: 12px 0;
-  }
-
-  @media (max-width: $xs-viewport) {
-    padding: 12px 4px;
-  }
-}
