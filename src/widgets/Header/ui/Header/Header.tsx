@@ -1,40 +1,32 @@
-import { ReactNode, FC, useState } from 'react';
-import { Navbar } from '../Navbar';
-import { Icons } from '../Icons';
-
-import { Logo } from '~entities/logo';
-import { Icon } from '~shared/ui/Icon';
-
+import { ReactNode, FC } from 'react';
 import css from './Header.module.scss';
-import { TopHeader } from '../TopHeader';
-import { BurgerMenu } from '../BurgerMenu';
+import { HeaderDefault } from '../HeaderDefault';
+import { useLocation } from 'react-router-dom';
+import { HeaderMini } from '../HeaderMini';
 
 type THeaderProps = {
   searchSlot?: ReactNode;
 };
 
-const Header: FC<THeaderProps> = props => {
-  const [openBurger, setOpenBurger] = useState(false);
+const Header: FC<THeaderProps> = ({ searchSlot }) => {
 
-  const handleBurger = () => {
-    setOpenBurger(!openBurger);
-  };
+  const location = useLocation();
+
+  const isCheckoutPage = location.pathname === '/checkout';
+  const isThankYou = location.pathname === '/thank-you';
+  const isError = location.key === 'default';
 
   return (
     <header className={css.header}>
-      <TopHeader />
-      <div className="container">
+       <div className="container">
         <div className={css.inner}>
-          <div className={css.leftHeader}>
-            <Logo type="header" />
-            <Navbar />
-            <Icon type="burger" btnStyle={css.burger} onClick={handleBurger} />
-          </div>
-          <div className={css.rightHeader}>{props.searchSlot}</div>
-          <Icons />
-        </div>
+      {!isCheckoutPage && !isThankYou && !isError ? (
+        <HeaderDefault searchSlot={searchSlot} />
+      ) : (
+        <HeaderMini />
+      )}
       </div>
-      <BurgerMenu isOpen={openBurger} setIsOpen={handleBurger} />
+      </div>
     </header>
   );
 };
