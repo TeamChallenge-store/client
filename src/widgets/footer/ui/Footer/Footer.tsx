@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Logo } from '~entities/logo';
+import cn from 'classnames';
 
+import { Logo } from '~entities/logo';
 import { JoinUs } from '../JoinUs';
 import { Info } from '../Info';
 import { Catalog } from '../Catalog';
@@ -17,7 +18,7 @@ const Footer: FC = () => {
   const isError = location.key === 'default';
 
   return (
-    <footer className={`${css.footer} ${isError ? css.errorFooter : ''}`}>
+    <footer className={cn(css.footer, { [css.miniFooter]: isError })}>
       <div className="container">
         {!isError && !isCheckoutPage && !isThankYou && (
           <div className={css.content}>
@@ -28,11 +29,9 @@ const Footer: FC = () => {
             </div>
           </div>
         )}
-        <div className={`${css.contentLinks} ${isError ? css.errorLinks : ''}`}>
+        <div className={cn(css.contentLinks, { [css.miniLinks]: isError })}>
           {!isError && !isCheckoutPage && !isThankYou && <JoinUs />}
-          <span
-            className={`${css.copyright} ${isError ? css.copyrightError : ''}`}
-          >
+          <span className={cn(css.copyright, { [css.miniCopyright]: isError })}>
             Campfire@ 2024. All rights reserved.
           </span>
         </div>

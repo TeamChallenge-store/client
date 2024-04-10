@@ -14,7 +14,7 @@
   }
 }
 
-.errorFooter {
+.miniFooter {
   padding-bottom: func.toRem(51);
 
   @media (max-width: $s-viewport) {
@@ -66,7 +66,7 @@
   }
 }
 
-.errorLinks {
+.miniLinks {
   display: flex;
   justify-content: start;
   align-items: start;
@@ -94,7 +94,7 @@
   }
 }
 
-.copyrightError {
+.miniCopyright {
   text-align: start;
   font-size: func.toRem(24);
   color: $white;
