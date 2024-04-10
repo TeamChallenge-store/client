@@ -1,1 +1,1 @@
-export { ErrorPopUp } from './ErrorPopUp.tsx';
+export * from './ErrorPopUp.tsx';
