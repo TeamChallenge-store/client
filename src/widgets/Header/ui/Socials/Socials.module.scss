@@ -3,8 +3,9 @@
 .socials {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   gap: 16px;
+  flex-grow: 1;
 
   svg path {
     fill: $green;
