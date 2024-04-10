@@ -88,7 +88,6 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
           ))}
         </ul>
       )}
-
       {activeCategory && (
         <div className={css.subMenu}>
           <button
@@ -104,21 +103,25 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
           </button>
           <h2 className={css.subtitle}>{activeCategory.title}</h2>
           <ul>
-            {activeCategory.submenu &&
-              activeCategory.submenu.map(subCategory => (
-                <li key={subCategory.title} className={css.item}>
-                  <NavLink
-                    to={subCategory.url}
-                    className={css.navLink}
-                    onClick={() => setIsOpen()}
-                  >
-                    {subCategory.title}
-                  </NavLink>
-                </li>
-              ))}
+            {
+              // eslint-disable-next-line operator-linebreak
+              activeCategory.submenu &&
+                activeCategory.submenu.map(subCategory => (
+                  <li key={subCategory.title} className={css.item}>
+                    <NavLink
+                      to={subCategory.url}
+                      className={css.navLink}
+                      onClick={() => setIsOpen()}
+                    >
+                      {subCategory.title}
+                    </NavLink>
+                  </li>
+                ))
+            }
           </ul>
         </div>
       )}
+
       {showNavigation && (
         <ul className={css.info}>
           <li>

@@ -7,20 +7,27 @@
   transition: width 0.5s ease;
 
   @media (max-width: $s-viewport) {
-    width: 216px;
+    position: absolute;
+    width: 80%;
   }
 }
 
 .expanded {
   width: func.toRem(293);
 
-  @media (max-width: $xs-viewport) {
-    width: 216px;
+  @media (max-width: $s-viewport) {
+    width: 100%;
+    background-color: $white;
+    z-index: 3;
   }
 }
 
 .label {
   display: block;
+
+  @media (max-width: $s-viewport) {
+    padding: 0 16px;
+  }
 }
 
 .searchInput {
@@ -41,32 +48,40 @@
   outline-color: transparent;
 }
 
-.searchButton {
+.searchIcon {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: func.toRem(25);
-  height: func.toRem(25);
+  width: 24px;
+  height: 25px;
   z-index: 1;
+
+  @media (max-width: $s-viewport) {
+    left: auto;
+  }
 }
 
 .clearButton {
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0;
   width: 12px;
   height: 12px;
-  margin: 6px;
 
   svg {
     stroke-width: 1.5px;
+  }
+
+  @media (max-width: $s-viewport) {
+    margin-right: 20px;
   }
 }
 
 .searchResults {
   position: absolute;
-  background-color: white;
+  background-color: $white;
   padding: 16px;
   border-radius: 0 0 8px 8px;
   top: 35px;

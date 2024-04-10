@@ -34,11 +34,7 @@ const Search = () => {
       })}
     >
       <label className={css.label}>
-        <Icon
-          className={css.searchIcon}
-          btnStyle={css.searchButton}
-          type="search"
-        />
+        <Icon btnStyle={css.searchIcon} type="search" />
         <input
           className={css.searchInput}
           type="text"
@@ -50,9 +46,9 @@ const Search = () => {
         />
         {searchText && (
           <Icon
-            type="close"
+            btnStyle={css.clearButton}
             onClick={handleFormClose}
-            className={css.clearButton}
+            type="close"
           />
         )}
       </label>
