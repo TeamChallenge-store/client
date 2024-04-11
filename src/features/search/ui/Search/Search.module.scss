@@ -1,10 +1,11 @@
 @use '../../../../shared/styles/helpers/variables.scss' as *;
 @use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .searchForm {
   width: func.toRem(216);
   position: relative;
-  transition: width 0.5s ease;
+  @include mixin.button-transition(width, 0.5s);
 
   @media (max-width: $s-viewport) {
     position: absolute;

@@ -42,7 +42,7 @@
   position: relative;
   font-weight: 500;
   border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s;
+  @include mixin.button-transition(border-bottom, 0.3s);
 
   &:hover {
     border-bottom-color: $green;
