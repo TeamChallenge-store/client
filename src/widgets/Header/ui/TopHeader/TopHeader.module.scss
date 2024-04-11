@@ -35,9 +35,9 @@
 .link {
   display: flex;
   justify-content: end;
-  padding: 0 12px;
-  font-size: 12px;
-  line-height: 12px;
+  padding: 0 func.toRem(12);
+  font-size: func.toRem(12);
+  line-height: func.toRem(18);
 
   &:last-child {
     padding-right: 0;

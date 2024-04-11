@@ -58,8 +58,8 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 25px;
+  width: func.toRem(24);
+  height: func.toRem(25);
   z-index: 1;
 
   @media (max-width: $s-viewport) {
@@ -72,11 +72,12 @@
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  width: 12px;
-  height: 12px;
+  width: func.toRem(12);
+  height: func.toRem(12);
+  margin-right: func.toRem(7);
 
   svg {
-    stroke-width: 1.5px;
+    stroke-width: func.toRem(1.5);
   }
 
   @media (max-width: $s-viewport) {
@@ -87,9 +88,9 @@
 .searchResults {
   position: absolute;
   background-color: $white;
-  padding: 16px;
-  border-radius: 0 0 8px 8px;
-  top: 35px;
+  padding: func.toRem(16);
+  border-radius: 0 0 func.toRem(8) func.toRem(8);
+  top: func.toRem(35);
   width: 100%;
   z-index: 1;
   

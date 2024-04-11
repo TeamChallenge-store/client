@@ -16,7 +16,7 @@
 
 .list {
   @include mixin.flexible;
-  gap: 41.2px;
+  gap: func.toRem(41.2);
   padding: func.toRem(27) 0 func.toRem(23) 0;
 
   @media (min-width: $max-viewport) {
@@ -77,7 +77,7 @@
   line-height: func.toRem(21.6);
   z-index: 1;
   background-color: $white;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 func.toRem(8) func.toRem(8);
   left: 50%;
   transform: translateX(-50%);
   width: max-content;

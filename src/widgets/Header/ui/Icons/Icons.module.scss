@@ -12,8 +12,8 @@
 }
 
 .icon {
-  width: 24px;
-  margin: 0px 8px;
+  width: func.toRem(24);
+  margin: 0px func.toRem(8);
 
   @media (max-width: $s-viewport) {
     margin: 0;

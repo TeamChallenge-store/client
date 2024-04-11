@@ -3,9 +3,9 @@
 
 .link {
   display: inline-block;
-  font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 8px;
+  font-size: func.toRem(16);
+  line-height: func.toRem(22);
+  margin-bottom: func.toRem(8);
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -21,6 +21,6 @@
 }
 
 .errorMessage {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: func.toRem(16);
+  line-height: func.toRem(22);
 }
