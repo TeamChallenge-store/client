@@ -28,9 +28,7 @@
 }
 
 .menuTop {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include mixin.flexible;
   margin-bottom: func.toRem(16);
 }
 
