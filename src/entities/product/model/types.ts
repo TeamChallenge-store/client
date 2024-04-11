@@ -2,8 +2,18 @@ interface IProductCard {
   id: number;
   name: string;
   price: string;
-  image: string;
-  oldPrice?: string;
+  old_price?: string;
+  image: string | null;
+  quantity_in_stock: number;
+  brand: string;
+  color: string;
+  rate: number;
+  _links: {
+    self: {
+      href: string;
+      title: string;
+    };
+  };
 }
 
 type TResponse = {

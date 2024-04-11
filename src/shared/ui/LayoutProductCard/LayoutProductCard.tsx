@@ -18,7 +18,7 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     return null;
   }
 
-  const { id, image, price, name, oldPrice } = product;
+  const { id, image, price, name, old_price } = product;
 
   return (
     <li>
@@ -30,8 +30,8 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
         <div className={css.content}>
           <div className={css.cardActionInner}>
             <div className={css.priceContainer}>
-              {oldPrice && (
-                <span className={css.oldPrice}>{`${oldPrice} ₴`}</span>
+              {old_price && (
+                <span className={css.oldPrice}>{`${old_price} ₴`}</span>
               )}
               <span className={css.cardPrice}>{`${price} ₴`}</span>
             </div>
