@@ -4,7 +4,7 @@ interface IProductCard {
   subcategory: number;
   name: string;
   price: string;
-  oldPrice?: string;
+  old_price?: string;
   image: string | null;
   quantity_in_stock: number;
   brand: string;
