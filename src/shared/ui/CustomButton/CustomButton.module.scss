@@ -12,6 +12,7 @@
   text-transform: uppercase;
   font-size: func.toRem(24);
   cursor: pointer;
+  text-align: center;
   @include mixin.button-transition(background-color, 0.3s);
 
   svg {
@@ -20,6 +21,14 @@
     path {
       stroke: $black;
     }
+  }
+
+  @media (max-width: $s-viewport) {
+      padding: 14px;
+      svg {
+        width: 25px;
+        height: 25px;
+      }
   }
 }
 
@@ -31,7 +40,7 @@
 
 .green {
   background-color: $green;
-  color: white;
+  color: $white;
   @include mixin.button-transition(background-color, 0.3s);
 
   svg {
@@ -67,8 +76,8 @@
 }
 
 .white {
-  background-color: white;
-  color: black;
+  background-color: $white;
+  color: $black;
   @include mixin.button-transition(background-color, 0.3s);
 
   &:hover {
@@ -93,16 +102,6 @@
       path {
         stroke: $gray600;
       }
-    }
-  }
-}
-
-@media (max-width: $s-viewport) {
-  .navigation {
-    padding: func.toRem(12);
-    svg {
-      width: 25px;
-      height: 25px;
     }
   }
 }
