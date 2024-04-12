@@ -15,7 +15,7 @@ const Footer: FC = () => {
   const isCheckoutPage = location.pathname === '/checkout';
   const isThankYou = location.pathname === '/thank-you';
 
-  const isError = location.key === 'default';
+  const isError = location.pathname !== '/' && location.key === 'default';
 
   return (
     <footer className={cn(css.footer, { [css.miniFooter]: isError })}>
