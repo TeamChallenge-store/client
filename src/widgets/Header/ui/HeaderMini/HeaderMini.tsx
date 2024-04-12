@@ -5,7 +5,7 @@ import css from './HeaderMini.module.scss';
 
 const HeaderMini: FC = () => {
   return (
-    <div className='container'>
+    <div className="container">
       <div className={css.inner}>
         <Logo type="header" className={css.logo} />
         <div className={css.info}>

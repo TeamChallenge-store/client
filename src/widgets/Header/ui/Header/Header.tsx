@@ -1,8 +1,9 @@
 import { ReactNode, FC } from 'react';
 import { useLocation } from 'react-router-dom';
-import css from './Header.module.scss';
 import { HeaderDefault } from '../HeaderDefault';
 import { HeaderMini } from '../HeaderMini';
+
+import css from './Header.module.scss';
 
 type THeaderProps = {
   searchSlot?: ReactNode;

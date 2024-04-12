@@ -10,7 +10,7 @@
   @media (max-width: $s-viewport) {
     position: absolute;
     width: 75%;
-  } 
+  }
 
   @media (max-width: $xs-viewport) {
     width: 65%;
@@ -93,7 +93,7 @@
   top: func.toRem(35);
   width: 100%;
   z-index: 1;
-  
+
   @media (max-width: $s-viewport) {
     border-radius: 0;
   }

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { navigationData } from '../Navbar/navigationData';
+import { Link } from 'react-router-dom';
+import { navigationData } from '../Navbar/config/navigationData';
 import arrowRight from '../../NavigationIcons/arrowRight.svg';
 import arrowLeft from '../../NavigationIcons/arrowLeft.svg';
 import basketIcon from '../../NavigationIcons/basket.svg';
@@ -41,7 +41,7 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
       {showNavigation && (
         <ul className={`${css.navigation} ${className}`}>
           <div className={css.item}>
-            <NavLink
+            <Link
               to="/allPropducts"
               onClick={() => {
                 setIsOpen();
@@ -50,11 +50,11 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
             >
               <img src={basketIcon} alt="basket" className={css.icon} />
               See all
-            </NavLink>
+            </Link>
           </div>
           {navigationData.map(category => (
             <li key={category.title} className={css.item}>
-              <NavLink
+              <Link
                 to={category.url}
                 onClick={() => {
                   setIsOpen();
@@ -67,7 +67,7 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
                   className={css.icon}
                 />
                 {category.title}
-              </NavLink>
+              </Link>
               {category.submenu && (
                 <button
                   onClick={() => {
@@ -108,13 +108,13 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
               activeCategory.submenu &&
                 activeCategory.submenu.map(subCategory => (
                   <li key={subCategory.title} className={css.item}>
-                    <NavLink
+                    <Link
                       to={subCategory.url}
                       className={css.navLink}
                       onClick={() => setIsOpen()}
                     >
                       {subCategory.title}
-                    </NavLink>
+                    </Link>
                   </li>
                 ))
             }
@@ -125,24 +125,24 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
       {showNavigation && (
         <ul className={css.info}>
           <li>
-            <NavLink to="/delivery" onClick={() => setIsOpen()}>
+            <Link to="/delivery" onClick={() => setIsOpen()}>
               Delivery
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/payment" onClick={() => setIsOpen()}>
+            <Link to="/payment" onClick={() => setIsOpen()}>
               Payment
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/contacts" onClick={() => setIsOpen()}>
+            <Link to="/contacts" onClick={() => setIsOpen()}>
               Contacts
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink to="/aboutUs" onClick={() => setIsOpen()}>
+            <Link to="/aboutUs" onClick={() => setIsOpen()}>
               About us
-            </NavLink>
+            </Link>
           </li>
         </ul>
       )}

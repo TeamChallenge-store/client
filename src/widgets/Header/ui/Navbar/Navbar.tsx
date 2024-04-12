@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import css from './Navbar.module.scss';
-import { navigationData } from './navigationData';
+import { navigationData } from './config/navigationData';
 
 const active = ({ isActive }: { isActive: boolean }) =>
   classNames(css.link, {

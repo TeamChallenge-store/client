@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import css from './Socials.module.scss';
 
 const Socials = () => {
   return (
     <ul className={css.socials}>
       <li>
-        <NavLink to="https://www.youtube.com/">
+        <Link to="https://www.youtube.com/">
           <svg
             width="24"
             height="24"
@@ -19,10 +19,10 @@ const Socials = () => {
               fill="black"
             />
           </svg>
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink to="https://www.facebook.com/">
+        <Link to="https://www.facebook.com/">
           <svg
             width="25"
             height="24"
@@ -36,10 +36,10 @@ const Socials = () => {
               fill="black"
             />
           </svg>
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink to="https://twitter.com/">
+        <Link to="https://twitter.com/">
           <svg
             width="25"
             height="24"
@@ -53,10 +53,10 @@ const Socials = () => {
               fill="black"
             />
           </svg>
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink to="https://www.instagram.com/">
+        <Link to="https://www.instagram.com/">
           <svg
             width="25"
             height="24"
@@ -80,10 +80,10 @@ const Socials = () => {
               fill="black"
             />
           </svg>
-        </NavLink>
+        </Link>
       </li>
       <li>
-        <NavLink to="https://www.linkedin.com/">
+        <Link to="https://www.linkedin.com/">
           <svg
             width="25"
             height="24"
@@ -97,7 +97,7 @@ const Socials = () => {
               fill="black"
             />
           </svg>
-        </NavLink>
+        </Link>
       </li>
     </ul>
   );

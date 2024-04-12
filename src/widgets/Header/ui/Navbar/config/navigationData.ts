@@ -1,9 +1,9 @@
-import tentsIcon from '../../NavigationIcons/tents.svg';
-import clothesIcon from '../../NavigationIcons/clothes.svg';
-import accessoriesIcon from '../../NavigationIcons/accessories.svg';
-import equipmentIcon from '../../NavigationIcons/equipment.svg';
-import mountaineeringIcon from '../../NavigationIcons/mountaineering.svg';
-import saleIcon from '../../NavigationIcons/sale.svg';
+import tentsIcon from '../../../NavigationIcons/tents.svg';
+import clothesIcon from '../../../NavigationIcons/clothes.svg';
+import accessoriesIcon from '../../../NavigationIcons/accessories.svg';
+import equipmentIcon from '../../../NavigationIcons/equipment.svg';
+import mountaineeringIcon from '../../../NavigationIcons/mountaineering.svg';
+import saleIcon from '../../../NavigationIcons/sale.svg';
 
 export const navigationData = [
   {
