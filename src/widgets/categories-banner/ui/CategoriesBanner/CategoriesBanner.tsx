@@ -2,7 +2,7 @@ import firstProductImage from '../../images/1.jpg';
 import secondProductImage from '../../images/2.jpg';
 import thirdProductImage from '../../images/3.jpg';
 import css from './CategoriesBanner.module.scss';
-import CategoryCard from './CategoryCard/CategoryCard';
+import { CategoryCard } from './CategoryCard/CategoryCard';
 
 const CategoriesBanner = () => {
   return (

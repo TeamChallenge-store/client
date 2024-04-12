@@ -92,4 +92,4 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   );
 };
 
-export default CategoryCard;
+export { CategoryCard };
