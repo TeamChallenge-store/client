@@ -29,8 +29,8 @@ type TIconType =
   | 'twitter'
   | 'instagram'
   | 'linkedin'
-  | 'email'
-  | 'close';
+  | 'close'
+  | 'email';
 
 type TPaths = { [key in TIconType]: string };
 
