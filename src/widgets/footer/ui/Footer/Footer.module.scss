@@ -72,7 +72,7 @@
   align-items: start;
   padding-top: func.toRem(51);
 
-    @media (max-width: $s-viewport) {
+  @media (max-width: $s-viewport) {
     padding-top: func.toRem(31);
   }
 }
