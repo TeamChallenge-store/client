@@ -24,8 +24,10 @@ const SubscribeFormConfig = ({
         .email('Invalid email address')
         .required('Required'),
     }),
-    onSubmit: () => {
+    // eslint-disable-next-line no-empty-pattern
+    onSubmit: ({}, { resetForm }) => {
       setSubscribeIsSuccess(true);
+      resetForm();
     },
   });
 };

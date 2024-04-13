@@ -2,7 +2,7 @@ import { RouteObject, createHashRouter as Router } from 'react-router-dom';
 
 import { baseLayout } from '~layout/baseLayout';
 
-import { HomePage, ProductPage } from '~lazyPages';
+import { HomePage, ProductPage, ErrorPage } from '~lazyPages';
 
 const routes: RouteObject[] = [
   {
@@ -38,8 +38,16 @@ const routes: RouteObject[] = [
         element: <h1>***in develop***</h1>,
       },
       {
+        path: 'checkout',
+        element: <h1>***in develop***</h1>,
+      },
+      {
+        path: 'thank-you',
+        element: <h1>***in develop***</h1>,
+      },
+      {
         path: '*',
-        element: <h1>Ooops...</h1>,
+        element: <ErrorPage />,
       },
     ],
   },
