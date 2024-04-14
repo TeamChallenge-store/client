@@ -1,4 +1,4 @@
-import { useNewProductQuery } from './newBlockApi';
+import { useNewProductQuery } from '~entities/product';
 import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
 import { Loader } from '~shared/ui/Loader';
 
