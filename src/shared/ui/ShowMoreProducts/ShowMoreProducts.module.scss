@@ -35,8 +35,17 @@
   }
 }
 
+.hideBtn, .showMoreBtn {
+  transition: transform 0.4s ease, visibility 0.4s linear 4s; 
+  visibility: visible; 
+}
+
 .hideBtn {
-  transform: rotate(180deg);
+  transform: rotate(180deg); 
+}
+
+.showMoreBtn {
+  transform: rotate(0deg); 
 }
 
 .productList {
@@ -75,13 +84,18 @@
   }
   to {
     opacity: 0;
+    height: 0;
   }
 }
 
 .fadeIn {
   animation: fadeIn 0.4s ease-in-out;
+  display: block;
+
 }
 
 .fadeOut {
-  animation: fadeOut 0.4s ease-in-out;
+  animation: fadeOut 0.4s ease-in-out  forwards;
+  opacity: 0;
+  pointer-events: none;
 }
