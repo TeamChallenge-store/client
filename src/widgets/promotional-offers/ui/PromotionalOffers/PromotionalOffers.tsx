@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ProductList } from '~widgets/product-list';
 import { CustomButton } from '~shared/ui/CustomButton';
-import { useSaleProductsQuery } from './promotionalOffersApi';
+import { useSaleProductsQuery } from '~entities/product';
 
 import 'swiper/css';
 import css from './PromotionalOffers.module.scss';
