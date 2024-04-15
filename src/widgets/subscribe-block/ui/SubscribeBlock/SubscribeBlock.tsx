@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { SubscribeForm } from '~features/subscribe-form';
 import css from './SubscribeBlock.module.scss';
@@ -6,12 +6,19 @@ import css from './SubscribeBlock.module.scss';
 const SubscribeBlock = () => {
   const [subscribeIsSuccess, setSubscribeIsSuccess] = useState(false);
 
-  const handleSubscribeSuccess = () => {
-    setSubscribeIsSuccess(true);
-    setTimeout(() => {
-      setSubscribeIsSuccess(false);
-    }, 3000);
-  };
+  useEffect(() => {
+    let timerId: NodeJS.Timeout;
+
+    if (subscribeIsSuccess) {
+      timerId = setTimeout(() => {
+        setSubscribeIsSuccess(false);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [subscribeIsSuccess]);
 
   return (
     <>
@@ -26,7 +33,7 @@ const SubscribeBlock = () => {
         <h1 className={css.title}>Innovations for Your Adventure Life</h1>
         <div className={css.formContainer}>
           <div className={css.form}>
-            <SubscribeForm setSubscribeIsSuccess={handleSubscribeSuccess} />
+            <SubscribeForm setSubscribeIsSuccess={setSubscribeIsSuccess} />
           </div>
           <span className={css.formDescription}>
             Embark on your next adventure with confidence. Explore the world
