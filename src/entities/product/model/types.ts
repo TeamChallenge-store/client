@@ -10,12 +10,6 @@ interface IProductCard {
   brand: string;
   color: string;
   rate: number;
-  _links: {
-    self: {
-      href: string;
-      title: string;
-    };
-  };
 }
 
 type TResponse = {
