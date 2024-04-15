@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import { useLocation } from 'react-router-dom';
 import cn from 'classnames';
-
+import { checkLocation } from '~features/check-location/checkLocation';
 import { Logo } from '~entities/logo';
 import { JoinUs } from '../JoinUs';
 import { Info } from '../Info';
@@ -10,12 +9,7 @@ import { Catalog } from '../Catalog';
 import css from './Footer.module.scss';
 
 const Footer: FC = () => {
-  const location = useLocation();
-
-  const isCheckoutPage = location.pathname === '/checkout';
-  const isThankYou = location.pathname === '/thank-you';
-
-  const isError = location.pathname !== '/' && location.key === 'default';
+  const { isCheckoutPage, isThankYou, isError } = checkLocation();
 
   return (
     <footer className={cn(css.footer, { [css.miniFooter]: isError })}>
