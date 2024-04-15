@@ -1,5 +1,5 @@
-@use '../../shared/styles/helpers/variables.scss' as *;
-@use '../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
 
 .bannerInfo {
   color: $white;
@@ -17,6 +17,7 @@
     width: 340px;
     gap: 26px;
     transform: translate(-50%, -37%);
+    z-index: 1;
   }
 }
 

@@ -13,7 +13,6 @@
 .bannerImg {
   display: flex;
   flex-direction: row;
-
   & img {
     width: func.toRem(480);
 
@@ -26,6 +25,10 @@
     }
 
     @media (max-width: $s-viewport) {
+      height: auto;
+      width: func.toRem(500);
+    }
+    @media (max-width: $xs-viewport) {
       height: 560px;
       width: func.toRem(500);
     }
@@ -34,6 +37,7 @@
 
 .bannerSwiper {
   display: none;
+ position: relative;
 
   @media (max-width: $s-viewport) {
     display: block;
