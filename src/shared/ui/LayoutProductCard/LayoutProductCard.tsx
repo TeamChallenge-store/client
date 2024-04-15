@@ -18,7 +18,7 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     return null;
   }
 
-  const { id, image, price, name, oldPrice } = product;
+  const { id, image, price, name, old_price: oldPrice } = product;
 
   return (
     <li>
