@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Scrollbar, Navigation, Pagination } from 'swiper/modules';
-import { BannerInfo } from '~features/bannerInfo';
+import { BannerInfo } from './bannerInfo/BannerInfo';
 
 import tent from '~shared/tent.jpg';
 import mountainView from './bannerImg/mountainView.jpg';
@@ -37,19 +37,16 @@ const Banner = () => {
             <div className={css.bannerImg}>
               <img src={mountainView} alt="mountain" />
             </div>
-            <BannerInfo />
           </SwiperSlide>
           <SwiperSlide>
             <div className={css.bannerImg}>
               <img src={people} alt="people are on a hike" />
             </div>
-            <BannerInfo />
           </SwiperSlide>
           <SwiperSlide>
             <div className={css.bannerImg}>
               <img src={tent} alt="tent" />
             </div>
-            <BannerInfo />
           </SwiperSlide>
           <div className={css.swiperButton}>
             <div
@@ -65,6 +62,7 @@ const Banner = () => {
             <span id="Banner" className={css.swiperPaginationBullet} />
           </div>
         </Swiper>
+        <BannerInfo />
       </div>
 
       <div className={css.banner}>
