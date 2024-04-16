@@ -18,6 +18,16 @@ export const productApi = baseApi.injectEndpoints({
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
     }),
+    bestsellersProduct: build.query<IProductCard[], string>({
+      query: () => 'products/?sort=rate',
+      keepUnusedDataFor: 30,
+      transformResponse: (response: TResponse) => response.results,
+    }),
+    newProduct: build.query<IProductCard[], void>({
+      query: () => 'products/?sort=date',
+      keepUnusedDataFor: 30,
+      transformResponse: (response: TResponse) => response.results,
+     }),
     saleProducts: build.query<IProductCard[], void>({
       query: () => 'product-categories/sale',
       keepUnusedDataFor: 30,
@@ -30,5 +40,7 @@ export const productApi = baseApi.injectEndpoints({
 export const {
   useProductCategoryQuery,
   useSearchProductsQuery,
-  useSaleProductsQuery,
+  useBestsellersProductQuery,
+  useNewProductQuery,
+  useSaleProductsQuery
 } = productApi;

@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { useState, FC } from 'react';
-import css from './ShowMoreProducts.module.scss';
+import { FC } from 'react';
+import cn from 'classnames';
+import { useToggle } from '~shared/model/useToggle';
 import { ProductList } from '~widgets/product-list';
 import { IProductCard } from '~entities/product/model/types';
+import css from './ShowMoreProducts.module.scss';
 
 type TShowMoreProductProps = {
   title: string;
@@ -10,31 +12,30 @@ type TShowMoreProductProps = {
 };
 
 const ShowMoreProducts: FC<TShowMoreProductProps> = ({ title, products }) => {
-  const [showAdditionalProducts, setShowAdditionalProducts] = useState(false);
+  // eslint-disable-next-line operator-linebreak
+  const [additionalProductsVisible, toggleAdditionalProducts] =
+    useToggle(false);
 
-  const toggleAdditionalProducts = () => {
-    setShowAdditionalProducts(prevState => !prevState);
-  };
-
-  const displayedProducts = showAdditionalProducts
-    ? products.slice(0, 4)
-    : products.slice(8);
+  const initialProducts = products.slice(0, 4);
+  const additionalProducts = products.slice(4);
 
   return (
-    <div className={showAdditionalProducts ? css.showProduct : css.hideProduct}>
+    <div className={css.showProduct}>
       <h2 className={css.title}>{title}</h2>
       <ul className={css.productList}>
-        <ProductList products={products.slice(4)} />
+        <ProductList products={initialProducts} />
       </ul>
-      <div className={showAdditionalProducts ? css.fadeIn : css.fadeOut}>
+      <div className={cn(additionalProductsVisible ? css.fadeIn : css.fadeOut)}>
         <ul className={css.productList}>
-          <ProductList products={displayedProducts} />
+          <ProductList products={additionalProducts} />
         </ul>
       </div>
       <div className={css.btn}>
         <button type="button" onClick={toggleAdditionalProducts}>
           <svg
-            className={showAdditionalProducts ? css.hideBtn : css.showMoreBtn}
+            className={cn(
+              additionalProductsVisible ? css.hideBtn : css.showMoreBtn,
+            )}
             viewBox="0 0 63 22"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
