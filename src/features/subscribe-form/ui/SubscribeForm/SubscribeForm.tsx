@@ -1,19 +1,28 @@
 import { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import css from './SubscribeForm.module.scss';
 import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
 import { CustomButton } from '~shared/ui/CustomButton';
 import { SubscribeFormConfig } from './config/SubscribeFormConfig';
+import {
+  selectIsSubscribeSuccess,
+  setSubscribeSuccess,
+} from '~widgets/subscribe-block/model/slice';
+import useDelay from '~shared/lib/useDelay';
 
-interface ISubscribeFormProps {
-  setSubscribeIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
+const SubscribeForm: FC = () => {
   /* eslint-disable operator-linebreak */
   const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
-    SubscribeFormConfig({
-      setSubscribeIsSuccess,
-    });
+    SubscribeFormConfig();
+
+  const dispatch = useDispatch();
+  const isSubscribeSuccess = useSelector(selectIsSubscribeSuccess);
+
+  useDelay({
+    isShow: isSubscribeSuccess,
+    hide: () => dispatch(setSubscribeSuccess(false)),
+    delay: 3000,
+  });
 
   return (
     <form className={css.subscribeInputForm} onSubmit={handleSubmit}>
@@ -26,7 +35,6 @@ const SubscribeForm: FC<ISubscribeFormProps> = ({ setSubscribeIsSuccess }) => {
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          autoComplete="email"
         />
         <img className={css.emailIcon} src={emailIcon} alt="Email" />
 

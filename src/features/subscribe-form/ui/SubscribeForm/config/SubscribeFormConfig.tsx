@@ -1,13 +1,13 @@
 import { useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
+import { setSubscribeSuccess } from '~widgets/subscribe-block/model/slice';
 
 const englishEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-const SubscribeFormConfig = ({
-  setSubscribeIsSuccess,
-}: {
-  setSubscribeIsSuccess: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const SubscribeFormConfig = () => {
+  const dispatch = useDispatch();
+
   return useFormik({
     initialValues: {
       email: '',
@@ -26,7 +26,7 @@ const SubscribeFormConfig = ({
     }),
     // eslint-disable-next-line no-empty-pattern
     onSubmit: ({}, { resetForm }) => {
-      setSubscribeIsSuccess(true);
+      dispatch(setSubscribeSuccess(true));
       resetForm();
     },
   });
