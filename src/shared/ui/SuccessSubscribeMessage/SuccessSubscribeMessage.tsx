@@ -8,15 +8,13 @@ const SuccessSubscribeMessage = () => {
   const isSubscribeSuccess = useSelector(selectIsSubscribeSuccess);
 
   return (
-    isSubscribeSuccess && (
-      <span
-        className={cn(css.successSubmit, {
-          [css.showMessage]: isSubscribeSuccess,
-        })}
-      >
-        Subscription successfully completed
-      </span>
-    )
+    <span
+      className={cn(css.successSubmit, {
+        [css.showMessage]: isSubscribeSuccess,
+      })}
+    >
+      Subscription successfully completed
+    </span>
   );
 };
 
