@@ -21,7 +21,7 @@ const SubscribeForm: FC = () => {
   useDelay({
     isShow: isSubscribeSuccess,
     hide: () => dispatch(setSubscribeSuccess(false)),
-    delay: 3000,
+    delay: 5000,
   });
 
   return (

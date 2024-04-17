@@ -3,6 +3,7 @@
 @use '../../styles/helpers/functions.scss' as func;
 
 .successSubmit {
+  display: block;
   padding: func.toRem(15.5) func.toRem(11);
   background-color: $green;
   font-size: func.toRem(24);
@@ -11,12 +12,29 @@
   width: 100%;
   color: $white;
   text-transform: uppercase;
-  z-index: 3;
-  display: none;
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
 }
 
-.successSubmit.show {
-  display: block;
+.showMessage {
+  animation: fadeInOut 5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: $sm-viewport) {
