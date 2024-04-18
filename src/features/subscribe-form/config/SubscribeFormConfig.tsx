@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
-import { setSubscribeSuccess } from '~widgets/subscribe-block/model/slice';
+import { setSubscribeSuccess } from '../model/slice';
 
 const englishEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

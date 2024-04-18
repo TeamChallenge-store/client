@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import cn from 'classnames';
-import { selectIsSubscribeSuccess } from '~widgets/subscribe-block/model/slice';
+import { selectIsSubscribeSuccess } from '~features/subscribe-form/model/slice';
 
 import css from './SuccessSubscribeMessage.module.scss';
 

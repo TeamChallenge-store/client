@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './SubscribeForm.module.scss';
 import emailIcon from '~shared/ui/Icon/icons/email.svg?url';
 import { CustomButton } from '~shared/ui/CustomButton';
-import { SubscribeFormConfig } from './config/SubscribeFormConfig';
+// eslint-disable-next-line max-len
+import { SubscribeFormConfig } from '~features/subscribe-form/config/SubscribeFormConfig';
 import {
   selectIsSubscribeSuccess,
   setSubscribeSuccess,
-} from '~widgets/subscribe-block/model/slice';
+} from '~features/subscribe-form/model/slice';
 import useDelay from '~shared/lib/useDelay';
 
 const SubscribeForm: FC = () => {
