@@ -1,20 +1,18 @@
-import { useState } from 'react';
-import { Modal } from '~shared/ui//Modal';
+import { useSelector } from 'react-redux';
+import { Modal } from '~shared/ui/Modal';
+import { selectIsModalOpen } from '~shared/ui/Modal/model/slice';
 
 const ErrorPopUp = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+  const isModalOpen = useSelector(selectIsModalOpen);
 
   return (
-    <Modal
-      isOpen={isModalOpen}
-      onClose={closeModal}
-      title="Something went wrong."
-      description="There was a failure. Please try again."
-    />
+    isModalOpen && (
+      <Modal
+        isOpen={isModalOpen}
+        title="Something went wrong."
+        description="There was a failure. Please try again."
+      />
+    )
   );
 };
 
