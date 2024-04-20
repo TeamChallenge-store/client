@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-export const checkLocation = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+export const useCheckLocation = () => {
   const location = useLocation();
 
   const isCheckoutPage = location.pathname === '/checkout';
