@@ -82,7 +82,10 @@
   line-height: func.toRem(24);
   max-width: func.toRem(270);
   padding: func.toRem(10) func.toRem(16) 0 func.toRem(16);
-  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
   @media (max-width: $s-viewport) {
     font-size: 18px;

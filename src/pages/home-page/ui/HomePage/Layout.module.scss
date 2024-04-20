@@ -34,20 +34,18 @@
 }
 
 .stock {
-  height: 664px;
-  background-color: gray;
+  padding-top: func.toRem(56);
+  padding-bottom: func.toRem(56);
+
+  @media (max-width: $xs-viewport) {
+    padding-top: func.toRem(32);
+    padding-bottom: func.toRem(32);
+  }
 }
 
 .title,
 .bestsellers,
-.newProducts,
-.stock {
+.subCategory,
+.newProducts {
   margin-bottom: func.toRem(80);
-}
-
-@media (max-width: $xs-viewport) {
-  .stock {
-    padding-top: func.toRem(32);
-    padding-bottom: func.toRem(32);
-  }
 }
