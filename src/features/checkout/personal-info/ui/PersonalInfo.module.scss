@@ -1,0 +1,98 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.form {
+  width: 100%;
+}
+
+.column {
+  margin-bottom: func.toRem(18);
+  display: flex;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  max-width: func.toRem(424);
+  border: none;
+  border-bottom: 1px solid $black;
+  width: 100%;
+  outline-color: transparent;
+  padding-bottom: func.toRem(8);
+
+  &::placeholder {
+    font-size: func.toRem(16);
+    line-height: func.toRem(22.4);
+  }
+  &:first-child {
+    margin-right: func.toRem(24);
+  }
+}
+
+.saveInfo {
+  padding-top: func.toRem(14);
+}
+
+.saveInfoCheckbox {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.saveInfoCheckbox + label::before {
+  content: '';
+  display: inline-block;
+  margin-right: func.toRem(14);
+  width: func.toRem(20);
+  height: func.toRem(20);
+  border: 1px solid $green;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.saveInfoCheckbox:checked + label::before {
+  background-color: $green;
+  border-color: $green;
+}
+
+.saveInfoCheckbox:disabled + label::before {
+  background-color: $norway50;
+  border: 1px solid $norway200;
+}
+
+.saveInfoCheckbox:disabled + .saveInfoLabel {
+  color: $gray300;
+  pointer-events: none;
+}
+
+.saveInfoLabel {
+  font-size: func.toRem(18);
+  line-height: func.toRem(21.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: $m-viewport) {
+  .column {
+    margin-bottom: 0;
+  }
+
+  .input {
+    margin-bottom: 18px;
+
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .saveInfo {
+    padding-top: 8px;
+  }
+}

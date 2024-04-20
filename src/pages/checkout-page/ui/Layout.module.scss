@@ -1,0 +1,59 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.checkoutTitle {
+  font-weight: 700;
+  font-size: func.toRem(32);
+  line-height: func.toRem(38.4);
+  margin-bottom: func.toRem(56);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  gap: func.toRem(52);
+}
+
+.form {
+  max-width: func.toRem(872);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: func.toRem(56);
+}
+
+.title {
+  font-weight: 400;
+  font-size: func.toRem(24);
+  line-height: func.toRem(27.6);
+  margin-bottom: func.toRem(18);
+  text-transform: uppercase;
+}
+
+.total {
+  max-width: func.toRem(368);
+  width: 100%;
+}
+
+@media (max-width: $xs-viewport) {
+  .checkoutTitle {
+    font-size: 32px;
+    line-height: 38.4px;
+    margin-bottom: 33px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: $sm-viewport) {
+  .inner {
+    flex-direction: column;
+  }
+}

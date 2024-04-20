@@ -1,0 +1,15 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.errorMessage {
+  position: absolute;
+  font-size: func.toRem(12);
+  line-height: func.toRem(14.4);
+  color: $red;
+  padding-left: func.toRem(14);
+  left: func.toRem(1);
+  bottom: func.toRem(-18);
+  background-image: url('../Icon/icons/warning.svg');
+  background-position: left center;
+  background-repeat: no-repeat;
+}
