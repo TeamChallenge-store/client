@@ -15,11 +15,7 @@ const Bestsellers = () => {
 
   const trimmedData = data.slice(0, 8);
 
-  return (
-    <div>
-      <ShowMoreProducts title="bestsellers" products={trimmedData} />
-    </div>
-  );
+  return <ShowMoreProducts title="bestsellers" products={trimmedData} />;
 };
 
 export { Bestsellers };

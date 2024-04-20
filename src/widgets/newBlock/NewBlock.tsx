@@ -15,11 +15,7 @@ const NewBlock = () => {
 
   const trimmedData = data.slice(0, 8);
 
-  return (
-    <div>
-      <ShowMoreProducts title="new" products={trimmedData} />
-    </div>
-  );
+  return <ShowMoreProducts title="new" products={trimmedData} />;
 };
 
 export { NewBlock };
