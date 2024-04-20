@@ -1,6 +1,6 @@
 import { baseApi } from '~shared/api/baseApi';
 
-import { IProductCard, TResponse } from '../model/types';
+import { IProductCard, TResponse, TResponseProducts } from '../model/types';
 
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
@@ -27,6 +27,12 @@ export const productApi = baseApi.injectEndpoints({
       query: () => 'products/?sort=date',
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
+     }),
+    saleProducts: build.query<IProductCard[], void>({
+      query: () => 'product-categories/sale',
+      keepUnusedDataFor: 30,
+      transformResponse: (response: TResponseProducts) =>
+        response.results.products,
     }),
   }),
 });
@@ -36,4 +42,5 @@ export const {
   useSearchProductsQuery,
   useBestsellersProductQuery,
   useNewProductQuery,
+  useSaleProductsQuery
 } = productApi;
