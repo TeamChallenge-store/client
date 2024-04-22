@@ -6,20 +6,22 @@
 }
 
 .column {
-  margin-bottom: func.toRem(18);
   display: flex;
 }
 
 .field {
   position: relative;
-  width: 100%;
+  margin-bottom: func.toRem(38);
+
+  &:first-child {
+    margin-right: func.toRem(24);
+  }
 }
 
 .input {
-  max-width: func.toRem(424);
+  width: func.toRem(353);
   border: none;
   border-bottom: 1px solid $black;
-  width: 100%;
   outline-color: transparent;
   padding-bottom: func.toRem(8);
 
@@ -27,30 +29,33 @@
     font-size: func.toRem(16);
     line-height: func.toRem(22.4);
   }
-  &:first-child {
-    margin-right: func.toRem(24);
-  }
 }
 
 .saveInfo {
   padding-top: func.toRem(14);
 }
 
-@media (max-width: $m-viewport) {
+@media (max-width: $sm-viewport) {
   .column {
-    margin-bottom: 0;
+    flex-direction: column;
   }
 
-  .input {
-    margin-bottom: 18px;
-
+  .field {
     &:first-child {
       margin-right: 0;
     }
   }
+
+  .input {
+    width: 100%;
+  }
 }
 
 @media (max-width: $xs-viewport) {
+  .field {
+    margin-bottom: 36px;
+  }
+
   .saveInfo {
     padding-top: 8px;
   }

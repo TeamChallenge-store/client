@@ -19,6 +19,7 @@
   height: func.toRem(20);
   border: func.toRem(1) solid $green;
   border-radius: func.toRem(3);
+  @include mixin.button-transition(background-color, 0.3s);
 }
 
 .label {

@@ -3,13 +3,16 @@
 
 .errorMessage {
   position: absolute;
+  padding-top: func.toRem(6);
+}
+
+.warningIcon {
+  width: func.toRem(13);
+  height: func.toRem(13);
+  margin-right: func.toRem(3);
+}
+
+.warning {
   font-size: func.toRem(12);
-  line-height: func.toRem(14.4);
   color: $red;
-  padding-left: func.toRem(14);
-  left: func.toRem(1);
-  bottom: func.toRem(-18);
-  background-image: url('../Icon/icons/warning.svg');
-  background-position: left center;
-  background-repeat: no-repeat;
 }
