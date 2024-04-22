@@ -37,8 +37,12 @@ body {
 }
 
 main {
-  padding-top: toRem(100);
+  padding-top: toRem(105);
   flex: 1 1 auto;
+
+  @media (max-width: $l-viewport) {
+    padding-top: 105px;
+  }
 }
 
 #root {
