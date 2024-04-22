@@ -36,6 +36,7 @@ const SubscribeForm: FC = () => {
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
+          autoComplete="email"
         />
         <img className={css.emailIcon} src={emailIcon} alt="Email" />
 
