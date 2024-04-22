@@ -5,14 +5,18 @@ export default createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          padding: '21px 23px',
-          borderRadius: '15px',
-          backgroundColor: '#a0a0a0',
+          padding: '21px',
+          borderRadius: '8px',
+          backgroundColor: '#37643B',
           boxShadow: 'none',
           position: 'relative',
 
+          '&.Mui-disabled': {
+            backgroundColor: '#37643B',
+          },
+
           '&:hover': {
-            backgroundColor: '#a0a0a0',
+            backgroundColor: '#37643B',
             boxShadow: 'none',
           },
 
@@ -21,9 +25,9 @@ export default createTheme({
           },
 
           '@media (max-width: 500px)': {
-            padding: '12px 15px',
-            borderRadius: '8px',
-            minWidth: '40px',
+            padding: '13.5px 15px',
+            minWidth: '52px',
+            borderRadius: '4px',
           },
           '@media (min-width: 1446px)': {
             padding: `${21 / 16}rem ${23 / 16}rem`,

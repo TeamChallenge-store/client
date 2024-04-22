@@ -3,57 +3,8 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .header {
-  border-bottom: func.toRem(1) solid $border;
-
-  @media (max-width: $m-viewport) {
-    padding: func.toRem(26) 0;
-  }
-}
-
-.inner {
-  @include mixin.flexible;
-  gap: 33px;
-
-  @media (max-width: $m-viewport) {
-    gap: 40px;
-  }
-
-  @media (max-width: $s-viewport) {
-    gap: func.toRem(16);
-  }
-
-  @media (min-width: $max-viewport) {
-    gap: func.toRem(33);
-  }
-}
-
-.leftHeader {
-  @include mixin.flexible;
-  gap: func.toRem(45);
-}
-
-.rightHeader {
-  @include mixin.flexible;
-  gap: func.toRem(33);
-  flex-grow: 1;
-
-  @media (max-width: $m-viewport) {
-    gap: func.toRem(40);
-  }
-
-  @media (max-width: $s-viewport) {
-    gap: func.toRem(16);
-  }
-}
-
-.burger {
-  display: none;
-
-  @media (max-width: $m-viewport) {
-    display: block;
-  }
-
-  @media (max-width: $xs-viewport) {
-    width: func.toRem(24);
-  }
+  position: fixed;
+  width: 100%;
+  background-color: $white;
+  z-index: 3;
 }

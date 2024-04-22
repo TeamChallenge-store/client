@@ -1,0 +1,43 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.cardContainer {
+  display: flex;
+  max-height: func.toRem(700);
+  gap: 8px;
+}
+
+.leftContainer {
+  position: relative;
+  width: func.toRem(662);
+}
+
+.rightContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: func.toRem(648);
+  gap: func.toRem(8);
+
+  .cardItem {
+    max-height: func.toRem(346);
+  }
+}
+
+@media (max-width: $sm-viewport) {
+  .cardContainer {
+    flex-direction: column;
+    max-height: fit-content;
+    gap: func.toRem(16);
+  }
+
+  .leftContainer {
+    width: 100%;
+  }
+
+  .rightContainer {
+    width: 100%;
+    gap: 16px;
+  }
+}

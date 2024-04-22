@@ -1,32 +1,26 @@
 import { ReactNode, FC } from 'react';
-import { Navbar } from '../Navbar';
-import { Icons } from '../Icons';
-
-import { Logo } from '~entities/logo';
-import { Icon } from '~shared/ui/Icon';
-
+import { HeaderDefault } from '../HeaderDefault';
+import { HeaderMini } from '../HeaderMini';
+import { useCheckLocation } from '~features/check-location/checkLocation';
 import css from './Header.module.scss';
+// eslint-disable-next-line max-len
+import { SuccessSubscribeMessage } from '~shared/ui/SuccessSubscribeMessage/SuccessSubscribeMessage';
 
 type THeaderProps = {
   searchSlot?: ReactNode;
 };
 
-const Header: FC<THeaderProps> = props => {
+const Header: FC<THeaderProps> = ({ searchSlot }) => {
+  const { isCheckoutPage, isThankYou, isError } = useCheckLocation();
+
   return (
     <header className={css.header}>
-      <div className="container">
-        <div className={css.inner}>
-          <div className={css.leftHeader}>
-            <Logo />
-            <Navbar />
-            <Icon type="burger" btnStyle={css.burger} />
-          </div>
-          <div className={css.rightHeader}>
-            {props.searchSlot}
-            <Icons />
-          </div>
-        </div>
-      </div>
+      {!isCheckoutPage && !isThankYou && !isError ? (
+        <HeaderDefault searchSlot={searchSlot} />
+      ) : (
+        <HeaderMini />
+      )}
+      <SuccessSubscribeMessage />
     </header>
   );
 };
