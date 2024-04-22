@@ -26,34 +26,6 @@
   color: $gray600;
 }
 
-.successSubmit {
-  display: block;
-  position: fixed;
-  top: 102px;
-  padding: func.toRem(15.5) func.toRem(11);
-  background-color: $green;
-  font-size: func.toRem(24);
-  line-height: func.toRem(22.08);
-  text-align: center;
-  width: 100%;
-  color: $white;
-  text-transform: uppercase;
-  z-index: 1;
-  opacity: 0;
-  visibility: hidden;
-  transition:
-    opacity 0.5s ease-in-out,
-    visibility 0.5s ease-out;
-}
-
-.successSubmit.show {
-  opacity: 1;
-  visibility: visible;
-  transition:
-    opacity 0.5s ease-in-out,
-    visibility 0.5s ease-out;
-}
-
 @media (max-width: $m-viewport) {
   .subscribe {
     display: block;
@@ -76,13 +48,6 @@
 
   .formDescription {
     display: none;
-  }
-
-  .successSubmit {
-    font-size: 16px;
-    line-height: 18.4px;
-    padding: 16px 10px;
-    top: 100px;
   }
 }
 
