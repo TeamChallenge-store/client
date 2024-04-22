@@ -3,6 +3,8 @@ import { HeaderDefault } from '../HeaderDefault';
 import { HeaderMini } from '../HeaderMini';
 import { useCheckLocation } from '~features/check-location/checkLocation';
 import css from './Header.module.scss';
+// eslint-disable-next-line max-len
+import { SuccessSubscribeMessage } from '~shared/ui/SuccessSubscribeMessage/SuccessSubscribeMessage';
 
 type THeaderProps = {
   searchSlot?: ReactNode;
@@ -18,6 +20,7 @@ const Header: FC<THeaderProps> = ({ searchSlot }) => {
       ) : (
         <HeaderMini />
       )}
+      <SuccessSubscribeMessage />
     </header>
   );
 };

@@ -3,6 +3,7 @@ import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
 import { Loader } from '~shared/ui/Loader';
 import { ErrorPopUp } from '~widgets/error-pop-up';
 
+
 const NewBlock = () => {
   const { data, isLoading } = useNewProductQuery();
 
