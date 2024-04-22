@@ -1,8 +1,7 @@
 import { ReactNode, FC } from 'react';
-import { useLocation } from 'react-router-dom';
 import { HeaderDefault } from '../HeaderDefault';
 import { HeaderMini } from '../HeaderMini';
-
+import { useCheckLocation } from '~features/check-location/checkLocation';
 import css from './Header.module.scss';
 
 type THeaderProps = {
@@ -10,11 +9,7 @@ type THeaderProps = {
 };
 
 const Header: FC<THeaderProps> = ({ searchSlot }) => {
-  const location = useLocation();
-
-  const isCheckoutPage = location.pathname === '/checkout';
-  const isThankYou = location.pathname === '/thank-you';
-  const isError = location.key === 'default';
+  const { isCheckoutPage, isThankYou, isError } = useCheckLocation();
 
   return (
     <header className={css.header}>
