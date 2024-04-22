@@ -1,6 +1,6 @@
-@use '../../styles/helpers/variables.scss' as *;
-@use '../../styles/helpers/mixins.scss' as mixin;
-@use '../../styles/helpers/functions.scss' as func;
+@use '../../../styles/helpers/variables.scss' as *;
+@use '../../../styles/helpers/mixins.scss' as mixin;
+@use '../../../styles/helpers/functions.scss' as func;
 
 .modalContainer {
   display: flex;
@@ -12,6 +12,7 @@
   height: 100%;
   overflow: hidden;
   background-color: $white;
+  z-index: 3;
 }
 
 .modal {
@@ -24,8 +25,13 @@
   width: func.toRem(19);
   height: func.toRem(19);
   position: absolute;
-  right: 43px;
-  top: 24px;
+  right: func.toRem(25);
+  top: func.toRem(23);
+
+  @media (max-width: $s-viewport) {
+    right: func.toRem(15);
+    top: func.toRem(20);
+  }
 }
 
 .modalContent {
@@ -33,6 +39,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: $s-viewport) {
+    padding: 0px func.toRem(16);
+  }
 }
 
 .modalTitle {
@@ -47,20 +57,23 @@
   color: $gray400;
 }
 
-.errorPopUpBtn {
+.popUpBtn {
   padding: func.toRem(18) func.toRem(33);
   margin-top: func.toRem(32);
-}
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+  @media (max-width: $s-viewport) {
+    display: none;
   }
 }
+.popUpBtnAdaptive {
+  display: none;
+  max-width: func.toRem(343);
+  width: 100%;
+  margin-top: func.toRem(32);
+  padding: func.toRem(13) func.toRem(42);
+  text-align: center;
 
-.fadeOut {
-  animation: fadeOut 0.5s ease-in-out;
+  @media (max-width: $s-viewport) {
+    display: block;
+  }
 }
