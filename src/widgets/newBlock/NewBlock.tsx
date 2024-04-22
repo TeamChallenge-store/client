@@ -1,6 +1,8 @@
 import { useNewProductQuery } from './newBlockApi';
 import { ShowMoreProducts } from '~shared/ui/ShowMoreProducts';
 import { Loader } from '~shared/ui/Loader';
+import { ErrorPopUp } from '~widgets/error-pop-up';
+
 
 const NewBlock = () => {
   const { data, isLoading } = useNewProductQuery();
@@ -10,7 +12,7 @@ const NewBlock = () => {
   }
 
   if (!data) {
-    return 'Something went wrong';
+    return <ErrorPopUp />;
   }
 
   const trimmedData = data.slice(0, 8);
