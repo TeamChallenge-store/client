@@ -36,47 +36,6 @@
   padding-top: func.toRem(14);
 }
 
-.saveInfoCheckbox {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.saveInfoCheckbox + label::before {
-  content: '';
-  display: inline-block;
-  margin-right: func.toRem(14);
-  width: func.toRem(20);
-  height: func.toRem(20);
-  border: 1px solid $green;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.saveInfoCheckbox:checked + label::before {
-  background-color: $green;
-  border-color: $green;
-}
-
-.saveInfoCheckbox:disabled + label::before {
-  background-color: $norway50;
-  border: 1px solid $norway200;
-}
-
-.saveInfoCheckbox:disabled + .saveInfoLabel {
-  color: $gray300;
-  pointer-events: none;
-}
-
-.saveInfoLabel {
-  font-size: func.toRem(18);
-  line-height: func.toRem(21.6);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
 @media (max-width: $m-viewport) {
   .column {
     margin-bottom: 0;

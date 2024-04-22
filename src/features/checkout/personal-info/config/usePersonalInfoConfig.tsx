@@ -49,9 +49,15 @@ const usePersonalInfoConfig = () => {
       formik.touched.name &&
       formik.touched.lastName &&
       formik.touched.phone &&
-      formik.touched.email
+      formik.touched.email &&
+      !formik.errors.name &&
+      !formik.errors.lastName &&
+      !formik.errors.phone &&
+      !formik.errors.email
     ) {
       setCheckboxIsAvailable(true);
+    } else {
+      setCheckboxIsAvailable(false);
     }
   }, [
     formik.isValid,
@@ -59,6 +65,10 @@ const usePersonalInfoConfig = () => {
     formik.touched.lastName,
     formik.touched.phone,
     formik.touched.email,
+    formik.errors.name,
+    formik.errors.lastName,
+    formik.errors.phone,
+    formik.errors.email,
   ]);
 
   return { formik, checkboxIsAvailable };

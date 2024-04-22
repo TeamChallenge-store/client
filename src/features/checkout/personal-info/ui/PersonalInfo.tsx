@@ -3,6 +3,7 @@ import React from 'react';
 import css from './PersonalInfo.module.scss';
 import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
 import { usePersonalInfoConfig } from '../config/usePersonalInfoConfig';
+import { CustomCheckbox } from '~shared/ui/CustomCheckbox';
 
 const PersonalInfo: React.FC = () => {
   const { formik, checkboxIsAvailable } = usePersonalInfoConfig();
@@ -88,15 +89,12 @@ const PersonalInfo: React.FC = () => {
         </div>
       </div>
       <div className={css.saveInfo}>
-        <input
-          type="checkbox"
+        <CustomCheckbox
           id="saveInfo"
           className={css.saveInfoCheckbox}
           disabled={!checkboxIsAvailable}
+          labelText="Save contact information"
         />
-        <label htmlFor="saveInfo" className={css.saveInfoLabel}>
-          Save contact information
-        </label>
       </div>
     </form>
   );

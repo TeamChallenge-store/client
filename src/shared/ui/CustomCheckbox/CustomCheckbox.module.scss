@@ -1,0 +1,68 @@
+@use '../../styles/helpers/variables.scss' as *;
+@use '../../styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .checkboxContainer {
+    position: relative;
+    width: func.toRem(20);
+    height: func.toRem(20);
+  }
+
+  .checkbox {
+    appearance: none;
+    width: func.toRem(20);
+    height: func.toRem(20);
+    border: func.toRem(1) solid $green;
+    border-radius: func.toRem(3);
+  }
+
+  .label {
+    font-size: func.toRem(18);
+    line-height: func.toRem(21.6);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: func.toRem(14);
+  }
+
+  .checkbox:checked {
+    background-color: $green;
+  }
+
+  .checkbox:focus {
+    box-shadow: 0px func.toRem(2) func.toRem(2) 0px #00000042;
+  }
+
+  .checkbox:disabled {
+    cursor: default;
+    background-color: $norway50;
+    border: 1px solid $norway200;
+  }
+
+  .labelDisabled {
+    color: $gray300;
+    cursor: default;
+  }
+
+  .checkbox:disabled + .checkmark svg {
+    path {
+      fill: $norway200;
+    }
+  }
+
+  .checkmark svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    width: func.toRem(14);
+    height: func.toRem(14);
+  }
+}
