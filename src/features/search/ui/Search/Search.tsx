@@ -37,6 +37,7 @@ const Search = () => {
         <Icon btnStyle={css.searchIcon} type="search" />
         <input
           className={css.searchInput}
+          id="searchInput"
           type="text"
           placeholder="Search.."
           onBlur={handleBlur}

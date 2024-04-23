@@ -24,7 +24,7 @@
       width: func.toRem(256);
     }
 
-   @media (max-width: $s-viewport) {
+    @media (max-width: $s-viewport) {
       height: auto;
       width: func.toRem(500);
     }
@@ -37,7 +37,7 @@
 
 .bannerSwiper {
   display: none;
- position: relative;
+  position: relative;
 
   @media (max-width: $s-viewport) {
     display: block;
