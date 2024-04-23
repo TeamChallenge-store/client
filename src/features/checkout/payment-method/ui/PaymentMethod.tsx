@@ -53,10 +53,10 @@ const PaymentMethod = () => {
         </ul>
       </div>
       <CustomRatioButton
-        labelText="Pay by email"
+        labelText="Payment upon receipt of the order"
         name="payment-method"
-        value="payByEmail"
-        id="PayByImail"
+        value="uponReceipt"
+        id="uponReceipt"
       />
     </>
   );

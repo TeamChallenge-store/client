@@ -2,19 +2,19 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .methodContainer {
-  margin-bottom: 18px;
+  margin-bottom: func.toRem(18);
 
   .method {
-    margin-bottom: 18px;
+    margin-bottom: func.toRem(20);
   }
 }
 
-.payMethod {
-  margin-bottom: 16px;
+.methodItem {
+  margin-bottom: func.toRem(18);
 }
 
 .methodList {
-  padding-left: 32px;
+  padding-left: func.toRem(32);
 }
 
 .methodItem {
@@ -24,13 +24,13 @@
 }
 
 .methodIcon {
-  padding: 3px 22px;
-  border: 1px solid $gray400;
-  border-radius: 6px;
+  padding: func.toRem(3) func.toRem(22);
+  border: func.toRem(1) solid $gray400;
+  border-radius: func.toRem(10);
   display: flex;
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: func.toRem(22);
+  height: func.toRem(22);
 }
