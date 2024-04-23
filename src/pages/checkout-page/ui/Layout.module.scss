@@ -2,6 +2,10 @@
 @use '../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../shared/styles/helpers/mixins.scss' as mixin;
 
+.checkoutForm {
+  padding-bottom: func.toRem(144);
+}
+
 .checkoutTitle {
   font-weight: 700;
   font-size: func.toRem(32);

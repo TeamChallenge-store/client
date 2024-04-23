@@ -1,0 +1,36 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.methodContainer {
+  margin-bottom: 18px;
+
+  .method {
+    margin-bottom: 18px;
+  }
+}
+
+.payMethod {
+  margin-bottom: 16px;
+}
+
+.methodList {
+  padding-left: 32px;
+}
+
+.methodItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.methodIcon {
+  padding: 3px 22px;
+  border: 1px solid $gray400;
+  border-radius: 6px;
+  display: flex;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

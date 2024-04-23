@@ -4,6 +4,7 @@ import cn from 'classnames';
 import css from './Layout.module.scss';
 import { PersonalInfo } from '~features/checkout/personal-info';
 import { Order } from '~features/checkout/order';
+import { PaymentMethod } from '~features/checkout/payment-method';
 
 type TLayoutProps = {};
 
@@ -29,6 +30,7 @@ const Layout: FC<TLayoutProps> = () => {
 
           <section className={css.paymentMethod}>
             <h3 className={css.title}>3. Payment Method</h3>
+            <PaymentMethod />
           </section>
         </div>
         <aside className={css.total}>Total</aside>

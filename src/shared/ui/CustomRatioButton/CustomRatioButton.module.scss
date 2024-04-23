@@ -1,0 +1,52 @@
+@use '../../styles/helpers/variables.scss' as *;
+@use '../../styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.customRatio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ratio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #37643b;
+  background-color: $white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.label {
+  padding-left: 10px;
+  font-size: 18px;
+  line-height: 21.6px;
+  cursor: pointer;
+}
+
+.ratio:disabled {
+  cursor: default;
+  border-color: $gray300;
+}
+
+.ratio:disabled .label {
+  color: $gray300;
+  cursor: default;
+}
+
+.ratio:checked::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.ratio:disabled:checked:after {
+  background-color: $gray300;
+}
