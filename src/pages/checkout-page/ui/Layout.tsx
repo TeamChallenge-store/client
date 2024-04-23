@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import css from './Layout.module.scss';
 import { PersonalInfo } from '~features/checkout/personal-info';
+import { Order } from '~features/checkout/order';
 
 type TLayoutProps = {};
 
@@ -19,6 +20,7 @@ const Layout: FC<TLayoutProps> = () => {
 
           <section className={css.order}>
             <h3 className={css.title}>Order</h3>
+            <Order />
           </section>
 
           <section className={css.delivery}>
