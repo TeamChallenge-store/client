@@ -15,6 +15,15 @@
 
 .methodList {
   padding-left: func.toRem(32);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.showMethodList {
+  opacity: 1;
+  max-height: func.toRem(200);
 }
 
 .methodItem {

@@ -1,0 +1,52 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.totalSummary {
+  font-size: func.toRem(18);
+  line-height: func.toRem(21.6);
+}
+
+.goodsAmount,
+.deliveryCost {
+  @include mixin.flexible;
+  padding-bottom: func.toRem(8);
+}
+
+.deliveryCost {
+  padding-bottom: func.toRem(24);
+  margin-bottom: func.toRem(30);
+  border-bottom: func.toRem(1) solid $green;
+}
+
+.total {
+  @include mixin.flexible;
+  margin-bottom: func.toRem(18);
+}
+
+.finalPrice {
+  font-size: func.toRem(24);
+  line-height: func.toRem(27.6);
+}
+
+.confirmButton {
+  margin-bottom: func.toRem(24);
+}
+
+.info {
+  font-size: func.toRem(14);
+  line-height: func.toRem(18);
+  color: $gray900;
+}
+
+.infoTitle {
+  margin: 0;
+}
+
+.infoList {
+  padding-left: func.toRem(15);
+}
+
+.infoItem {
+  list-style: disc;
+}

@@ -43,6 +43,13 @@
   width: 100%;
 }
 
+.totalTitle {
+  text-transform: uppercase;
+  font-size: func.toRem(32);
+  line-height: func.toRem(38.4);
+  margin-bottom: func.toRem(18);
+}
+
 @media (max-width: $xs-viewport) {
   .checkoutTitle {
     font-size: 32px;
