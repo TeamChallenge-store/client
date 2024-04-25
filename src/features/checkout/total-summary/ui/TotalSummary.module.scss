@@ -15,7 +15,7 @@
 
 .deliveryCost {
   padding-bottom: func.toRem(24);
-  margin-bottom: func.toRem(30);
+  margin-bottom: func.toRem(25);
   border-bottom: func.toRem(1) solid $green;
 }
 
@@ -27,10 +27,12 @@
 .finalPrice {
   font-size: func.toRem(24);
   line-height: func.toRem(27.6);
+  margin-right: func.toRem(4);
 }
 
 .confirmButton {
-  margin-bottom: func.toRem(24);
+  max-width: func.toRem(368);
+  margin-bottom: func.toRem(28);
 }
 
 .info {
@@ -44,9 +46,38 @@
 }
 
 .infoList {
-  padding-left: func.toRem(15);
+  padding-left: func.toRem(20);
 }
 
 .infoItem {
   list-style: disc;
+}
+
+@media (max-width: $m-viewport) {
+  .confirmButton {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .goodsAmount {
+    margin-bottom: 2px;
+  }
+
+  .deliveryCost {
+    padding-bottom: 15px;
+    margin-bottom: 21px;
+  }
+
+  .finalPrice {
+    margin-right: 8px;
+  }
+
+  .total {
+    margin-bottom: 24px;
+  }
+
+  .confirmButton {
+    margin-bottom: 22px;
+  }
 }

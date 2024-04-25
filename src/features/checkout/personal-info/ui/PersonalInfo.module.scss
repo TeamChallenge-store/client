@@ -35,6 +35,13 @@
   padding-top: func.toRem(14);
 }
 
+@media (max-width: $m-viewport) {
+  .field,
+  .input {
+    width: 100%;
+  }
+}
+
 @media (max-width: $sm-viewport) {
   .column {
     flex-direction: column;
