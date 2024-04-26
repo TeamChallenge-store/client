@@ -43,17 +43,14 @@
 .cartPage {
   margin: auto;
   border-radius: 15px;
-  background-color: #ffff;
+  background-color: $white;
   height: func.toRem(559);
+  width: func.toRem(1258);
   @media (max-width: $m-viewport) {
     width: func.toRem(900);
   }
 
-  @media (max-width: $md-viewport) {
-    width: func.toRem(700);
-  }
-
-  @media (max-width: $s-viewport) {
+  @media (max-width: $sm-viewport) {
     height: 100%;
     padding: 0;
     border-radius: 0;
@@ -62,41 +59,52 @@
 
 .cartHeader {
   @include mixin.flexible;
-  border-bottom: func.toRem(1) solid #d1d1d1;
-  padding: func.toRem(19) func.toRem(35);
+  border-bottom: func.toRem(1) solid $green;
+  padding: func.toRem(23) func.toRem(32) func.toRem(16);
 
-  @media (max-width: $s-viewport) {
-    background-color: #efefef;
-    padding: func.toRem(21) func.toRem(46);
+  @media (max-width: $sm-viewport) {
+    border-bottom: 1px solid $gray200;
+    padding: func.toRem(20) func.toRem(46) func.toRem(13);
+  }
+
+  @media (max-width: $xs-viewport) {
+    border-bottom: 1px solid $gray200;
+    padding: func.toRem(20) func.toRem(16) func.toRem(13);
   }
 }
 
 .title {
-  font-weight: 500;
+  text-transform: uppercase;
   font-size: func.toRem(24);
 }
 
 .closeIcon {
-  width: func.toRem(19);
-  height: func.toRem(19);
+  width: func.toRem(40);
+  height: func.toRem(21);
+  margin-bottom: func.toRem(6);
+
+  @media (max-width: $s-viewport) {
+    width: 42px;
+    height: 22px;
+    margin-bottom: 4px;
+  }
 }
 
 .info {
   display: flex;
-  gap: func.toRem(60);
   padding: 0 func.toRem(30);
 
   @media (max-width: $m-viewport) {
-    gap: func.toRem(40);
+    gap: func.toRem(25);
   }
 
-  @media (max-width: $md-viewport) {
-    gap: func.toRem(55);
+  @media (max-width: $sm-viewport) {
+    flex-direction: column;
+    gap: 0;
   }
 
   @media (max-width: $s-viewport) {
-    flex-direction: column;
-    gap: 0;
+    padding: 0;
   }
 }
 
@@ -105,15 +113,23 @@
   max-height: func.toRem(460);
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: 20px;
-  scrollbar-color: #50555c #ffff;
+  scrollbar-color: $green $white;
   scrollbar-width: thin;
+  padding-right: func.toRem(40);
 
   @media (max-width: $m-viewport) {
-    padding-right: 0;
+    padding-right: func.toRem(20);
+  }
+
+  @media (max-width: $sm-viewport) {
+    max-height: func.toRem(700);
   }
 
   @media (max-width: $s-viewport) {
-    max-height: func.toRem(700);
+    max-height: func.toRem(559);
+    padding-top: func.toRem(24);
+    padding-left: func.toRem(16);
+    padding-right: 16px;
   }
+  
 }

@@ -3,79 +3,76 @@
 @use '../../styles/helpers/functions.scss' as func;
 
 .summary {
-  width: func.toRem(489);
+  width: func.toRem(526);
+  padding-left: func.toRem(40);
 
   @media (max-width: $m-viewport) {
     width: func.toRem(300);
+    padding-left: 0;
   }
 
-  @media (max-width: $md-viewport) {
-    width: func.toRem(250);
-  }
-
-  @media (max-width: $s-viewport) {
+  @media (max-width: $sm-viewport) {
     width: 100%;
-    border-top: func.toRem(1) solid #eaebed;
+    border-top: func.toRem(1) solid $norway400;
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #ffff;
+    background-color: $white;
   }
 }
 
 .summaryTitle {
-  font-weight: 600;
   font-size: func.toRem(24);
-  border-bottom: func.toRem(1) solid $border;
-  padding-bottom: func.toRem(15);
-  margin-top: func.toRem(16);
+  padding: func.toRem(27) 0 func.toRem(21);
+  text-transform: uppercase;
 
-  @media (max-width: $s-viewport) {
+  @media (max-width: $sm-viewport) {
     padding: func.toRem(24) func.toRem(16);
     margin: 0;
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: func.toRem(16) func.toRem(12);
   }
 }
 
 .summaryContent {
   @include mixin.flexible;
   flex-direction: row;
-  font-size: func.toRem(16);
-  padding-top: func.toRem(16);
+  padding-bottom: func.toRem(15);
+
+  @media (max-width: $sm-viewport) {
+    padding: func.toRem(16) func.toRem(16) func.toRem(24);
+  }
 
   @media (max-width: $s-viewport) {
-    padding: func.toRem(16) func.toRem(16) func.toRem(24) func.toRem(16);
+    padding: 0 func.toRem(16) func.toRem(12);
   }
 }
 
-.contentTitle {
-  font-weight: 700;
-  margin: 0;
+.contentTitle,
+.price {
+  font-size: func.toRem(18);
 }
 
-.price {
-  font-weight: 600;
-}
 .continueBtn {
   width: 100%;
-  background-color: #50555c;
-  border-radius: func.toRem(15);
-  padding: func.toRem(14) func.toRem(167);
-  color: #ffff;
-  text-align: center;
-  margin-top: func.toRem(29);
-  cursor: pointer;
-
   @media (max-width: $m-viewport) {
-    padding: func.toRem(14) func.toRem(80);
+    padding: func.toRem(14) 0;
   }
 
-  @media (max-width: $md-viewport) {
-    padding: func.toRem(14) func.toRem(45);
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(738);
+    margin: 0 auto func.toRem(44);
+    padding: func.toRem(14) func.toRem(42);
   }
 
   @media (max-width: $s-viewport) {
-    border-radius: 0;
-    height: func.toRem(61);
-    margin: 0;
+    width: func.toRem(400);
+    margin-bottom: func.toRem(30);
+  }
+
+  @media (max-width: $xs-viewport) {
+    width: func.toRem(343);
   }
 }

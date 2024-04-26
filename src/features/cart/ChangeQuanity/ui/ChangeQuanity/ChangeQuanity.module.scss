@@ -3,22 +3,51 @@
 @use '../../../../../shared/styles/helpers/functions.scss' as func;
 
 .counter {
-  margin-right: func.toRem(70);
-  width: func.toRem(46);
-  white-space: nowrap;
+  width: func.toRem(86);
+  height: func.toRem(42);
+  display: flex;
+  justify-content: center;
+  border: 1px solid $green;
+  border-radius: func.toRem(8);
+
   @media (max-width: $m-viewport) {
-    margin-right: func.toRem(40);
+    width: func.toRem(75);
+    margin-right: func.toRem(17);
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(86);
+    height: func.toRem(42);
+    margin-right: 0;
+  }
+
+  @media (max-width: $xs-viewport) {
+    width: func.toRem(84);
+    height: func.toRem(32);
   }
 }
 
 .counterActions {
-  color: rgba(102, 102, 102, 1);
+  color: $green;
   cursor: pointer;
-  font-size: func.toRem(15);
+  font-size: func.toRem(20);
+  padding-top: func.toRem(6);
+
+  @media (max-width: $m-viewport) {
+    padding-top: func.toRem(1);
+  }
 }
 
 .quantity {
-  margin: 0 10px;
-  font-weight: 500;
-  font-size: func.toRem(18);
+  padding: func.toRem(9) func.toRem(14);
+  font-size: func.toRem(20);
+
+  @media (max-width: $m-viewport) {
+    font-size: func.toRem(18);
+    padding: func.toRem(10) func.toRem(14);
+  }
+
+  @media (max-width: $xs-viewport) {
+    padding: func.toRem(6) func.toRem(12);
+  }
 }

@@ -5,113 +5,142 @@
 .cartItem {
   width: func.toRem(629);
   padding: func.toRem(20) 0;
-  border-bottom: func.toRem(1) solid $border;
+  border-bottom: func.toRem(1) solid $gray100;
 
   @media (max-width: $m-viewport) {
     width: func.toRem(490);
   }
 
-  @media (max-width: $md-viewport) {
-    width: func.toRem(350);
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(700);
   }
 
   @media (max-width: $s-viewport) {
-    padding: 16px 16px 0;
-    width: func.toRem(490);
+    width: func.toRem(460);
+    padding-bottom: func.toRem(12);
+    padding-top: 0;
     border: none;
   }
 
   @media (max-width: $xs-viewport) {
-    padding: 16px 16px 0;
-    width: func.toRem(375);
-    border: none;
+    width: func.toRem(343);
   }
 }
 
 .itemImg {
-  width: func.toRem(129);
-  height: func.toRem(133);
-  border-radius: func.toRem(10);
-  margin-right: func.toRem(16);
+  width: func.toRem(125);
+  height: func.toRem(125);
 
   @media (max-width: $m-viewport) {
     width: func.toRem(110);
-    height: func.toRem(120);
+    height: func.toRem(110);
+    margin-right: func.toRem(15);
   }
 
-  @media (max-width: $s-viewport) {
-    width: func.toRem(105);
-    height: func.toRem(105);
+  @media (max-width: $sm-viewport) {
+    margin-right: func.toRem(8);
   }
 }
 
 .content {
   display: flex;
   align-items: center;
-}
-
-.contentAdaptive {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-
-  @media (max-width: $md-viewport) {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-    align-items: start;
-  }
+  justify-content: space-between;
 
   @media (max-width: $s-viewport) {
-    width: func.toRem(370);
-  }
-
-  @media (max-width: $xs-viewport) {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
     align-items: start;
+    position: relative;
+    justify-content: flex-start;
   }
 }
 
 .itemTitle {
-  font-size: func.toRem(18);
-  margin-right: func.toRem(140);
+  font-size: func.toRem(16);
+  line-height: func.toRem(19);
+  width: func.toRem(296);
 
   @media (max-width: $m-viewport) {
-    margin-right: func.toRem(40);
+    width: func.toRem(200);
   }
 
-  @media (max-width: $xs-viewport) {
-    margin-right: 0;
-    font-size: func.toRem(16);
-  }
-}
-
-.itemActionInner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: func.toRem(29);
-  margin-top: func.toRem(53);
-
-  @media (max-width: $md-viewport) {
-    flex-direction: row;
-    gap: func.toRem(150);
-    align-items: center;
-    margin-top: 0;
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(380);
+    padding-top: func.toRem(8);
   }
 
   @media (max-width: $s-viewport) {
-    gap: func.toRem(245);
+    width: func.toRem(250);
   }
 
   @media (max-width: $xs-viewport) {
-    gap: func.toRem(150);
+    max-width: func.toRem(194);
+    max-height: func.toRem(38);
+    padding-top: 0;
+    margin-top: func.toRem(15);
+    overflow: hidden;
+
+    &::after {
+      content: '...';
+      position: absolute;
+      bottom: 0;
+      right: func.toRem(30);
+      background: white;
+    }
+  }
+}
+
+.itemPriceActions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: func.toRem(25);
+  padding-top: func.toRem(53);
+
+  @media (max-width: $m-viewport) {
+    padding-top: func.toRem(40);
+  }
+
+  @media (max-width: $sm-viewport) {
+    padding-top: func.toRem(46);
+  }
+
+  @media (max-width: $s-viewport) {
+    gap: func.toRem(58);
+    padding-top: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    flex-direction: column-reverse;
+  }
+  @media (max-width: $xs-viewport) {
+    gap: func.toRem(45);
+    bottom: 15px;
   }
 }
 
 .itemPrice {
-  font-weight: 600;
   font-size: func.toRem(18);
+}
+
+.itemTop {
+  display: flex;
+  flex-direction: row;
+  gap: func.toRem(20);
+
+  @media (max-width: $m-viewport) {
+    gap: func.toRem(12);
+  }
+
+  @media (max-width: $sm-viewport) {
+    gap: func.toRem(35);
+  }
+
+  @media (max-width: $s-viewport) {
+    flex-direction: column;
+    gap: func.toRem(20);
+  }
+
+  @media (max-width: $xs-viewport) {
+    gap: func.toRem(12);
+  }
 }

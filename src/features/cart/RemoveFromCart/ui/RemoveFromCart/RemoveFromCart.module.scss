@@ -1,7 +1,14 @@
 @use '../../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../../shared/styles/helpers/variables.scss' as *;
 
 .removeIcon {
-  width: func.toRem(24);
-  height: func.toRem(24);
+  width: func.toRem(22);
+  height: func.toRem(22);
   cursor: pointer;
+  text-align: end;
+
+  @media (max-width: $xs-viewport) {
+    width: func.toRem(19);
+    height: func.toRem(18);
+  }
 }

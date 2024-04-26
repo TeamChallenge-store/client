@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { CustomButton } from '../CustomButton';
 import css from './OrderSummary.module.scss';
 
 type TOrderSummaryProps = {
@@ -27,15 +27,14 @@ const OrderSummary: FC<TOrderSummaryProps> = props => {
         <p className={css.contentTitle}>Total</p>
         <span className={css.price}>{`${total} ₴`}</span>
       </div>
-      <Link to="/checkout">
-        <button
-          type="button"
-          className={css.continueBtn}
-          onClick={handleContinueClick}
-        >
-          Continue to order
-        </button>
-      </Link>
+      <CustomButton
+        to="/checkout"
+        bgColor="green"
+        className={css.continueBtn}
+        onClick={handleContinueClick}
+      >
+        Continue to order
+      </CustomButton>
     </article>
   );
 };

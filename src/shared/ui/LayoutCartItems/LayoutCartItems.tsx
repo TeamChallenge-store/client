@@ -8,7 +8,7 @@ import css from './LayoutCartItems.module.scss';
 interface Product {
   img: string;
   title: string;
-  price: number;
+  price: string;
   name: string;
 }
 const LayoutCartItems: FC<{ product?: Product }> = ({ product }) => {
@@ -22,13 +22,13 @@ const LayoutCartItems: FC<{ product?: Product }> = ({ product }) => {
     <article className={css.cartItem}>
       <div className={css.content}>
         <img className={css.itemImg} src={img} alt={name} />
-        <div className={css.contentAdaptive}>
-          <h3 className={css.itemTitle}>{title}</h3>
+        <div className={css.itemTop}>
+          <p className={css.itemTitle}>{title}</p>
           <ChangeQuanity />
-          <div className={css.itemActionInner}>
-            <span className={css.itemPrice}>{`${price} ₴`}</span>
-            <RemoveFromCart />
-          </div>
+        </div>
+        <div className={css.itemPriceActions}>
+          <span className={css.itemPrice}>{`${price} ₴`}</span>
+          <RemoveFromCart />
         </div>
       </div>
     </article>
@@ -38,8 +38,8 @@ const LayoutCartItems: FC<{ product?: Product }> = ({ product }) => {
 LayoutCartItems.defaultProps = {
   product: {
     img: card,
-    title: 'Natural Honey Bottle',
-    price: 12,
+    title: 'Kelty Tallboy Family Car Camping Tent, 4 or 6 Person ',
+    price: '8 699',
     name: 'card',
   },
 };

@@ -14,7 +14,7 @@ import instagram from '~icons/instagram.svg';
 import linkedin from '~icons/linkedin.svg';
 import email from '~icons/email.svg';
 import showMoreProduct from '~icons/arrow-up.svg';
-import close from '~icons/close.svg';
+// import close from '~icons/close.svg';
 import close from '~icons/close.svg';
 import remove from '~icons/remove.svg';
 
@@ -33,7 +33,6 @@ type TIconType =
   | 'linkedin'
   | 'email'
   | 'showMoreProduct'
-  | 'close'
   | 'close'
   | 'remove';
 
@@ -62,7 +61,6 @@ const paths: TPaths = {
   linkedin,
   email,
   showMoreProduct,
-  close,
   close,
   remove,
 };
