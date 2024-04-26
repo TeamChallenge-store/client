@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CustomButton } from '../CustomButton';
+import { CustomButton } from '../../../shared/ui/CustomButton';
 import css from './OrderSummary.module.scss';
 
 type TOrderSummaryProps = {

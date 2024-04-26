@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import { CartList } from '~widgets/CartList';
-import { OrderSummary } from '~shared/ui/OrderSummary';
+import { CartList } from '~widgets/cart-pop-up/CartList';
+import { OrderSummary } from '~widgets/cart-pop-up/OrderSummary';
 
 import { Icon } from '~shared/ui/Icon';
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { LayoutCartItems } from '~shared/ui/LayoutCartItems';
+import { LayoutCartItems } from '~widgets/cart-pop-up/LayoutCartItems';
 
 type TCartList = object;
 

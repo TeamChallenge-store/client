@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { useState } from 'react';
-import CartPopUp from '~entities/CartPopUp';
+import CartPopUp from '~widgets/cart-pop-up';
 import { Icon } from '~shared/ui/Icon';
 
 import css from './Icons.module.scss';
