@@ -6,6 +6,7 @@ import { PersonalInfo } from '~features/checkout/personal-info';
 import { Order } from '~features/checkout/order';
 import { PaymentMethod } from '~features/checkout/payment-method';
 import { TotalSummary } from '~features/checkout/total-summary';
+import { DeliveryMethod } from '~features/checkout/delivery-method';
 
 type TLayoutProps = {};
 
@@ -27,6 +28,7 @@ const Layout: FC<TLayoutProps> = () => {
 
           <section className={css.delivery}>
             <h3 className={css.title}>2. Delivery</h3>
+            <DeliveryMethod />
           </section>
 
           <section className={css.paymentMethod}>

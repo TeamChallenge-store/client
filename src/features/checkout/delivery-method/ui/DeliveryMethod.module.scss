@@ -1,0 +1,42 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.field {
+  margin-bottom: func.toRem(24);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $black;
+  outline-color: transparent;
+  padding-bottom: func.toRem(8);
+
+  &::placeholder {
+    font-size: func.toRem(16);
+    line-height: func.toRem(22.4);
+    color: $gray300;
+  }
+}
+
+.deliveryOption {
+  margin-bottom: func.toRem(30);
+}
+
+.deliveryContainer {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.showMethodList {
+  opacity: 1;
+  max-height: func.toRem(200);
+}
+
+.optionContainer {
+  @include mixin.flexible;
+  margin-bottom: func.toRem(18);
+}

@@ -21,14 +21,29 @@
 .input {
   width: func.toRem(353);
   border: none;
-  border-bottom: 1px solid $black;
   outline-color: transparent;
   padding-bottom: func.toRem(8);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid $black;
 
   &::placeholder {
     font-size: func.toRem(16);
     line-height: func.toRem(22.4);
+    color: $gray300;
   }
+}
+
+.input::after {
+  content: '';
+  position: absolute;
+  width: 100%; /* Match input width */
+  height: 1px; /* Initial border height */
+  bottom: 8px;
+  left: 0;
+  background-color: $black;
+  transition: width 0.3s ease-in-out;
+  z-index: 3;
 }
 
 .saveInfo {
