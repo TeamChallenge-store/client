@@ -1,6 +1,6 @@
-@use '../../styles/helpers/variables.scss' as *;
-@use '../../styles/helpers/mixins.scss' as mixin;
-@use '../../styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
 
 .summary {
   width: func.toRem(526);

@@ -31,7 +31,7 @@
   color: $green;
   cursor: pointer;
   font-size: func.toRem(20);
-  padding-top: func.toRem(6);
+  padding-top: func.toRem(2);
 
   @media (max-width: $m-viewport) {
     padding-top: func.toRem(1);
