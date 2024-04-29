@@ -1,16 +1,17 @@
-import { Empty } from '~shared/ui/Empty';
 import { Layout } from './ui/HomePage';
 import { PromotionalOffers } from '~widgets/promotional-offers';
 import { CategoriesBanner } from '~widgets/categories-banner';
 import { SubscribeBlock } from '~widgets/subscribe-block';
 import { Banner } from '~widgets/banner';
+import { Bestsellers } from '~widgets/bestsellers';
+import { NewBlock } from '~widgets/newBlock';
 
 const HomePage = () => (
   <Layout
     banner={<Banner />}
-    bestsellers={<Empty title="bestsellers" />}
+    bestsellers={<Bestsellers />}
     subCategory={<CategoriesBanner />}
-    newProducts={<Empty title="newProducts" />}
+    newProducts={<NewBlock />}
     stock={<PromotionalOffers />}
     subscribe={<SubscribeBlock />}
   />
