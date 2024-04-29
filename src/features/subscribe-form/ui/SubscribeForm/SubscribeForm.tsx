@@ -10,6 +10,7 @@ import {
   setSubscribeSuccess,
 } from '~features/subscribe-form/model/slice';
 import useDelay from '~shared/lib/useDelay';
+import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
 
 const SubscribeForm: FC = () => {
   /* eslint-disable operator-linebreak */
@@ -41,7 +42,7 @@ const SubscribeForm: FC = () => {
         <img className={css.emailIcon} src={emailIcon} alt="Email" />
 
         {touched.email && errors.email ? (
-          <span className={css.errorMessage}>{errors.email}</span>
+          <InputErrorMessage errorMessage={errors.email} />
         ) : null}
       </div>
 
