@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
+const englishEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 const usePersonalInfoConfig = () => {
   const [checkboxIsAvailable, setCheckboxIsAvailable] = useState(false);
   const formik = useFormik({
@@ -38,7 +40,12 @@ const usePersonalInfoConfig = () => {
         .required('Email is required')
         .max(75, 'Must be 75 symbols or less')
         .min(3, 'Must be at least 3 symbols')
-        .email('Invalid email address'),
+        .email('Invalid email address')
+        .test(
+          'isEnglishEmail',
+          'Invalid email address',
+          value => !!value && englishEmailRegex.test(value),
+        ),
     }),
     onSubmit: () => {},
   });
