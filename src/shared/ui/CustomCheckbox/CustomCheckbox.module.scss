@@ -4,13 +4,13 @@
 
 .customCheckbox {
   display: flex;
-  cursor: pointer;
 }
 
 .checkboxContainer {
   position: relative;
   width: func.toRem(20);
   height: func.toRem(20);
+  cursor: pointer;
 }
 
 .checkbox {
@@ -19,6 +19,7 @@
   height: func.toRem(20);
   border: func.toRem(1) solid $green;
   border-radius: func.toRem(3);
+  cursor: pointer;
   @include mixin.button-transition(background-color, 0.3s);
 }
 

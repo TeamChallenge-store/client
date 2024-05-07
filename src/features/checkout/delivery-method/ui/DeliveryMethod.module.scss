@@ -3,7 +3,7 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .field {
-  margin-bottom: func.toRem(24);
+  margin-bottom: func.toRem(50);
 }
 
 .input {
@@ -33,7 +33,7 @@
 
 .showMethodList {
   opacity: 1;
-  max-height: func.toRem(200);
+  max-height: fit-content;
 }
 
 .optionContainer {
