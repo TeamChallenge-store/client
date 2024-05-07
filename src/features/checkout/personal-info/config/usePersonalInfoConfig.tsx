@@ -45,6 +45,11 @@ const usePersonalInfoConfig = () => {
           'isEnglishEmail',
           'Invalid email address',
           value => !!value && englishEmailRegex.test(value),
+        )
+        .test(
+          'noSpacesAllowed',
+          'Email cannot contain any spaces',
+          value => !/^\s*|\s*$/.test(value.trim()),
         ),
     }),
     onSubmit: () => {},
