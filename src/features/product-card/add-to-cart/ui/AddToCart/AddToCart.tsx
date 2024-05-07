@@ -1,21 +1,29 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider } from '@mui/material';
 import cn from 'classnames';
+import { useAddProductToCartMutation, IBagProduct } from '~entities/cart';
 
 import theme from '../../config/muiTheme';
 
 import css from './AddToCart.module.scss';
 
-const AddToCart = () => {
+interface IAddToCartProps {
+  product: IBagProduct;
+}
+
+const AddToCart: FC<IAddToCartProps> = ({ product }) => {
+  const [addProductToCart] = useAddProductToCartMutation();
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
   const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsLiked(!isLiked);
     setLoading(true);
+
+    await addProductToCart({ pk: product.id, quantity: count });
 
     const id = setTimeout(() => {
       setLoading(false);

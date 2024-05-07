@@ -1,16 +1,34 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import { useAddProductToCartMutation } from '~entities/cart';
 
 import css from './ChangeQuanity.module.scss';
 
-const ChangeQuanity = () => {
-  const [count, setCount] = useState(1);
+interface ChangeQuanityProps {
+  initialQuantity: number;
+  productId: number;
+}
 
-  const increment = () => {
-    setCount(prevCount => prevCount + 1);
+const ChangeQuanity: FC<ChangeQuanityProps> = ({
+  initialQuantity,
+  productId,
+}) => {
+  const [count, setCount] = useState(initialQuantity);
+  const [updateCart] = useAddProductToCartMutation();
+
+  const increment = async () => {
+    const newCount = count + 1;
+
+    setCount(newCount);
+    await updateCart({ pk: productId, quantity: newCount });
   };
 
-  const decrement = () => {
-    setCount(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
+  const decrement = async () => {
+    if (count > 0) {
+      const newCount = count - 1;
+
+      setCount(newCount);
+      await updateCart({ pk: productId, quantity: newCount });
+    }
   };
 
   return (

@@ -116,7 +116,7 @@
   scrollbar-color: $green $white;
   scrollbar-width: thin;
   padding-right: func.toRem(40);
-
+  width: 50%;
   @media (max-width: $m-viewport) {
     padding-right: func.toRem(20);
   }

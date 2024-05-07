@@ -13,7 +13,7 @@ const ProductList: FC<TProductListProps> = ({ products }) => {
     <LayoutProductCard
       key={product.id}
       product={product}
-      addToCartSlot={<AddToCart />}
+      addToCartSlot={<AddToCart product={product} />}
       wishSlot={<AddToWish />}
     />
   ));
