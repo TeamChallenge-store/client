@@ -1,13 +1,13 @@
 import { baseApi } from '~shared/api/baseApi';
 
-import { IBagProduct, TResponse } from '../model/types';
+import { IBagProduct, TResponseBag } from '../model/types';
 
 export const cartApi = baseApi.injectEndpoints({
   endpoints: build => ({
     getCartProduct: build.query<IBagProduct[], void>({
       query: () => '/cart/',
       keepUnusedDataFor: 30,
-      transformResponse: (response: TResponse) => response.results,
+      transformResponse: (response: TResponseBag) => response.cart_items,
     }),
     addProductToCart: build.mutation<void, { pk: number; quantity: number }>({
       query: ({ pk, quantity }) => ({
@@ -16,7 +16,18 @@ export const cartApi = baseApi.injectEndpoints({
         params: { pk, quantity },
       }),
     }),
+    deleteCartProduct: build.mutation<void, { pk: number }>({
+      query: ({ pk }) => ({
+        url: '/cart/',
+        method: 'DELETE',
+        params: { pk },
+      }),
+    }),
   }),
 });
 
-export const { useGetCartProductQuery, useAddProductToCartMutation } = cartApi;
+export const {
+  useGetCartProductQuery,
+  useAddProductToCartMutation,
+  useDeleteCartProductMutation,
+} = cartApi;

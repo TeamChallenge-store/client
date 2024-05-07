@@ -10,4 +10,8 @@ type TResponse = {
   results: IBagProduct[];
 };
 
-export { type IBagProduct, type TResponse };
+type TResponseBag = {
+  cart_items: IBagProduct[];
+};
+
+export { type IBagProduct, type TResponse, type TResponseBag };

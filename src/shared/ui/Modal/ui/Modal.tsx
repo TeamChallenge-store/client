@@ -23,6 +23,7 @@ const Modal = ({ isOpen, title, description }: ModalProps) => {
   const handleBtnClick = () => {
     if (location.pathname === '/') {
       handleCloseModal();
+      window.location.reload();
     }
   };
 

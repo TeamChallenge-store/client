@@ -5,6 +5,7 @@ import { LayoutCartItems } from '~widgets/cart-pop-up/LayoutCartItems';
 import { ErrorPopUp } from '~widgets/error-pop-up';
 import { Loader } from '~shared/ui/Loader';
 import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
+import css from './CartList.module.scss';
 
 type TCartList = object;
 
@@ -27,11 +28,11 @@ const CartList: FC<TCartList> = () => {
   }
 
   return (
-    <>
+    <div className={css.cartList}>
       {cartProducts.map(product => (
         <LayoutCartItems key={product.id} product={product} />
       ))}
-    </>
+    </div>
   );
 };
 

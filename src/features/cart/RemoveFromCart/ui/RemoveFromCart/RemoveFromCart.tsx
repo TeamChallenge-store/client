@@ -1,8 +1,22 @@
+import { FC } from 'react';
+import { useDeleteCartProductMutation } from '~entities/cart';
+
 import css from './RemoveFromCart.module.scss';
 
-const RemoveFromCart = () => {
+interface IDeleteProductProps {
+  productId: number;
+}
+
+const RemoveFromCart: FC<IDeleteProductProps> = ({ productId }) => {
+  const [deleteProduct] = useDeleteCartProductMutation();
+
+  const deleteCartProduct = async () => {
+    await deleteProduct({ pk: productId });
+  };
+
   return (
-    <>
+    // eslint-disable-next-line jsx-a11y/control-has-associated-label
+    <button type="button" onClick={deleteCartProduct}>
       <svg
         width="22"
         height="22"
@@ -17,7 +31,7 @@ const RemoveFromCart = () => {
           fill="#37643B"
         />
       </svg>
-    </>
+    </button>
   );
 };
 
