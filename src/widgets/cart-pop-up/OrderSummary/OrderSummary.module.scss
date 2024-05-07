@@ -5,7 +5,7 @@
 .summary {
   width: func.toRem(526);
   padding-left: func.toRem(40);
-  
+
   @media (max-width: $m-viewport) {
     width: func.toRem(300);
     padding-left: 0;

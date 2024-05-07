@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useGetCartProductQuery } from '~entities/cart';
 import { LayoutCartItems } from '~widgets/cart-pop-up/LayoutCartItems';
 import { ErrorPopUp } from '~widgets/error-pop-up';
+import { CartModal } from '../CartModal';
 import { Loader } from '~shared/ui/Loader';
 import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
 import css from './CartList.module.scss';
@@ -25,6 +26,10 @@ const CartList: FC<TCartList> = () => {
 
   if (!cartProducts) {
     return <ErrorPopUp />;
+  }
+
+  if (cartProducts.length === 0) {
+    return <CartModal />;
   }
 
   return (

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { setIsModalOpen } from '../model/slice';
 import { CustomButton } from '~shared/ui/CustomButton';
 import { Icon } from '~shared/ui/Icon';
@@ -15,12 +15,15 @@ type ModalProps = {
 const Modal = ({ isOpen, title, description }: ModalProps) => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
 
   const handleCloseModal = () => {
     dispatch(setIsModalOpen(false));
   };
 
   const handleBtnClick = () => {
+    navigate('/');
+
     if (location.pathname === '/') {
       handleCloseModal();
       window.location.reload();
