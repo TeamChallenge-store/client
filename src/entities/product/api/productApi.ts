@@ -13,18 +13,18 @@ export const productApi = baseApi.injectEndpoints({
     }),
     searchProducts: build.query<IProductCard[], string>({
       query: searchProduct => ({
-        url: `products/?search=${searchProduct}`,
+        url: `products?search=${searchProduct}`,
       }),
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
     }),
     bestsellersProduct: build.query<IProductCard[], string>({
-      query: () => 'products/?sort=rate',
+      query: () => 'products?sort=rate',
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
     }),
     newProduct: build.query<IProductCard[], void>({
-      query: () => 'products/?sort=date',
+      query: () => 'products?sort=date',
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
     }),
