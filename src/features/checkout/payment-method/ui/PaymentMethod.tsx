@@ -1,30 +1,34 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 import { CustomRatioButton } from '~shared/ui/CustomRatioButton';
 import googleIcon from '../images/googlePay.svg';
 import appleIcon from '../images/applePay.svg';
 
 import css from './PaymentMethod.module.scss';
+import { setPaymentMethod } from '~entities/order/model/slice';
 
 const PaymentMethod = () => {
-  const [selectedMethod, setSelectedMethod] = useState('payByNow');
+  const [selectedMethod, setSelectedMethod] = useState('payByCard');
+  const dispatch = useDispatch();
 
   const handleMethodChange = (value: string) => {
     setSelectedMethod(value);
+    dispatch(setPaymentMethod(value));
   };
 
-  const showMethodList = selectedMethod === 'payByNow';
+  const showMethodList = selectedMethod === 'payByCard';
 
   return (
     <div className={css.methodContainer}>
       <CustomRatioButton
         labelText="Pay now by card"
         name="payment-method"
-        value="payByNow"
-        id="payByNow"
+        value="payByCard"
+        id="payByCard"
         className={css.method}
-        checked={selectedMethod === 'payByNow'}
-        onChange={() => handleMethodChange('payByNow')}
+        checked={selectedMethod === 'payByCard'}
+        onChange={() => handleMethodChange('payByCard')}
       />
       <ul
         className={cn(css.methodList, {

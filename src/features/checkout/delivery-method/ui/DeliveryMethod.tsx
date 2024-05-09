@@ -1,19 +1,56 @@
 /* eslint-disable @typescript-eslint/indent */
 /* eslint-disable operator-linebreak */
 import { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import { CustomRatioButton } from '~shared/ui/CustomRatioButton';
 import css from './DeliveryMethod.module.scss';
 import { useDeliveryInfoConfig } from '../config/useDeliveryMethodConfig';
 import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
+import {
+  setAddress,
+  setCity,
+  setDeliveryMethod,
+  setNPDepartment,
+  setUPDepartment,
+} from '~entities/order/model/slice';
 
 const DeliveryMethod: FC = () => {
   const [selectedMethod, setSelectedMethod] = useState('deliveryToAdress');
   const { formik } = useDeliveryInfoConfig();
+  const dispatch = useDispatch();
 
   const handleMethodChange = (value: string) => {
     setSelectedMethod(value);
+    dispatch(setDeliveryMethod(value));
+  };
+
+  const handleDeliveryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    formik.handleChange(event);
+    const { name, value } = event.target;
+    let address;
+
+    switch (selectedMethod) {
+      case 'deliveryToAdress':
+        address = {
+          ...formik.values,
+          [name]: value,
+        };
+        dispatch(setAddress(address));
+        dispatch(setDeliveryMethod('deliveryToAdress'));
+        break;
+      case 'PickupFromNovaPoshta':
+        dispatch(setNPDepartment(value));
+        dispatch(setDeliveryMethod('novaPoshta'));
+        break;
+      case 'PickupFromUkrPoshta':
+        dispatch(setUPDepartment(value));
+        dispatch(setDeliveryMethod('ukrPoshta'));
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -25,7 +62,10 @@ const DeliveryMethod: FC = () => {
           placeholder="Name of city*"
           className={css.input}
           required
-          onChange={formik.handleChange}
+          onChange={event => {
+            formik.handleChange(event);
+            dispatch(setCity(event.target.value));
+          }}
           onBlur={formik.handleBlur}
           value={formik.values.city}
         />
@@ -59,7 +99,9 @@ const DeliveryMethod: FC = () => {
                 placeholder="Street Name*"
                 className={css.input}
                 required
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.streetName}
               />
@@ -74,7 +116,9 @@ const DeliveryMethod: FC = () => {
                 placeholder="House Number*"
                 className={css.input}
                 required
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.houseNumber}
               />
@@ -88,7 +132,9 @@ const DeliveryMethod: FC = () => {
                 name="sectionNumber"
                 placeholder="Section Number"
                 className={css.input}
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.sectionNumber}
               />
@@ -103,7 +149,9 @@ const DeliveryMethod: FC = () => {
                 placeholder="Apartment Number*"
                 className={css.input}
                 required
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.apartmentNumber}
               />
@@ -141,7 +189,9 @@ const DeliveryMethod: FC = () => {
                 placeholder="Choose a post office*"
                 className={css.input}
                 required
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.novaPostOffice}
               />
@@ -179,7 +229,9 @@ const DeliveryMethod: FC = () => {
                 placeholder="Choose a post office*"
                 className={css.input}
                 required
-                onChange={formik.handleChange}
+                onChange={event => {
+                  handleDeliveryChange(event);
+                }}
                 onBlur={formik.handleBlur}
                 value={formik.values.ukrPostOffice}
               />
