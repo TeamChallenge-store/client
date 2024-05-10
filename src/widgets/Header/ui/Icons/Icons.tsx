@@ -1,5 +1,10 @@
+import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
-import { useState } from 'react';
+// import { useState } from 'react';
+import {
+  setIsCartOpen,
+  selectIsCartOpen,
+} from '~widgets/cart-pop-up/model/slice';
 import CartPopUp from '~widgets/cart-pop-up';
 import { Icon } from '~shared/ui/Icon';
 
@@ -7,14 +12,15 @@ import css from './Icons.module.scss';
 
 const Icons = () => {
   // const [cartCount] = useState(1);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isCartOpen = useSelector(selectIsCartOpen);
 
   const handleOpenCart = () => {
-    setIsCartOpen(true);
+    dispatch(setIsCartOpen(true));
   };
 
   const handleCloseCart = () => {
-    setIsCartOpen(false);
+    dispatch(setIsCartOpen(false));
   };
 
   return (

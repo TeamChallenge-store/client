@@ -2,7 +2,9 @@ import { FC, useEffect, useState } from 'react';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider } from '@mui/material';
 import cn from 'classnames';
+import 'react-toastify/dist/ReactToastify.css';
 import { useAddProductToCartMutation, IBagProduct } from '~entities/cart';
+import { ShortCartMessage } from '~widgets/cart-pop-up/ShortCartMessage';
 
 import theme from '../../config/muiTheme';
 
@@ -18,12 +20,15 @@ const AddToCart: FC<IAddToCartProps> = ({ product }) => {
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
   const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
+  const { showMessage } = ShortCartMessage();
 
   const handleClick = async () => {
     setIsLiked(!isLiked);
     setLoading(true);
 
     await addProductToCart({ pk: product.id, quantity: count });
+
+    showMessage();
 
     const id = setTimeout(() => {
       setLoading(false);
