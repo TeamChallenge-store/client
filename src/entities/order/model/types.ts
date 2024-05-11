@@ -1,5 +1,3 @@
-import { IProductCard } from '~entities/product';
-
 interface IOrder {
   first_name: string;
   last_name: string;
@@ -11,7 +9,6 @@ interface IOrder {
   up_department?: string;
   delivery_method: string;
   payment_method: string;
-  products: IProductCard[];
 }
 
 export { type IOrder };

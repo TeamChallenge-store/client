@@ -9,15 +9,19 @@ import css from './PaymentMethod.module.scss';
 import { setPaymentMethod } from '~entities/order/model/slice';
 
 const PaymentMethod = () => {
-  const [selectedMethod, setSelectedMethod] = useState('payByCard');
+  const [selectedMethod, setSelectedMethod] = useState('card online');
   const dispatch = useDispatch();
 
   const handleMethodChange = (value: string) => {
-    setSelectedMethod(value);
+    setSelectedMethod(value === 'card online' ? 'card online' : 'upon receipt');
     dispatch(setPaymentMethod(value));
   };
 
-  const showMethodList = selectedMethod === 'payByCard';
+  const handlePaymentMethod = (value: string) => {
+    dispatch(setPaymentMethod(value));
+  };
+
+  const showMethodList = selectedMethod === 'card online';
 
   return (
     <div className={css.methodContainer}>
@@ -27,8 +31,8 @@ const PaymentMethod = () => {
         value="payByCard"
         id="payByCard"
         className={css.method}
-        checked={selectedMethod === 'payByCard'}
-        onChange={() => handleMethodChange('payByCard')}
+        checked={selectedMethod === 'card online'}
+        onChange={() => handleMethodChange('card online')}
       />
       <ul
         className={cn(css.methodList, {
@@ -42,6 +46,7 @@ const PaymentMethod = () => {
             value="payCardOnline"
             id="payCardOnline"
             className={css.payMethod}
+            onChange={() => handlePaymentMethod('payCardOnline')}
           />
         </li>
         <li className={css.methodItem}>
@@ -51,6 +56,7 @@ const PaymentMethod = () => {
             value="googlePay"
             id="googlePay"
             className={css.payMethod}
+            onChange={() => handlePaymentMethod('Google Pay')}
           />
           <button type="button" className={css.methodIcon}>
             <img className={css.icon} src={googleIcon} alt="google pay" />
@@ -63,6 +69,7 @@ const PaymentMethod = () => {
             value="applePay"
             id="applePay"
             className={css.payMethod}
+            onChange={() => handlePaymentMethod('Apple Pay')}
           />
           <button type="button" className={css.methodIcon}>
             <img className={css.icon} src={appleIcon} alt="google pay" />
@@ -74,8 +81,8 @@ const PaymentMethod = () => {
         name="payment-method"
         value="uponReceipt"
         id="uponReceipt"
-        checked={selectedMethod === 'uponReceipt'}
-        onChange={() => handleMethodChange('uponReceipt')}
+        checked={selectedMethod === 'upon receipt'}
+        onChange={() => handleMethodChange('upon receipt')}
       />
     </div>
   );

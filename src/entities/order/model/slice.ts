@@ -16,9 +16,8 @@ const initialState: OrderState = {
     address: '',
     np_department: '',
     up_department: '',
-    delivery_method: 'deliveryToAdress',
-    payment_method: 'payByCard',
-    products: [],
+    delivery_method: 'Nova Poshta',
+    payment_method: 'Google Pay',
   },
 };
 
@@ -58,6 +57,8 @@ export const orderSlice = createSlice({
     },
   },
 });
+
+export const selectOrderData = (state: RootState) => state.order.orderData;
 
 export const {
   setFirstName,

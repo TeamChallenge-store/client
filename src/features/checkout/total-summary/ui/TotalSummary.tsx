@@ -1,9 +1,19 @@
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import css from './TotalSummary.module.scss';
 import { CustomButton } from '~shared/ui/CustomButton';
+import { useCreateOrderMutation } from '~entities/order/api/orderApi';
+import { selectOrderData } from '~entities/order/model/slice';
 
 const TotalSummary: FC = () => {
+  const [createOrderMutation] = useCreateOrderMutation();
+  const orderData = useSelector(selectOrderData);
+
+  const createOrder = () => {
+    createOrderMutation(orderData);
+  };
+
   return (
     <div className={css.totalSummary}>
       <div className={css.goodsAmount}>
@@ -18,7 +28,11 @@ const TotalSummary: FC = () => {
         <div>To be paid</div>
         <span className={css.finalPrice}>1222₴</span>
       </div>
-      <CustomButton buttonType="submit" className={css.confirmButton} disabled>
+      <CustomButton
+        buttonType="submit"
+        className={css.confirmButton}
+        onClick={createOrder}
+      >
         Confirm the order
       </CustomButton>
       <div className={css.info}>

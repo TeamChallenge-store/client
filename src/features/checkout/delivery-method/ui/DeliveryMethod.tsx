@@ -29,24 +29,30 @@ const DeliveryMethod: FC = () => {
   const handleDeliveryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     formik.handleChange(event);
     const { name, value } = event.target;
-    let address;
+    const updatedAddress = { ...formik.values };
+    let address = '';
 
     switch (selectedMethod) {
       case 'deliveryToAdress':
-        address = {
-          ...formik.values,
-          [name]: value,
-        };
+        if (
+          name === 'streetName' ||
+          name === 'houseNumber' ||
+          name === 'sectionNumber' ||
+          name === 'apartmentNumber'
+        ) {
+          address = `streetName: ${updatedAddress.streetName}, houseNumber: ${updatedAddress.houseNumber}, sectionNumber: ${updatedAddress.sectionNumber}, apartmentNumber: ${updatedAddress.apartmentNumber}`;
+        }
+
         dispatch(setAddress(address));
-        dispatch(setDeliveryMethod('deliveryToAdress'));
+        dispatch(setDeliveryMethod('Courier'));
         break;
-      case 'PickupFromNovaPoshta':
+      case 'Nova Poshta':
         dispatch(setNPDepartment(value));
-        dispatch(setDeliveryMethod('novaPoshta'));
+        dispatch(setDeliveryMethod('Nova Poshta'));
         break;
       case 'PickupFromUkrPoshta':
         dispatch(setUPDepartment(value));
-        dispatch(setDeliveryMethod('ukrPoshta'));
+        dispatch(setDeliveryMethod('Ukr Poshta'));
         break;
       default:
         break;
@@ -169,17 +175,17 @@ const DeliveryMethod: FC = () => {
             <CustomRatioButton
               labelText="Pickup from Nova Poshta"
               name="delivery"
-              value="PickupFromNovaPoshta"
+              value="Nova Poshta"
               id="PickupFromNovaPoshta"
               className={css.ratioButton}
-              checked={selectedMethod === 'PickupFromNovaPoshta'}
-              onChange={() => handleMethodChange('PickupFromNovaPoshta')}
+              checked={selectedMethod === 'Nova Poshta'}
+              onChange={() => handleMethodChange('Nova Poshta')}
             />
             <span className={css.optionPrice}>70₴</span>
           </div>
           <div
             className={cn(css.deliveryContainer, {
-              [css.showMethodList]: selectedMethod === 'PickupFromNovaPoshta',
+              [css.showMethodList]: selectedMethod === 'Nova Poshta',
             })}
           >
             <div className={css.field}>
