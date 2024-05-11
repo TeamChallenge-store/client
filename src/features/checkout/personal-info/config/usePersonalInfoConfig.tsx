@@ -2,11 +2,20 @@
 import { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import {
+  setEmail,
+  setFirstName,
+  setLastName,
+  setPersonalInfoIsValid,
+  setPhoneNumber,
+} from '~entities/order/model/slice';
 
 const englishEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 const usePersonalInfoConfig = () => {
-  const [checkboxIsAvailable, setCheckboxIsAvailable] = useState(false);
+  const [checkboxIsAvailable, setChekboxIsAvailable] = useState(false);
+  const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -62,9 +71,15 @@ const usePersonalInfoConfig = () => {
       !formik.errors.phone &&
       !formik.errors.email
     ) {
-      setCheckboxIsAvailable(true);
+      setChekboxIsAvailable(true);
+      dispatch(setPersonalInfoIsValid(true));
+      dispatch(setFirstName(formik.values.name));
+      dispatch(setLastName(formik.values.lastName));
+      dispatch(setPhoneNumber(formik.values.phone));
+      dispatch(setEmail(formik.values.email));
     } else {
-      setCheckboxIsAvailable(false);
+      setChekboxIsAvailable(false);
+      dispatch(setPersonalInfoIsValid(false));
     }
   }, [
     formik.isValid,
@@ -76,6 +91,11 @@ const usePersonalInfoConfig = () => {
     formik.errors.lastName,
     formik.errors.phone,
     formik.errors.email,
+    formik.values.name,
+    formik.values.lastName,
+    formik.values.phone,
+    formik.values.email,
+    dispatch,
   ]);
 
   return { formik, checkboxIsAvailable };

@@ -4,11 +4,15 @@ import { useSelector } from 'react-redux';
 import css from './TotalSummary.module.scss';
 import { CustomButton } from '~shared/ui/CustomButton';
 import { useCreateOrderMutation } from '~entities/order/api/orderApi';
-import { selectOrderData } from '~entities/order/model/slice';
+import {
+  selectOrderData,
+  selectPersonalInfoIsValid,
+} from '~entities/order/model/slice';
 
 const TotalSummary: FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
   const orderData = useSelector(selectOrderData);
+  const personalInfoIsValid = useSelector(selectPersonalInfoIsValid);
 
   const createOrder = () => {
     createOrderMutation(orderData);
@@ -32,6 +36,7 @@ const TotalSummary: FC = () => {
         buttonType="submit"
         className={css.confirmButton}
         onClick={createOrder}
+        disabled={!personalInfoIsValid}
       >
         Confirm the order
       </CustomButton>

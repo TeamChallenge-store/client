@@ -1,20 +1,17 @@
 /* eslint-disable operator-linebreak */
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import css from './PersonalInfo.module.scss';
 import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
 import { usePersonalInfoConfig } from '../config/usePersonalInfoConfig';
 import { CustomCheckbox } from '~shared/ui/CustomCheckbox';
-import {
-  setEmail,
-  setFirstName,
-  setLastName,
-  setPhoneNumber,
-} from '~entities/order/model/slice';
+import { selectOrderData } from '~entities/order/model/slice';
 
 const PersonalInfo: React.FC = () => {
   const { formik, checkboxIsAvailable } = usePersonalInfoConfig();
-  const dispatch = useDispatch();
+  const orderData = useSelector(selectOrderData);
+
+  console.log(orderData);
 
   return (
     <form
@@ -31,10 +28,7 @@ const PersonalInfo: React.FC = () => {
             placeholder="First Name*"
             className={css.input}
             required
-            onChange={event => {
-              formik.handleChange(event);
-              dispatch(setFirstName(event.target.value));
-            }}
+            onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
             autoComplete="off"
@@ -52,10 +46,7 @@ const PersonalInfo: React.FC = () => {
             placeholder="Last Name*"
             className={css.input}
             required
-            onChange={event => {
-              formik.handleChange(event);
-              dispatch(setLastName(event.target.value));
-            }}
+            onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.lastName}
             autoComplete="off"
@@ -74,10 +65,7 @@ const PersonalInfo: React.FC = () => {
             placeholder="Phone number*"
             className={css.input}
             required
-            onChange={event => {
-              formik.handleChange(event);
-              dispatch(setPhoneNumber(event.target.value));
-            }}
+            onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.phone}
             autoComplete="off"
@@ -95,10 +83,7 @@ const PersonalInfo: React.FC = () => {
             placeholder="Email*"
             className={css.input}
             required
-            onChange={event => {
-              formik.handleChange(event);
-              dispatch(setEmail(event.target.value));
-            }}
+            onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
             autoComplete="off"
