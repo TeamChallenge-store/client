@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/client',
+  base: './',
   resolve: {
     alias: {
       '~app': path.resolve('src/app'),
@@ -18,6 +18,18 @@ export default defineConfig({
       '~layout': path.resolve('src/app/layout'),
       '~lazyPages': path.resolve('src/app/lazyPages.tsx'),
       '~icons': path.resolve('src/shared/ui/Icon/icons/'),
+    },
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      },
     },
   },
 });
