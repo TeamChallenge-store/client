@@ -1,17 +1,11 @@
-/* eslint-disable operator-linebreak */
 import React from 'react';
-import { useSelector } from 'react-redux';
 import css from './PersonalInfo.module.scss';
 import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
 import { usePersonalInfoConfig } from '../config/usePersonalInfoConfig';
 import { CustomCheckbox } from '~shared/ui/CustomCheckbox';
-import { selectOrderData } from '~entities/order/model/slice';
 
 const PersonalInfo: React.FC = () => {
   const { formik, checkboxIsAvailable } = usePersonalInfoConfig();
-  const orderData = useSelector(selectOrderData);
-
-  console.log(orderData);
 
   return (
     <form
