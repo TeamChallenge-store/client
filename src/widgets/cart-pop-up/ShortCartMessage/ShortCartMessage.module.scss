@@ -1,4 +1,24 @@
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+
+@import '../../../shared/styles/fonts.scss';
+
+.icon{
+  width: func.toRem(24);
+  height: func.toRem(24);
+
+}
+
+.cartShortMessage {
+  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  gap: func.toRem(8);
+  align-items: center;
+  background-color: #E1ECDF;
+  color: $black;
+  font-size: func.toRem(16);
+}
+
 .messageLink {
   text-decoration: underline;
-  margin-left: 4px;
 }
