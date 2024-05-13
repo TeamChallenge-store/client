@@ -9,20 +9,20 @@ const products: IProductCard[] = [
   {
     id: 0,
     // eslint-disable-next-line max-len
-    name: 'Kelty Tallboy Family Car Camping Tent, 4 or 6 Person Freestanding Shelter',
+    name: 'TwinZipper (System) double bike bag',
     price: '1 250',
     image:
       // eslint-disable-next-line max-len
-      'https://s3-alpha-sig.figma.com/img/cccf/b39d/cd4907b7fe6f30aa4dfc7e10b4ea9f12?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Cch45HuB8f~xw0TKMuDzcHgF0Xkit3iPi18OUHWrr2ArTZU~qy1ZnZ-kIGWRW-V~zwYcQo9TFQCLs1le7fNK0MwHVzz-BvoJsm~i78JAeeMqkwa5Ef3ON4JBE2Cg-EwYdG4ayDqNtqYveEd4SK6eqipVNAURHfAfI~vLyibii4PhyonXg7YiyLEESDXIkNPgHC7flRbWAVabk6Afulmm2fuCrB9qCaJy0IiNtC-eJ9FK6Cew1HUC1RM-~AM18vXuc5f0eubGwUwn2JywCETKaGU8eT3cjGVWa-zYI3Wi9kj8FhLyAppKL6OH1BwIaPwnJVhGVLHQeEIldoGI36yJ7w__',
+      'https://s3-alpha-sig.figma.com/img/cccf/b39d/cd4907b7fe6f30aa4dfc7e10b4ea9f12?Expires=1716768000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=qtMPnxgF5W8OGYVRmB-~ML6KwFu1Q4KhJVGz-TI3mueO4tifqze7sKBpMOeWGQdURFBVC2IReQ8eA~jcY~6C1qLyX75awKXO1FCnGu8xrOD9c0D3~ECeRFIe~6bMLfLlfnY1QFpwKQqsZlbDk1oQJEZ87xgwqfBBK21JMnAkLAMeAnY8BNzJ1Xm2Z0lwMR-lrEtvCeVEIYLvO5~3OOMsniqPBzZadyPMFt8wE~2DxRqdWn-o~ETKjoGAikE~XNXNavuMl-IHfycJvFpYKgC4ovTPNBnvpulpDArGpXzbdlzjmCBpTiG8Ix2qWw3NLWBIHydMeGJ8WP0xyRDGega1Zg__',
   },
   {
     id: 1,
     // eslint-disable-next-line max-len
-    name: 'Kelty Tallboy Family Car Camping Tent, 4 or 6 Person Freestanding Shelter',
+    name: 'Badawi Long 6 Persons - Family Tent',
     price: '8 699',
     image:
       // eslint-disable-next-line max-len
-      'https://s3-alpha-sig.figma.com/img/c80b/eb1a/633e1085cba49b5c2e17bc3492fc27ba?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OA6RAnQm9xcR4umJVLS9~giI4u5m8hm66SVsgoAua0y8HpJ81yrkbpgVW32RwnYZocdvFqzrOygzhYYdJTb-kxltLajieSLd46n23p9pai9NSe-bvZU0c94DaiWZxCF0Bk4WnIHgnqNI8Vc6-5R7gHbyyeVBRGqM3MTGmQiohex-1m6EQNDFIluwBEtXhW9rZtFiSB8ag8tRAkWEJQLVe26SbFuyfzdq3jmqnaKv7A-fYIH8YazHj~sujxw-aodHFqI4e6suFyAOjIb0MZ2Kc3A0O-8orRfseztf4O0L4Ucg3bwkwhJLDXTuC9-QyL9~EwTF5qXquimOdHpoQt2FxQ__',
+      'https://s3-alpha-sig.figma.com/img/c80b/eb1a/633e1085cba49b5c2e17bc3492fc27ba?Expires=1716768000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LPmwYXNtJP1m87Y0KQuP~lOWuRST7AnzbtQ3O8nHf-BUhReBe7mkw7qZ0y2USg~~xO~KoJJjTVrTLCJw2aS3aNjIZAc-P1HoneZBStxf4OilQEKvDxy2eAIuZayKlvN05RUbpeMk3b7sLje15LEBuhdCkhr41Zk0if~eUNG5tPFwfeex35zI5cwROqSUNzZMqQnKQsmWj109v7UGEP-NXW8cQQ-rmfe8hlYtIK2Du4EZRGhSpBlTG27shRAyTmwnjGtZXUd1oSLIALhr2ha~oGng07yZbjxMlzBZjaH-rE~FTC2UoLHOs9Udlvwborn4Ri7snrdf~UkBhhfgvo5MKQ__',
   },
 ];
 

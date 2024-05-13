@@ -8,55 +8,16 @@ import { CustomRatioButton } from '~shared/ui/CustomRatioButton';
 import css from './DeliveryMethod.module.scss';
 import { useDeliveryInfoConfig } from '../config/useDeliveryMethodConfig';
 import { InputErrorMessage } from '~shared/ui/InputErrorMessage';
-import {
-  setAddress,
-  setCity,
-  setDeliveryMethod,
-  setNPDepartment,
-  setUPDepartment,
-} from '~entities/order/model/slice';
+import { setCity, setDeliveryMethod } from '~entities/order/model/slice';
 
 const DeliveryMethod: FC = () => {
-  const [selectedMethod, setSelectedMethod] = useState('deliveryToAdress');
-  const { formik } = useDeliveryInfoConfig();
+  const [selectedMethod, setSelectedMethod] = useState('Courier');
+  const { formik } = useDeliveryInfoConfig(selectedMethod);
   const dispatch = useDispatch();
 
   const handleMethodChange = (value: string) => {
     setSelectedMethod(value);
     dispatch(setDeliveryMethod(value));
-  };
-
-  const handleDeliveryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    formik.handleChange(event);
-    const { name, value } = event.target;
-    const updatedAddress = { ...formik.values };
-    let address = '';
-
-    switch (selectedMethod) {
-      case 'deliveryToAdress':
-        if (
-          name === 'streetName' ||
-          name === 'houseNumber' ||
-          name === 'sectionNumber' ||
-          name === 'apartmentNumber'
-        ) {
-          address = `streetName: ${updatedAddress.streetName}, houseNumber: ${updatedAddress.houseNumber}, sectionNumber: ${updatedAddress.sectionNumber}, apartmentNumber: ${updatedAddress.apartmentNumber}`;
-        }
-
-        dispatch(setAddress(address));
-        dispatch(setDeliveryMethod('Courier'));
-        break;
-      case 'Nova Poshta':
-        dispatch(setNPDepartment(value));
-        dispatch(setDeliveryMethod('Nova Poshta'));
-        break;
-      case 'PickupFromUkrPoshta':
-        dispatch(setUPDepartment(value));
-        dispatch(setDeliveryMethod('Ukr Poshta'));
-        break;
-      default:
-        break;
-    }
   };
 
   return (
@@ -85,17 +46,17 @@ const DeliveryMethod: FC = () => {
             <CustomRatioButton
               labelText="Courier to your address"
               name="delivery"
-              value="deliveryToAdress"
+              value="Courier"
               id="deliveryToAdress"
               className={css.ratioButton}
-              checked={selectedMethod === 'deliveryToAdress'}
-              onChange={() => handleMethodChange('deliveryToAdress')}
+              checked={selectedMethod === 'Courier'}
+              onChange={() => handleMethodChange('Courier')}
             />
             <span className={css.optionPrice}>150₴</span>
           </div>
           <div
             className={cn(css.deliveryContainer, {
-              [css.showMethodList]: selectedMethod === 'deliveryToAdress',
+              [css.showMethodList]: selectedMethod === 'Courier',
             })}
           >
             <div className={css.field}>
@@ -105,9 +66,7 @@ const DeliveryMethod: FC = () => {
                 placeholder="Street Name*"
                 className={css.input}
                 required
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.streetName}
               />
@@ -122,9 +81,7 @@ const DeliveryMethod: FC = () => {
                 placeholder="House Number*"
                 className={css.input}
                 required
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.houseNumber}
               />
@@ -138,9 +95,7 @@ const DeliveryMethod: FC = () => {
                 name="sectionNumber"
                 placeholder="Section Number"
                 className={css.input}
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.sectionNumber}
               />
@@ -154,10 +109,7 @@ const DeliveryMethod: FC = () => {
                 name="apartmentNumber"
                 placeholder="Apartment Number*"
                 className={css.input}
-                required
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.apartmentNumber}
               />
@@ -175,17 +127,17 @@ const DeliveryMethod: FC = () => {
             <CustomRatioButton
               labelText="Pickup from Nova Poshta"
               name="delivery"
-              value="Nova Poshta"
+              value="Nova_Poshta"
               id="PickupFromNovaPoshta"
               className={css.ratioButton}
-              checked={selectedMethod === 'Nova Poshta'}
-              onChange={() => handleMethodChange('Nova Poshta')}
+              checked={selectedMethod === 'Nova_Poshta'}
+              onChange={() => handleMethodChange('Nova_Poshta')}
             />
             <span className={css.optionPrice}>70₴</span>
           </div>
           <div
             className={cn(css.deliveryContainer, {
-              [css.showMethodList]: selectedMethod === 'Nova Poshta',
+              [css.showMethodList]: selectedMethod === 'Nova_Poshta',
             })}
           >
             <div className={css.field}>
@@ -195,9 +147,7 @@ const DeliveryMethod: FC = () => {
                 placeholder="Choose a post office*"
                 className={css.input}
                 required
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.novaPostOffice}
               />
@@ -215,17 +165,17 @@ const DeliveryMethod: FC = () => {
             <CustomRatioButton
               labelText="Pickup from Ukr Poshta"
               name="delivery"
-              value="PickupFromUkrPoshta"
+              value="Ukr_Poshta"
               id="PickupFromUkrPoshta"
               className={css.ratioButton}
-              checked={selectedMethod === 'PickupFromUkrPoshta'}
-              onChange={() => handleMethodChange('PickupFromUkrPoshta')}
+              checked={selectedMethod === 'Ukr_Poshta'}
+              onChange={() => handleMethodChange('Ukr_Poshta')}
             />
             <span className={css.optionPrice}>70₴</span>
           </div>
           <div
             className={cn(css.deliveryContainer, {
-              [css.showMethodList]: selectedMethod === 'PickupFromUkrPoshta',
+              [css.showMethodList]: selectedMethod === 'Ukr_Poshta',
             })}
           >
             <div className={css.field}>
@@ -235,9 +185,7 @@ const DeliveryMethod: FC = () => {
                 placeholder="Choose a post office*"
                 className={css.input}
                 required
-                onChange={event => {
-                  handleDeliveryChange(event);
-                }}
+                onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.ukrPostOffice}
               />

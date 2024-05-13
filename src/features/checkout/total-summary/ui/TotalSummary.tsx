@@ -5,6 +5,7 @@ import css from './TotalSummary.module.scss';
 import { CustomButton } from '~shared/ui/CustomButton';
 import { useCreateOrderMutation } from '~entities/order/api/orderApi';
 import {
+  selectAddressIsValid,
   selectOrderData,
   selectPersonalInfoIsValid,
 } from '~entities/order/model/slice';
@@ -13,6 +14,7 @@ const TotalSummary: FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
   const orderData = useSelector(selectOrderData);
   const personalInfoIsValid = useSelector(selectPersonalInfoIsValid);
+  const addressIsValid = useSelector(selectAddressIsValid);
 
   const createOrder = () => {
     createOrderMutation(orderData);
@@ -36,7 +38,7 @@ const TotalSummary: FC = () => {
         buttonType="submit"
         className={css.confirmButton}
         onClick={createOrder}
-        disabled={!personalInfoIsValid}
+        disabled={!personalInfoIsValid || !addressIsValid}
       >
         Confirm the order
       </CustomButton>

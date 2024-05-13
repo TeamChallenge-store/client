@@ -4,6 +4,7 @@
 .errorMessage {
   position: absolute;
   padding-top: func.toRem(6);
+  pointer-events: none;
 }
 
 .warningIcon {

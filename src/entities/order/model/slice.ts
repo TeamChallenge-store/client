@@ -5,6 +5,7 @@ import { IOrder } from './types';
 interface OrderState {
   orderData: IOrder;
   personalInfoIsValid: boolean;
+  addressIsValid: boolean;
 }
 
 const initialState: OrderState = {
@@ -21,6 +22,7 @@ const initialState: OrderState = {
     payment_method: 'Google Pay',
   },
   personalInfoIsValid: false,
+  addressIsValid: false,
 };
 
 export const orderSlice = createSlice({
@@ -60,12 +62,17 @@ export const orderSlice = createSlice({
     setPersonalInfoIsValid(state, action) {
       state.personalInfoIsValid = action.payload;
     },
+    setAddressIsValid(state, action) {
+      state.addressIsValid = action.payload;
+    },
   },
 });
 
 export const selectOrderData = (state: RootState) => state.order.orderData;
 export const selectPersonalInfoIsValid = (state: RootState) =>
   state.order.personalInfoIsValid;
+export const selectAddressIsValid = (state: RootState) =>
+  state.order.addressIsValid;
 
 export const {
   setFirstName,
@@ -79,5 +86,6 @@ export const {
   setDeliveryMethod,
   setPaymentMethod,
   setPersonalInfoIsValid,
+  setAddressIsValid,
 } = orderSlice.actions;
 export default orderSlice.reducer;

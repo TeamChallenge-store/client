@@ -56,21 +56,12 @@ const usePersonalInfoConfig = () => {
           value => !!value && englishEmailRegex.test(value),
         ),
     }),
+    validateOnMount: true,
     onSubmit: () => {},
   });
 
   useEffect(() => {
-    if (
-      formik.isValid &&
-      formik.touched.name &&
-      formik.touched.lastName &&
-      formik.touched.phone &&
-      formik.touched.email &&
-      !formik.errors.name &&
-      !formik.errors.lastName &&
-      !formik.errors.phone &&
-      !formik.errors.email
-    ) {
+    if (formik.isValid) {
       setChekboxIsAvailable(true);
       dispatch(setPersonalInfoIsValid(true));
       dispatch(setFirstName(formik.values.name));
@@ -81,22 +72,7 @@ const usePersonalInfoConfig = () => {
       setChekboxIsAvailable(false);
       dispatch(setPersonalInfoIsValid(false));
     }
-  }, [
-    formik.isValid,
-    formik.touched.name,
-    formik.touched.lastName,
-    formik.touched.phone,
-    formik.touched.email,
-    formik.errors.name,
-    formik.errors.lastName,
-    formik.errors.phone,
-    formik.errors.email,
-    formik.values.name,
-    formik.values.lastName,
-    formik.values.phone,
-    formik.values.email,
-    dispatch,
-  ]);
+  }, [dispatch, formik.isValid, formik.values]);
 
   return { formik, checkboxIsAvailable };
 };
