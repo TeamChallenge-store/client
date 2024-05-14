@@ -1,9 +1,12 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
 import { ProductList } from '~widgets/product-list';
 import { CustomButton } from '~shared/ui/CustomButton';
-import { useSaleProductsQuery } from './promotionalOffersApi';
+import { useSaleProductsQuery } from '~entities/product';
+import { ErrorPopUp } from '~widgets/error-pop-up';
 
 import 'swiper/css';
 import css from './PromotionalOffers.module.scss';
@@ -11,9 +14,20 @@ import { Loader } from '~shared/ui/Loader';
 
 const PromotionalOffers: FC = () => {
   const { data: products, isLoading } = useSaleProductsQuery();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!products) {
+      dispatch(setIsModalOpen(true));
+    }
+  }, [dispatch, products]);
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (!products) {
+    return <ErrorPopUp />;
   }
 
   return (
@@ -48,29 +62,26 @@ const PromotionalOffers: FC = () => {
       </div>
       <div className={`${css.offersSlider} container`}>
         <Swiper
-          slidesPerView={4}
-          spaceBetween={15}
+          slidesPerView={1}
+          spaceBetween={24}
           navigation={{
             prevEl: '#swiper-prev',
             nextEl: '#swiper-next',
           }}
           breakpoints={{
-            375: {
-              slidesPerView: 2,
+            0: {
+              slidesPerView: 1,
             },
-            500: {
+            375: {
               slidesPerView: 2,
               spaceBetween: 15,
             },
-            767: {
+            768: {
               slidesPerView: 3,
+              spaceBetween: 20,
             },
             1025: {
               slidesPerView: 4,
-              spaceBetween: 20,
-            },
-            1440: {
-              spaceBetween: 25,
             },
           }}
           modules={[Navigation, Pagination]}
