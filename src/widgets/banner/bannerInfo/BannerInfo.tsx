@@ -7,7 +7,7 @@ const BannerInfo = () => {
       <span className={css.bannerTitle}>
         Innovations for Your Adventure Life: Convenience, Quality, Nature
       </span>
-      <Link to="products/:category" className={css.bannerBtn}>
+      <Link to="products/category" className={css.bannerBtn}>
         Shop now
       </Link>
     </div>
