@@ -21,26 +21,26 @@
  * setStoredValue('newValue');
  */
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const useLocalStorage = (initialValue: unknown, key: string) => {
-  const getValue = () => {
+const useLocalStorage = <T>(initialValue: T, key: string) => {
+  const [value, setValue] = useState(() => {
     const storage = localStorage.getItem(key);
 
-    if (storage) {
-      return JSON.parse(storage);
+    if (storage === null) {
+      return initialValue;
     }
 
-    return initialValue;
+    return JSON.parse(storage);
+  });
+
+  const saveToLocal = (newValue: T) => {
+    localStorage.setItem(key, JSON.stringify(newValue));
+
+    setValue(newValue);
   };
 
-  const [value, setValue] = useState(getValue);
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key]);
-
-  return [value, setValue];
+  return [value, saveToLocal];
 };
 
 export { useLocalStorage };
