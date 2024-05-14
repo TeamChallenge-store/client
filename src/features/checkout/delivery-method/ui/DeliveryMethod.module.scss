@@ -3,7 +3,7 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .field {
-  margin-bottom: func.toRem(50);
+  margin-bottom: func.toRem(38);
 }
 
 .input {
@@ -18,10 +18,6 @@
     line-height: func.toRem(22.4);
     color: $gray300;
   }
-}
-
-.deliveryOption {
-  margin-bottom: func.toRem(30);
 }
 
 .deliveryContainer {

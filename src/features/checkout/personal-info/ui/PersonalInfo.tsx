@@ -25,7 +25,6 @@ const PersonalInfo: React.FC = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
-            autoComplete="off"
           />
           {formik.touched.name && formik.errors.name && (
             <InputErrorMessage errorMessage={formik.errors.name} />
@@ -43,7 +42,6 @@ const PersonalInfo: React.FC = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.lastName}
-            autoComplete="off"
           />
           {formik.touched.lastName && formik.errors.lastName ? (
             <InputErrorMessage errorMessage={formik.errors.lastName} />
@@ -62,7 +60,6 @@ const PersonalInfo: React.FC = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.phone}
-            autoComplete="off"
           />
           {formik.touched.phone && formik.errors.phone ? (
             <InputErrorMessage errorMessage={formik.errors.phone} />
@@ -71,7 +68,7 @@ const PersonalInfo: React.FC = () => {
 
         <div className={css.field}>
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             placeholder="Email*"
@@ -80,7 +77,6 @@ const PersonalInfo: React.FC = () => {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
-            autoComplete="off"
           />
           {formik.touched.email && formik.errors.email ? (
             <InputErrorMessage errorMessage={formik.errors.email} />
