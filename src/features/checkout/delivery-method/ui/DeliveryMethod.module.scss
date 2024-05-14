@@ -3,7 +3,7 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .field {
-  margin-bottom: func.toRem(38);
+  margin-bottom: func.toRem(40);
 }
 
 .input {
@@ -35,4 +35,12 @@
 .optionContainer {
   @include mixin.flexible;
   margin-bottom: func.toRem(18);
+
+  .ratioButton:checked {
+    color: green;
+  }
+}
+
+.optionContainer:not(:checked):last-child {
+  margin-bottom: 0;
 }
