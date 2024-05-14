@@ -3,7 +3,6 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 
 .footer {
-  margin-top: func.toRem(72);
   background-color: $bg;
   padding-bottom: 25px;
 
