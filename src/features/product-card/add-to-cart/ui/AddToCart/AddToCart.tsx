@@ -6,11 +6,11 @@ import cn from 'classnames';
 import theme from '../../config/muiTheme';
 
 import css from './AddToCart.module.scss';
-import { useLocalStorage } from '~shared/model/useLocalStorage';
+// import { useLocalStorage } from '~shared/model/useLocalStorage';
 import { IProductCard } from '~entities/product';
 
 const AddToCart = ({ product }: { product: IProductCard }) => {
-  const [value, setValue] = useLocalStorage<IProductCard[]>('card', []);
+  // const [value, setValue] = useLocalStorage<IProductCard[]>('card', []);
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
