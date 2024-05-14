@@ -6,6 +6,7 @@ import doneIcon from './icon/doneIcon.svg';
 import css from './ShortCartMessage.module.scss';
 
 const ShortCartMessage = () => {
+  const isMobile = window.matchMedia('(max-width: 500px)').matches;
   const dispatch = useDispatch();
 
   const handleOpenCart = () => {
@@ -31,16 +32,14 @@ const ShortCartMessage = () => {
         </button>
       </div>,
       {
-        position: 'top-right',
+        position: isMobile ? 'bottom-center' : 'top-right',
         autoClose: false,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        style: {
-          background: '#E1ECDF',
-        },
+        className: css.customToast,
       },
     );
   };
