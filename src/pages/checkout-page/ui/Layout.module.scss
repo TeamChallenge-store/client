@@ -28,6 +28,10 @@
   gap: func.toRem(56);
 }
 
+.order .title {
+  padding-left: 0;
+}
+
 .title {
   font-weight: 400;
   font-size: func.toRem(24);
