@@ -67,7 +67,7 @@
     padding: func.toRem(20) func.toRem(46) func.toRem(13);
   }
 
-  @media (max-width: $xs-viewport) {
+  @media (max-width: $s-viewport) {
     border-bottom: 1px solid $gray200;
     padding: func.toRem(20) func.toRem(16) func.toRem(13);
   }
@@ -116,7 +116,7 @@
   scrollbar-color: $green $white;
   scrollbar-width: thin;
   padding-right: func.toRem(40);
-  width: 50%;
+
   @media (max-width: $m-viewport) {
     padding-right: func.toRem(20);
   }

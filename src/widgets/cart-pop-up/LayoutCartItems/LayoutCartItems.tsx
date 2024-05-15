@@ -12,7 +12,7 @@ const LayoutCartItems: FC<{ product?: IBagProduct }> = ({ product }) => {
     return null;
   }
 
-  const { image, price, name, quantity } = product;
+  const { image, price, name, quantity, id } = product;
 
   return (
     <article className={css.cartItem}>
@@ -24,11 +24,21 @@ const LayoutCartItems: FC<{ product?: IBagProduct }> = ({ product }) => {
         </div>
         <div className={css.itemPriceActions}>
           <span className={css.itemPrice}>{`${price} ₴`}</span>
-          <RemoveFromCart />
+          <RemoveFromCart productId={id} />
         </div>
       </div>
     </article>
   );
+};
+
+LayoutCartItems.defaultProps = {
+  product: {
+    id: 1,
+    image: null,
+    name: 'Badawi Long 6 Persons - Family Tent fbfbfbfbfbfbfbfbfbfb ',
+    price: '8 699',
+    quantity: 2,
+  },
 };
 
 export { LayoutCartItems };

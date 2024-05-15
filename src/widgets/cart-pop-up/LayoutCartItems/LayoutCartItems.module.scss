@@ -17,12 +17,14 @@
 
   @media (max-width: $s-viewport) {
     width: func.toRem(460);
-    padding-bottom: func.toRem(12);
-    padding-top: 0;
-    border: none;
+    padding-bottom: func.toRem(20);
+    padding-top: func.toRem(20);
+    // border: none;
   }
 
   @media (max-width: $xs-viewport) {
+      padding-bottom: func.toRem(12);
+    padding-top: func.toRem(12);
     width: func.toRem(343);
   }
 }
@@ -64,6 +66,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+  padding-top: func.toRem(12);
 
   @media (max-width: $m-viewport) {
     width: func.toRem(200);
@@ -129,7 +132,7 @@
   }
 
   @media (max-width: $sm-viewport) {
-    gap: func.toRem(35);
+    gap: 0;
   }
 
   @media (max-width: $s-viewport) {

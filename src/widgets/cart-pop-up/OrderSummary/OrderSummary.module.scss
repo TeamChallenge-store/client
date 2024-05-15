@@ -39,7 +39,7 @@
 .summaryContent {
   @include mixin.flexible;
   flex-direction: row;
-  padding-bottom: func.toRem(15);
+  padding-bottom: func.toRem(17);
 
   @media (max-width: $sm-viewport) {
     padding: func.toRem(16) func.toRem(16) func.toRem(24);
