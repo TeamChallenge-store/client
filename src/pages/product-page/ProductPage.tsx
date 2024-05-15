@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
-import { useState } from 'react';
 
 import { ProductList } from '~widgets/product-list';
 import { ProductListFilters } from '~features/product-list';

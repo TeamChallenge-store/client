@@ -9,7 +9,7 @@ export const productApi = baseApi.injectEndpoints({
     productCategory: build.query<IProductCard[], { page: number; sortBy: string }>({
       query: ({ page, sortBy }) => {
         return {
-          url: 'products/',
+          url: 'products',
           params: {
             page,
             sortBy,
@@ -17,6 +17,7 @@ export const productApi = baseApi.injectEndpoints({
         };
       },
       keepUnusedDataFor: 30,
+      transformResponse: (response: TResponse) => response.results,
     }),
     searchProducts: build.query<IProductCard[], string>({
       query: searchProduct => ({
