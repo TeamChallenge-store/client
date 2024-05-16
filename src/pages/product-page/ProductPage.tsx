@@ -24,6 +24,8 @@ const ProductPage = () => {
     sortBy: searchParams.get(QUERY_NAME)?.toString() ?? DEFAULT_SORT_PARAM,
   });
 
+  const totalPages = data?.total_pages || -1; // Use total_pages for pagination
+
   if (isLoading) {
     return 'Loading';
   }
@@ -44,14 +46,14 @@ const ProductPage = () => {
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
       }
       filtersMob={<ProductListFilters />}
-      productList={<ProductList products={data} />}
+      productList={<ProductList products={data.results} />}
       pagination={
         <ReactPaginate
           nextLabel="next >"
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           marginPagesDisplayed={2}
-          pageCount={-1}
+          pageCount={totalPages}
           previousLabel="< previous"
           pageClassName="page-item"
           pageLinkClassName="page-link"
