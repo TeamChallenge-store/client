@@ -1,0 +1,57 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: func.toRem(18);
+  line-height: func.toRem(21.6);
+}
+
+.pageLinkItem {
+  padding: func.toRem(13) func.toRem(18.5);
+  cursor: pointer;
+  color: $black;
+
+  &:hover {
+    color: $norway950;
+  }
+}
+
+.activeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $norway950;
+  border-radius: 50%;
+  width: func.toRem(48);
+  height: func.toRem(48);
+}
+
+.previousArrow,
+.nextArrow {
+  width: func.toRem(13);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  padding: func.toRem(13) func.toRem(17);
+  outline-color: transparent;
+
+  &:hover {
+    filter: none; /* Remove color inversion (if used previously) */
+    fill: #111d13; /* Directly set the fill color */
+    transition: fill 0.3s ease;
+  }
+}
+
+.previousArrow {
+  background-image: url('../../icons/pagination-left-arrow.svg');
+  margin-right: 48px;
+}
+
+.nextArrow {
+  background-image: url('../../icons/pagination-right-arrow.svg');
+  margin-left: 48px;
+}
