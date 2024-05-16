@@ -24,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $norway950;
+  border: func.toRem(1) solid $norway950;
   border-radius: 50%;
   width: func.toRem(48);
   height: func.toRem(48);
@@ -40,18 +40,42 @@
   outline-color: transparent;
 
   &:hover {
-    filter: none; /* Remove color inversion (if used previously) */
-    fill: #111d13; /* Directly set the fill color */
+    filter: none;
+    fill: $norway950;
     transition: fill 0.3s ease;
   }
 }
 
 .previousArrow {
   background-image: url('../../icons/pagination-left-arrow.svg');
-  margin-right: 48px;
+  margin-right: func.toRem(55);
 }
 
 .nextArrow {
   background-image: url('../../icons/pagination-right-arrow.svg');
-  margin-left: 48px;
+  margin-left: func.toRem(55);
+}
+
+@media (max-width: $s-viewport) {
+  .pagination {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+
+  .previousArrow {
+    margin-right: 40px;
+  }
+
+  .nextArrow {
+    margin-left: 40px;
+  }
+
+  .pageLinkItem {
+    padding: 9px 12.5px;
+  }
+
+  .activeItem {
+    width: 32px;
+    height: 32px;
+  }
 }
