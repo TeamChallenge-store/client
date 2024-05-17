@@ -6,14 +6,27 @@ import css from './Pagination.module.scss';
 type TPaginationProps = {
   handlePageClick: (pag: { selected: number }) => void;
   totalPages: number;
+  currentPage: number;
 };
 
-const Pagination: FC<TPaginationProps> = ({ handlePageClick, totalPages }) => {
+const showItems = (currentPage: number) => {
+  if (currentPage === 2 || currentPage === 3) {
+    return 4;
+  }
+
+  return 5;
+};
+
+const Pagination: FC<TPaginationProps> = ({
+  handlePageClick,
+  totalPages,
+  currentPage,
+}) => {
   return (
     <ReactPaginate
       nextLabel=""
       onPageChange={handlePageClick}
-      pageRangeDisplayed={5}
+      pageRangeDisplayed={showItems(currentPage)}
       marginPagesDisplayed={0}
       pageCount={totalPages}
       previousLabel=""
@@ -27,6 +40,7 @@ const Pagination: FC<TPaginationProps> = ({ handlePageClick, totalPages }) => {
       containerClassName={css.pagination}
       activeClassName={css.activeItem}
       renderOnZeroPageCount={null}
+      forcePage={0}
     />
   );
 };

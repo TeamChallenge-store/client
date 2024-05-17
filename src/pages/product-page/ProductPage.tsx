@@ -48,7 +48,11 @@ const ProductPage = () => {
       filtersMob={<ProductListFilters />}
       productList={<ProductList products={data.results} />}
       pagination={
-        <Pagination handlePageClick={handlePageClick} totalPages={totalPages} />
+        <Pagination
+          handlePageClick={handlePageClick}
+          totalPages={totalPages}
+          currentPage={pageOffset}
+        />
       }
     />
   );
