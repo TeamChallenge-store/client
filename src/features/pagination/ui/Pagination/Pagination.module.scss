@@ -32,28 +32,28 @@
 
 .previousArrow,
 .nextArrow {
-  width: func.toRem(13);
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
   cursor: pointer;
-  padding: func.toRem(13) func.toRem(17);
+  padding: func.toRem(12) func.toRem(17);
   outline-color: transparent;
 
-  &:hover {
-    filter: none;
+  svg path {
+    fill: $norway700;
+    @include mixin.button-transition(fill, 0.3s);
+  }
+
+  &:hover svg path {
     fill: $norway950;
-    transition: fill 0.3s ease;
   }
 }
 
 .previousArrow {
-  background-image: url('../../icons/pagination-left-arrow.svg');
-  margin-right: func.toRem(55);
+  margin-right: func.toRem(48);
 }
 
 .nextArrow {
-  background-image: url('../../icons/pagination-right-arrow.svg');
-  margin-left: func.toRem(55);
+  margin-left: func.toRem(48);
+  transform: rotate(180deg);
 }
 
 @media (max-width: $s-viewport) {
