@@ -2,6 +2,10 @@
 @use '../../../../shared/styles/helpers/functions.scss' as func;
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
+.deliveryForm {
+  margin-bottom: func.toRem(56);
+}
+
 .field {
   margin-bottom: func.toRem(40);
 }
@@ -41,6 +45,8 @@
   }
 }
 
-.optionContainer:not(:checked):last-child {
-  margin-bottom: 0;
+.deliveryOptions > .deliveryOption:last-child {
+  .optionContainer:not(:has(> .ratioButton:checked)) {
+    margin-bottom: 0;
+  }
 }

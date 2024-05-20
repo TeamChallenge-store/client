@@ -31,7 +31,7 @@ const TotalSummary: FC = () => {
         <span>at carrier rates</span>
       </div>
       <div className={css.total}>
-        <div>To be paid</div>
+        <div className={css.totalSubtitle}>To be paid</div>
         <span className={css.finalPrice}>1222₴</span>
       </div>
       <CustomButton

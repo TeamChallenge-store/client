@@ -24,6 +24,10 @@
   margin-bottom: func.toRem(18);
 }
 
+.totalSubtitle {
+  letter-spacing: func.toRem(0.5);
+}
+
 .finalPrice {
   font-size: func.toRem(24);
   line-height: func.toRem(27.6);
