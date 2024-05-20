@@ -1,0 +1,72 @@
+@use '../styles/helpers/functions.scss' as func;
+@use '../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../styles/helpers/variables.scss' as *;
+
+.customRatio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ratio {
+  appearance: none;
+  width: func.toRem(20);
+  height: func.toRem(20);
+  border: func.toRem(2) solid #37643b;
+  background-color: $white;
+  border-radius: func.toRem(10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.label {
+  padding-left: func.toRem(10);
+  font-size: func.toRem(18);
+  line-height: func.toRem(21.6);
+  cursor: pointer;
+}
+
+.ratio:disabled {
+  cursor: default;
+  border-color: $gray300;
+}
+
+.ratio:disabled .label {
+  color: $gray300;
+  cursor: default;
+}
+
+.ratio:checked::after {
+  content: '';
+  display: block;
+  width: func.toRem(10);
+  height: func.toRem(10);
+  background-color: $green;
+  border-radius: 50%;
+}
+
+.ratio:disabled:checked:after {
+  background-color: $gray300;
+}
+
+@media (max-width: $xs-viewport) {
+  .ratio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #37643b;
+    border-radius: 10px;
+  }
+
+  .label {
+    padding-left: 10px;
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  .ratio:checked::after {
+    width: 10px;
+    height: 10px;
+  }
+}

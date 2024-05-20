@@ -6,7 +6,6 @@ import css from './Layout.module.scss';
 type TLayoutProps = {
   sidebar?: ReactNode;
   sortBy?: ReactNode;
-  filtersMob?: ReactNode;
   productList?: ReactNode;
   pagination?: ReactNode;
 };
@@ -18,7 +17,6 @@ const Layout: FC<TLayoutProps> = props => {
         <aside className={css.filters}>{props.sidebar}</aside>
 
         <div className={css.listInner}>
-          <div className={css.filtersMob}>{props.filtersMob}</div>
           <div className={css.select}>{props.sortBy}</div>
           <ul className={css.listGrid}>{props.productList}</ul>
           {props.pagination}

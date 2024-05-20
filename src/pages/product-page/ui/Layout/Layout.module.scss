@@ -3,8 +3,8 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .productsSection {
-  padding-top: 20px;
-  padding-bottom: 120px;
+  padding-top: func.toRem(20);
+  padding-bottom: func.toRem(120);
 
   @media (min-width: $max-viewport) {
     padding-top: func.toRem(20);
@@ -15,22 +15,11 @@
 .inner {
   display: flex;
   justify-content: space-between;
-  column-gap: 24px;
+  column-gap: func.toRem(24);
 
   @media (max-width: $m-viewport) {
     justify-content: center;
-  }
-}
-
-.filters {
-  @include mixin.placeholder(312px, auto);
-
-  @media (max-width: $m-viewport) {
-    display: none;
-  }
-
-  @media (min-width: $max-viewport) {
-    @include mixin.placeholder(func.toRem(312), auto);
+    column-gap: 0;
   }
 }
 
@@ -38,18 +27,6 @@
   position: relative;
   font-size: func.toRem(16);
   font-weight: 500;
-}
-
-.filtersMob {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  display: none;
-
-  @media (max-width: $m-viewport) {
-    display: block;
-  }
 }
 
 .select {

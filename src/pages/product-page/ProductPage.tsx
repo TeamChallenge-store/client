@@ -41,11 +41,10 @@ const ProductPage = () => {
 
   return (
     <Layout
-      sidebar={null}
+      sidebar={<ProductListFilters />}
       sortBy={
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
       }
-      filtersMob={<ProductListFilters />}
       productList={<ProductList products={data.results} />}
       pagination={
         <Pagination
