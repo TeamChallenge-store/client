@@ -1,15 +1,20 @@
 /* eslint-disable max-len */
 import { baseApi } from '~shared/api/baseApi';
 
-import { IProductCard, TResponse, TResponseProducts } from '../model/types';
+import {
+  IProductCard,
+  TResponse,
+  TResponseProducts,
+  TResponseProductsPage,
+} from '../model/types';
 
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
     // prettier-ignore
-    productCategory: build.query<IProductCard[], { page: number; sortBy: string }>({
+    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string }>({
       query: ({ page, sortBy }) => {
         return {
-          url: 'products/',
+          url: 'products',
           params: {
             page,
             sortBy,
@@ -17,6 +22,7 @@ export const productApi = baseApi.injectEndpoints({
         };
       },
       keepUnusedDataFor: 30,
+      transformResponse: (response: TResponseProductsPage) => response,
     }),
     searchProducts: build.query<IProductCard[], string>({
       query: searchProduct => ({
