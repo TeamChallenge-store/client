@@ -1,0 +1,90 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+
+.form {
+  width: 100%;
+  margin-bottom: func.toRem(50);
+}
+
+.column {
+  display: flex;
+}
+
+.field {
+  position: relative;
+  margin-bottom: func.toRem(40);
+
+  &:first-child {
+    margin-right: func.toRem(24);
+  }
+}
+
+.input {
+  width: func.toRem(353);
+  border: none;
+  outline-color: transparent;
+  padding-bottom: func.toRem(8);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid $black;
+
+  &::placeholder {
+    font-size: func.toRem(16);
+    line-height: func.toRem(22.4);
+    color: $gray300;
+  }
+}
+
+.input::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 8px;
+  left: 0;
+  background-color: $black;
+  transition: width 0.3s ease-in-out;
+  z-index: 3;
+}
+
+.saveInfo {
+  padding-top: func.toRem(14);
+  width: fit-content;
+
+  .saveInfoCheckbox :disabled {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: $m-viewport) {
+  .field,
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: $sm-viewport) {
+  .column {
+    flex-direction: column;
+  }
+
+  .field {
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+
+  .input {
+    width: 100%;
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .field {
+    margin-bottom: 40px;
+  }
+
+  .saveInfo {
+    padding-top: 8px;
+  }
+}

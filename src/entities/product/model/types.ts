@@ -1,15 +1,18 @@
 interface IProductCard {
   id: number;
-  category: number;
-  subcategory: number;
+  category?: number;
+  subcategory?: number;
   name: string;
   price: string;
   old_price?: string;
   image: string | null;
-  quantity_in_stock: number;
-  brand: string;
-  color: string;
-  rate: number;
+  quantity_in_stock?: number;
+  brand?: string;
+  color?: string;
+  rate?: number;
+  subtitle?: string;
+  subscription?: string;
+  features?: string;
 }
 
 type TResponse = {
