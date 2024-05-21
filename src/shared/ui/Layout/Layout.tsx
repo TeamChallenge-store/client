@@ -1,4 +1,5 @@
 import { FC, ReactNode, Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { Outlet } from 'react-router-dom';
 
 type TLayoutProps = {
@@ -14,6 +15,7 @@ const Layout: FC<TLayoutProps> = props => {
         <Suspense fallback="Loading...">
           <Outlet />
         </Suspense>
+        <ToastContainer />
       </main>
       {props.footer}
     </>

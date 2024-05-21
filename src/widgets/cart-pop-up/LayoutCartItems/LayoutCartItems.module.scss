@@ -1,0 +1,146 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.cartItem {
+  width: func.toRem(629);
+  padding: func.toRem(20) 0;
+  border-bottom: func.toRem(1) solid $gray100;
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(490);
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(700);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(460);
+    padding-bottom: func.toRem(20);
+    padding-top: func.toRem(20);
+    // border: none;
+  }
+
+  @media (max-width: $xs-viewport) {
+      padding-bottom: func.toRem(12);
+    padding-top: func.toRem(12);
+    width: func.toRem(343);
+  }
+}
+
+.itemImg {
+  width: func.toRem(125);
+  height: func.toRem(125);
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(110);
+    height: func.toRem(110);
+    margin-right: func.toRem(15);
+  }
+
+  @media (max-width: $sm-viewport) {
+    margin-right: func.toRem(8);
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $s-viewport) {
+    align-items: start;
+    position: relative;
+    justify-content: flex-start;
+  }
+}
+
+.itemTitle {
+  font-size: func.toRem(16);
+  line-height: func.toRem(19);
+  width: func.toRem(296);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  padding-top: func.toRem(12);
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(200);
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(380);
+    padding-top: func.toRem(8);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(250);
+  }
+
+  @media (max-width: $xs-viewport) {
+    max-width: func.toRem(194);
+    max-height: func.toRem(38);
+    padding-top: 0;
+    margin-top: func.toRem(15);
+  }
+}
+
+.itemPriceActions {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: func.toRem(25);
+  padding-top: func.toRem(53);
+
+  @media (max-width: $m-viewport) {
+    padding-top: func.toRem(40);
+  }
+
+  @media (max-width: $sm-viewport) {
+    padding-top: func.toRem(46);
+  }
+
+  @media (max-width: $s-viewport) {
+    gap: func.toRem(58);
+    padding-top: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    flex-direction: column-reverse;
+  }
+  @media (max-width: $xs-viewport) {
+    gap: func.toRem(45);
+    bottom: 15px;
+  }
+}
+
+.itemPrice {
+  font-size: func.toRem(18);
+}
+
+.itemTop {
+  display: flex;
+  flex-direction: row;
+  gap: func.toRem(20);
+
+  @media (max-width: $m-viewport) {
+    gap: func.toRem(12);
+  }
+
+  @media (max-width: $sm-viewport) {
+    gap: 0;
+  }
+
+  @media (max-width: $s-viewport) {
+    flex-direction: column;
+    gap: func.toRem(20);
+  }
+
+  @media (max-width: $xs-viewport) {
+    gap: func.toRem(12);
+  }
+}

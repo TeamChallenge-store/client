@@ -10,6 +10,7 @@ interface IProductCard {
   brand: string;
   color: string;
   rate: number;
+  quantity: number;
 }
 
 type TResponse = {

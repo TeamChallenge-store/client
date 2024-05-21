@@ -7,7 +7,6 @@ import like from '~icons/like.svg';
 import cart from '~icons/cart.svg';
 import search from '~icons/search.svg';
 import burger from '~icons/burger.svg';
-
 import youtube from '~icons/youtube.svg';
 import facebook from '~icons/facebook.svg';
 import twitter from '~icons/twitter.svg';
@@ -15,7 +14,9 @@ import instagram from '~icons/instagram.svg';
 import linkedin from '~icons/linkedin.svg';
 import email from '~icons/email.svg';
 import showMoreProduct from '~icons/arrow-up.svg';
+// import close from '~icons/close.svg';
 import close from '~icons/close.svg';
+import remove from '~icons/remove.svg';
 
 import css from './Icon.module.scss';
 
@@ -32,7 +33,8 @@ type TIconType =
   | 'linkedin'
   | 'email'
   | 'showMoreProduct'
-  | 'close';
+  | 'close'
+  | 'remove';
 
 type TPaths = { [key in TIconType]: string };
 
@@ -60,6 +62,7 @@ const paths: TPaths = {
   email,
   showMoreProduct,
   close,
+  remove,
 };
 
 const Icon: FC<IconProps> = ({
