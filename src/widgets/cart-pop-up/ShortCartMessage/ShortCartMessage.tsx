@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
+import { toast, Zoom } from 'react-toastify';
 import { setIsCartOpen } from '~widgets/cart-pop-up/model/slice';
 import doneIcon from './icon/doneIcon.svg';
 
@@ -33,12 +33,13 @@ const ShortCartMessage = () => {
       </div>,
       {
         position: isMobile ? 'bottom-center' : 'top-right',
-        autoClose: false,
+        autoClose: 5000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
+        transition: Zoom,
         className: css.customToast,
       },
     );

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { FC } from 'react';
-import { ChangeQuanity } from '~features/cart/ChangeQuanity';
-import { RemoveFromCart } from '~features/cart/RemoveFromCart';
+import { ChangeQuanity } from '~features/cart/change-quanity';
+import { RemoveFromCart } from '~features/cart/remove-from-cart';
 import { IBagProduct } from '~entities/cart';
 // eslint-disable-next-line max-len
 import defaultImage from '../../../shared/ui/LayoutProductCard/defaultImage.png';
