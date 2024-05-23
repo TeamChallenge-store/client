@@ -14,7 +14,7 @@ export const productApi = baseApi.injectEndpoints({
     productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string }>({
       query: ({ page, sortBy }) => {
         return {
-          url: 'products',
+          url: `products?sort=${sortBy}`,
           params: {
             page,
             sortBy,
