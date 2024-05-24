@@ -26,7 +26,7 @@
 .subcategoryImg {
   height: func.toRem(153);
   border-top-right-radius: 8px;
-    margin: 0
+  margin: 0;
 }
 
 .subcategory {
@@ -37,6 +37,5 @@
   border-bottom-right-radius: 8px;
   text-align: center;
   line-height: func.toRem(22.08);
-  padding: func.toRem(16) func.toRem(39)  func.toRem(14);
+  padding: func.toRem(16) func.toRem(39) func.toRem(14);
 }
-

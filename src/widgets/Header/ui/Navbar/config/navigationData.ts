@@ -8,7 +8,7 @@ import saleIcon from '../../../NavigationIcons/sale.svg';
 export const navigationData = [
   {
     title: 'Tents',
-    url: '/tents',
+    url: 'products/tents',
     icon: tentsIcon,
     submenu: [
       {
@@ -31,7 +31,7 @@ export const navigationData = [
   },
   {
     title: 'Clothes',
-    url: '/clothes',
+    url: 'products/clothes',
     icon: clothesIcon,
     submenu: [
       {
@@ -54,7 +54,7 @@ export const navigationData = [
   },
   {
     title: 'Accessories',
-    url: '/accessories',
+    url: 'products/accessories',
     icon: accessoriesIcon,
     submenu: [
       {
@@ -77,7 +77,7 @@ export const navigationData = [
   },
   {
     title: 'Camping equipment',
-    url: '/equipment',
+    url: 'products/equipment',
     icon: equipmentIcon,
     submenu: [
       {
@@ -100,7 +100,7 @@ export const navigationData = [
   },
   {
     title: 'Mountaineering',
-    url: '/mountaineering',
+    url: 'products/mountaineering',
     icon: mountaineeringIcon,
     submenu: [
       {
@@ -123,7 +123,7 @@ export const navigationData = [
   },
   {
     title: 'Sale',
-    url: '/sale',
+    url: 'products/sale',
     icon: saleIcon,
   },
 ];
