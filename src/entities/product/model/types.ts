@@ -31,6 +31,18 @@ type TResponseProductsPage = {
   results: IProductCard[];
 };
 
+interface ISubcategory {
+  id: number;
+  name: string;
+  image: string;
+}
+
+interface ICategory {
+  id: number;
+  name: string;
+  subcategories: ISubcategory[];
+}
+
 type TSortBy = [string, string][];
 
 export {
@@ -39,4 +51,6 @@ export {
   type TResponse,
   type TResponseProducts,
   type TResponseProductsPage,
+  type ISubcategory,
+  type ICategory,
 };

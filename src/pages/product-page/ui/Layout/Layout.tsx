@@ -1,6 +1,8 @@
 import { FC, ReactNode } from 'react';
 import cn from 'classnames';
 
+import { Subcategory } from '~features/product-list';
+
 import css from './Layout.module.scss';
 
 type TLayoutProps = {
@@ -14,6 +16,9 @@ type TLayoutProps = {
 const Layout: FC<TLayoutProps> = props => {
   return (
     <section className={cn('container', css.productsSection)}>
+      <div className={css.subcategory}>
+        <Subcategory />
+      </div>
       <div className={css.inner}>
         <aside className={css.filters}>{props.sidebar}</aside>
 

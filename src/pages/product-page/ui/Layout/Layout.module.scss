@@ -12,6 +12,11 @@
   }
 }
 
+.subcategory {
+  margin-top: func.toRem(32);
+  margin-bottom: func.toRem(53);
+}
+
 .inner {
   display: flex;
   justify-content: space-between;

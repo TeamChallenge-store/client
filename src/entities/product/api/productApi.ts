@@ -6,6 +6,7 @@ import {
   TResponse,
   TResponseProducts,
   TResponseProductsPage,
+  ICategory,
 } from '../model/types';
 
 export const productApi = baseApi.injectEndpoints({
@@ -47,6 +48,10 @@ export const productApi = baseApi.injectEndpoints({
       transformResponse: (response: TResponseProducts) =>
         response.results.products,
     }),
+    getCategories: build.query<ICategory[], void>({
+      query: () => 'product-categories',
+      transformResponse: (response: ICategory[]) => response,
+    }),
   }),
 });
 
@@ -56,4 +61,5 @@ export const {
   useBestsellersProductQuery,
   useNewProductQuery,
   useSaleProductsQuery,
+  useGetCategoriesQuery,
 } = productApi;
