@@ -9,7 +9,7 @@ import { useGetCategoriesQuery } from '~entities/product';
 import css from './Subcategory.module.scss';
 // import tents from './tents.png';
 
-const Subcategory = () => {
+const Subcategory = ({ categoryId }: { categoryId: string }) => {
   // const { categoryId } = useParams<{ categoryId: string }>();
   const { data: categories, isLoading } = useGetCategoriesQuery();
   const dispatch = useDispatch();
@@ -20,6 +20,11 @@ const Subcategory = () => {
     }
   }, [dispatch, categories]);
 
+  useEffect(() => {
+    // console.log('Categories:', categories);
+    // console.log('Selected Category ID:', categoryId);
+  }, [categories, categoryId]);
+
   if (isLoading) {
     return <Loader />;
   }
@@ -27,34 +32,32 @@ const Subcategory = () => {
   if (!categories) {
     return <ErrorPopUp />;
   }
-  // console.log(categories);
 
-  // const category = categories?.find(cat => cat.id.toString() === categoryId);
-  // console.log(category);
+  const selectedCategory = categories?.find(
+    cat => cat.id.toString() === categoryId,
+  );
+  // console.log(selectedCategory);
 
-  // if (!category) {
-  //   return <p>Category not found</p>;
-  // }
+  if (!selectedCategory) {
+    // console.error(`Category with id ${categoryId} not found`);
+    return <p>Category not found</p>;
+  }
 
   return (
     <div className={css.categoriesBlock}>
-      {categories.map(category => (
-        <div key={category.id}>
-          <h2 className={css.category}>{category.name}</h2>
-          <ul className={css.subcategoriesList}>
-            {category.subcategories.map(subcategory => (
-              <li key={subcategory.id} className={css.subcategoryItem}>
-                <img
-                  src={subcategory.image}
-                  alt={subcategory.name}
-                  className={css.subcategoryImg}
-                />
-                <div className={css.subcategoryName}>{subcategory.name}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      <h2 className={css.category}>{selectedCategory.name}</h2>
+      <ul className={css.subcategoriesList}>
+        {selectedCategory.subcategories.map(subcategory => (
+          <li key={subcategory.id} className={css.subcategoryItem}>
+            <img
+              src={subcategory.image}
+              alt={subcategory.name}
+              className={css.subcategoryImg}
+            />
+            <div className={css.subcategoryName}>{subcategory.name}</div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

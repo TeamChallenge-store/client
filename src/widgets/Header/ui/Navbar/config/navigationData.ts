@@ -7,13 +7,14 @@ import saleIcon from '../../../NavigationIcons/sale.svg';
 
 export const navigationData = [
   {
+    id: '1',
     title: 'Tents',
     url: 'products/tents',
     icon: tentsIcon,
     submenu: [
       {
         title: 'See all',
-        url: '/all',
+        url: '/products/tents/all',
       },
       {
         title: 'Single',
@@ -30,6 +31,7 @@ export const navigationData = [
     ],
   },
   {
+    id: '2',
     title: 'Clothes',
     url: 'products/clothes',
     icon: clothesIcon,
@@ -53,6 +55,7 @@ export const navigationData = [
     ],
   },
   {
+    id: '3',
     title: 'Accessories',
     url: 'products/accessories',
     icon: accessoriesIcon,
@@ -76,6 +79,7 @@ export const navigationData = [
     ],
   },
   {
+    id: '4',
     title: 'Camping equipment',
     url: 'products/equipment',
     icon: equipmentIcon,
@@ -99,6 +103,7 @@ export const navigationData = [
     ],
   },
   {
+    id: '5',
     title: 'Mountaineering',
     url: 'products/mountaineering',
     icon: mountaineeringIcon,
@@ -122,6 +127,7 @@ export const navigationData = [
     ],
   },
   {
+    id: '6',
     title: 'Sale',
     url: 'products/sale',
     icon: saleIcon,

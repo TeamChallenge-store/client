@@ -15,7 +15,7 @@
   gap: func.toRem(24);
 }
 
-.subcategoriesItem {
+.subcategoryItem {
   width: func.toRem(200);
   height: func.toRem(202);
   display: flex;
@@ -26,13 +26,14 @@
 .subcategoryImg {
   height: func.toRem(153);
   border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
   margin: 0;
 }
 
-.subcategory {
+.subcategoryName {
   border: 1px solid $green;
   border-top: none;
-  height: func.toRem(50);
+  // height: func.toRem(50);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   text-align: center;

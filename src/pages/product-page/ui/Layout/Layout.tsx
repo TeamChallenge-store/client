@@ -11,13 +11,14 @@ type TLayoutProps = {
   filtersMob?: ReactNode;
   productList?: ReactNode;
   pagination?: ReactNode;
+  categoryId: string;
 };
 
 const Layout: FC<TLayoutProps> = props => {
   return (
     <section className={cn('container', css.productsSection)}>
       <div className={css.subcategory}>
-        <Subcategory />
+        <Subcategory categoryId={props.categoryId} />
       </div>
       <div className={css.inner}>
         <aside className={css.filters}>{props.sidebar}</aside>

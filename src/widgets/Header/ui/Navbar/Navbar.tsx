@@ -1,6 +1,9 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import classNames from 'classnames';
+import { setSelectedCategory } from '~widgets/Header/ui/Navbar/model/slice';
+
 import css from './Navbar.module.scss';
 import { navigationData } from './config/navigationData';
 
@@ -10,12 +13,22 @@ const active = ({ isActive }: { isActive: boolean }) =>
   });
 
 const Navbar: FC = () => {
+  const dispatch = useDispatch();
+
+  const handleCategorySelect = (categoryId: string) => {
+    dispatch(setSelectedCategory(categoryId));
+  };
+
   return (
     <nav className={css.nav}>
       <ul className={css.list}>
         {navigationData.map(item => (
           <li key={item.title} className={css.item}>
-            <NavLink className={active} to={item.url}>
+            <NavLink
+              className={active}
+              to={item.url}
+              onClick={() => handleCategorySelect(item.id)}
+            >
               {item.title}
             </NavLink>
             {item.submenu && (
