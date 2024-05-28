@@ -6,9 +6,3 @@ services:
       dockerfile: Dockerfile
     ports:
       - "4173:80"
-    networks:
-      - my_network
-
-networks:
-  my_network:
-    external: true
