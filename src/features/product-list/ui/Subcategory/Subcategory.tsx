@@ -1,18 +1,22 @@
 import { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import cn from 'classnames';
 import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
 import { Loader } from '~shared/ui/Loader';
 import { ErrorPopUp } from '~widgets/error-pop-up';
 import { useGetCategoriesQuery } from '~entities/product';
+import {
+  setSelectedSubcategory,
+  selectSelectedSubcategory,
+} from '~widgets/Header/ui/Navbar/model/slice';
 
 import css from './Subcategory.module.scss';
-// import tents from './tents.png';
 
 const Subcategory = ({ categoryId }: { categoryId: string }) => {
-  // const { categoryId } = useParams<{ categoryId: string }>();
   const { data: categories, isLoading } = useGetCategoriesQuery();
+
   const dispatch = useDispatch();
+  const selectedSubcategory = useSelector(selectSelectedSubcategory);
 
   useEffect(() => {
     if (!categories) {
@@ -20,10 +24,9 @@ const Subcategory = ({ categoryId }: { categoryId: string }) => {
     }
   }, [dispatch, categories]);
 
-  useEffect(() => {
-    // console.log('Categories:', categories);
-    // console.log('Selected Category ID:', categoryId);
-  }, [categories, categoryId]);
+  const handleSubcategoryClick = (subcategoryId: string) => {
+    dispatch(setSelectedSubcategory(subcategoryId));
+  };
 
   if (isLoading) {
     return <Loader />;
@@ -33,28 +36,39 @@ const Subcategory = ({ categoryId }: { categoryId: string }) => {
     return <ErrorPopUp />;
   }
 
-  const selectedCategory = categories?.find(
+  const selectedCategoryData = categories?.find(
     cat => cat.id.toString() === categoryId,
   );
-  // console.log(selectedCategory);
 
-  if (!selectedCategory) {
-    // console.error(`Category with id ${categoryId} not found`);
+  if (!selectedCategoryData) {
     return <p>Category not found</p>;
   }
 
   return (
     <div className={css.categoriesBlock}>
-      <h2 className={css.category}>{selectedCategory.name}</h2>
+      <h2 className={css.category}>{selectedCategoryData.name}</h2>
       <ul className={css.subcategoriesList}>
-        {selectedCategory.subcategories.map(subcategory => (
-          <li key={subcategory.id} className={css.subcategoryItem}>
-            <img
-              src={subcategory.image}
-              alt={subcategory.name}
-              className={css.subcategoryImg}
-            />
-            <div className={css.subcategoryName}>{subcategory.name}</div>
+        {selectedCategoryData.subcategories.map(subcategory => (
+          <li key={subcategory.id}>
+            <button
+              type="button"
+              className={css.subcategoryItem}
+              onClick={() => handleSubcategoryClick(`${subcategory.id}`)}
+            >
+              <img
+                src={subcategory.image}
+                alt={subcategory.name}
+                className={css.subcategoryImg}
+              />
+              <div
+                className={cn(css.subcategoryName, {
+                  [css.active]:
+                    selectedSubcategory === subcategory.id.toString(),
+                })}
+              >
+                {subcategory.name}
+              </div>
+            </button>
           </li>
         ))}
       </ul>

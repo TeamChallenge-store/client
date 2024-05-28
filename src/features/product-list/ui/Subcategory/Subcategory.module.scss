@@ -34,9 +34,15 @@
   border: 1px solid $green;
   border-top: none;
   // height: func.toRem(50);
+  width: 100%;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   text-align: center;
   line-height: func.toRem(22.08);
   padding: func.toRem(16) func.toRem(39) func.toRem(14);
+}
+
+.active{
+  background-color: $green;
+  color: $white;
 }

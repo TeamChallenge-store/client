@@ -15,17 +15,22 @@ import {
   DEFAULT_SORT_LABLE,
 } from './constants';
 import { Pagination } from '~features/pagination';
-import { selectSelectedCategory } from '~widgets/Header/ui/Navbar/model/slice';
+import {
+  selectSelectedCategory,
+  selectSelectedSubcategory,
+} from '~widgets/Header/ui/Navbar/model/slice';
 
 const ProductPage = () => {
   const [pageOffset, setPageOffset] = useState(1);
   const [searchParams] = useSearchParams();
   const selectedCategory = useSelector(selectSelectedCategory);
+  const selectedSubcategory = useSelector(selectSelectedSubcategory);
 
   const { data, isLoading } = useProductCategoryQuery({
     page: pageOffset || 1,
     sortBy: searchParams.get(QUERY_NAME)?.toString() ?? DEFAULT_SORT_PARAM,
     categoryId: selectedCategory,
+    subcategoryId: selectedSubcategory,
   });
 
   const totalPages = data?.total_pages || -1;

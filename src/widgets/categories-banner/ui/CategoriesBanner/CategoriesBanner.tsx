@@ -12,7 +12,7 @@ const CategoriesBanner = () => {
           backgroundImage={firstProductImage}
           title="Tents"
           subtitle="Shelter Haven: Your Gateway to Outdoor Bliss"
-          linkToProduct="/tents"
+          linkToProduct="products/tents"
           className={`${css.cardItem} ${css.cardLeft}`}
           isLeftSide
         />

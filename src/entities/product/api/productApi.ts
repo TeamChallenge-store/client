@@ -12,14 +12,15 @@ import {
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
     // prettier-ignore
-    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string; categoryId: string }>({
-      query: ({ page, sortBy, categoryId }) => {
+    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string; categoryId: string; subcategoryId: string }>({
+      query: ({ page, sortBy, categoryId, subcategoryId }) => {
         return {
           url: `products?sort=${sortBy}`,
           params: {
             page,
             sortBy,
             categoryId,
+            subcategoryId,
           },
         };
       },
