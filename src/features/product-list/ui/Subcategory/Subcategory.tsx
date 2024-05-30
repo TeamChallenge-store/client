@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
@@ -12,7 +12,12 @@ import {
 
 import css from './Subcategory.module.scss';
 
-const Subcategory = ({ categoryId }: { categoryId: string }) => {
+type TSubcategoryProps = {
+  categoryId: string;
+  subcategoryId: string;
+};
+
+const Subcategory: FC<TSubcategoryProps> = ({ categoryId, subcategoryId }) => {
   const { data: categories, isLoading } = useGetCategoriesQuery();
 
   const dispatch = useDispatch();
@@ -24,8 +29,14 @@ const Subcategory = ({ categoryId }: { categoryId: string }) => {
     }
   }, [dispatch, categories]);
 
-  const handleSubcategoryClick = (subcategoryId: string) => {
-    dispatch(setSelectedSubcategory(subcategoryId));
+  useEffect(() => {
+    if (subcategoryId) {
+      dispatch(setSelectedSubcategory(subcategoryId));
+    }
+  }, [dispatch, subcategoryId]);
+
+  const handleSubcategoryClick = (id: string) => {
+    dispatch(setSelectedSubcategory(id));
   };
 
   if (isLoading) {

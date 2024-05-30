@@ -64,6 +64,7 @@ const ProductPage = () => {
         />
       }
       categoryId={selectedCategory}
+      subcategoryId={selectedSubcategory}
     />
   );
 };
