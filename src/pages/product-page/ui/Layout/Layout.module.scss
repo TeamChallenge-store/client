@@ -13,8 +13,12 @@
 }
 
 .subcategory {
-  margin-top: func.toRem(32);
-  margin-bottom: func.toRem(53);
+  margin-top: func.toRem(16);
+  margin-bottom: func.toRem(26.5);
+
+  @media (max-width: $m-viewport) {
+    margin-top: func.toRem(12);
+  }
 }
 
 .inner {

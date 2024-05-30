@@ -7,12 +7,29 @@
   font-weight: 400;
   line-height: func.toRem(57.6);
   margin-bottom: func.toRem(32);
+
+  @media (max-width: $s-viewport) {
+    font-size: func.toRem(32);
+    line-height: func.toRem(38.4);
+    margin-bottom: func.toRem(12);
+  }
 }
 
 .subcategoriesList {
   display: flex;
   flex-direction: row;
   gap: func.toRem(24);
+
+  @media (max-width: $m-viewport) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-color: $green $white;
+    scrollbar-width: thin;
+    padding-bottom: func.toRem(12);
+  }
+  @media (max-width: $s-viewport) {
+    gap: func.toRem(16);
+  }
 }
 
 .subcategoryItem {
@@ -20,26 +37,38 @@
   height: func.toRem(202);
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(124);
+    height: func.toRem(126);
+  }
 }
 
 .subcategoryImg {
   height: func.toRem(153);
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: func.toRem(8);
+  border-top-left-radius: func.toRem(8);
   margin: 0;
+
+  @media (max-width: $s-viewport) {
+    height: func.toRem(96);
+  }
 }
 
 .subcategoryName {
-  border: 1px solid $green;
+  border: func.toRem(1) solid $green;
   border-top: none;
   // height: func.toRem(50);
   width: 100%;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: func.toRem(8);
+  border-bottom-right-radius: func.toRem(8);
   text-align: center;
   line-height: func.toRem(22.08);
   padding: func.toRem(16) func.toRem(39) func.toRem(14);
+
+  @media (max-width: $s-viewport) {
+    padding: func.toRem(4) func.toRem(15.5) func.toRem(3);
+  }
 }
 
 .active {

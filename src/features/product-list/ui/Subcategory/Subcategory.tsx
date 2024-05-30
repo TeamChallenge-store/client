@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
+
 import { setIsModalOpen } from '~shared/ui/Modal/model/slice';
 import { Loader } from '~shared/ui/Loader';
 import { ErrorPopUp } from '~widgets/error-pop-up';
@@ -11,6 +12,7 @@ import {
 } from '~widgets/Header/ui/Navbar/model/slice';
 
 import css from './Subcategory.module.scss';
+import 'swiper/css';
 
 type TSubcategoryProps = {
   categoryId: string;
