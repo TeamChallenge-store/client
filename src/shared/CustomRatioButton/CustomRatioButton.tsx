@@ -11,7 +11,7 @@ type TCustomRationButtonProps = {
   value?: string;
   required?: boolean;
   labelText?: string;
-  onChange?: () => void;
+  onChange?: () => {};
 };
 
 const CustomRatioButton: FC<TCustomRationButtonProps> = ({

@@ -18,10 +18,18 @@ import { Pagination } from '~features/pagination';
 
 const ProductPage = () => {
   const [pageOffset, setPageOffset] = useState(1);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [isOpenFilters, setIsOpenFilters] = useState(true);
+
+  const sortBy = searchParams.get(QUERY_NAME) ?? DEFAULT_SORT_PARAM;
+  const minPrice = searchParams.get('min_price') ?? 0;
+  const maxPrice = searchParams.get('max_price') ?? 12000;
+
   const { data, isLoading } = useProductCategoryQuery({
     page: pageOffset || 1,
-    sortBy: searchParams.get(QUERY_NAME)?.toString() ?? DEFAULT_SORT_PARAM,
+    sortBy,
+    minPrice,
+    maxPrice,
   });
 
   const totalPages = data?.total_pages || -1;
@@ -39,9 +47,27 @@ const ProductPage = () => {
     setPageOffset(pag.selected + 1);
   };
 
+  // Handle price filter change
+  const handlePriceChange = (min: number, max: number) => {
+    setSearchParams({ min_price: min.toString(), max_price: max.toString() });
+    setPageOffset(1); // Reset page offset when price filter changes
+  };
+
+  const handleFilters = () => {
+    setIsOpenFilters(!isOpenFilters);
+  };
+
   return (
     <Layout
-      sidebar={<ProductListFilters />}
+      sidebar={
+        <ProductListFilters
+          minPrice={Number(minPrice)}
+          maxPrice={Number(maxPrice)}
+          onPriceChange={handlePriceChange}
+          isOpenFilters={isOpenFilters}
+          handleFilters={handleFilters}
+        />
+      }
       sortBy={
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
       }
