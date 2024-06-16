@@ -47,10 +47,9 @@ const ProductPage = () => {
     setPageOffset(pag.selected + 1);
   };
 
-  // Handle price filter change
   const handlePriceChange = (min: number, max: number) => {
     setSearchParams({ min_price: min.toString(), max_price: max.toString() });
-    setPageOffset(1); // Reset page offset when price filter changes
+    setPageOffset(1);
   };
 
   const handleFilters = () => {
