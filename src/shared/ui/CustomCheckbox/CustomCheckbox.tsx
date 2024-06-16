@@ -33,10 +33,10 @@ const CustomCheckbox: FC<TCustomCheckboxProps> = ({
   }, [checked]);
 
   return (
-    <label className={css.customCheckbox}>
+    <label className={`${css.customCheckbox} ${className}`}>
       <div className={css.checkboxContainer}>
         <input
-          className={`${className} ${css.checkbox}`}
+          className={css.checkbox}
           type="checkbox"
           id={id}
           name={name}

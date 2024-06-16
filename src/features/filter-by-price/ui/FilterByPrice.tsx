@@ -5,9 +5,9 @@ import { FC, useEffect, useState } from 'react';
 import cn from 'classnames';
 import Slider from 'rc-slider';
 import arrow from '../../product-list/ui/icons/arrow.svg';
-import { CustomRatioButton } from '~shared/CustomRatioButton';
 
 import css from './FilterByPrice.module.scss';
+import { CustomRatioButton } from '~shared/ui/CustomRatioButton';
 
 type TFilterByPriceProps = {
   minPrice: number;

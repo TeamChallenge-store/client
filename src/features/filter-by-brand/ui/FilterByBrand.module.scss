@@ -1,0 +1,74 @@
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.filterBrand {
+  border-bottom: 1px solid $green;
+  margin-bottom: func.toRem(48);
+}
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: func.toRem(24);
+}
+
+.title {
+  font-weight: 600;
+  font-size: func.toRem(20);
+  line-height: func.toRem(24);
+}
+
+.buttonContainer {
+  opacity: 0;
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  max-height: 0;
+
+  &.showBrand {
+    max-height: 100%;
+    opacity: 1;
+  }
+}
+
+.showButton {
+  width: func.toRem(24);
+}
+
+.arrow {
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease 0s;
+  width: auto;
+}
+
+.rotateArrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.brandItem {
+  margin-bottom: func.toRem(16);
+  transition: transform 0.3s ease 0s;
+}
+
+.showMoreButton {
+  margin-bottom: func.toRem(16);
+}
+
+.showMoreArrow {
+  margin-right: func.toRem(8);
+  transform: translateY(-50%) rotate(180deg);
+  transition: transform 0.3s ease 0s;
+  width: auto;
+}
+
+.rotateMoreArrow {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+@media (max-width: $m-viewport) {
+  .filterBrand {
+    padding: 0 func.toRem(32);
+  }
+}

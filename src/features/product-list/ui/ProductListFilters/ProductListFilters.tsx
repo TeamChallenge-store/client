@@ -7,6 +7,7 @@ import closeIcon from '../../../../shared/ui/Icon/icons/close.svg';
 
 import css from './ProductListFilters.module.scss';
 import { FilterByPrice } from '~features/filter-by-price';
+import { FilterByBrand } from '~features/filter-by-brand';
 
 type TProductListFiltersProps = {
   minPrice: number;
@@ -37,6 +38,7 @@ const ProductListFilters: FC<TProductListFiltersProps> = ({
           maxPrice={maxPrice}
           onPriceChange={onPriceChange}
         />
+        <FilterByBrand />
       </div>
 
       <button
