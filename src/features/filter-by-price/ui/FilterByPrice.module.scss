@@ -33,9 +33,14 @@
   }
 }
 
+.showButton {
+  width: func.toRem(24);
+}
+
 .arrow {
   transform: translateY(-50%) rotate(0deg);
   transition: transform 0.3s ease 0s;
+  width: auto;
 }
 
 .lineDecor {
@@ -63,11 +68,11 @@
 }
 
 .selectedValues {
-  margin-bottom: func.toRem(24);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: func.toRem(17);
+  margin: func.toRem(25) 0;
 }
 
 .priceValue {
@@ -105,12 +110,6 @@
 .icon {
   width: func.toRem(24);
   height: func.toRem(24);
-}
-
-.selectedValues {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
 }
 
 @media (max-width: $m-viewport) {
