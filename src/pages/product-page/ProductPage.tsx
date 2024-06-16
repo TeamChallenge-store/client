@@ -22,8 +22,8 @@ const ProductPage = () => {
   const [isOpenFilters, setIsOpenFilters] = useState(true);
 
   const sortBy = searchParams.get(QUERY_NAME) ?? DEFAULT_SORT_PARAM;
-  const minPrice = searchParams.get('min_price') ?? 0;
-  const maxPrice = searchParams.get('max_price') ?? 12000;
+  const minPrice = parseInt(searchParams.get('min_price') ?? '0', 10);
+  const maxPrice = parseInt(searchParams.get('max_price') ?? '12000', 10);
 
   const { data, isLoading } = useProductCategoryQuery({
     page: pageOffset || 1,

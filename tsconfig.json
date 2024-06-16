@@ -47,6 +47,7 @@
     "src",
     "types",
     "src/shared/ui/ShowMoreProducts/ShowMoreProducts.tsx",
+    "src/features/filter-by-price/ui/FilterByPrice.tsx",
   ],
   "references": [{ "path": "./tsconfig.node.json" }],
 }
