@@ -2,11 +2,13 @@ import { FC } from 'react';
 import ReactPaginate from 'react-paginate';
 
 import css from './Pagination.module.scss';
+import { IProductCard } from '~entities/product';
 
 type TPaginationProps = {
   handlePageClick: (pag: { selected: number }) => void;
   totalPages: number;
   currentPage: number;
+  products: IProductCard[];
 };
 
 const showItems = (currentPage: number) => {
@@ -37,7 +39,12 @@ const Pagination: FC<TPaginationProps> = ({
   handlePageClick,
   totalPages,
   currentPage,
+  products,
 }) => {
+  if (products.length === 0) {
+    return null;
+  }
+
   return (
     <ReactPaginate
       nextLabel={<CustomArrow />}

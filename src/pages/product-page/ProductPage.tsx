@@ -20,6 +20,7 @@ const ProductPage = () => {
   const [pageOffset, setPageOffset] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isOpenFilters, setIsOpenFilters] = useState(true);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
   const sortBy = searchParams.get(QUERY_NAME) ?? DEFAULT_SORT_PARAM;
   const minPrice = parseInt(searchParams.get('min_price') ?? '0', 10);
@@ -30,6 +31,7 @@ const ProductPage = () => {
     sortBy,
     minPrice,
     maxPrice,
+    brand: selectedBrands,
   });
 
   const totalPages = data?.total_pages || -1;
@@ -56,6 +58,18 @@ const ProductPage = () => {
     setIsOpenFilters(!isOpenFilters);
   };
 
+  const handleBrandSelect = (brand: string) => {
+    setSelectedBrands(prevBrands =>
+      prevBrands.includes(brand)
+        ? prevBrands.filter(item => item !== brand)
+        : [...prevBrands, brand],
+    );
+    setSearchParams({ brand: selectedBrands });
+    console.log(brand);
+    console.log(data);
+    console.log(data);
+  };
+
   return (
     <Layout
       sidebar={
@@ -65,6 +79,8 @@ const ProductPage = () => {
           onPriceChange={handlePriceChange}
           isOpenFilters={isOpenFilters}
           handleFilters={handleFilters}
+          selectedBrands={selectedBrands}
+          onSelectBrand={handleBrandSelect}
         />
       }
       sortBy={
@@ -76,6 +92,7 @@ const ProductPage = () => {
           handlePageClick={handlePageClick}
           totalPages={totalPages}
           currentPage={pageOffset}
+          products={data.results}
         />
       }
     />

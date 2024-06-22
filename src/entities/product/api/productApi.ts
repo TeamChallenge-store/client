@@ -11,8 +11,8 @@ import {
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
     // prettier-ignore
-    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number }>({
-      query: ({ page, sortBy, minPrice, maxPrice }) => {
+    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number, brand?: string[]; }>({
+      query: ({ page, sortBy, minPrice, maxPrice, brand }) => {
         return {
           url: 'products',
           params: {
@@ -20,6 +20,7 @@ export const productApi = baseApi.injectEndpoints({
             sortBy,
             min_price: minPrice,
             max_price: maxPrice,
+            brand,
           },
         };
       },

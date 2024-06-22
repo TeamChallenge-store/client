@@ -6,9 +6,15 @@ import { brandList } from '../data/brandList';
 import css from './FilterByBrand.module.scss';
 import { CustomCheckbox } from '~shared/ui/CustomCheckbox';
 
-type TFilterByBrandProps = {};
+type TFilterByBrandProps = {
+  selectedBrands: string[];
+  onSelectBrand: (brand: string) => void;
+};
 
-const FilterByBrand: FC<TFilterByBrandProps> = () => {
+const FilterByBrand: FC<TFilterByBrandProps> = ({
+  selectedBrands,
+  onSelectBrand,
+}) => {
   const [isBrandVisible, setIsBrandVisible] = useState(true);
   const [isShowMore, setIsShowMore] = useState(false);
 
@@ -48,6 +54,9 @@ const FilterByBrand: FC<TFilterByBrandProps> = () => {
             })}
             key={brand}
             labelText={brand}
+            id={brand}
+            checked={selectedBrands.includes(brand)}
+            onChange={() => onSelectBrand(brand)}
           />
         ))}
 

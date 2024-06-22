@@ -15,6 +15,8 @@ type TProductListFiltersProps = {
   onPriceChange: (min: number, max: number) => void;
   isOpenFilters: boolean;
   handleFilters: () => void;
+  selectedBrands: string[];
+  onSelectBrand: (brand: string) => void;
 };
 
 const ProductListFilters: FC<TProductListFiltersProps> = ({
@@ -23,6 +25,8 @@ const ProductListFilters: FC<TProductListFiltersProps> = ({
   onPriceChange,
   isOpenFilters,
   handleFilters,
+  selectedBrands,
+  onSelectBrand,
 }) => {
   return (
     <div className={css.inner}>
@@ -38,7 +42,10 @@ const ProductListFilters: FC<TProductListFiltersProps> = ({
           maxPrice={maxPrice}
           onPriceChange={onPriceChange}
         />
-        <FilterByBrand />
+        <FilterByBrand
+          selectedBrands={selectedBrands}
+          onSelectBrand={onSelectBrand}
+        />
       </div>
 
       <button

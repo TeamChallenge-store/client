@@ -11,6 +11,7 @@ type TCustomCheckboxProps = {
   className?: string;
   value?: string;
   labelText?: string;
+  onChange?: () => void;
 };
 
 const CustomCheckbox: FC<TCustomCheckboxProps> = ({
@@ -21,11 +22,15 @@ const CustomCheckbox: FC<TCustomCheckboxProps> = ({
   checked = false,
   value,
   labelText,
+  onChange,
 }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
+    if (onChange) {
+      onChange();
+    }
   };
 
   useEffect(() => {
