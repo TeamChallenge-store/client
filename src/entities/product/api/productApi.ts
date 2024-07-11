@@ -24,7 +24,7 @@ export const productApi = baseApi.injectEndpoints({
       transformResponse: (response: TResponse) => response.results,
     }),
     newProduct: build.query<IProductCard[], void>({
-      query: () => 'products?sort=date',
+      query: () => 'products?sort=created_at',
       keepUnusedDataFor: 30,
       transformResponse: (response: TResponse) => response.results,
     }),
