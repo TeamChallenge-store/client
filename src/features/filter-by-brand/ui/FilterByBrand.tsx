@@ -24,6 +24,14 @@ const FilterByBrand: FC<TFilterByBrandProps> = ({
     setVisibleBrandCount(isShowMore ? brandList.length : 5);
   }, [isShowMore]);
 
+  const getMaxHeight = () => {
+    if (!isBrandVisible) {
+      return '0';
+    }
+
+    return isShowMore ? `${brandList.length * 40}px` : '200px';
+  };
+
   return (
     <section className={css.filterBrand}>
       <div className={css.topContainer}>
@@ -43,15 +51,16 @@ const FilterByBrand: FC<TFilterByBrandProps> = ({
         </button>
       </div>
       <div
-        className={cn(css.buttonContainer, {
-          [css.showBrand]: isBrandVisible,
-        })}
+        className={css.brandListWrapper}
+        style={{
+          maxHeight: getMaxHeight(),
+          overflow: 'hidden',
+          transition: 'max-height 0.3s ease',
+        }}
       >
         {brandList.slice(0, visibleBrandCount).map(brand => (
           <CustomCheckbox
-            className={cn(css.brandItem, {
-              [css.showBrands]: !isShowMore && brandList.indexOf(brand) >= 5,
-            })}
+            className={css.brandItem}
             key={brand}
             labelText={brand}
             id={brand}
@@ -59,7 +68,8 @@ const FilterByBrand: FC<TFilterByBrandProps> = ({
             onChange={() => onSelectBrand(brand)}
           />
         ))}
-
+      </div>
+      {isBrandVisible && (
         <button
           type="button"
           onClick={() => setIsShowMore(prevState => !prevState)}
@@ -74,7 +84,7 @@ const FilterByBrand: FC<TFilterByBrandProps> = ({
           />
           {!isShowMore ? `Show all ${brandList.length}` : 'Show less'}
         </button>
-      </div>
+      )}
     </section>
   );
 };

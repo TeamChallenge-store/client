@@ -13,15 +13,20 @@ export const productApi = baseApi.injectEndpoints({
     // prettier-ignore
     productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number, brand?: string[]; }>({
       query: ({ page, sortBy, minPrice, maxPrice, brand }) => {
+        const params: Record<string, string | number> = {
+          page,
+          sortBy,
+          min_price: minPrice || 0,
+          max_price: maxPrice || 12000,
+        };
+
+        if (brand && brand.length > 0) {
+          params.brand = brand.join(',');
+        }
+
         return {
           url: 'products',
-          params: {
-            page,
-            sortBy,
-            min_price: minPrice,
-            max_price: maxPrice,
-            brand,
-          },
+          params,
         };
       },
       keepUnusedDataFor: 30,

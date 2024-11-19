@@ -59,15 +59,29 @@ const ProductPage = () => {
   };
 
   const handleBrandSelect = (brand: string) => {
-    setSelectedBrands(prevBrands =>
-      prevBrands.includes(brand)
-        ? prevBrands.filter(item => item !== brand)
-        : [...prevBrands, brand],
-    );
-    setSearchParams({ brand: selectedBrands });
-    console.log(brand);
-    console.log(data);
-    console.log(data);
+    setSelectedBrands(prevSelectedBrands => {
+      const updatedBrands = prevSelectedBrands.includes(brand)
+        ? prevSelectedBrands.filter(b => b !== brand)
+        : [...prevSelectedBrands, brand];
+
+      const params: Record<string, string> = {};
+
+      searchParams.forEach((value, key) => {
+        if (key !== 'brand') {
+          params[key] = value;
+        }
+      });
+
+      if (updatedBrands.length > 0) {
+        params.brand = updatedBrands.join(',');
+      } else {
+        delete params.brand;
+      }
+
+      setSearchParams(new URLSearchParams(params).toString());
+
+      return updatedBrands;
+    });
   };
 
   return (
