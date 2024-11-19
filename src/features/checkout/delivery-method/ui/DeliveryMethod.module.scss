@@ -1,0 +1,52 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.deliveryForm {
+  margin-bottom: func.toRem(56);
+}
+
+.field {
+  margin-bottom: func.toRem(40);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $black;
+  outline-color: transparent;
+  padding-bottom: func.toRem(8);
+
+  &::placeholder {
+    font-size: func.toRem(16);
+    line-height: func.toRem(22.4);
+    color: $gray300;
+  }
+}
+
+.deliveryContainer {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.showMethodList {
+  opacity: 1;
+  max-height: fit-content;
+}
+
+.optionContainer {
+  @include mixin.flexible;
+  margin-bottom: func.toRem(18);
+
+  .ratioButton:checked {
+    color: green;
+  }
+}
+
+.deliveryOptions > .deliveryOption:last-child {
+  .optionContainer:not(:has(> .ratioButton:checked)) {
+    margin-bottom: 0;
+  }
+}

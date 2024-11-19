@@ -37,18 +37,14 @@ body {
 }
 
 main {
-  padding-top: toRem(105);
   flex: 1 1 auto;
-
-  @media (max-width: $l-viewport) {
-    padding-top: 105px;
-  }
 }
 
 #root {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 button {
