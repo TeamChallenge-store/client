@@ -27,6 +27,7 @@
   position: relative;
   font-size: func.toRem(16);
   font-weight: 500;
+  width: 100%;
 }
 
 .select {
@@ -46,6 +47,7 @@
   display: grid;
   gap: 32px 25px;
   grid-template-columns: repeat(var(--columns), 1fr);
+  justify-items: center;
 
   @media (max-width: $m-viewport) {
     --columns: 2;
