@@ -13,6 +13,7 @@ type TLayoutProps = {
 const Layout: FC<TLayoutProps> = props => {
   return (
     <section className={cn('container', css.productsSection)}>
+      <h1 className={css.title}>Catalog</h1>
       <div className={css.inner}>
         <aside className={css.filters}>{props.sidebar}</aside>
 

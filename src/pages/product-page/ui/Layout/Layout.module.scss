@@ -12,6 +12,12 @@
   }
 }
 
+.title {
+  padding: func.toRem(32) 0;
+  font-size: func.toRem(48);
+  line-height: func.toRem(57.6);
+}
+
 .inner {
   display: flex;
   justify-content: space-between;
