@@ -1,0 +1,14 @@
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.title {
+  margin-bottom: func.toRem(24);
+}
+
+.filterContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: func.toRem(16) func.toRem(24);
+  justify-items: center;
+}
