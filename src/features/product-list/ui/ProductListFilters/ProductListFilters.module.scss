@@ -146,7 +146,7 @@
 @media (max-width: $m-viewport) {
   .filtersBox {
     position: absolute;
-    top: func.toRem(-200);
+    top: 0;
     left: 0;
     background-color: $white;
     z-index: 3;

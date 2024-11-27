@@ -1,10 +1,12 @@
-import { FC, useState } from 'react';
-// import cn from 'classnames';
+import { FC } from 'react';
 
 import css from './FilterByColor.module.scss';
 import { ColorCheckbox } from '~shared/ui/ColorCheckbox';
 
-type TFilterByColorProps = {};
+type TFilterByColorProps = {
+  selectedColors: string[];
+  onColorSelect: (color: string) => void;
+};
 
 const colors = [
   { label: 'White', bgColor: 'white' },
@@ -17,15 +19,10 @@ const colors = [
   { label: 'Brown', bgColor: '#815E41' },
 ];
 
-const FilterByColor: FC<TFilterByColorProps> = () => {
-  const [selectedColors, setSelectedColors] = useState<string[]>([]);
-
-  const handleColorSelect = (color: string, isSelected: boolean) => {
-    setSelectedColors(prev => {
-      return isSelected ? [...prev, color] : prev.filter(c => c !== color);
-    });
-  };
-
+const FilterByColor: FC<TFilterByColorProps> = ({
+  selectedColors,
+  onColorSelect,
+}) => {
   return (
     <section className={css.filterColor}>
       <h3 className={css.title}>Color</h3>
@@ -36,7 +33,7 @@ const FilterByColor: FC<TFilterByColorProps> = () => {
             label={color.label}
             bgColor={color.bgColor}
             isSelected={selectedColors.includes(color.label)}
-            onClick={isSelected => handleColorSelect(color.label, isSelected)}
+            onClick={() => onColorSelect(color.label)}
           />
         ))}
       </div>

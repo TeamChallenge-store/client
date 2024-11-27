@@ -11,8 +11,8 @@ import {
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
     // prettier-ignore
-    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number, brand?: string[]; }>({
-      query: ({ page, sortBy, minPrice, maxPrice, brand }) => {
+    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number, brand?: string[], color?: string[] }>({
+      query: ({ page, sortBy, minPrice, maxPrice, brand, color }) => {
         const params: Record<string, string | number> = {
           page,
           sortBy,
@@ -22,6 +22,10 @@ export const productApi = baseApi.injectEndpoints({
 
         if (brand && brand.length > 0) {
           params.brand = brand.join(',');
+        }
+
+        if (color && color.length > 0) {
+          params.color = color.join(',');
         }
 
         return {

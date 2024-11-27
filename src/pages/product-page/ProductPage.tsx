@@ -21,6 +21,7 @@ const ProductPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [isOpenFilters, setIsOpenFilters] = useState(true);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
   const sortBy = searchParams.get(QUERY_NAME) ?? DEFAULT_SORT_PARAM;
   const minPrice = parseInt(searchParams.get('min_price') ?? '0', 10);
@@ -32,6 +33,7 @@ const ProductPage = () => {
     minPrice,
     maxPrice,
     brand: selectedBrands,
+    color: selectedColors,
   });
 
   const totalPages = data?.total_pages || -1;
@@ -58,30 +60,40 @@ const ProductPage = () => {
     setIsOpenFilters(!isOpenFilters);
   };
 
-  const handleBrandSelect = (brand: string) => {
-    setSelectedBrands(prevSelectedBrands => {
-      const updatedBrands = prevSelectedBrands.includes(brand)
-        ? prevSelectedBrands.filter(b => b !== brand)
-        : [...prevSelectedBrands, brand];
+  const handleFilterSelect = (
+    filterKey: string,
+    selectedValue: string,
+    setSelectedValues: React.Dispatch<React.SetStateAction<string[]>>,
+  ) => {
+    setSelectedValues(prevSelectedValues => {
+      const updatedValues = prevSelectedValues.includes(selectedValue)
+        ? prevSelectedValues.filter(value => value !== selectedValue)
+        : [...prevSelectedValues, selectedValue];
 
       const params: Record<string, string> = {};
 
       searchParams.forEach((value, key) => {
-        if (key !== 'brand') {
+        if (key !== filterKey) {
           params[key] = value;
         }
       });
 
-      if (updatedBrands.length > 0) {
-        params.brand = updatedBrands.join(',');
-      } else {
-        delete params.brand;
+      if (updatedValues.length > 0) {
+        params[filterKey] = updatedValues.join(',');
       }
 
       setSearchParams(new URLSearchParams(params).toString());
 
-      return updatedBrands;
+      return updatedValues;
     });
+  };
+
+  const handleBrandSelect = (brand: string) => {
+    handleFilterSelect('brand', brand, setSelectedBrands);
+  };
+
+  const handleColorSelect = (color: string) => {
+    handleFilterSelect('color', color, setSelectedColors);
   };
 
   return (
@@ -95,6 +107,8 @@ const ProductPage = () => {
           handleFilters={handleFilters}
           selectedBrands={selectedBrands}
           onSelectBrand={handleBrandSelect}
+          selectedColors={selectedColors}
+          onColorSelect={handleColorSelect}
         />
       }
       sortBy={

@@ -18,6 +18,8 @@ type TProductListFiltersProps = {
   handleFilters: () => void;
   selectedBrands: string[];
   onSelectBrand: (brand: string) => void;
+  selectedColors: string[];
+  onColorSelect: (color: string) => void;
 };
 
 const ProductListFilters: FC<TProductListFiltersProps> = ({
@@ -28,6 +30,8 @@ const ProductListFilters: FC<TProductListFiltersProps> = ({
   handleFilters,
   selectedBrands,
   onSelectBrand,
+  selectedColors,
+  onColorSelect,
 }) => {
   return (
     <div className={css.inner}>
@@ -47,7 +51,10 @@ const ProductListFilters: FC<TProductListFiltersProps> = ({
           selectedBrands={selectedBrands}
           onSelectBrand={onSelectBrand}
         />
-        <FilterByColor />
+        <FilterByColor
+          selectedColors={selectedColors}
+          onColorSelect={onColorSelect}
+        />
       </div>
 
       <button
