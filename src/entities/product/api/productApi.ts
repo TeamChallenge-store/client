@@ -29,7 +29,7 @@ export const productApi = baseApi.injectEndpoints({
         }
 
         return {
-          url: 'products',
+          url: `products?sort=${sortBy}`,
           params,
         };
       },
