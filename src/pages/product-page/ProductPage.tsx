@@ -111,6 +111,7 @@ const ProductPage = () => {
           onColorSelect={handleColorSelect}
         />
       }
+      productsNumber={data.count}
       sortBy={
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
       }

@@ -8,6 +8,7 @@ type TLayoutProps = {
   sortBy?: ReactNode;
   productList?: ReactNode;
   pagination?: ReactNode;
+  productsNumber?: number;
 };
 
 const Layout: FC<TLayoutProps> = props => {
@@ -18,6 +19,10 @@ const Layout: FC<TLayoutProps> = props => {
         <aside className={css.filters}>{props.sidebar}</aside>
 
         <div className={css.listInner}>
+          <span className={css.productsNumber}>
+            {props.productsNumber}
+            {' products found'}
+          </span>
           <div className={css.select}>{props.sortBy}</div>
           <ul className={css.listGrid}>{props.productList}</ul>
           {props.pagination}

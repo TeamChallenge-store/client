@@ -11,4 +11,22 @@
   grid-template-columns: repeat(4, 1fr);
   gap: func.toRem(16) func.toRem(24);
   justify-items: center;
+  max-width: fit-content;
+}
+
+@media (max-width: $m-viewport) {
+  .filterColor {
+    padding: 0 func.toRem(32);
+    margin-bottom: func.toRem(80);
+  }
+
+  .filterContainer {
+    display: flex;
+  }
+}
+
+@media (max-width: $s-viewport) {
+  .filterContainer {
+    display: grid;
+  }
 }

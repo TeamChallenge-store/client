@@ -5,6 +5,7 @@
 .productsSection {
   padding-top: func.toRem(20);
   padding-bottom: func.toRem(120);
+  position: relative;
 
   @media (min-width: $max-viewport) {
     padding-top: func.toRem(20);
@@ -36,6 +37,16 @@
   width: 100%;
 }
 
+.productsNumber {
+  color: $gray300;
+  position: absolute;
+  top: func.toRem(20);
+
+  @media (max-width: $m-viewport) {
+    top: func.toRem(40);
+  }
+}
+
 .select {
   position: absolute;
   right: 0;
@@ -57,7 +68,6 @@
 
   @media (max-width: $m-viewport) {
     --columns: 2;
-    padding-top: func.toRem(34);
   }
 
   @media (max-width: $s-viewport) {
