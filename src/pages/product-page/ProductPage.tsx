@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useParams } from 'react-router-dom';
 
 import { ProductList } from '~widgets/product-list';
 import { ProductListFilters } from '~features/product-list';
@@ -17,6 +17,7 @@ import {
 import { Pagination } from '~features/pagination';
 
 const ProductPage = () => {
+  const { category } = useParams<{ category: string }>();
   const [pageOffset, setPageOffset] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
   const [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -28,6 +29,7 @@ const ProductPage = () => {
   const maxPrice = parseInt(searchParams.get('max_price') ?? '12000', 10);
 
   const { data, isLoading } = useProductCategoryQuery({
+    category,
     page: pageOffset || 1,
     sortBy,
     minPrice,
@@ -50,6 +52,16 @@ const ProductPage = () => {
   const handlePageClick = (pag: { selected: number }) => {
     setPageOffset(pag.selected + 1);
   };
+
+  const formatCategoryName = (categoryName: string | undefined): string => {
+    if (!categoryName) {
+      return 'Catalog';
+    }
+
+    return categoryName.replace(/^=/, '').replace(/^\w/, c => c.toUpperCase());
+  };
+
+  const formattedCategoryName = formatCategoryName(category);
 
   const handlePriceChange = (min: number, max: number) => {
     setSearchParams({ min_price: min.toString(), max_price: max.toString() });
@@ -111,6 +123,7 @@ const ProductPage = () => {
           onColorSelect={handleColorSelect}
         />
       }
+      categoryName={formattedCategoryName}
       productsNumber={data.count}
       sortBy={
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
