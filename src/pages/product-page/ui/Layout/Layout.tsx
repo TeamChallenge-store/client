@@ -4,6 +4,7 @@ import cn from 'classnames';
 import css from './Layout.module.scss';
 
 type TLayoutProps = {
+  breadcrumbs?: ReactNode;
   sidebar?: ReactNode;
   sortBy?: ReactNode;
   productList?: ReactNode;
@@ -15,6 +16,7 @@ type TLayoutProps = {
 const Layout: FC<TLayoutProps> = props => {
   return (
     <section className={cn('container', css.productsSection)}>
+      <div className={css.breadcrumbs}>{props.breadcrumbs}</div>
       <h1 className={css.title}>{props.categoryName}</h1>
       <div className={css.inner}>
         <aside className={css.filters}>{props.sidebar}</aside>

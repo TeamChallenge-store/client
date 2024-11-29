@@ -15,6 +15,7 @@ import {
   DEFAULT_SORT_LABLE,
 } from './constants';
 import { Pagination } from '~features/pagination';
+import { Breadcrumbs } from '~widgets/breadcrumbs';
 
 const ProductPage = () => {
   const { category } = useParams<{ category: string }>();
@@ -110,6 +111,9 @@ const ProductPage = () => {
 
   return (
     <Layout
+      breadcrumbs={
+        <Breadcrumbs mainPage="Catalog" categoryName={formattedCategoryName} />
+      }
       sidebar={
         <ProductListFilters
           minPrice={Number(minPrice)}
