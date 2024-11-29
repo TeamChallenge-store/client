@@ -3,12 +3,12 @@
 @use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .productsSection {
-  padding-top: func.toRem(20);
+  padding-top: func.toRem(16);
   padding-bottom: func.toRem(120);
   position: relative;
 
   @media (min-width: $max-viewport) {
-    padding-top: func.toRem(20);
+    padding-top: func.toRem(16);
     padding-bottom: func.toRem(120);
   }
 }
@@ -17,6 +17,7 @@
   padding: func.toRem(32) 0;
   font-size: func.toRem(48);
   line-height: func.toRem(57.6);
+  font-weight: 400;
 }
 
 .inner {
@@ -44,6 +45,7 @@
   color: $gray300;
   position: absolute;
   top: func.toRem(20);
+  font-size: 18px;
 
   @media (max-width: $m-viewport) {
     top: func.toRem(40);

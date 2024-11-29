@@ -58,13 +58,13 @@
 
 .showMoreArrow {
   margin-right: func.toRem(8);
-  transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(0deg);
   transition: transform 0.3s ease 0s;
   width: auto;
 }
 
 .rotateMoreArrow {
-  transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 @media (max-width: $m-viewport) {
