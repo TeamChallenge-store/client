@@ -1,15 +1,44 @@
+/* eslint-disable max-len */
 import { baseApi } from '~shared/api/baseApi';
 
-import { IProductCard, TResponse, TResponseProducts } from '../model/types';
+import {
+  IProductCard,
+  TResponse,
+  TResponseProducts,
+  TResponseProductsPage,
+} from '../model/types';
 
 export const productApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    productCategory: build.query<IProductCard[], string>({
-      query: sortBy => ({
-        url: `products/${sortBy}`,
-      }),
+    // prettier-ignore
+    productCategory: build.query<TResponseProductsPage, { page: number; sortBy: string, minPrice?: number, maxPrice?: number, brand?: string[], color?: string[], category?: string }>({
+      query: ({ page, sortBy, minPrice, maxPrice, brand, color, category }) => {
+        const params: Record<string, string | number> = {
+          page,
+          sortBy,
+          min_price: minPrice || 0,
+          max_price: maxPrice || 12000,
+        };
+
+        if (brand && brand.length > 0) {
+          params.brand = brand.join(',');
+        }
+
+        if (color && color.length > 0) {
+          params.color = color.join(',');
+        }
+
+        if (category) {
+          params.category = category;
+        }
+
+        return {
+          url: `products?sort=${sortBy}`,
+          params,
+        };
+      },
       keepUnusedDataFor: 30,
-      transformResponse: (response: TResponse) => response.results,
+      transformResponse: (response: TResponseProductsPage) => response,
     }),
     searchProducts: build.query<IProductCard[], string>({
       query: searchProduct => ({

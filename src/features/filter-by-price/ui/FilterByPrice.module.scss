@@ -1,0 +1,125 @@
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: func.toRem(24);
+}
+
+.title {
+  font-weight: 600;
+  font-size: func.toRem(20);
+  line-height: func.toRem(24);
+}
+
+.filterPrice {
+  border-bottom: 1px solid $green;
+  margin-bottom: func.toRem(48);
+}
+
+.buttonContainer {
+  opacity: 0;
+  transition:
+    max-height 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+  max-height: 0;
+
+  &.showPrice {
+    max-height: 100%;
+    opacity: 1;
+  }
+}
+
+.showButton {
+  width: func.toRem(24);
+}
+
+.arrow {
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease 0s;
+  width: auto;
+}
+
+.lineDecor {
+  display: inline-block;
+  width: func.toRem(15);
+  height: func.toRem(2);
+  background-color: $green;
+  border-radius: func.toRem(5);
+}
+
+.rotateArrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.rangePrice {
+  margin-bottom: func.toRem(16);
+}
+
+.input {
+  margin-bottom: func.toRem(16);
+}
+
+.range {
+  margin-bottom: func.toRem(16);
+}
+
+.selectedValues {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: func.toRem(17);
+  margin: func.toRem(25) 0;
+}
+
+.priceValue {
+  padding: func.toRem(8) func.toRem(16);
+  border: func.toRem(1) solid $green;
+  width: func.toRem(114);
+  border-radius: func.toRem(15);
+  outline-color: $green;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  &[type='number'] {
+    appearance: textfield;
+  }
+}
+
+.filterIcon {
+  display: none;
+  position: absolute;
+  z-index: 2;
+
+  @media (max-width: $m-viewport) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: func.toRem(8);
+  }
+}
+
+.icon {
+  width: func.toRem(24);
+  height: func.toRem(24);
+}
+
+@media (max-width: $m-viewport) {
+  .filterPrice {
+    padding: 0 func.toRem(32);
+  }
+  .range {
+    width: 90%;
+  }
+  .selectedValues {
+    justify-content: start;
+  }
+}

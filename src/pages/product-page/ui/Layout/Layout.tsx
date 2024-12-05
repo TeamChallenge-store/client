@@ -4,21 +4,28 @@ import cn from 'classnames';
 import css from './Layout.module.scss';
 
 type TLayoutProps = {
+  breadcrumbs?: ReactNode;
   sidebar?: ReactNode;
   sortBy?: ReactNode;
-  filtersMob?: ReactNode;
   productList?: ReactNode;
   pagination?: ReactNode;
+  categoryName?: string;
+  productsNumber?: number;
 };
 
 const Layout: FC<TLayoutProps> = props => {
   return (
     <section className={cn('container', css.productsSection)}>
+      <div className={css.breadcrumbs}>{props.breadcrumbs}</div>
+      <h1 className={css.title}>{props.categoryName}</h1>
       <div className={css.inner}>
         <aside className={css.filters}>{props.sidebar}</aside>
 
         <div className={css.listInner}>
-          <div className={css.filtersMob}>{props.filtersMob}</div>
+          <span className={css.productsNumber}>
+            {props.productsNumber}
+            {' products found'}
+          </span>
           <div className={css.select}>{props.sortBy}</div>
           <ul className={css.listGrid}>{props.productList}</ul>
           {props.pagination}
