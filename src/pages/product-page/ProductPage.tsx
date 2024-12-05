@@ -21,7 +21,7 @@ const ProductPage = () => {
   const { category } = useParams<{ category: string }>();
   const [pageOffset, setPageOffset] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [isOpenFilters, setIsOpenFilters] = useState(true);
+  const [isOpenFilters, setIsOpenFilters] = useState(false);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
 
