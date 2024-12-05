@@ -8,7 +8,6 @@ import css from './Order.module.scss';
 const products: IProductCard[] = [
   {
     id: 0,
-    // eslint-disable-next-line max-len
     name: 'TwinZipper (System) double bike bag',
     price: '1 250',
     image:
@@ -17,7 +16,6 @@ const products: IProductCard[] = [
   },
   {
     id: 1,
-    // eslint-disable-next-line max-len
     name: 'Badawi Long 6 Persons - Family Tent',
     price: '8 699',
     image:

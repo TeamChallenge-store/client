@@ -1,0 +1,217 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 8px;
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* Container for the left and right sections */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 24px; /* Space between child elements */
+  padding: 112px 60px 135px; /* Top/Bottom: 20px, Left/Right: 16px */
+
+  width: 100%; /* Default width for small screens */
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1286px; /* Limit the width for larger devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 16px; /* Reduce padding for very small screens */
+    gap: 10px; /* Adjust gap to fit smaller devices */
+  }
+}
+
+ 
+/* Left side styling */
+.leftSide {
+  flex: 1; /* Allow it to grow and shrink */
+  max-width: 862px; /* Restrict the maximum width */
+  width: 100%; /* Take full width of the container by default */
+}
+
+/* Right side styling */
+.rightSide {
+  flex: 1; /* Allow it to grow and shrink */
+  max-width: 424px; /* Restrict the maximum width */
+  height: 718px;
+  border-radius: 8px;
+}
+
+.thankYouContainer {
+  background-color: #f2f7f2; /* Light background color */
+  padding: 20px; 
+  margin-bottom: 20px;
+  width: 862px; 
+  border-radius: 15px;
+}
+
+/* Header styling */
+.header {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem; /* Larger text for better readability */
+  color: #333; /* A dark color for contrast */
+  font-family: 'Helvetica', sans-serif; /* Make the header stand out */
+}
+
+.header p {
+  color: #868484;
+  font-size: 18px;
+  text-align: left;
+}
+
+.header h1 {
+  text-align: left;
+  font-size: 32px; /* Adjust to your desired size */
+  font-weight: 600; /* Optional: Slightly reduce weight */
+
+  color: #333; /* Ensure it remains legible */
+}
+
+/* User name styling */
+.userName {
+  font-weight: 600; /* A bit lighter than bold for better readability */
+}
+
+/* Section details layout */
+.details p {
+  display: flex; /* Enable flexbox for each <p> */
+  justify-content: space-between; /* Align left and right */
+  align-items: center; /* Center align vertically */
+  margin: 0; /* Reset default margin for better spacing control */
+  padding: 10px 0; /* Optional: Add some vertical spacing */
+  border-bottom: 1px solid #ccc; /* Optional: Add a divider for visual clarity */
+}
+
+.label {
+  font-size: 18px; /* Adjust font size if needed */
+  color: #000000; /* Text color for labels */
+}
+
+.value {
+  font-size: 20px; /* Same font size as the label */
+  color: #000; /* Text color for values */
+  font-weight: bold; /* Make values bold */
+}
+
+.details p.info {
+  color: #868484;
+  margin-top: 32px;
+  font-size: 16px; /* Adjust size if needed */
+  border-bottom: none; /* No border for the info paragraph */
+  display: block; /* Add 8px gap below the info */ /* Reset to block layout for better structure */
+}
+
+.details p.email {
+  border-bottom: none;
+  display: block; /* Ensure the email appears on a new line */
+  margin: 0; /* Reset margins */
+  padding: 10px 0; /* Add spacing if needed */
+  font-size: 16px; /* Adjust size */
+  color: #000; /* Ensure consistent styling */ 
+}
+
+/* Shipping section */
+.shipping {
+  margin-top: 60px;
+  font-family: Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  text-underline-position: from-font;
+}
+
+.shipping h3 {
+  font-size: 16px; /* Adjust if needed for heading size */
+  font-weight: 600; /* Typically headings are bolder */
+  margin-bottom: 16px; /* Add margin for spacing */
+}
+
+.shipping address {
+  margin-top: 10px; /* Space between the address and the shipping header */
+}
+
+.shipping p {
+  margin: 4px 0; /* Space between paragraphs for better readability */
+}
+
+.imageBadge {
+  display: flex; /* Flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 48px; /* Fixed width */
+  height: 48px; /* Fixed height */
+  padding: 3px; /* Padding around the content */
+  gap: 4px; /* Spacing between items inside */
+  opacity: 1; /* Visible */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  margin-bottom: 10px;
+}
+
+.helpContainer {
+  justify-content: space-between;
+  display: flex; /* Enable flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  margin-top: 20px; /* Optional: Add spacing above the container */
+}
+
+.textContainer {
+  display: flex; /* Flex layout for image and text */
+  align-items: center; /* Center image and text vertically */
+  gap: 8px; /* Add spacing between the image and the text */
+}
+
+.help {
+  font-weight: normal;
+  margin: 0; /* Reset default margin for proper alignment */
+  font-size: 18px; /* Adjust font size */
+  font-family: Helvetica, Arial, sans-serif;
+  color: #000; /* Optional: Set text color */
+}
+
+.continueButton {
+  font-size: 24px;
+  max-width: 411px;
+  height: 64px;
+  background-color: #37643b;
+  color: #fff;
+  padding: 16px 76px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.infoBadge {
+  display: flex; /* Flex container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 22px; /* Fixed width */
+  height: 22px; /* Fixed height */
+  padding: 1px 0; /* Padding around the content */
+  border: 1.5px solid transparent; /* Proper border property */
+  opacity: 1; /* Fully visible */
+  margin-bottom: 5px; /* Space below the badge */
+}
+

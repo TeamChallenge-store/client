@@ -1,0 +1,78 @@
+.summary {
+  margin-top: 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif; 
+}
+
+.itemList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.itemName {
+  font-weight: bold;
+  font-size: 16px;
+  color: #444;
+  font-family: 'Helvetica', sans-serif; 
+}
+
+.itemQuantity {
+  font-size: 18px;
+}
+
+.summaryDetails {
+  margin-top: 20px;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    &:last-child {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+    }
+  }
+
+  p.total {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .text {
+    font-size: 18px; /* Adjust size if needed */
+    font-family: 'Helvetica', sans-serif; 
+  }
+
+  .price {
+    font-size: 18px; /* Different size for prices */
+    font-family: 'Helvetica', sans-serif; 
+  }
+  
+  .border {
+    border-top: 2px solid #37643B; /* Green top border */
+  }
+}

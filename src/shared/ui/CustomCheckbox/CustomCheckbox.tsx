@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import { FC, useEffect, useState } from 'react';
 import cn from 'classnames';
 import css from './CustomCheckbox.module.scss';
