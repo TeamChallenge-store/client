@@ -41,7 +41,6 @@
   }
 }
 
- 
 /* Left side styling */
 .leftSide {
   flex: 1; /* Allow it to grow and shrink */
@@ -59,9 +58,9 @@
 
 .thankYouContainer {
   background-color: #f2f7f2; /* Light background color */
-  padding: 20px; 
+  padding: 20px;
   margin-bottom: 20px;
-  width: 862px; 
+  width: 862px;
   border-radius: 15px;
 }
 
@@ -128,7 +127,7 @@
   margin: 0; /* Reset margins */
   padding: 10px 0; /* Add spacing if needed */
   font-size: 16px; /* Adjust size */
-  color: #000; /* Ensure consistent styling */ 
+  color: #000; /* Ensure consistent styling */
 }
 
 /* Shipping section */
@@ -214,4 +213,3 @@
   opacity: 1; /* Fully visible */
   margin-bottom: 5px; /* Space below the badge */
 }
-
