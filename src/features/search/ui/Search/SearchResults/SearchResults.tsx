@@ -1,7 +1,8 @@
 import { FC } from 'react';
-import { useDebounce } from 'use-debounce';
-import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
+import { NavLink } from 'react-router-dom';
+import { useDebounce } from 'use-debounce';
+
 import { useSearchProductsQuery } from '~entities/product';
 import css from './SearchResults.module.scss';
 

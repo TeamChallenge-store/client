@@ -1,0 +1,81 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: func.toRem(18);
+  line-height: func.toRem(21.6);
+}
+
+.pageLinkItem {
+  padding: func.toRem(13) func.toRem(18.5);
+  cursor: pointer;
+  color: $black;
+
+  &:hover {
+    color: $norway950;
+  }
+}
+
+.activeItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: func.toRem(1) solid $norway950;
+  border-radius: 50%;
+  width: func.toRem(48);
+  height: func.toRem(48);
+}
+
+.previousArrow,
+.nextArrow {
+  display: flex;
+  cursor: pointer;
+  padding: func.toRem(12) func.toRem(17);
+  outline-color: transparent;
+
+  svg path {
+    fill: $norway700;
+    @include mixin.button-transition(fill, 0.3s);
+  }
+
+  &:hover svg path {
+    fill: $norway950;
+  }
+}
+
+.previousArrow {
+  margin-right: func.toRem(48);
+}
+
+.nextArrow {
+  margin-left: func.toRem(48);
+  transform: rotate(180deg);
+}
+
+@media (max-width: $s-viewport) {
+  .pagination {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+
+  .previousArrow {
+    margin-right: 35px;
+  }
+
+  .nextArrow {
+    margin-left: 35px;
+  }
+
+  .pageLinkItem {
+    padding: 9px 12.5px;
+  }
+
+  .activeItem {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,16 +1,18 @@
 interface IProductCard {
   id: number;
-  category: number;
-  subcategory: number;
+  category?: number;
+  subcategory?: number;
   name: string;
   price: string;
   old_price?: string;
   image: string | null;
-  quantity_in_stock: number;
-  brand: string;
-  color: string;
-  rate: number;
-  quantity: number;
+  quantity_in_stock?: number;
+  brand?: string;
+  color?: string;
+  rate?: number;
+  subtitle?: string;
+  subscription?: string;
+  features?: string;
 }
 
 type TResponse = {
@@ -23,6 +25,15 @@ type TResponseProducts = {
   };
 };
 
+type TResponseProductsPage = {
+  count: number;
+  page_size: number;
+  total_pages: number;
+  next: string | null;
+  previous: string | null;
+  results: IProductCard[];
+};
+
 type TSortBy = [string, string][];
 
 export {
@@ -30,4 +41,5 @@ export {
   type TSortBy,
   type TResponse,
   type TResponseProducts,
+  type TResponseProductsPage,
 };
