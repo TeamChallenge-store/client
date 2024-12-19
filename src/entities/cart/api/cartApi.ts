@@ -4,20 +4,26 @@ import { IBagProduct, TResponseBag } from '../model/types';
 
 export const cartApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    getCartProduct: build.query<IBagProduct[], void>({
+    getCartProduct: build.query<
+      { cart_items: IBagProduct[]; total_price: number },
+      void
+    >({
       query: () => ({
         url: 'cart',
-        credentials: 'include', 
+        credentials: 'include',
       }),
       keepUnusedDataFor: 30,
-      transformResponse: (response: TResponseBag) => response.cart_items,
+      transformResponse: (response: TResponseBag) => ({
+        cart_items: response.cart_items,
+        total_price: response.total_price,
+      }),
     }),
     addProductToCart: build.mutation<void, { pk: number; quantity: number }>({
       query: ({ pk, quantity }) => ({
         url: 'cart',
         method: 'POST',
         params: { pk, quantity },
-        credentials: 'include', 
+        credentials: 'include',
       }),
     }),
     deleteCartProduct: build.mutation<void, { pk: number }>({
@@ -25,12 +31,11 @@ export const cartApi = baseApi.injectEndpoints({
         url: 'cart',
         method: 'DELETE',
         params: { pk },
-        credentials: 'include', 
+        credentials: 'include',
       }),
     }),
   }),
 });
-
 
 export const {
   useGetCartProductQuery,

@@ -6,11 +6,13 @@ import css from './ChangeQuanity.module.scss';
 interface ChangeQuanityProps {
   initialQuantity: number;
   productId: number;
+  refetch: () => void;
 }
 
 const ChangeQuanity: FC<ChangeQuanityProps> = ({
   initialQuantity,
   productId,
+  refetch,
 }) => {
   const [count, setCount] = useState(initialQuantity);
   const [updateCart] = useAddProductToCartMutation();
@@ -20,6 +22,7 @@ const ChangeQuanity: FC<ChangeQuanityProps> = ({
 
     setCount(newCount);
     await updateCart({ pk: productId, quantity: newCount });
+    refetch();
   };
 
   const decrement = async () => {
@@ -28,6 +31,7 @@ const ChangeQuanity: FC<ChangeQuanityProps> = ({
 
       setCount(newCount);
       await updateCart({ pk: productId, quantity: newCount });
+      refetch();
     }
   };
 

@@ -5,13 +5,15 @@ import css from './RemoveFromCart.module.scss';
 
 interface IDeleteProductProps {
   productId: number;
+  refetch: () => void;
 }
 
-const RemoveFromCart: FC<IDeleteProductProps> = ({ productId }) => {
+const RemoveFromCart: FC<IDeleteProductProps> = ({ productId, refetch }) => {
   const [deleteProduct] = useDeleteCartProductMutation();
 
   const deleteCartProduct = async () => {
     await deleteProduct({ pk: productId });
+    refetch();
   };
 
   return (

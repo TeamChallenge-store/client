@@ -6,10 +6,21 @@ import { OrderSummary } from '~widgets/cart-pop-up/OrderSummary';
 import { Icon } from '~shared/ui/Icon';
 
 import css from './CartPopUp.module.scss';
+import { useGetCartProductQuery } from '~entities/cart';
+import { useDispatch } from 'react-redux';
+import { setIsModalOpen } from '~shared/ui/Modal';
+import { Loader } from '~shared/ui/Loader';
+import { ErrorPopUp } from '~widgets/error-pop-up';
+import { CartModal } from './CartModal';
 
 const CartPopUp = ({ onClose }: { onClose: () => void }) => {
   const [isCartOpen] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
+  const { data: cartProducts, isLoading, refetch } = useGetCartProductQuery();
+  const products = cartProducts?.cart_items;
+  const totalPrice = cartProducts?.total_price;
+  const dispatch = useDispatch();
+  console.log('totalPrice is... ', totalPrice);
 
   useEffect(() => {
     document.body.classList.add('no-scroll');
@@ -18,6 +29,12 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
       document.body.classList.remove('no-scroll');
     };
   }, []);
+
+  useEffect(() => {
+    if (!products) {
+      dispatch(setIsModalOpen(true));
+    }
+  }, [dispatch, products]);
 
   const handleCloseCart = () => {
     setIsClosing(true);
@@ -31,6 +48,18 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
       handleCloseCart();
     }
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (!products) {
+    return <ErrorPopUp />;
+  }
+
+  if (products.length === 0) {
+    return <CartModal />;
+  }
 
   return (
     isCartOpen && (
@@ -50,9 +79,9 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
           </div>
           <div className={css.info}>
             <div className={css.cartList}>
-              <CartList />
+              <CartList products={products} refetch={refetch} />
             </div>
-            <OrderSummary total={200} onClose={handleCloseCart} />
+            <OrderSummary total={totalPrice} onClose={handleCloseCart} />
           </div>
         </div>
       </div>

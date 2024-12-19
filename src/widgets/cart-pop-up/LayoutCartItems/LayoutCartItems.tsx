@@ -7,12 +7,15 @@ import { IBagProduct } from '~entities/cart';
 import defaultImage from '../../../shared/ui/LayoutProductCard/defaultImage.png';
 import css from './LayoutCartItems.module.scss';
 
-const LayoutCartItems: FC<{ product?: IBagProduct }> = ({ product }) => {
+const LayoutCartItems: FC<{ product?: IBagProduct; refetch: () => void }> = ({
+  product,
+  refetch,
+}) => {
   if (!product) {
     return null;
   }
 
-  const { image, price, name, quantity, id } = product;
+  const { image, price, name, id } = product.product;
 
   return (
     <article className={css.cartItem}>
@@ -20,25 +23,19 @@ const LayoutCartItems: FC<{ product?: IBagProduct }> = ({ product }) => {
         <img className={css.itemImg} src={image || defaultImage} />
         <div className={css.itemTop}>
           <p className={css.itemTitle}>{name}</p>
-          <ChangeQuanity initialQuantity={quantity} productId={product.id} />
+          <ChangeQuanity
+            initialQuantity={product.quantity}
+            productId={id}
+            refetch={refetch}
+          />
         </div>
         <div className={css.itemPriceActions}>
           <span className={css.itemPrice}>{`${price} ₴`}</span>
-          <RemoveFromCart productId={id} />
+          <RemoveFromCart productId={id} refetch={refetch} />
         </div>
       </div>
     </article>
   );
-};
-
-LayoutCartItems.defaultProps = {
-  product: {
-    id: 1,
-    image: null,
-    name: 'Badawi Long 6 Persons - Family Tent fbfbfbfbfbfbfbfbfbfb ',
-    price: '8 699',
-    quantity: 2,
-  },
 };
 
 export { LayoutCartItems };
