@@ -12,9 +12,24 @@ const ThankYouPage: React.FC = () => {
       address: 'Kyiv, Nova Post №164',
     },
     items: [
-      { name: 'Proof Offroad M bike saddlebag', price: 1200, quantity: 1 },
-      { name: 'Badawi Long 6 Persons - Family Tent', price: 8699, quantity: 1 },
-      { name: 'Downieville All Mountain Bike Shoes', price: 3502, quantity: 1 },
+      {
+        name: 'Proof Offroad M bike saddlebag',
+        price: 1200,
+        quantity: 1,
+        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (3).png', // Relative path to the image
+      },
+      {
+        name: 'Badawi Long 6 Persons - Family Tent',
+        price: 8699,
+        quantity: 1,
+        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (4).png', // Relative path to the image
+      },
+      {
+        name: 'Downieville All Mountain Bike Shoes',
+        price: 3502,
+        quantity: 1,
+        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (5).png', // Relative path to the image
+      },
     ],
     subtotal: 13401,
     shipping: 70,

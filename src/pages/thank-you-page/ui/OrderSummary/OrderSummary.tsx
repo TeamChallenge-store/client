@@ -5,6 +5,7 @@ interface Item {
   name: string;
   price: number;
   quantity: number;
+  imageUrl: string;
 }
 
 interface Props {
@@ -23,11 +24,19 @@ const OrderSummary: React.FC<Props> = ({
   <div className={styles.summary}>
     <h3>
       {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-      Your Order ({items.length})
+      Your order({items.length})
     </h3>
     <ul className={styles.itemList}>
       {items.map(item => (
         <li key={item.name} className={styles.item}>
+          <div className={styles.itemImageContainer}>
+            {/* Rendering the image for each item */}
+            <img
+              src={item.imageUrl}
+              alt={item.name}
+              className={styles.itemImage}
+            />
+          </div>
           <div>
             <p className={styles.itemName}>{item.name}</p>
             <p className={styles.itemQuantity}>
@@ -59,7 +68,7 @@ const OrderSummary: React.FC<Props> = ({
       <div className={styles.border} />
       <p className={styles.total}>
         <span>Total</span>
-        <span>
+        <span className={styles.total_price}>
           {total}
           {' ₴'}
         </span>

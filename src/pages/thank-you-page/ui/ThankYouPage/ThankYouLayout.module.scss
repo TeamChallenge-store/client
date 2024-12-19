@@ -1,67 +1,38 @@
-.layout {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-  padding-left: 16px;
-  padding-right: 16px;
-  border-radius: 8px;
-  margin-left: 60px;
-  margin-right: 60px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
 
-/* Container for the left and right sections */
-.container {
+.thankYouPage {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  gap: 24px; /* Space between child elements */
-  padding: 112px 60px 135px; /* Top/Bottom: 20px, Left/Right: 16px */
-
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: func.toRem(24); /* Space between child elements */
+  padding-top: func.toRem(112);
+  margin-bottom: func.toRem(135);
   width: 100%; /* Default width for small screens */
 }
 
-@media (max-width: 1024px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1286px; /* Limit the width for larger devices */
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 16px; /* Reduce padding for very small screens */
-    gap: 10px; /* Adjust gap to fit smaller devices */
-  }
-}
-
-/* Left side styling */
 .leftSide {
-  flex: 1; /* Allow it to grow and shrink */
-  max-width: 862px; /* Restrict the maximum width */
+  flex: 1;
+  max-width: func.toRem(862);
   width: 100%; /* Take full width of the container by default */
 }
 
 /* Right side styling */
 .rightSide {
   flex: 1; /* Allow it to grow and shrink */
-  max-width: 424px; /* Restrict the maximum width */
-  height: 718px;
-  border-radius: 8px;
+  max-width: func.toRem(424); /* Restrict the maximum width */
+  height: func.toRem(
+    718
+  ); // cумніваюсь про потрібність використання тут фіксованої висоти
 }
 
 .thankYouContainer {
-  background-color: #f2f7f2; /* Light background color */
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 862px;
-  border-radius: 15px;
+  background-color: $norway50; /* Light background color */
+  padding: func.toRem(20);
+  margin-bottom: func.toRem(20);
+  max-width: func.toRem(862); // тут краще використати max-width
+  border-radius: 16px; // 16px
 }
 
 /* Header styling */
@@ -124,15 +95,13 @@
 .details p.email {
   border-bottom: none;
   display: block; /* Ensure the email appears on a new line */
-  margin: 0; /* Reset margins */
-  padding: 10px 0; /* Add spacing if needed */
   font-size: 16px; /* Adjust size */
-  color: #000; /* Ensure consistent styling */
+  font-weight: normal;
 }
 
 /* Shipping section */
 .shipping {
-  margin-top: 60px;
+  margin-top: 56px;
   font-family: Helvetica;
   font-size: 14px;
   font-weight: 400;
@@ -172,7 +141,7 @@
   justify-content: space-between;
   display: flex; /* Enable flexbox for horizontal alignment */
   align-items: center; /* Center items vertically */
-  margin-top: 20px; /* Optional: Add spacing above the container */
+  margin-top: 56px; /* Optional: Add spacing above the container */
 }
 
 .textContainer {
@@ -212,4 +181,48 @@
   border: 1.5px solid transparent; /* Proper border property */
   opacity: 1; /* Fully visible */
   margin-bottom: 5px; /* Space below the badge */
+}
+
+@media (max-width: $m-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+  }
+
+  .leftSide,
+  .rightSide,
+  .thankYouContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+  }
+
+  .continueButton {
+    bottom: 16px; /* Space from the bottom edge */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    width: calc(100% - 32px); /* Maintain padding on smaller screens */
+    max-width: 400px; /* Optional: Limit maximum width */
+    height: 56px; /* Adjust height for mobile */
+    padding: 0; /* Reset padding */
+    font-size: 16px; /* Adjust font size for smaller viewports */
+    border-radius: 8px; /* Rounded corners */
+  }
+}
+
+@media (max-width: 1024px) {
+  .thankYouPage {
+    position: relative;
+  }
+.helpContainer {
+    position: absolute;
+    margin-top: 30px;
+    bottom: 0;
+    left: 0;
+    padding: 0 func.toRem(60);  
+    width: 100%;
+  }
 }

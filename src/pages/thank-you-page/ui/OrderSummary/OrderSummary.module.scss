@@ -1,15 +1,15 @@
 .summary {
-  margin-top: 20px;
   font-size: 14px;
   border-radius: 8px;
-  padding: 20px;
+  padding: 0px 16px 20px 16px;
 }
 
-h3 {
-  font-size: 25px;
-  margin-bottom: 15px;
-  color: #333;
+.summary h3 {
+  font-size: 24px;
+  margin: 20px 0px 16px 16px;
+  color: #000000;
   font-family: 'Helvetica', sans-serif;
+  font-weight: normal;
 }
 
 .itemList {
@@ -27,7 +27,9 @@ h3 {
 }
 
 .itemName {
+  width: 248px;
   font-weight: bold;
+  padding: 24px 0;
   font-size: 16px;
   color: #444;
   font-family: 'Helvetica', sans-serif;
@@ -39,40 +41,61 @@ h3 {
 
 .summaryDetails {
   margin-top: 20px;
+}
 
-  p {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+.summaryDetails p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
-    &:last-child {
-      font-size: 16px;
-      font-weight: bold;
-      color: #222;
-    }
-  }
+.summaryDetails p:last-child {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
 
-  p.total {
-    font-size: 24px;
-  }
+.summaryDetails h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #000000;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: normal;
+}
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-  }
+.summaryDetails p.total {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: 'Helvetica', sans-serif;
+}
 
-  .text {
-    font-size: 18px; /* Adjust size if needed */
-    font-family: 'Helvetica', sans-serif;
-  }
+.summaryDetails .text {
+  font-size: 18px; /* Adjust size if needed */
+  font-family: 'Helvetica', sans-serif;
+}
 
-  .price {
-    font-size: 18px; /* Different size for prices */
-    font-family: 'Helvetica', sans-serif;
-  }
+.summaryDetails .price {
+  font-size: 18px; /* Different size for prices */
+  font-family: 'Helvetica', sans-serif;
+}
 
-  .border {
-    border-top: 2px solid #37643b; /* Green top border */
-  }
+.summaryDetails .total_price {
+  font-size: 24px;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.summaryDetails .border {
+  border-top: 2px solid #37643b; /* Green top border */
+}
+
+.itemImageContainer {
+  width: 125px; /* Set width for the image */
+  height: 125px; /* Set height for the image */
+  margin-right: 16px;
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits properly within the container */
 }

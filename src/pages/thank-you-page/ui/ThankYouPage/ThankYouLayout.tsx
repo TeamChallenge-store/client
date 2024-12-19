@@ -1,6 +1,7 @@
 import React from 'react';
+import cn from 'classnames';
 import OrderSummary from '../OrderSummary/OrderSummary';
-import styles from './ThankYouLayout.module.scss';
+import css from './ThankYouLayout.module.scss';
 import badge from '../icons/Badge.svg';
 import info from '../icons/Info.svg';
 
@@ -14,6 +15,7 @@ interface Item {
   name: string;
   price: number;
   quantity: number;
+  imageUrl: string;
 }
 
 interface Props {
@@ -38,15 +40,15 @@ const ThankYouLayout: React.FC<Props> = ({
   total,
 }) => {
   return (
-    <div className={styles.container}>
-      <div className={styles.leftSide}>
-        <div className={styles.thankYouContainer}>
-          <header className={styles.header}>
-            <img src={badge} alt="Badge" className={styles.imageBadge} />
+    <section className={cn('container', css.thankYouPage)}>
+      <div className={css.leftSide}>
+        <div className={css.thankYouContainer}>
+          <header className={css.header}>
+            <img src={badge} alt="Badge" className={css.imageBadge} />
             <h1>
               {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
               THANK YOU,{' '}
-              <span className={styles.userName}>
+              <span className={css.userName}>
                 {shippingAddress.name.toUpperCase()}
               </span>
               !
@@ -54,28 +56,28 @@ const ThankYouLayout: React.FC<Props> = ({
             <p>Your order was completed successfully</p>
           </header>
 
-          <section className={styles.details}>
+          <section className={css.details}>
             <p>
-              <span className={styles.label}>Order number</span>
-              <strong className={styles.value}>
+              <span className={css.label}>Order number</span>
+              <strong className={css.value}>
                 {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
                 #{orderNumber}
               </strong>
             </p>
             <p>
-              <span className={styles.label}>Order date</span>
-              <strong className={styles.value}>{orderDate}</strong>
+              <span className={css.label}>Order date</span>
+              <strong className={css.value}>{orderDate}</strong>
             </p>
-            <p className={styles.info}>
+            <p className={css.info}>
               We have sent detailed information about the order confirmation to
             </p>
-            <p className={styles.email}>
+            <p className={css.email}>
               <strong>{email}</strong>
             </p>
           </section>
         </div>
 
-        <section className={styles.shipping}>
+        <section className={css.shipping}>
           <h3>Shipping address</h3>
           <address>
             <p>{shippingAddress.name}</p>
@@ -84,18 +86,19 @@ const ThankYouLayout: React.FC<Props> = ({
           </address>
         </section>
 
-        <div className={styles.helpContainer}>
-          <div className={styles.textContainer}>
-            <img src={info} alt="Info" className={styles.infoBadge} />
-            <h3 className={styles.help}>Need help? Contact us</h3>
+        <div className={css.helpContainer}>
+          <div className={css.textContainer}>
+            <img src={info} alt="Info" className={css.infoBadge} />
+            <h3 className={css.help}>Need help?</h3>
           </div>
-          <button type="button" className={styles.continueButton}>
+          {/* тут має бути посилання на сторінку продуктів - Link */}
+          <button type="button" className={css.continueButton}>
             CONTINUE SHOPPING
           </button>
         </div>
       </div>
 
-      <div className={styles.rightSide}>
+      <div className={css.rightSide}>
         <OrderSummary
           items={items}
           subtotal={subtotal}
@@ -103,7 +106,7 @@ const ThankYouLayout: React.FC<Props> = ({
           total={total}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
