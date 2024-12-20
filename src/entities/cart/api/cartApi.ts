@@ -29,7 +29,7 @@ export const cartApi = baseApi.injectEndpoints({
     deleteCartProduct: build.mutation<void, { pk: number }>({
       query: ({ pk }) => ({
         url: 'cart',
-        method: 'DELETE',
+        method: 'PATCH',
         params: { pk },
         credentials: 'include',
       }),
