@@ -12,6 +12,7 @@ import { setIsModalOpen } from '~shared/ui/Modal';
 import { Loader } from '~shared/ui/Loader';
 import { ErrorPopUp } from '~widgets/error-pop-up';
 import { CartModal } from './CartModal';
+import { setIsCartOpen } from './model/slice';
 
 const CartPopUp = ({ onClose }: { onClose: () => void }) => {
   const [isCartOpen] = useState(true);
@@ -41,6 +42,10 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
     setTimeout(() => {
       onClose();
     }, 300);
+  };
+
+  const closeCart = () => {
+    dispatch(setIsCartOpen(false));
   };
 
   const handleBackdropClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -81,7 +86,7 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
             <div className={css.cartList}>
               <CartList products={products} refetch={refetch} />
             </div>
-            <OrderSummary total={totalPrice} onClose={handleCloseCart} />
+            <OrderSummary total={totalPrice} onClose={closeCart} />
           </div>
         </div>
       </div>

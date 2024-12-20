@@ -15,6 +15,7 @@ export const orderApi = baseApi.injectEndpoints({
             'x-session-id': sessionId || '',
           },
           body: order,
+          credentials: 'include',
         };
       },
     }),
