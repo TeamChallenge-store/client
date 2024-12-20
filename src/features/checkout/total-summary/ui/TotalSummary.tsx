@@ -10,6 +10,7 @@ import {
   selectPersonalInfoIsValid,
 } from '~entities/order/model/slice';
 import { useGetCartProductQuery } from '~entities/cart';
+import { useNavigate } from 'react-router-dom';
 
 const TotalSummary: FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
@@ -21,8 +22,15 @@ const TotalSummary: FC = () => {
   const products = cartProducts?.cart_items;
   const totalPrice = cartProducts?.total_price;
 
-  const createOrder = () => {
-    createOrderMutation(orderData);
+  const navigate = useNavigate();
+
+  const createOrder = async () => {
+    try {
+      await createOrderMutation(orderData).unwrap();
+      navigate('/thank-you');
+    } catch (error) {
+      console.error('Failed to create order:', error);
+    }
   };
 
   return (
