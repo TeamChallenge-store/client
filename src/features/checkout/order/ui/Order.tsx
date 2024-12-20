@@ -37,6 +37,9 @@ const Order: FC = () => {
                   src={item.product.image || defaultImage}
                   alt={item.product.name}
                   className={css.image}
+                  onError={e => {
+                    (e.target as HTMLImageElement).src = defaultImage;
+                  }}
                 />
               </div>
               <p className={css.productName}>{item.product.name}</p>
