@@ -5,8 +5,8 @@ interface IOrder {
   email: string;
   city: string;
   address?: string;
-  np_department?: string;
-  up_department?: string;
+  department_NP?: string;
+  department_UP?: string;
   delivery_method: string;
   payment_method: string;
 }

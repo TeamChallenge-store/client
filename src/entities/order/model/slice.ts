@@ -16,8 +16,8 @@ const initialState: OrderState = {
     email: '',
     city: '',
     address: '',
-    np_department: '',
-    up_department: '',
+    department_NP: '',
+    department_UP: '',
     delivery_method: 'Nova Poshta',
     payment_method: 'Google Pay',
   },
@@ -48,10 +48,10 @@ export const orderSlice = createSlice({
       state.orderData.address = action.payload;
     },
     setNPDepartment(state, action) {
-      state.orderData.np_department = action.payload;
+      state.orderData.department_NP = action.payload;
     },
     setUPDepartment(state, action) {
-      state.orderData.up_department = action.payload;
+      state.orderData.department_UP = action.payload;
     },
     setDeliveryMethod(state, action) {
       state.orderData.delivery_method = action.payload;
