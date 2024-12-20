@@ -9,12 +9,17 @@ import {
   selectOrderData,
   selectPersonalInfoIsValid,
 } from '~entities/order/model/slice';
+import { useGetCartProductQuery } from '~entities/cart';
 
 const TotalSummary: FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
   const orderData = useSelector(selectOrderData);
   const personalInfoIsValid = useSelector(selectPersonalInfoIsValid);
   const addressIsValid = useSelector(selectAddressIsValid);
+
+  const { data: cartProducts } = useGetCartProductQuery();
+  const products = cartProducts?.cart_items;
+  const totalPrice = cartProducts?.total_price;
 
   const createOrder = () => {
     createOrderMutation(orderData);
@@ -23,8 +28,9 @@ const TotalSummary: FC = () => {
   return (
     <div className={css.totalSummary}>
       <div className={css.goodsAmount}>
-        <div>1 item in the amount of</div>
-        <span>1222₴</span>
+        {products?.length || 0} {products?.length === 1 ? 'item' : 'items'} in
+        the amount of
+        <span>{totalPrice}₴</span>
       </div>
       <div className={css.deliveryCost}>
         <div>The cost of delivery</div>
@@ -32,7 +38,7 @@ const TotalSummary: FC = () => {
       </div>
       <div className={css.total}>
         <div className={css.totalSubtitle}>To be paid</div>
-        <span className={css.finalPrice}>1222₴</span>
+        <span className={css.finalPrice}>{totalPrice}₴</span>
       </div>
       <CustomButton
         buttonType="submit"
