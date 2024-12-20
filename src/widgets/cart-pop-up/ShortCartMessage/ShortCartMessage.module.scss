@@ -1,0 +1,69 @@
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/variables.scss' as *;
+
+@import '../../../shared/styles/fonts.scss';
+
+.customToast {
+  background: #e1ecdf;
+  width: func.toRem(375);
+  height: func.toRem(64);
+  top: func.toRem(112);
+
+  @media (min-width: $max-viewport) {
+    svg {
+      width: func.toRem(15);
+      height: func.toRem(15);
+    }
+
+    right: func.toRem(272);
+  }
+
+  @media (max-width: $l-viewport) {
+    right: func.toRem(102);
+  }
+
+  @media (max-width: $m-viewport) {
+    right: func.toRem(90);
+  }
+
+  @media (max-width: $sm-viewport) {
+    right: func.toRem(75);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(500);
+    bottom: 0;
+    right: func.toRem(94);
+    top: func.toRem(37);
+    border-radius: 0;
+  }
+
+  @media (max-width: 480px) {
+    right: 0;
+    top: 0;
+  }
+
+  @media (max-width: $xs-viewport) {
+    bottom: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+.icon {
+  width: func.toRem(24);
+  height: func.toRem(24);
+}
+
+.cartShortMessage {
+  font-family: 'Helvetica', sans-serif;
+  display: flex;
+  gap: func.toRem(8);
+  align-items: center;
+  color: $black;
+  font-size: func.toRem(16);
+}
+
+.messageLink {
+  text-decoration: underline;
+}

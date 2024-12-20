@@ -1,0 +1,78 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.summary {
+  width: func.toRem(526);
+  padding-left: func.toRem(40);
+
+  @media (max-width: $m-viewport) {
+    width: func.toRem(300);
+    padding-left: 0;
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: 100%;
+    border-top: func.toRem(1) solid $norway400;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $white;
+  }
+}
+
+.summaryTitle {
+  font-size: func.toRem(24);
+  padding: func.toRem(27) 0 func.toRem(21);
+  text-transform: uppercase;
+
+  @media (max-width: $sm-viewport) {
+    padding: func.toRem(24) func.toRem(16);
+    margin: 0;
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: func.toRem(16) func.toRem(12);
+  }
+}
+
+.summaryContent {
+  @include mixin.flexible;
+  flex-direction: row;
+  padding-bottom: func.toRem(17);
+
+  @media (max-width: $sm-viewport) {
+    padding: func.toRem(16) func.toRem(16) func.toRem(24);
+  }
+
+  @media (max-width: $s-viewport) {
+    padding: 0 func.toRem(16) func.toRem(12);
+  }
+}
+
+.contentTitle,
+.price {
+  font-size: func.toRem(18);
+}
+
+.continueBtn {
+  width: 100%;
+  @media (max-width: $m-viewport) {
+    padding: func.toRem(14) 0;
+  }
+
+  @media (max-width: $sm-viewport) {
+    width: func.toRem(738);
+    margin: 0 auto func.toRem(44);
+    padding: func.toRem(14) func.toRem(42);
+  }
+
+  @media (max-width: $s-viewport) {
+    width: func.toRem(400);
+    margin-bottom: func.toRem(30);
+  }
+
+  @media (max-width: $xs-viewport) {
+    width: func.toRem(343);
+  }
+}

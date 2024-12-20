@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { LoadingButton } from '@mui/lab';
 import { ThemeProvider } from '@mui/material';
 import cn from 'classnames';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAddProductToCartMutation, IBagProduct } from '~entities/cart';
+import { ShortCartMessage } from '~widgets/cart-pop-up/ShortCartMessage';
 
 import theme from '../../config/muiTheme';
 
@@ -9,18 +12,25 @@ import css from './AddToCart.module.scss';
 // import { useLocalStorage } from '~shared/model/useLocalStorage';
 import { IProductCard } from '~entities/product';
 
-const AddToCart = ({ product }: { product: IProductCard }) => {
-  // const [value, setValue] = useLocalStorage<IProductCard[]>('card', []);
+interface IAddToCartProps {
+  product: IBagProduct;
+}
+
+const AddToCart: FC<IAddToCartProps> = ({ product }) => {
+  const [addProductToCart] = useAddProductToCartMutation();
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [count, setCount] = useState(1);
   const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
+  const { showMessage } = ShortCartMessage();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsLiked(!isLiked);
     setLoading(true);
 
-    setValue([...value, product]);
+    await addProductToCart({ pk: product.id, quantity: count });
+
+    showMessage();
 
     const id = setTimeout(() => {
       setLoading(false);
