@@ -10,13 +10,15 @@ interface CartListProps {
 const CartList: FC<CartListProps> = ({ products, refetch }) => {
   return (
     <div>
-      {products.map(product => (
-        <LayoutCartItems
-          key={product.product.id}
-          product={product}
-          refetch={refetch}
-        />
-      ))}
+      {products.map(product =>
+        product.product?.id ? (
+          <LayoutCartItems
+            key={product.product.id}
+            product={product}
+            refetch={refetch}
+          />
+        ) : null,
+      )}
     </div>
   );
 };
