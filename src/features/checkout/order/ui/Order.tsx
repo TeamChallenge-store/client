@@ -55,7 +55,7 @@ const Order: FC = () => {
               <p className={css.productName}>{item.product.name}</p>
               <span
                 className={css.productPrice}
-              >{`${item.product.price} ₴`}</span>
+              >{`${item.total_price} ₴`}</span>
             </li>
           ))}
         </ul>
