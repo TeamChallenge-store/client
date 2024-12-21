@@ -17,12 +17,22 @@ const LayoutCartItems: FC<{ product?: IBagProduct; refetch: () => void }> = ({
 
   const { image, name, id } = product.product;
 
+  const getImageUrl = (imagePath: string | null) => {
+    if (!imagePath) {
+      return defaultImage;
+    }
+    if (imagePath.startsWith('/media/')) {
+      return `http://localhost:8000${imagePath}`;
+    }
+    return `http://localhost:8000/media/${imagePath}`;
+  };
+
   return (
     <article className={css.cartItem}>
       <div className={css.content}>
         <img
           className={css.itemImg}
-          src={image || defaultImage}
+          src={getImageUrl(image)}
           onError={e => {
             (e.target as HTMLImageElement).src = defaultImage;
           }}
