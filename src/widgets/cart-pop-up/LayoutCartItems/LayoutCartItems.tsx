@@ -15,7 +15,7 @@ const LayoutCartItems: FC<{ product?: IBagProduct; refetch: () => void }> = ({
     return null;
   }
 
-  const { image, price, name, id } = product.product;
+  const { image, name, id } = product.product;
 
   return (
     <article className={css.cartItem}>
@@ -30,7 +30,7 @@ const LayoutCartItems: FC<{ product?: IBagProduct; refetch: () => void }> = ({
           />
         </div>
         <div className={css.itemPriceActions}>
-          <span className={css.itemPrice}>{`${price} ₴`}</span>
+          <span className={css.itemPrice}>{`${product.total_price} ₴`}</span>
           <RemoveFromCart productId={id} refetch={refetch} />
         </div>
       </div>
