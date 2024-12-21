@@ -59,7 +59,7 @@
 
 .cartHeader {
   @include mixin.flexible;
-  border-bottom: func.toRem(1) solid $green;
+  border-bottom: 1px solid $green;
   padding: func.toRem(23) func.toRem(32) func.toRem(16);
 
   @media (max-width: $sm-viewport) {
