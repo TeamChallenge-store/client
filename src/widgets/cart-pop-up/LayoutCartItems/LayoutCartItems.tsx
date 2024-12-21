@@ -20,7 +20,13 @@ const LayoutCartItems: FC<{ product?: IBagProduct; refetch: () => void }> = ({
   return (
     <article className={css.cartItem}>
       <div className={css.content}>
-        <img className={css.itemImg} src={image || defaultImage} />
+        <img
+          className={css.itemImg}
+          src={image || defaultImage}
+          onError={e => {
+            (e.target as HTMLImageElement).src = defaultImage;
+          }}
+        />
         <div className={css.itemTop}>
           <p className={css.itemTitle}>{name}</p>
           <ChangeQuanity

@@ -14,12 +14,6 @@ const OrderSummary: FC<TOrderSummaryProps> = props => {
     return null;
   }
 
-  const handleContinueClick = () => {
-    if (onClose) {
-      onClose();
-    }
-  };
-
   return (
     <article className={css.summary}>
       <p className={css.summaryTitle}>Order Summary</p>
@@ -31,16 +25,12 @@ const OrderSummary: FC<TOrderSummaryProps> = props => {
         to="/checkout"
         bgColor="green"
         className={css.continueBtn}
-        onClick={handleContinueClick}
+        onClick={onClose}
       >
         Continue to order
       </CustomButton>
     </article>
   );
-};
-
-OrderSummary.defaultProps = {
-  total: 200,
 };
 
 export { OrderSummary };

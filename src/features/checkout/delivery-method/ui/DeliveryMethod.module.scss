@@ -44,9 +44,3 @@
     color: green;
   }
 }
-
-.deliveryOptions > .deliveryOption:last-child {
-  .optionContainer:not(:has(> .ratioButton:checked)) {
-    margin-bottom: 0;
-  }
-}
