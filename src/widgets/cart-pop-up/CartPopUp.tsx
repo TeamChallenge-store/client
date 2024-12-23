@@ -9,6 +9,10 @@ import css from './CartPopUp.module.scss';
 import { useGetCartProductQuery } from '~entities/cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsModalOpen, setIsModalOpen } from '~shared/ui/Modal';
+import {
+  selectIsCartUpdated,
+  setIsCartUpdated,
+} from '~widgets/cart-pop-up/model/slice';
 import { Loader } from '~shared/ui/Loader';
 import { ErrorPopUp } from '~widgets/error-pop-up';
 import { setIsCartOpen } from './model/slice';
@@ -16,6 +20,7 @@ import { EmptyCartModal } from './EmptyCartModal';
 
 const CartPopUp = ({ onClose }: { onClose: () => void }) => {
   const isModalOpen = useSelector(selectIsModalOpen);
+  const isCartUpdated = useSelector(selectIsCartUpdated);
   const [isClosing, setIsClosing] = useState(false);
   const { data: cartProducts, isLoading, refetch } = useGetCartProductQuery();
   const products = cartProducts?.cart_items;
@@ -29,6 +34,13 @@ const CartPopUp = ({ onClose }: { onClose: () => void }) => {
       document.body.classList.remove('no-scroll');
     };
   }, []);
+
+  useEffect(() => {
+    if (isCartUpdated) {
+      refetch();
+      dispatch(setIsCartUpdated(false));
+    }
+  }, [isCartUpdated, dispatch, refetch]);
 
   useEffect(() => {
     if (!products) {
