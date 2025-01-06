@@ -22,6 +22,7 @@ interface IBagProduct {
     color: number;
   };
   quantity: number;
+  total_price: number;
 }
 
 type TResponse = {

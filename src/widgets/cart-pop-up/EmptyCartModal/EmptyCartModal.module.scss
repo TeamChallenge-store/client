@@ -1,0 +1,63 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: func.toRem(23) func.toRem(32);
+  position: relative;
+  height: 100%;
+}
+
+.emptyHeader {
+  margin-left: auto;
+  position: absolute;
+  top: 23px;
+  right: 32px;
+}
+
+.emptyContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: func.toRem(535);
+  width: 100%;
+}
+
+.modalTitle {
+  text-transform: uppercase;
+  font-size: func.toRem(32);
+  line-height: func.toRem(38.4);
+  padding-bottom: func.toRem(12);
+}
+
+.modalDescription {
+  font-size: func.toRem(24);
+  color: $gray400;
+}
+
+.popUpBtn {
+  padding: func.toRem(18) func.toRem(33);
+  margin-top: func.toRem(32);
+
+  @media (max-width: $s-viewport) {
+    display: none;
+  }
+}
+.popUpBtnAdaptive {
+  display: none;
+  max-width: func.toRem(343);
+  width: 100%;
+  margin-top: func.toRem(32);
+  padding: func.toRem(13) func.toRem(42);
+  text-align: center;
+
+  @media (max-width: $s-viewport) {
+    display: block;
+  }
+}

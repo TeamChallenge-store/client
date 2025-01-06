@@ -26,6 +26,16 @@ const Order: FC = () => {
     dispatch(setIsCartOpen(false));
   };
 
+  const getImageUrl = (imagePath: string | null) => {
+    if (!imagePath) {
+      return defaultImage;
+    }
+    if (imagePath.startsWith('/media/')) {
+      return `http://localhost:8000${imagePath}`;
+    }
+    return `http://localhost:8000/media/${imagePath}`;
+  };
+
   return (
     <>
       <div className={css.orderContainer}>
@@ -34,7 +44,7 @@ const Order: FC = () => {
             <li key={item.id} className={css.orderItem}>
               <div className={css.imageContainer}>
                 <img
-                  src={item.product.image || defaultImage}
+                  src={getImageUrl(item.product.image)}
                   alt={item.product.name}
                   className={css.image}
                   onError={e => {
@@ -45,7 +55,7 @@ const Order: FC = () => {
               <p className={css.productName}>{item.product.name}</p>
               <span
                 className={css.productPrice}
-              >{`${item.product.price} ₴`}</span>
+              >{`${item.total_price} ₴`}</span>
             </li>
           ))}
         </ul>

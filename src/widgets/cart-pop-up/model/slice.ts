@@ -2,10 +2,12 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 type TCartModalSlice = {
   isCartOpen: boolean;
+  isCartUpdated: boolean;
 };
 
 const initialState: TCartModalSlice = {
   isCartOpen: false,
+  isCartUpdated: false,
 };
 
 export const cartSlice = createSlice({
@@ -16,9 +18,15 @@ export const cartSlice = createSlice({
       /* eslint-disable no-param-reassign */
       state.isCartOpen = action.payload;
     },
+    setIsCartUpdated: (state, action: PayloadAction<boolean>) => {
+      /* eslint-disable no-param-reassign */
+      state.isCartUpdated = action.payload;
+    },
   },
 });
 
-export const { setIsCartOpen } = cartSlice.actions;
+export const { setIsCartOpen, setIsCartUpdated } = cartSlice.actions;
 export const selectIsCartOpen = (state: RootState) => state.cart.isCartOpen;
+export const selectIsCartUpdated = (state: RootState) =>
+  state.cart.isCartUpdated;
 export default cartSlice.reducer;
