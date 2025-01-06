@@ -1,0 +1,21 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.breadcrumbItem {
+  color: $norway600;
+
+  &:last-child {
+    color: $gray300;
+  }
+}

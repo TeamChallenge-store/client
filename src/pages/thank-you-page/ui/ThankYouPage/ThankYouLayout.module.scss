@@ -204,7 +204,7 @@
     bottom: 16px; /* Space from the bottom edge */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
-    width: calc(100% - 32px); /* Maintain padding on smaller screens */
+    width: func.toRem(343); /* Maintain padding on smaller screens */
     max-width: 400px; /* Optional: Limit maximum width */
     height: 56px; /* Adjust height for mobile */
     padding: 0; /* Reset padding */
@@ -216,10 +216,20 @@
 @media (max-width: 1024px) {
   .thankYouPage {
     position: relative;
+    padding-bottom: 32px;
   }
   .helpContainer {
     position: absolute;
-    margin-top: 30px;
+    margin-top: 32px;
+    bottom: 0;
+    left: 0;
+    padding: 0 func.toRem(60);
+    width: 100%;
+    flex-direction: column;
+  }
+  .helpContainer.continueButton {
+    position: absolute;
+    margin-top: auto;
     bottom: 0;
     left: 0;
     padding: 0 func.toRem(60);

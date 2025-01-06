@@ -1,4 +1,6 @@
-import { useSearchParams } from 'react-router-dom';
+/* eslint-disable react/jsx-wrap-multilines */
+import { useState } from 'react';
+import { useSearchParams, useParams } from 'react-router-dom';
 
 import { ProductList } from '~widgets/product-list';
 import { ProductListFilters } from '~features/product-list';
@@ -12,30 +14,133 @@ import {
   DEFAULT_SORT_PARAM,
   DEFAULT_SORT_LABLE,
 } from './constants';
+import { Pagination } from '~features/pagination';
+import { Breadcrumbs } from '~widgets/breadcrumbs';
 
 const ProductPage = () => {
-  const [searchParams] = useSearchParams();
-  const { data: products, isLoading } = useProductCategoryQuery(
-    searchParams.get(QUERY_NAME)?.toString() ?? DEFAULT_SORT_PARAM,
-  );
+  const { category } = useParams<{ category: string }>();
+  const [pageOffset, setPageOffset] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [isOpenFilters, setIsOpenFilters] = useState(false);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
+  const [selectedColors, setSelectedColors] = useState<string[]>([]);
+
+  const sortBy = searchParams.get(QUERY_NAME) ?? DEFAULT_SORT_PARAM;
+  const minPrice = parseInt(searchParams.get('min_price') ?? '0', 10);
+  const maxPrice = parseInt(searchParams.get('max_price') ?? '12000', 10);
+
+  const { data, isLoading } = useProductCategoryQuery({
+    category,
+    page: pageOffset || 1,
+    sortBy,
+    minPrice,
+    maxPrice,
+    brand: selectedBrands,
+    color: selectedColors,
+  });
+
+  const totalPages = data?.total_pages || -1;
 
   if (isLoading) {
     return 'Loading';
   }
 
-  if (!products) {
+  if (!data) {
     return 'no category';
   }
 
+  // Invoke when user click to request another page.
+  const handlePageClick = (pag: { selected: number }) => {
+    setPageOffset(pag.selected + 1);
+  };
+
+  const formatCategoryName = (categoryName: string | undefined): string => {
+    if (!categoryName) {
+      return 'Catalog';
+    }
+
+    return categoryName.replace(/^=/, '').replace(/^\w/, c => c.toUpperCase());
+  };
+
+  const formattedCategoryName = formatCategoryName(category);
+
+  const handlePriceChange = (min: number, max: number) => {
+    setSearchParams({ min_price: min.toString(), max_price: max.toString() });
+    setPageOffset(1);
+  };
+
+  const handleFilters = () => {
+    setIsOpenFilters(!isOpenFilters);
+  };
+
+  const handleFilterSelect = (
+    filterKey: string,
+    selectedValue: string,
+    setSelectedValues: React.Dispatch<React.SetStateAction<string[]>>,
+  ) => {
+    setSelectedValues(prevSelectedValues => {
+      const updatedValues = prevSelectedValues.includes(selectedValue)
+        ? prevSelectedValues.filter(value => value !== selectedValue)
+        : [...prevSelectedValues, selectedValue];
+
+      const params: Record<string, string> = {};
+
+      searchParams.forEach((value, key) => {
+        if (key !== filterKey) {
+          params[key] = value;
+        }
+      });
+
+      if (updatedValues.length > 0) {
+        params[filterKey] = updatedValues.join(',');
+      }
+
+      setSearchParams(new URLSearchParams(params).toString());
+
+      return updatedValues;
+    });
+  };
+
+  const handleBrandSelect = (brand: string) => {
+    handleFilterSelect('brand', brand, setSelectedBrands);
+  };
+
+  const handleColorSelect = (color: string) => {
+    handleFilterSelect('color', color, setSelectedColors);
+  };
+
   return (
     <Layout
-      sidebar={null}
+      breadcrumbs={
+        <Breadcrumbs mainPage="Catalog" categoryName={formattedCategoryName} />
+      }
+      sidebar={
+        <ProductListFilters
+          minPrice={Number(minPrice)}
+          maxPrice={Number(maxPrice)}
+          onPriceChange={handlePriceChange}
+          isOpenFilters={isOpenFilters}
+          handleFilters={handleFilters}
+          selectedBrands={selectedBrands}
+          onSelectBrand={handleBrandSelect}
+          selectedColors={selectedColors}
+          onColorSelect={handleColorSelect}
+        />
+      }
+      categoryName={formattedCategoryName}
+      productsNumber={data.count}
       sortBy={
         <CustomSelect options={options} startValue={DEFAULT_SORT_LABLE} />
       }
-      filtersMob={<ProductListFilters />}
-      productList={<ProductList products={products} />}
-      pagination={null}
+      productList={<ProductList products={data.results} />}
+      pagination={
+        <Pagination
+          handlePageClick={handlePageClick}
+          totalPages={totalPages}
+          currentPage={pageOffset}
+          products={data.results}
+        />
+      }
     />
   );
 };

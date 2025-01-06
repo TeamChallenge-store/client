@@ -12,7 +12,11 @@ const Footer: FC = () => {
   const { isCheckoutPage, isThankYou, isError } = useCheckLocation();
 
   return (
-    <footer className={cn(css.footer, { [css.miniFooter]: isError })}>
+    <footer
+      className={cn(css.footer, {
+        [css.miniFooter]: isError || isCheckoutPage,
+      })}
+    >
       <div className="container">
         {!isError && !isCheckoutPage && !isThankYou && (
           <div className={css.content}>

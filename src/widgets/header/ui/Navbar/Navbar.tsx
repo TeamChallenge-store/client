@@ -18,7 +18,7 @@ const Navbar: FC = () => {
             <NavLink className={active} to={item.url}>
               {item.title}
             </NavLink>
-            {item.submenu && (
+            {/* {item.submenu && (
               <ul className={css.submenu}>
                 {item.submenu.map(subItem => (
                   <li key={subItem.title}>
@@ -28,7 +28,7 @@ const Navbar: FC = () => {
                   </li>
                 ))}
               </ul>
-            )}
+            )} */}
           </li>
         ))}
       </ul>

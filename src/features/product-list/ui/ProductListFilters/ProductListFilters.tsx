@@ -1,28 +1,70 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import { FC } from 'react';
+import cn from 'classnames';
+import 'rc-slider/assets/index.css';
+import filterIcon from '../icons/filter-icon.svg';
+import closeIcon from '../../../../shared/ui/Icon/icons/close.svg';
 
 import css from './ProductListFilters.module.scss';
+import { FilterByPrice } from '~features/filter-by-price';
+import { FilterByBrand } from '~features/filter-by-brand';
+import { FilterByColor } from '~features/filter-by-color';
 
-type TProductListFiltersProps = object;
+type TProductListFiltersProps = {
+  minPrice: number;
+  maxPrice: number;
+  onPriceChange: (min: number, max: number) => void;
+  isOpenFilters: boolean;
+  handleFilters: () => void;
+  selectedBrands: string[];
+  onSelectBrand: (brand: string) => void;
+  selectedColors: string[];
+  onColorSelect: (color: string) => void;
+};
 
-const ProductListFilters: FC<TProductListFiltersProps> = () => {
+const ProductListFilters: FC<TProductListFiltersProps> = ({
+  minPrice,
+  maxPrice,
+  onPriceChange,
+  isOpenFilters,
+  handleFilters,
+  selectedBrands,
+  onSelectBrand,
+  selectedColors,
+  onColorSelect,
+}) => {
   return (
     <div className={css.inner}>
-      Filters
-      <svg
-        className={css.icon}
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M4 12H14.1M4 6H20M4 18H11.1"
-          stroke="#A0A0A0"
-          strokeWidth="1.6"
-          strokeLinecap="round"
+      <div className={cn(css.filtersBox, { [css.animating]: isOpenFilters })}>
+        <div className={css.filterHeader}>
+          <h3 className={css.filterTitle}>FILTER</h3>
+          <button onClick={() => handleFilters()} type="button">
+            <img className={css.closeIcon} src={closeIcon} alt="close" />
+          </button>
+        </div>
+        <FilterByPrice
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+          onPriceChange={onPriceChange}
         />
-      </svg>
+        <FilterByBrand
+          selectedBrands={selectedBrands}
+          onSelectBrand={onSelectBrand}
+        />
+        <FilterByColor
+          selectedColors={selectedColors}
+          onColorSelect={onColorSelect}
+        />
+      </div>
+
+      <button
+        className={css.filterIcon}
+        type="button"
+        onClick={() => handleFilters()}
+      >
+        <img className={css.icon} src={filterIcon} alt="filter" />
+        Filter
+      </button>
     </div>
   );
 };

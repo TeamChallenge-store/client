@@ -3,7 +3,8 @@
 @use '../../../shared/styles/helpers/mixins.scss' as mixin;
 
 .checkoutForm {
-  padding-bottom: func.toRem(144);
+  padding-top: func.toRem(32);
+  padding-bottom: func.toRem(124);
 }
 
 .checkoutTitle {
@@ -69,6 +70,10 @@
 }
 
 @media (max-width: $xs-viewport) {
+  .checkoutForm {
+    padding-bottom: 86px;
+  }
+
   .checkoutTitle {
     font-size: 32px;
     line-height: 38.4px;

@@ -39,7 +39,11 @@ const PromotionalOffers: FC = () => {
           <p className={css.offersDescription}>
             Final сlearance on apparel and footwear
           </p>
-          <CustomButton to="/sale" bgColor="white" className={css.offersLink}>
+          <CustomButton
+            to="/products/sale"
+            bgColor="white"
+            className={css.offersLink}
+          >
             see more
             <svg
               width="25"

@@ -11,7 +11,8 @@ type TCustomRationButtonProps = {
   value?: string;
   required?: boolean;
   labelText?: string;
-  onChange?: () => void;
+  onChange?: () => {};
+  onClick?: () => void;
 };
 
 const CustomRatioButton: FC<TCustomRationButtonProps> = ({
@@ -24,6 +25,7 @@ const CustomRatioButton: FC<TCustomRationButtonProps> = ({
   required,
   labelText,
   onChange,
+  onClick,
 }) => {
   return (
     <div className={`${css.customRatio} ${className}`}>
@@ -36,6 +38,7 @@ const CustomRatioButton: FC<TCustomRationButtonProps> = ({
         disabled={disabled}
         className={css.ratio}
         onChange={onChange}
+        onClick={onClick}
         required={required}
       />
       <label htmlFor={id} className={css.label}>

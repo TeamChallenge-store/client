@@ -42,7 +42,7 @@ const BurgerNavigation: FC<TBurgerNavigationProps> = ({
         <ul className={`${css.navigation} ${className}`}>
           <div className={css.item}>
             <Link
-              to="/allPropducts"
+              to="/products/"
               onClick={() => {
                 setIsOpen();
               }}

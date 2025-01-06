@@ -25,6 +25,15 @@ type TResponseProducts = {
   };
 };
 
+type TResponseProductsPage = {
+  count: number;
+  page_size: number;
+  total_pages: number;
+  next: string | null;
+  previous: string | null;
+  results: IProductCard[];
+};
+
 type TSortBy = [string, string][];
 
 export {
@@ -32,4 +41,5 @@ export {
   type TSortBy,
   type TResponse,
   type TResponseProducts,
+  type TResponseProductsPage,
 };
