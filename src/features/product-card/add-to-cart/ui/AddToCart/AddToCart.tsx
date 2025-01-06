@@ -9,8 +9,8 @@ import { ShortCartMessage } from '~widgets/cart-pop-up/ShortCartMessage';
 import theme from '../../config/muiTheme';
 
 import css from './AddToCart.module.scss';
-// import { useLocalStorage } from '~shared/model/useLocalStorage';
-import { IProductCard } from '~entities/product';
+import { useDispatch } from 'react-redux';
+import { setIsCartUpdated } from '~widgets/cart-pop-up/model/slice';
 
 interface IAddToCartProps {
   product: IBagProduct;
@@ -23,12 +23,15 @@ const AddToCart: FC<IAddToCartProps> = ({ product }) => {
   const [count, setCount] = useState(1);
   const [timeoutId, setTimeoutId] = useState<number | undefined>(undefined);
   const { showMessage } = ShortCartMessage();
+  const dispatch = useDispatch();
 
   const handleClick = async () => {
     setIsLiked(!isLiked);
     setLoading(true);
 
     await addProductToCart({ pk: product.id, quantity: count });
+
+    dispatch(setIsCartUpdated(true));
 
     showMessage();
 
