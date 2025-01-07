@@ -1,40 +1,49 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import ThankYouLayout from './ui/ThankYouPage/ThankYouLayout';
 
+const generateOrderNumber = () => {
+  return Math.floor(Math.random() * 10000000); 
+};
+
+const generateOrderDate = () => {
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, '0'); 
+  const month = String(now.getMonth() + 1).padStart(2, '0'); 
+  const year = String(now.getFullYear()).slice(2);
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  
+  return `${day}.${month}.${year} ${hours}:${minutes}`;
+};
+
 const ThankYouPage: React.FC = () => {
+  const location = useLocation();
+  const { products, totalPrice, orderData } = location.state || {};
+
   const orderDetails = {
-    orderNumber: '3827379',
-    orderDate: '25.03.24 15:59',
-    email: 'iris.anna898@gmail.com',
+    orderNumber: String(Math.floor(Math.random() * 10000000)),
+    orderDate: generateOrderDate(),
+    email: orderData?.email, 
     shippingAddress: {
-      name: 'Anna',
-      phone: '+380976765454',
-      address: 'Kyiv, Nova Post №164',
+      name: orderData?.first_name,
+      phone: orderData?.phone_number,
+      address: orderData?.address,
     },
-    items: [
-      {
-        name: 'Proof Offroad M bike saddlebag',
-        price: 1200,
-        quantity: 1,
-        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (3).png', // Relative path to the image
-      },
-      {
-        name: 'Badawi Long 6 Persons - Family Tent',
-        price: 8699,
-        quantity: 1,
-        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (4).png', // Relative path to the image
-      },
-      {
-        name: 'Downieville All Mountain Bike Shoes',
-        price: 3502,
-        quantity: 1,
-        imageUrl: '/src/pages/thank-you-page/ui/icons/2 (5).png', // Relative path to the image
-      },
-    ],
-    subtotal: 13401,
-    shipping: 70,
-    total: 13471,
+    items: (products || []).map((product: any) => {
+      return {
+        name: product.product.name,
+        price: parseFloat(product.product.price),
+        quantity: product.product.quantity,
+        imageUrl: product.product.image,
+      };
+    }),
+    subtotal: totalPrice || 0,
+    shipping: 70, 
+    total: (totalPrice || 0) + 70,
   };
+
+  console.log(orderData);
 
   return <ThankYouLayout {...orderDetails} />;
 };

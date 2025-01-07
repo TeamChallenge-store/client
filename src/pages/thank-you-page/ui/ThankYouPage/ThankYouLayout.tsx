@@ -4,6 +4,7 @@ import OrderSummary from '../OrderSummary/OrderSummary';
 import css from './ThankYouLayout.module.scss';
 import badge from '../icons/Badge.svg';
 import info from '../icons/Info.svg';
+import { Link } from 'react-router-dom';
 
 interface ShippingAddress {
   name: string;
@@ -46,7 +47,6 @@ const ThankYouLayout: React.FC<Props> = ({
           <header className={css.header}>
             <img src={badge} alt="Badge" className={css.imageBadge} />
             <h1>
-              {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
               THANK YOU,{' '}
               <span className={css.userName}>
                 {shippingAddress.name.toUpperCase()}
@@ -59,10 +59,7 @@ const ThankYouLayout: React.FC<Props> = ({
           <section className={css.details}>
             <p>
               <span className={css.label}>Order number</span>
-              <strong className={css.value}>
-                {/* eslint-disable-next-line react/jsx-one-expression-per-line */}
-                #{orderNumber}
-              </strong>
+              <strong className={css.value}>#{orderNumber}</strong>
             </p>
             <p>
               <span className={css.label}>Order date</span>
@@ -90,8 +87,9 @@ const ThankYouLayout: React.FC<Props> = ({
           <div className={css.textContainer}>
             <img src={info} alt="Info" className={css.infoBadge} />
             <h3 className={css.help}>Need help?</h3>
+            <Link to="/contact" className={css.contactUsLink}>Contact us</Link>
           </div>
-          {/* тут має бути посилання на сторінку продуктів - Link */}
+          {/* Replace with a Link for navigation */}
           <button type="button" className={css.continueButton}>
             CONTINUE SHOPPING
           </button>

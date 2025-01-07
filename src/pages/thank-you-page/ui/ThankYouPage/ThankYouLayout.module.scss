@@ -6,42 +6,39 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: func.toRem(24); /* Space between child elements */
+  gap: func.toRem(24);
   padding-top: func.toRem(112);
   margin-bottom: func.toRem(135);
-  width: 100%; /* Default width for small screens */
+  width: 100%;
 }
 
 .leftSide {
   flex: 1;
-  max-width: func.toRem(862);
-  width: 100%; /* Take full width of the container by default */
+  max-width: func.toRem(872);
+  max-height: func.toRem(638);
+  width: 100%;
 }
 
-/* Right side styling */
 .rightSide {
-  flex: 1; /* Allow it to grow and shrink */
-  max-width: func.toRem(424); /* Restrict the maximum width */
-  height: func.toRem(
-    718
-  ); // cумніваюсь про потрібність використання тут фіксованої висоти
+  flex: 1;
+  max-width: func.toRem(424);
+  height: func.toRem(718);
 }
 
 .thankYouContainer {
-  background-color: $norway50; /* Light background color */
+  background-color: $norway50;
   padding: func.toRem(20);
   margin-bottom: func.toRem(20);
-  max-width: func.toRem(862); // тут краще використати max-width
-  border-radius: 16px; // 16px
+  max-width: func.toRem(862);
+  border-radius: 16px;
 }
 
-/* Header styling */
 .header {
   margin-bottom: 20px;
   text-align: center;
-  font-size: 1.5rem; /* Larger text for better readability */
-  color: #333; /* A dark color for contrast */
-  font-family: 'Helvetica', sans-serif; /* Make the header stand out */
+  font-size: 1.5rem;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
 }
 
 .header p {
@@ -52,54 +49,51 @@
 
 .header h1 {
   text-align: left;
-  font-size: 32px; /* Adjust to your desired size */
-  font-weight: 600; /* Optional: Slightly reduce weight */
-
-  color: #333; /* Ensure it remains legible */
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
 }
 
-/* User name styling */
 .userName {
-  font-weight: 600; /* A bit lighter than bold for better readability */
+  font-weight: 600;
 }
 
-/* Section details layout */
 .details p {
-  display: flex; /* Enable flexbox for each <p> */
-  justify-content: space-between; /* Align left and right */
-  align-items: center; /* Center align vertically */
-  margin: 0; /* Reset default margin for better spacing control */
-  padding: 10px 0; /* Optional: Add some vertical spacing */
-  border-bottom: 1px solid #ccc; /* Optional: Add a divider for visual clarity */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 .label {
-  font-size: 18px; /* Adjust font size if needed */
-  color: #000000; /* Text color for labels */
+  font-size: 18px;
+  color: #000000;
 }
 
 .value {
-  font-size: 20px; /* Same font size as the label */
-  color: #000; /* Text color for values */
-  font-weight: bold; /* Make values bold */
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
 }
 
 .details p.info {
   color: #868484;
   margin-top: 32px;
-  font-size: 16px; /* Adjust size if needed */
-  border-bottom: none; /* No border for the info paragraph */
-  display: block; /* Add 8px gap below the info */ /* Reset to block layout for better structure */
+  font-size: 16px;
+  border-bottom: none;
+  display: block;
+  font-weight: 400;
 }
 
 .details p.email {
   border-bottom: none;
-  display: block; /* Ensure the email appears on a new line */
-  font-size: 16px; /* Adjust size */
-  font-weight: normal;
+  display: block;
+  font-size: func.toRem(16);
+  font-weight: 400;
 }
 
-/* Shipping section */
 .shipping {
   margin-top: 56px;
   font-family: Helvetica;
@@ -110,52 +104,52 @@
   text-underline-position: from-font;
 }
 
-.shipping h3 {
-  font-size: 16px; /* Adjust if needed for heading size */
-  font-weight: 600; /* Typically headings are bolder */
-  margin-bottom: 16px; /* Add margin for spacing */
-}
-
-.shipping address {
-  margin-top: 10px; /* Space between the address and the shipping header */
-}
-
-.shipping p {
-  margin: 4px 0; /* Space between paragraphs for better readability */
-}
-
 .imageBadge {
-  display: flex; /* Flex container */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  width: 48px; /* Fixed width */
-  height: 48px; /* Fixed height */
-  padding: 3px; /* Padding around the content */
-  gap: 4px; /* Spacing between items inside */
-  opacity: 1; /* Visible */
-  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 3px;
+  gap: 4px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
   margin-bottom: 10px;
 }
 
 .helpContainer {
   justify-content: space-between;
-  display: flex; /* Enable flexbox for horizontal alignment */
-  align-items: center; /* Center items vertically */
-  margin-top: 56px; /* Optional: Add spacing above the container */
+  display: flex;
+  align-items: center;
+  margin-top: 56px;
 }
 
 .textContainer {
-  display: flex; /* Flex layout for image and text */
-  align-items: center; /* Center image and text vertically */
-  gap: 8px; /* Add spacing between the image and the text */
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .help {
   font-weight: normal;
-  margin: 0; /* Reset default margin for proper alignment */
-  font-size: 18px; /* Adjust font size */
+  margin: 0;
+  font-size: func.toRem(18);
+  font-weight: 400;
   font-family: Helvetica, Arial, sans-serif;
-  color: #000; /* Optional: Set text color */
+  color: #000;
+}
+
+.contactUsLink {
+  font-weight: normal;
+  margin: 0;
+  font-size: func.toRem(18);
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #000;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #000;
+  text-decoration-offset: -2px;
 }
 
 .continueButton {
@@ -168,19 +162,19 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for hover */
+  transition: background-color 0.3s ease;
 }
 
 .infoBadge {
-  display: flex; /* Flex container */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
-  width: 22px; /* Fixed width */
-  height: 22px; /* Fixed height */
-  padding: 1px 0; /* Padding around the content */
-  border: 1.5px solid transparent; /* Proper border property */
-  opacity: 1; /* Fully visible */
-  margin-bottom: 5px; /* Space below the badge */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  padding: 1px 0;
+  border: 1.5px solid transparent;
+  opacity: 1;
+  margin-bottom: 5px;
 }
 
 @media (max-width: $m-viewport) {
@@ -198,22 +192,37 @@
 @media (max-width: $xs-viewport) {
   .thankYouPage {
     flex-direction: column;
+    padding-top: func.toRem(24);
+  }
+
+  .leftSide {
+    flex: 1;
+    max-width: func.toRem(343);
+    width: 100%;
+  }
+
+  .rightSide {
+    flex: 1;
+    max-width: func.toRem(343);
+  }
+
+  .helpContainer {
+    margin-top: 18px;
   }
 
   .continueButton {
-    bottom: 16px; /* Space from the bottom edge */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    width: func.toRem(343); /* Maintain padding on smaller screens */
-    max-width: 400px; /* Optional: Limit maximum width */
-    height: 56px; /* Adjust height for mobile */
-    padding: 0; /* Reset padding */
-    font-size: 16px; /* Adjust font size for smaller viewports */
-    border-radius: 8px; /* Rounded corners */
+    margin-top: 18px;
+    bottom: 16px;
+    width: func.toRem(343);
+    max-width: 400px;
+    height: 56px;
+    padding: 0;
+    font-size: 24px;
+    border-radius: 8px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: $m-viewport) {
   .thankYouPage {
     position: relative;
     padding-bottom: 32px;
@@ -222,6 +231,7 @@
     position: absolute;
     margin-top: 32px;
     bottom: 0;
+    order: 2;
     left: 0;
     padding: 0 func.toRem(60);
     width: 100%;
@@ -234,5 +244,64 @@
     left: 0;
     padding: 0 func.toRem(60);
     width: 100%;
+  }
+}
+
+@media (max-width: $sm-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+    padding: func.toRem(25);
+    gap: func.toRem(16);
+  }
+
+  .leftSide,
+  .rightSide {
+    flex: 1;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .thankYouContainer {
+    max-width: 100%;
+    padding: func.toRem(16);
+    margin-bottom: func.toRem(16);
+  }
+
+  .details p {
+    font-size: func.toRem(14);
+    padding: func.toRem(8) 0;
+  }
+
+  .shipping h3 {
+    font-size: func.toRem(14);
+    margin-bottom: func.toRem(12);
+  }
+
+  .helpContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-top: func.toRem(16);
+  }
+
+  .continueButton {
+    width: 100%;
+    max-width: 500px;
+    height: func.toRem(48);
+    font-size: func.toRem(24);
+    padding: func.toRem(8);
+    margin-top: func.toRem(16);
+    border-radius: func.toRem(8);
+  }
+
+  .infoBadge {
+    width: func.toRem(18);
+    height: func.toRem(18);
+    font-size: func.toRem(12);
+  }
+
+  .imageBadge {
+    width: func.toRem(40);
+    height: func.toRem(40);
+    gap: func.toRem(2);
   }
 }
