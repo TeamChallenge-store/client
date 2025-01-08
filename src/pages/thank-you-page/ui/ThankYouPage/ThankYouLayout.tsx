@@ -52,14 +52,16 @@ const ThankYouLayout: React.FC<Props> = ({
         <div className={css.thankYouContainer}>
           <header className={css.header}>
             <img src={badge} alt="Badge" className={css.imageBadge} />
-            <h1>
+            <h1 className={css.headerTitle}>
               THANK YOU,{' '}
               <span className={css.userName}>
                 {shippingAddress.name.toUpperCase()}
               </span>
               !
             </h1>
-            <p>Your order was completed successfully</p>
+            <p className={css.headerDescription}>
+              Your order was completed successfully
+            </p>
           </header>
 
           <section className={css.details}>
@@ -74,15 +76,13 @@ const ThankYouLayout: React.FC<Props> = ({
             <p className={css.info}>
               We have sent detailed information about the order confirmation to
             </p>
-            <p className={css.email}>
-              <strong>{email}</strong>
-            </p>
+            <p className={css.email}>{email}</p>
           </section>
         </div>
 
         <section className={css.shipping}>
-          <h3>Shipping address</h3>
-          <address>
+          <h5 className={css.shippingTitle}>Shipping address</h5>
+          <address className={css.shippingAddress}>
             <p>{shippingAddress.name}</p>
             <p>{shippingAddress.phone}</p>
             <p>{shippingAddress.address}</p>
@@ -92,7 +92,7 @@ const ThankYouLayout: React.FC<Props> = ({
         <div className={css.helpContainer}>
           <div className={css.textContainer}>
             <img src={info} alt="Info" className={css.infoBadge} />
-            <h3 className={css.help}>Need help?</h3>
+            <span className={css.helpTitle}>Need help?</span>
             <Link to="/contact" className={css.contactUsLink}>
               Contact us
             </Link>

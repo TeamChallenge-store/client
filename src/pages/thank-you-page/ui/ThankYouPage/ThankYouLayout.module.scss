@@ -27,35 +27,31 @@
 
 .thankYouContainer {
   background-color: $norway50;
-  padding: func.toRem(20);
-  margin-bottom: func.toRem(20);
-  max-width: func.toRem(862);
+  padding: func.toRem(20) func.toRem(16);
+  margin-bottom: func.toRem(56);
+  width: 100%;
   border-radius: 16px;
 }
 
 .header {
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #333;
-  font-family: 'Helvetica', sans-serif;
+  margin-bottom: func.toRem(32);
 }
 
-.header p {
+.imageBadge {
+  width: func.toRem(48);
+  height: func.toRem(48);
+  margin-bottom: func.toRem(16);
+}
+
+.headerTitle {
+  font-size: func.toRem(32);
+  font-weight: 600;
+  margin-bottom: func.toRem(8);
+}
+
+.headerDescription {
   color: #868484;
-  font-size: 18px;
-  text-align: left;
-}
-
-.header h1 {
-  text-align: left;
-  font-size: 32px;
-  font-weight: 600;
-  color: #333;
-}
-
-.userName {
-  font-weight: 600;
+  font-size: func.toRem(18);
 }
 
 .details p {
@@ -74,8 +70,6 @@
 
 .value {
   font-size: 20px;
-  color: #000;
-  font-weight: bold;
 }
 
 .details p.info {
@@ -83,38 +77,31 @@
   margin-top: 32px;
   font-size: 16px;
   border-bottom: none;
-  display: block;
   font-weight: 400;
 }
 
 .details p.email {
   border-bottom: none;
-  display: block;
   font-size: func.toRem(16);
   font-weight: 400;
 }
 
 .shipping {
   margin-top: 56px;
-  font-family: Helvetica;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  text-align: left;
-  text-underline-position: from-font;
 }
 
-.imageBadge {
+.shippingTitle {
+  color: #868484;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.shippingAddress {
+  font-style: normal;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  padding: 3px;
-  gap: 4px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .helpContainer {
@@ -127,36 +114,23 @@
 .textContainer {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
-.help {
-  font-weight: normal;
-  margin: 0;
-  font-size: func.toRem(18);
-  font-weight: 400;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #000;
+.helpTitle {
+  font-size: 18px;
+  margin-right: 8px;
 }
 
 .contactUsLink {
-  font-weight: normal;
-  margin: 0;
-  font-size: func.toRem(18);
-  font-weight: 400;
-  font-family: Helvetica, Arial, sans-serif;
-  color: #000;
+  font-size: 18px;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: #000;
-  text-decoration-offset: -2px;
 }
 
 .continueButton {
   font-size: 24px;
   max-width: 411px;
   height: 64px;
-  background-color: #37643b;
+  background-color: $norway600;
   color: #fff;
   padding: 16px 76px;
   border: none;
@@ -166,15 +140,9 @@
 }
 
 .infoBadge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 22px;
-  height: 22px;
-  padding: 1px 0;
-  border: 1.5px solid transparent;
-  opacity: 1;
-  margin-bottom: 5px;
+  width: func.toRem(20);
+  height: func.toRem(20);
+  margin-right: 4px;
 }
 
 @media (max-width: $m-viewport) {
@@ -229,21 +197,18 @@
   }
   .helpContainer {
     position: absolute;
-    margin-top: 32px;
-    bottom: 0;
+    bottom: func.toRem(-70);
     order: 2;
     left: 0;
-    padding: 0 func.toRem(60);
+    padding: 0 16px;
     width: 100%;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-  .helpContainer.continueButton {
-    position: absolute;
-    margin-top: auto;
-    bottom: 0;
-    left: 0;
-    padding: 0 func.toRem(60);
+  .continueButton {
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -272,20 +237,8 @@
     padding: func.toRem(8) 0;
   }
 
-  .shipping h3 {
-    font-size: func.toRem(14);
-    margin-bottom: func.toRem(12);
-  }
-
-  .helpContainer {
-    flex-direction: column;
-    align-items: center;
-    margin-top: func.toRem(16);
-  }
-
   .continueButton {
     width: 100%;
-    max-width: 500px;
     height: func.toRem(48);
     font-size: func.toRem(24);
     padding: func.toRem(8);
