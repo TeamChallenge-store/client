@@ -4,7 +4,7 @@ import OrderSummary from '../OrderSummary/OrderSummary';
 import css from './ThankYouLayout.module.scss';
 import badge from '../icons/Badge.svg';
 import info from '../icons/Info.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface ShippingAddress {
   name: string;
@@ -40,6 +40,12 @@ const ThankYouLayout: React.FC<Props> = ({
   shipping,
   total,
 }) => {
+  const navigate = useNavigate();
+
+  const handleContinueShopping = () => {
+    navigate('/products');
+  };
+
   return (
     <section className={cn('container', css.thankYouPage)}>
       <div className={css.leftSide}>
@@ -87,10 +93,14 @@ const ThankYouLayout: React.FC<Props> = ({
           <div className={css.textContainer}>
             <img src={info} alt="Info" className={css.infoBadge} />
             <h3 className={css.help}>Need help?</h3>
-            <Link to="/contact" className={css.contactUsLink}>Contact us</Link>
+            <Link to="/contact" className={css.contactUsLink}>
+              Contact us
+            </Link>
           </div>
-          {/* Replace with a Link for navigation */}
-          <button type="button" className={css.continueButton}>
+          <button
+            onClick={handleContinueShopping}
+            className={css.continueButton}
+          >
             CONTINUE SHOPPING
           </button>
         </div>
