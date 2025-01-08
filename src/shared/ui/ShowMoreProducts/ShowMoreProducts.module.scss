@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
+  margin-bottom: 2px;
 
   gap: func.toRem(24);
 

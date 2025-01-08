@@ -18,14 +18,14 @@ const LayoutProductCard: FC<TLayoutProductCardProps> = props => {
     return null;
   }
 
-  const { id, image, price, name, old_price: oldPrice } = product;
+  const { image, price, name, old_price: oldPrice } = product;
 
   return (
     <li>
       <article className={css.card}>
-        <Link className={css.cardTop} to={`/product/${id}`}>
+        <div className={css.cardTop}>
           <img className={css.cardImg} src={image || defaultImage} alt={name} />
-        </Link>
+        </div>
         <h3 className={css.cardTitle}>{name}</h3>
         <div className={css.content}>
           <div className={css.cardActionInner}>
