@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
 import defaultImage from './defaultImage.png';
 
 import css from './LayoutProductCard.module.scss';
