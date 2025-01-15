@@ -3,7 +3,7 @@ import { LoadingButton } from '@mui/lab';
 import { ThemeProvider } from '@mui/material';
 import cn from 'classnames';
 import 'react-toastify/dist/ReactToastify.css';
-import { useAddProductToCartMutation, IBagProduct } from '~entities/cart';
+import { useAddProductToCartMutation } from '~entities/cart';
 import { ShortCartMessage } from '~widgets/cart-pop-up/ShortCartMessage';
 
 import theme from '../../config/muiTheme';
@@ -11,9 +11,10 @@ import theme from '../../config/muiTheme';
 import css from './AddToCart.module.scss';
 import { useDispatch } from 'react-redux';
 import { setIsCartUpdated } from '~widgets/cart-pop-up/model/slice';
+import { IProductCard } from '~entities/product';
 
 interface IAddToCartProps {
-  product: IBagProduct;
+  product: IProductCard;
 }
 
 const AddToCart: FC<IAddToCartProps> = ({ product }) => {
