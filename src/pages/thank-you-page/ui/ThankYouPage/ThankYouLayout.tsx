@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 interface ShippingAddress {
   name: string;
+  fullName: string;
   phone: string;
   address: string;
 }
@@ -83,7 +84,7 @@ const ThankYouLayout: React.FC<Props> = ({
         <section className={css.shipping}>
           <h5 className={css.shippingTitle}>Shipping address</h5>
           <address className={css.shippingAddress}>
-            <p>{shippingAddress.name}</p>
+            <p>{shippingAddress.fullName}</p>
             <p>{shippingAddress.phone}</p>
             <p>{shippingAddress.address}</p>
           </address>
