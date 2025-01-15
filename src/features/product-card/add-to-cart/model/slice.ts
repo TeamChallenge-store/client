@@ -16,8 +16,6 @@ const loadCartFromStorage = (): IProductCard[] => {
 
     return cartItems;
   } catch (error) {
-    console.error('Error loading cart from local storage:', error);
-
     return [];
   }
 };

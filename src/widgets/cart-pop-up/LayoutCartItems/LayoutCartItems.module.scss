@@ -23,7 +23,7 @@
   }
 
   @media (max-width: $xs-viewport) {
-      padding-bottom: func.toRem(12);
+    padding-bottom: func.toRem(12);
     padding-top: func.toRem(12);
     width: func.toRem(343);
   }

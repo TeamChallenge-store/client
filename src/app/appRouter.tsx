@@ -2,7 +2,13 @@ import { RouteObject, createHashRouter as Router } from 'react-router-dom';
 
 import { baseLayout } from '~layout/baseLayout';
 
-import { HomePage, ProductPage, ErrorPage, CheckoutPage } from '~lazyPages';
+import {
+  HomePage,
+  ProductPage,
+  ErrorPage,
+  CheckoutPage,
+  ThankYouPage,
+} from '~lazyPages';
 
 const routes: RouteObject[] = [
   {
@@ -47,7 +53,7 @@ const routes: RouteObject[] = [
       },
       {
         path: 'thank-you',
-        element: <h1>***in develop***</h1>,
+        element: <ThankYouPage />,
       },
       {
         path: '*',

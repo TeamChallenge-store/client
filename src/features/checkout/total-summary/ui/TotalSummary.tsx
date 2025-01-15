@@ -27,7 +27,7 @@ const TotalSummary: FC = () => {
   const createOrder = async () => {
     try {
       await createOrderMutation(orderData).unwrap();
-      navigate('/thank-you');
+      navigate('/thank-you', { state: { products, totalPrice, orderData } });
     } catch (error) {
       console.error('Failed to create order:', error);
     }

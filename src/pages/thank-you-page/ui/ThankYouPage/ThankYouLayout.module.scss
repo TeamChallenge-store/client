@@ -1,0 +1,260 @@
+@use '../../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.thankYouPage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: func.toRem(24);
+  padding-top: func.toRem(112);
+  margin-bottom: func.toRem(135);
+  width: 100%;
+}
+
+.leftSide {
+  flex: 1;
+  max-width: func.toRem(872);
+  max-height: func.toRem(638);
+  width: 100%;
+}
+
+.rightSide {
+  flex: 1;
+  max-width: func.toRem(424);
+  height: func.toRem(718);
+}
+
+.thankYouContainer {
+  background-color: $norway50;
+  padding: func.toRem(20) func.toRem(16);
+  margin-bottom: func.toRem(56);
+  width: 100%;
+  border-radius: 16px;
+}
+
+.header {
+  margin-bottom: func.toRem(32);
+}
+
+.imageBadge {
+  width: func.toRem(48);
+  height: func.toRem(48);
+  margin-bottom: func.toRem(16);
+}
+
+.headerTitle {
+  font-size: func.toRem(32);
+  font-weight: 600;
+  margin-bottom: func.toRem(8);
+}
+
+.headerDescription {
+  color: #868484;
+  font-size: func.toRem(18);
+}
+
+.details p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.label {
+  font-size: 18px;
+  color: #000000;
+}
+
+.value {
+  font-size: 20px;
+}
+
+.details p.info {
+  color: #868484;
+  margin-top: 32px;
+  font-size: 16px;
+  border-bottom: none;
+  font-weight: 400;
+}
+
+.details p.email {
+  border-bottom: none;
+  font-size: func.toRem(16);
+  font-weight: 400;
+}
+
+.shipping {
+  margin-top: 56px;
+}
+
+.shippingTitle {
+  color: #868484;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.shippingAddress {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.helpContainer {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+}
+
+.helpTitle {
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.contactUsLink {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.continueButton {
+  font-size: 24px;
+  max-width: 411px;
+  height: 64px;
+  background-color: $norway600;
+  color: #fff;
+  padding: 16px 76px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.infoBadge {
+  width: func.toRem(20);
+  height: func.toRem(20);
+  margin-right: 4px;
+}
+
+@media (max-width: $m-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+  }
+
+  .leftSide,
+  .rightSide,
+  .thankYouContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $xs-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+    padding-top: func.toRem(24);
+  }
+
+  .leftSide {
+    flex: 1;
+    max-width: func.toRem(343);
+    width: 100%;
+  }
+
+  .rightSide {
+    flex: 1;
+    max-width: func.toRem(343);
+  }
+
+  .helpContainer {
+    margin-top: 18px;
+  }
+
+  .continueButton {
+    margin-top: 18px;
+    bottom: 16px;
+    width: func.toRem(343);
+    max-width: 400px;
+    height: 56px;
+    padding: 0;
+    font-size: 24px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: $m-viewport) {
+  .thankYouPage {
+    position: relative;
+    padding-bottom: 32px;
+  }
+  .helpContainer {
+    position: absolute;
+    bottom: func.toRem(-70);
+    order: 2;
+    left: 0;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .continueButton {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $sm-viewport) {
+  .thankYouPage {
+    flex-direction: column;
+    padding: func.toRem(25);
+    gap: func.toRem(16);
+  }
+
+  .leftSide,
+  .rightSide {
+    flex: 1;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .thankYouContainer {
+    max-width: 100%;
+    padding: func.toRem(16);
+    margin-bottom: func.toRem(16);
+  }
+
+  .details p {
+    font-size: func.toRem(14);
+    padding: func.toRem(8) 0;
+  }
+
+  .continueButton {
+    width: 100%;
+    height: func.toRem(48);
+    font-size: func.toRem(24);
+    padding: func.toRem(8);
+    margin-top: func.toRem(16);
+    border-radius: func.toRem(8);
+  }
+
+  .infoBadge {
+    width: func.toRem(18);
+    height: func.toRem(18);
+    font-size: func.toRem(12);
+  }
+
+  .imageBadge {
+    width: func.toRem(40);
+    height: func.toRem(40);
+    gap: func.toRem(2);
+  }
+}

@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// const BASE_URL = 'https://django.pp.ua/api/v1/';
 const BASE_URL = 'http://localhost:8000/api/v1/';
 
 const baseApi = createApi({
