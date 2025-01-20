@@ -5,16 +5,19 @@ import { SubscribeBlock } from '~widgets/subscribe-block';
 import { Banner } from '~widgets/banner';
 import { Bestsellers } from '~widgets/bestsellers';
 import { NewBlock } from '~widgets/newBlock';
+import ChatWidget from '~widgets/ai-assistant/ChatWidget';
 
 const HomePage = () => (
-  <Layout
-    banner={<Banner />}
-    bestsellers={<Bestsellers />}
-    subCategory={<CategoriesBanner />}
-    newProducts={<NewBlock />}
-    stock={<PromotionalOffers />}
-    subscribe={<SubscribeBlock />}
-  />
+  <>
+    <Layout
+      banner={<Banner />}
+      bestsellers={<Bestsellers />}
+      subCategory={<CategoriesBanner />}
+      newProducts={<NewBlock />}
+      stock={<PromotionalOffers />}
+      subscribe={<SubscribeBlock />}
+    />
+  </>
 );
 
 export { HomePage };
