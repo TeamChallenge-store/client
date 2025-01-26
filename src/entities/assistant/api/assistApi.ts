@@ -10,6 +10,9 @@ export const chatApi = baseApi.injectEndpoints({
         method: 'POST',
         body: payload,
         credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
       }),
     }),
   }),

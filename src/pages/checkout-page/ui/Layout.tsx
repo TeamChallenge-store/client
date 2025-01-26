@@ -19,7 +19,7 @@ const Layout: FC<TLayoutProps> = () => {
           <section className={css.personalInfo}>
             <h3 className={css.title}>1. Personal information</h3>
             <PersonalInfo />
-          </section>
+          </section>  
 
           <section className={css.order}>
             <h3 className={css.title}>Order</h3>

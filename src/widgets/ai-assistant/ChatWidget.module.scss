@@ -1,3 +1,8 @@
+@use '../../shared/styles/helpers/variables.scss' as *;
+@use '../../shared/styles/helpers/functions.scss' as func;
+@use '../../shared/styles/helpers/mixins.scss' as mixin;
+
+
 .chatWidget {
     position: fixed;
     bottom: 20px;
@@ -9,8 +14,8 @@
   }
   
   .chatButton {
-    background-color: #007bff;
-    color: white;
+    background-color: $norway600;
+    color: $norway50;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
@@ -20,16 +25,16 @@
   }
   
   .chatButton:hover {
-    background-color: #0056b3;
+    background-color: $norway600;
   }
   
   .chatWindow {
     position: absolute;
     bottom: 60px;
     right: 0;
-    width: 300px;
-    height: 400px;
-    background: white;
+    width: func.toRem(400);
+    height: func.toRem(450);
+    background: $norway50;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     overflow: hidden;
@@ -38,9 +43,10 @@
   }
   
   .chatHeader {
-    background-color: #f1f1f1;
+    background-color: $norway600;
     padding: 10px;
     font-size: 18px;
+    color: $norway50;
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #ddd;
@@ -52,15 +58,43 @@
     overflow-y: auto;
     border-bottom: 1px solid #ddd;
   }
+
+
+
+  
+  .chatInputWrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
   
   .chatInput {
-    width: 100%;
+    flex: 1;
     padding: 10px;
     border: none;
-    border-top: 1px solid #ddd;
     resize: none;
     height: 60px;
     font-size: 14px;
     outline: none;
+    align-items: center;
+    line-height: normal;
   }
   
+  .sentMessage {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: $norway600; 
+    color: $norway50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sentMessage:hover {
+    background-color: $norway800; 
+  }
+  
+  .sentMessage:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;
+  }

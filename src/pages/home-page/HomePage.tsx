@@ -17,6 +17,7 @@ const HomePage = () => (
       stock={<PromotionalOffers />}
       subscribe={<SubscribeBlock />}
     />
+    <ChatWidget/>
   </>
 );
 

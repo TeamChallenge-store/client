@@ -12,8 +12,8 @@ const TopHeader = () => {
             <Link className={css.link} to="/help">
               Help
             </Link>
-            <Link className={css.link} to="/signIn">
-              Sign In
+            <Link className={css.link} to="/sign_up">
+              Sign Up
             </Link>
           </div>
         </div>

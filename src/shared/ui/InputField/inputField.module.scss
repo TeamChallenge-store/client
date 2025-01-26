@@ -1,0 +1,32 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.input-group input {
+    display: flex;
+    align-items: center;
+    padding: func.toRem(8);
+    font-size: func.toRem(15);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border 0.3s ease;
+}
+
+.input-group input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+}
+
