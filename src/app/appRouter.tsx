@@ -8,8 +8,9 @@ import {
   ErrorPage,
   CheckoutPage,
   ThankYouPage,
+  SignInPage,
+  SignUpPage,
 } from '~lazyPages';
-import SignUpPage from '~pages/sign-up/SignUpPage.tsx';
 
 const routes: RouteObject[] = [
   {
@@ -44,10 +45,10 @@ const routes: RouteObject[] = [
         path: 'delivery',
         element: <h1>***in develop***</h1>,
       },
-      // {
-      //   path: 'sign_in',
-      //   element: <SignInPage />,
-      // },
+      {
+        path: 'sign_in',
+        element: <SignInPage />,
+      },
       {
         path: 'sign_up',
         element: <SignUpPage />,

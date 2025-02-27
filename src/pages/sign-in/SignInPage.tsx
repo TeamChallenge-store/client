@@ -1,31 +1,61 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../services/authService";
-import { AuthContext } from "../context/AuthContext";
-import InputField from "../components/InputField";
-import Button from "../components/Button";
-import styles from '../styles/login.module.css'; 
-import loginImage from "../assets/login.webp";
 
-const Login = () => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+import { useLoginUserMutation, useLoginWithGitHubMutation } from '~entities/users/api/authApi.ts';
+import { InputField } from '~shared/ui/InputField/InputField.tsx';
+import { CustomButton } from "~shared/ui/CustomButton";
+
+import styles from './ui/Login.module.scss';
+import loginImage from "./ui/icons/login.webp";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
+
+const SignInPage = () => {
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: ""
+  });
+
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const { setUser } = useContext(AuthContext); 
 
-  const handleChange = (e) => {
+  const [loginWithGitHub] = useLoginWithGitHubMutation();
+  const [loginUser] = useLoginUserMutation();
+
+  const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setCredentials({ ...credentials, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const { email, password } = credentials;
+
     try {
-      const data = await loginUser(credentials);
-      setUser(data.user); 
-      navigate("/dashboard"); 
+      const response = await loginUser({
+        email,
+        password
+      }).unwrap();
+
+      sessionStorage.setItem('accessToken', response.access);
+      sessionStorage.setItem('refreshToken', response.refresh);
+
+      navigate("/");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed. Please try again.");
+      if (err instanceof Error) {
+        setError(err.message || "Login failed. Please try again.");
+      } else {
+        setError("Login failed. Please try again.");
+      }
+    }
+  };
+
+  const handleGitHubLogin = async () => {
+    try {
+      await loginWithGitHub().unwrap();
+    } catch (err: any) {
+      setError(err.message || "GitHub login failed");
     }
   };
 
@@ -35,11 +65,12 @@ const Login = () => {
         <img src={loginImage} alt="Login Illustration" className={styles.image} />
       </div>
       <div className={styles.formContainer}>
-        <h2 className={styles.heading}>Login</h2>
+        <h3 className={styles.heading}>Login</h3>
+        <p className={styles.greeting}>Welcome back! 😊</p>
         {error && <p className={styles.error}>{error}</p>}
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={handleSubmit}>
           <InputField
-            label="Username"
+            label="Email"
             type="text"
             name="email"
             value={credentials.email}
@@ -52,18 +83,30 @@ const Login = () => {
             value={credentials.password}
             onChange={handleChange}
           />
-          <Button type="submit" text="Login" className={styles.button} />
+          <a href="#" className={styles.link}>
+            Forgot password?
+          </a>
+          <CustomButton buttonType="submit" className={styles.logButton}>
+            Login
+          </CustomButton>
         </form>
         <p className={styles.redirectText}>
           Don't have an account?{" "}
-          <a href="/register" className={styles.redirectLink}>
+          <a href="/#/sign_up" className={styles.redirectLink}>
             Register here
           </a>
         </p>
+        <div className={styles.divider}>
+          <span>or</span>
+        </div>
+        <div className={styles.socialButtonsContainer}>
+          <FontAwesomeIcon onClick={handleGitHubLogin} icon={faGithub} className={styles.icon} />
+          <FontAwesomeIcon icon={faGoogle} className={styles.icon} />
+          <FontAwesomeIcon icon={faFacebookF} className={styles.icon} />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
-
+export default SignInPage;

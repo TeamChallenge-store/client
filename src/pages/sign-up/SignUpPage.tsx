@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import {
-  useRegisterUserMutation,
-  useLoginWithGitHubMutation,
-} from "~entities/users/api/authApi.ts";
+import { useNavigate } from 'react-router-dom';
+
+import { useRegisterUserMutation, useLoginWithGitHubMutation } from "~entities/users/api/authApi.ts";
 import { CustomButton } from "~shared/ui/CustomButton";
 import { ErrorPage } from "~pages/error-page/ErrorPage.tsx";
-import InputField from "~shared/ui/InputField/InputField.tsx";
+import { InputField } from '~shared/ui/InputField/InputField.tsx';
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faGoogle,
-  faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faGoogle, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+
 import registerImage from "./ui/icons/register.webp";
 import styles from "./ui/Register.module.scss";
+
 
 const SignUpPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -26,6 +24,7 @@ const SignUpPage: React.FC = () => {
   const [error, setError] = useState<string>("");
   const [registerUser] = useRegisterUserMutation();
   const [loginWithGitHub] = useLoginWithGitHubMutation();
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -45,9 +44,11 @@ const SignUpPage: React.FC = () => {
       await registerUser({
         username,
         email,
-        password1: password,
-        password2: confirmPassword,
+        password: password,      
+        re_password: confirmPassword,
       }).unwrap();
+
+      navigate("/sign_in");
     } catch (err: any) {
       setError(err.message || "Registration failed");
     }
@@ -111,7 +112,7 @@ const SignUpPage: React.FC = () => {
               Register
             </CustomButton>
             <p className={styles.redirectText}>
-              Already have an account? <a href="#" className={styles.redirectLink}>Sign In</a>
+              Already have an account? <a href="/#/sign_in" className={styles.redirectLink}>Sign In</a>
             </p>
           </div>
         </form>

@@ -25,4 +25,4 @@ const InputField: React.FC<InputFieldProps> = ({ label, type, name, value, onCha
   );
 };
 
-export default InputField;
+export { InputField };

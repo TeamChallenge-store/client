@@ -7,12 +7,12 @@ const getCSRFToken = (): string | null => {
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    registerUser: build.mutation<void, { username: string; email: string; password1: string; password2: string }>({
+    registerUser: build.mutation<void, { username: string; email: string; password: string; re_password: string }>({
       query: (data) => {
         const csrfToken = getCSRFToken();
 
         return {
-          url: '/dj-rest-auth/registration/',
+          url: '/auth/users/',
           method: 'POST',
           body: data,
           credentials: 'include',
@@ -24,9 +24,9 @@ export const authApi = baseApi.injectEndpoints({
         };
       },
     }),
-    loginUser: build.mutation<void, { username: string, password: string }>({
+    loginUser: build.mutation<{ access: string, refresh: string }, { email: string, password: string }>({
       query: (data) => ({
-        url: '/dj-rest-auth/login/',
+        url: '/auth/jwt/jwt/create/',
         method: 'POST',
         body: data,
         credentials: 'include',
