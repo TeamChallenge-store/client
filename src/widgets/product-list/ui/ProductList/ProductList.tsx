@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { type IProductCard } from '~entities/product';
-
 import { AddToCart, AddToWish } from '~features/product-card';
 import { LayoutProductCard } from '~shared/ui/LayoutProductCard';
 
@@ -14,7 +13,7 @@ const ProductList: FC<TProductListProps> = ({ products }) => {
       key={product.id}
       product={product}
       addToCartSlot={<AddToCart product={product} />}
-      wishSlot={<AddToWish />}
+      wishSlot={<AddToWish product={product} />}
     />
   ));
 };

@@ -27,6 +27,5 @@ export const cartSlice = createSlice({
 
 export const { setIsCartOpen, setIsCartUpdated } = cartSlice.actions;
 export const selectIsCartOpen = (state: RootState) => state.cart.isCartOpen;
-export const selectIsCartUpdated = (state: RootState) =>
-  state.cart.isCartUpdated;
+export const selectIsCartUpdated = (state: RootState) => state.cart.isCartUpdated;
 export default cartSlice.reducer;

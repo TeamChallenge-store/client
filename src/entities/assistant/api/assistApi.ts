@@ -1,5 +1,5 @@
 import { baseApi } from '~shared/api/baseApi';
-import { IChatRequest, IChatResponse } from '../model/types';
+import { IChatRequest, IChatResponse } from '~entities/assistant/model/type.ts';
 
 
 export const chatApi = baseApi.injectEndpoints({

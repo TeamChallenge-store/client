@@ -2,99 +2,186 @@
 @use '../../shared/styles/helpers/functions.scss' as func;
 @use '../../shared/styles/helpers/mixins.scss' as mixin;
 
-
 .chatWidget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .chatButton {
-    background-color: $norway600;
-    color: $norway50;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .chatButton:hover {
-    background-color: $norway600;
-  }
-  
-  .chatWindow {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: func.toRem(400);
-    height: func.toRem(450);
-    background: $norway50;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .chatHeader {
-    background-color: $norway600;
-    padding: 10px;
-    font-size: 18px;
-    color: $norway50;
-    font-weight: bold;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .chatContent {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    border-bottom: 1px solid #ddd;
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
+.chatButton {
+  background-color: $norway600;
+  color: $norway50;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
+.chatButton:hover {
+  background-color: $norway600;
+}
 
-  
-  .chatInputWrapper {
-    display: flex;
-    align-items: center;
-    padding: 10px;
+.chatWindow {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  width: func.toRem(400);
+  height: func.toRem(450);
+  background: $norway50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  resize: both;
+  min-width: func.toRem(300);
+  min-height: func.toRem(350);
+  max-width: func.toRem(600);
+  max-height: func.toRem(650);
+}
+
+.chatHeader {
+  background-color: $norway600;
+  padding: 10px;
+  font-size: 18px;
+  color: $norway50;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.chatContent {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeMessage {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+.message {
+  max-width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userMessage {
+  background-color: $norway600;
+  color: $norway50;
+  align-self: flex-end;
+  margin-left: 10px;
+}
+
+.serverMessage {
+  background-color: #f0f0f0;
+  color: #333;
+  align-self: flex-start;
+  margin-right: 10px;
+}
+
+.messageContent {
+  word-break: break-word;
+}
+
+.messageTimestamp {
+  font-size: 12px;
+  color: #999;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.productItem {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+  &:last-child {
+    border-bottom: none;
   }
-  
-  .chatInput {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    resize: none;
-    height: 60px;
-    font-size: 14px;
-    outline: none;
-    align-items: center;
-    line-height: normal;
-  }
-  
-  .sentMessage {
-    padding: 10px 15px;
-    margin-left: 10px;
-    background-color: $norway600; 
-    color: $norway50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .sentMessage:hover {
-    background-color: $norway800; 
-  }
-  
-  .sentMessage:disabled {
-    background-color: #ccc; 
-    cursor: not-allowed;
-  }
+}
+
+.productLink {
+  color: $norway600;
+  text-decoration: none;
+  display: block;
+}
+
+.productLink:hover {
+  text-decoration: underline;
+  color: $norway800;
+}
+
+.unauthenticatedMessage {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  margin: auto;
+}
+
+.signUpLink {
+  color: $norway600;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.signUpLink:hover {
+  color: $norway800;
+}
+
+.chatInputWrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.chatInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  resize: none;
+  height: 60px;
+  font-size: 14px;
+  outline: none;
+  line-height: normal;
+}
+
+.sentMessage {
+  padding: 10px 15px;
+  margin-left: 10px;
+  background-color: $norway600;
+  color: $norway50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sentMessage:hover {
+  background-color: $norway800;
+}
+
+.sentMessage:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

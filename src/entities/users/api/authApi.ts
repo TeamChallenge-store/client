@@ -32,14 +32,15 @@ export const authApi = baseApi.injectEndpoints({
         credentials: 'include',
       }),
     }),
-    loginWithGitHub: build.mutation<void, void>({
-      query: () => ({
+    fetchGitHubTokens: build.mutation<{ access: string}, { code: string }>({
+      query: ({ code }) => ({
         url: '/dj-rest-auth/github/',
         method: 'POST',
+        body: { code },
         credentials: 'include',
       }),
     }),
   }),
 });
 
-export const { useRegisterUserMutation, useLoginUserMutation, useLoginWithGitHubMutation } = authApi;
+export const { useRegisterUserMutation, useLoginUserMutation, useFetchGitHubTokensMutation } = authApi;

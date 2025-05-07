@@ -51,15 +51,15 @@
     "@types/uuid": "^9.0.7",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "husky": "^8.0.3",
     "prettier": "3.2.4",
-    "sass": "^1.70.0",
+    "sass": "^1.86.3",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^6.2.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run fix-style --exit-on-error"

@@ -6,6 +6,7 @@ import {
   TResponse,
   TResponseProducts,
   TResponseProductsPage,
+  IProductDetails,
 } from '../model/types';
 
 export const productApi = baseApi.injectEndpoints({
@@ -63,6 +64,13 @@ export const productApi = baseApi.injectEndpoints({
       transformResponse: (response: TResponseProducts) =>
         response.results.products,
     }),
+    productById: build.query<IProductDetails, number>({
+      query: (productId) => ({
+        url: `products/${productId}`,
+      }),
+      keepUnusedDataFor: 30,
+      transformResponse: (response: IProductDetails) => response,
+    }),
   }),
 });
 
@@ -72,4 +80,5 @@ export const {
   useBestsellersProductQuery,
   useNewProductQuery,
   useSaleProductsQuery,
+  useProductByIdQuery,
 } = productApi;

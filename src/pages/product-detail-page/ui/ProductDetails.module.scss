@@ -1,0 +1,288 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+
+.breadcrumbs {
+  margin-top: 16px;
+  margin-left: 60px;
+}
+
+.productPage {
+  display: flex;
+  justify-content: center;
+  padding-top: func.toRem(50);
+  margin-bottom: func.toRem(112);
+  margin-left: func.toRem(60);
+  margin-right: func.toRem(60);
+}
+
+.productContainer {
+  display: flex;
+  gap: func.toRem(24);
+  max-width: func.toRem(1320);
+}
+
+.leftSide {
+  flex: 1;
+  max-width: func.toRem(760);
+  max-height: func.toRem(1003);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: func.toRem(32);
+}
+
+.rightSide {
+  flex: 1;
+  max-width: func.toRem(536);
+  height: func.toRem(802);
+}
+
+.imageSection {
+}
+
+.additionalImages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.additionalImage {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+}
+
+.contentSection {
+  width: func.toRem(758);
+  display: flex;
+  flex-direction: column;
+  gap: func.toRem(32);
+}
+
+.toggleSection {
+  display: flex;
+  justify-content: space-between;
+  gap: func.toRem(10);
+}
+
+.toggleButton {
+  width: func.toRem(123);
+  height: func.toRem(38);
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.08px;
+  color: #3D3D3D;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: func.toRem(8) func.toRem(16);
+}
+
+.descriptionSection,
+.featuresSection {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.productDescription,
+.productFeatures {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%; /* 120% of 18px = 21.6px */
+  letter-spacing: 0;
+  color: #3D3D3D;
+}
+
+.rightSideContainer {
+  height: 574px;
+  display: flex;
+  flex-direction: column; /* Розташувати елементи вертикально */
+  gap: 32px; /* Відступ 32px між дочірніми елементами */
+}
+
+.productTitleContainer {
+  max-width: func.toRem(536);
+  height: func.toRem(76);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: func.toRem(10);
+}
+
+.productTitle {
+  flex: 0 0 auto;
+  max-width: func.toRem(427);
+  font-family: Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.badgeStockContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: func.toRem(10);
+}
+
+.imageBadge {
+  width: 20px;
+}
+
+.inStockText {
+  flex: 0 0 auto;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: #0e8345;
+}
+
+.productSubscription {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #3D3D3D;
+}
+
+.priceContainer {
+  width: 110px;
+  height: 60px;
+}
+
+.productOldPrice {
+  width: 55px;
+  height: 22px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.08px;
+  letter-spacing: 0;
+  text-align: right;
+  text-decoration: line-through;
+  color: #B0B0B0;
+  white-space: nowrap;
+}
+
+.productPrice {
+  width: 55px;
+  height: 38px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 550;
+  font-size: 31px;
+  line-height: 38.4px;
+  letter-spacing: 0;
+  color: #000000;
+  white-space: nowrap;
+}
+.storeInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.storeInfo {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.08px;
+  letter-spacing: 0;
+  color: #B0B0B0;
+}
+
+.storeLabel {
+  color: #000000;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  max-width: func.toRem(536);
+  width: func.toRem(536);
+  height: func.toRem(64);
+  gap: func.toRem(16);
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: func.toRem(154);
+  height: func.toRem(56);
+  border-radius: 8px;
+  border: 1px solid #37643B;
+  padding: 0 func.toRem(16);
+}
+
+.quantityButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #37643B;
+  padding: 0;
+}
+
+.quantity {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22.08px;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.buyButton {
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: func.toRem(24); /* 24px */
+  line-height: 100%; /* 24px для font-size 24px */
+  letter-spacing: 0;
+  text-align: center;
+  text-transform: uppercase;
+  background: $norway600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; /* Для вирівнювання тексту */
+  align-items: center; /* Вертикальне вирівнювання */
+  justify-content: center; /* Горизонтальне вирівнювання */
+}
+
+.favoriteButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  font-family: Helvetica, sans-serif;
+  border: none;
+  color: #475156;
+  cursor: pointer;
+  font-size: func.toRem(16);
+}
+
+.heartIcon {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 100px;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+}
+
+.featuresList li {
+  margin-bottom: 10px;
+}
+
+.deliveryIcon {
+  width: func.toRem(536);
+  height: func.toRem(184);
+  margin-top: 44px; 
+}

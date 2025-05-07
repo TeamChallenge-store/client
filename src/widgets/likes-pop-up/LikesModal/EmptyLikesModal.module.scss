@@ -1,0 +1,57 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.emptyLikesModal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $green;
+  padding: func.toRem(23) func.toRem(32) func.toRem(16);
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: func.toRem(24);
+  margin: 0;
+}
+
+.closeIcon {
+  width: func.toRem(40);
+  height: func.toRem(21);
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: func.toRem(20);
+}
+
+.message {
+  font-size: func.toRem(18);
+  color: $gray600;
+  margin-bottom: func.toRem(20);
+}
+
+.shopButton {
+  padding: func.toRem(10) func.toRem(20);
+  background-color: $norway600;
+  color: $white;
+  border: none;
+  border-radius: 5px;
+  font-size: func.toRem(16);
+  cursor: pointer;
+  &:hover {
+    background-color: $norway800;
+  }
+}

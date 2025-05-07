@@ -3,7 +3,7 @@ type IChatRequest = {
   };
   
 type IChatResponse = {
-    links: string[];
+    links: { [key: string]: string };
     timestamp: string;
 };
   

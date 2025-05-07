@@ -2,7 +2,7 @@
 @use './helpers/variables.scss' as *;
 @use './helpers/functions.scss' as *;
 
-@import './fonts.scss';
+@use './fonts.scss';
 
 * {
   box-sizing: border-box;

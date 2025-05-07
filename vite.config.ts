@@ -2,7 +2,6 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   base: './',
@@ -19,6 +18,13 @@ export default defineConfig({
       '~lazyPages': path.resolve('src/app/lazyPages.tsx'),
       '~icons': path.resolve('src/shared/ui/Icon/icons/'),
     },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern'
+      }
+    }
   },
   build: {
     outDir: 'dist',

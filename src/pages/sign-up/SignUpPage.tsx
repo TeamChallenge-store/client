@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-import { useRegisterUserMutation, useLoginWithGitHubMutation } from "~entities/users/api/authApi.ts";
+import { useRegisterUserMutation, useFetchGitHubTokensMutation } from "~entities/users/api/authApi.ts";
 import { CustomButton } from "~shared/ui/CustomButton";
 import { ErrorPage } from "~pages/error-page/ErrorPage.tsx";
 import { InputField } from '~shared/ui/InputField/InputField.tsx';
@@ -23,7 +23,7 @@ const SignUpPage: React.FC = () => {
 
   const [error, setError] = useState<string>("");
   const [registerUser] = useRegisterUserMutation();
-  const [loginWithGitHub] = useLoginWithGitHubMutation();
+  const [loginWithGitHub] = useFetchGitHubTokensMutation();
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +44,7 @@ const SignUpPage: React.FC = () => {
       await registerUser({
         username,
         email,
-        password: password,      
+        password: password,
         re_password: confirmPassword,
       }).unwrap();
 
@@ -112,7 +112,7 @@ const SignUpPage: React.FC = () => {
               Register
             </CustomButton>
             <p className={styles.redirectText}>
-              Already have an account? <a href="/#/sign_in" className={styles.redirectLink}>Sign In</a>
+              Already have an account? <a href="/sign_in" className={styles.redirectLink}>Sign In</a>
             </p>
           </div>
         </form>

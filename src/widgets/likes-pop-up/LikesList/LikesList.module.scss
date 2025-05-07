@@ -1,0 +1,51 @@
+@use '../../../shared/styles/helpers/variables.scss' as *;
+@use '../../../shared/styles/helpers/mixins.scss' as mixin;
+@use '../../../shared/styles/helpers/functions.scss' as func;
+
+.likesList {
+  display: flex;
+  flex-direction: column;
+  gap: func.toRem(20);
+}
+
+.productItem {
+  display: flex;
+  align-items: center;
+  padding: func.toRem(10);
+  border-bottom: 1px solid $gray200;
+}
+
+.productImage {
+  width: func.toRem(80);
+  height: func.toRem(80);
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: func.toRem(20);
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productName {
+  font-size: func.toRem(16);
+  font-weight: 500;
+  color: $norway600;
+  margin: 0;
+}
+
+.productPrice {
+  font-size: func.toRem(14);
+  color: $gray600;
+  margin: func.toRem(5) 0 0;
+}
+
+.removeIcon {
+  width: func.toRem(24);
+  height: func.toRem(24);
+  cursor: pointer;
+  color: $red;
+  &:hover {
+    color: $red;
+  }
+}

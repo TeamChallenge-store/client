@@ -7,5 +7,17 @@ const CheckoutPage = lazy(() => import('~pages/checkout-page'));
 const ThankYouPage = lazy(() => import('~pages/thank-you-page'));
 const SignUpPage = lazy(() => import('~pages/sign-up/SignUpPage.tsx'));
 const SignInPage = lazy(() => import('~pages/sign-in/SignInPage.tsx'));
+const ProductDetails = lazy(() => import('~pages/product-detail-page/ProductDetailPage.tsx'));
+const GitHubCallback = lazy(() => import('~pages/sign-in/GitHubCallback.tsx'));
 
-export { HomePage, ProductPage, ErrorPage, CheckoutPage, ThankYouPage, SignUpPage, SignInPage };
+export {
+  HomePage,
+  ProductPage,
+  ErrorPage,
+  CheckoutPage,
+  ThankYouPage,
+  SignUpPage,
+  SignInPage,
+  ProductDetails,
+  GitHubCallback,
+};

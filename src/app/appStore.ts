@@ -17,7 +17,7 @@ import { rootReducer } from './rootReducer';
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: [baseApi.reducerPath],
+  blacklist: [baseApi.reducerPath, 'likes'], 
 };
 
 const makeStore = () => {
@@ -40,9 +40,7 @@ const makeStore = () => {
 const appStore = makeStore();
 const persistedStore = persistStore(appStore);
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 type RootState = ReturnType<typeof appStore.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 type AppDispatch = typeof appStore.dispatch;
 
 export { appStore, persistedStore };

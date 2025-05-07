@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { useLoginUserMutation, useLoginWithGitHubMutation } from '~entities/users/api/authApi.ts';
+import { useLoginUserMutation } from '~entities/users/api/authApi.ts';
 import { InputField } from '~shared/ui/InputField/InputField.tsx';
 import { CustomButton } from "~shared/ui/CustomButton";
-
 import styles from './ui/Login.module.scss';
 import loginImage from "./ui/icons/login.webp";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,12 +13,8 @@ const SignInPage = () => {
     email: "",
     password: ""
   });
-
   const [error, setError] = useState("");
-
-  const [loginWithGitHub] = useLoginWithGitHubMutation();
   const [loginUser] = useLoginUserMutation();
-
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,32 +25,24 @@ const SignInPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { email, password } = credentials;
-
     try {
-      const response = await loginUser({
-        email,
-        password
-      }).unwrap();
-
+      const response = await loginUser({ email, password }).unwrap();
       sessionStorage.setItem('accessToken', response.access);
       sessionStorage.setItem('refreshToken', response.refresh);
-
       navigate("/");
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message || "Login failed. Please try again.");
-      } else {
-        setError("Login failed. Please try again.");
-      }
+    } catch (err: any) {
+      setError(err.message || "Login failed. Please try again.");
     }
   };
 
-  const handleGitHubLogin = async () => {
-    try {
-      await loginWithGitHub().unwrap();
-    } catch (err: any) {
-      setError(err.message || "GitHub login failed");
-    }
+  const handleGitHubLogin = () => {
+    const githubAuthUrl = 'https://github.com/login/oauth/authorize';
+    const params = new URLSearchParams({
+      client_id: 'Ov23liOD1PFHlg8Xg7Wl',
+      redirect_uri: 'http://localhost:5173/accounts/github/login/callback',
+      scope: 'user:email',
+    });
+    window.location.href = `${githubAuthUrl}?${params.toString()}`;
   };
 
   return (
@@ -92,7 +78,7 @@ const SignInPage = () => {
         </form>
         <p className={styles.redirectText}>
           Don't have an account?{" "}
-          <a href="/#/sign_up" className={styles.redirectLink}>
+          <a href="/sign_up" className={styles.redirectLink}>
             Register here
           </a>
         </p>

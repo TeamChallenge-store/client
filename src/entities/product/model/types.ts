@@ -15,6 +15,36 @@ interface IProductCard {
   features?: string;
 }
 
+interface IProductImage {
+  id: number;
+  image: string;
+  created_at?: string;
+  updated_at?: string;
+}
+
+interface IProductDetails {
+  id: number;
+  category?: number;
+  subcategory?: number;
+  name: string;
+  price: string;
+  old_price?: string;
+  image: string | null;
+  quantity_in_stock?: number;
+  brand?: string | number;
+  color?: string | number;
+  rate?: number;
+  subtitle?: string;
+  subscription?: string;
+  features?: string;
+  comments?: any[];
+  created_at?: string;
+  updated_at?: string;
+  description?: string;
+  is_visible?: boolean;
+  images?: IProductImage[];
+}
+
 type TResponse = {
   results: IProductCard[];
 };
@@ -42,4 +72,5 @@ export {
   type TResponse,
   type TResponseProducts,
   type TResponseProductsPage,
+  type IProductDetails,
 };

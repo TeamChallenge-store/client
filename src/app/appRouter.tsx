@@ -1,4 +1,4 @@
-import { RouteObject, createHashRouter as Router } from 'react-router-dom';
+import { RouteObject, createBrowserRouter as Router } from 'react-router-dom';
 
 import { baseLayout } from '~layout/baseLayout';
 
@@ -10,6 +10,8 @@ import {
   ThankYouPage,
   SignInPage,
   SignUpPage,
+  ProductDetails,
+  GitHubCallback,
 } from '~lazyPages';
 
 const routes: RouteObject[] = [
@@ -22,8 +24,12 @@ const routes: RouteObject[] = [
         element: <HomePage />,
       },
       {
-        path: 'products/',
+        path: 'products',
         element: <ProductPage />,
+      },
+      {
+        path: 'product/:productId',
+        element: <ProductDetails />,
       },
       {
         path: 'products/:category',
@@ -60,6 +66,10 @@ const routes: RouteObject[] = [
       {
         path: 'thank-you',
         element: <ThankYouPage />,
+      },
+      {
+        path: 'accounts/github/login/callback',
+        element: <GitHubCallback />,
       },
       {
         path: '*',
